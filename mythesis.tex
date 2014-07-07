@@ -1,0 +1,56 @@
+\documentclass{mythesis}
+\usepackage{mythesis}
+
+%% You can set the line spacing this way
+%\setallspacing{double}
+%% or a section at a time like this
+%\setfrontmatterspacing{double}
+
+%% PDF metadata
+\makeatletter
+\@ifpackageloaded{hyperref}{%
+\hypersetup{%
+pdftitle = {Search for H$\rightarrow\tau\tau$ with CMS},
+pdfsubject = {Rebecca Lane's PhD thesis},
+pdfkeywords = {CMS, H, physics, LHC, Higgs, tau},
+pdfauthor = {\textcopyright\ Rebecca Lane}
+}
+}{}
+\makeatother
+
+%% Define the thesis title and author
+\title{A search for H $\rightarrow\tau\tau$ with the CMS experiment}
+\author{Rebecca Charlotte Lane}
+
+%% Start the document
+\begin{document}
+
+%% Define the un-numbered front matter (cover pages, rubrik and table of contents)
+\begin{frontmatter}
+  \input{frontmatter}
+\end{frontmatter}
+
+%% Start the content body of the thesis
+\begin{mainmatter}
+  %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
+  \input{chap1}
+  \input{chap2}
+  \input{chap3}
+  %% To ignore a specific chapter while working on another,
+  %% making the build faster, comment it out like this:
+  %\input{chap4}
+\end{mainmatter}
+
+%% Produce the appendices
+\begin{appendices}
+  \input{appendices}
+\end{appendices}
+
+%% Produce the un-numbered back matter (e.g. colophon,
+%% bibliography, tables of figures etc., index...)
+\begin{backmatter}
+  \input{backmatter}
+\end{backmatter}
+
+%% Close
+\end{document}

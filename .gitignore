@@ -1,0 +1,6 @@
+*.log
+*.aux
+example*
+mythesis.pdf
+mythesis.out
+mythesis.bbl

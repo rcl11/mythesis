@@ -1,10 +1,19 @@
 \documentclass{mythesis}
 \usepackage{mythesis}
+%\usepackage{ptdr-definitions}
 
 %% You can set the line spacing this way
 %\setallspacing{double}
 %% or a section at a time like this
 %\setfrontmatterspacing{double}
+
+%% Define a few useful shorthands
+\newcommand{\emu}{\Pe\Pgm}
+\newcommand{\ee}{\Pe\Pe}
+\newcommand{\mumu}{\Pgm\Pgm}
+\newcommand{\mutau}{\Pgm\Pgth}
+\newcommand{\etau}{\Pe\Pgth}
+\newcommand{\tautau}{\Pgth\Pgth}
 
 %% PDF metadata
 \makeatletter
@@ -33,18 +42,20 @@ pdfauthor = {\textcopyright\ Rebecca Lane}
 %% Start the content body of the thesis
 \begin{mainmatter}
   %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
-  \input{chap1}
-  \input{chap2}
-  %\input{chap3}
+  \input{theory}
+  \input{detector}
+  \input{htt-sm}
+  \input{htt-mssm}
+  \input{Hhh}
   %% To ignore a specific chapter while working on another,
   %% making the build faster, comment it out like this:
   %\input{chap4}
 \end{mainmatter}
 
 %% Produce the appendices
-\begin{appendices}
-  \input{appendices}
-\end{appendices}
+%\begin{appendices}
+%  \input{appendices}
+%\end{appendices}
 
 %% Produce the un-numbered back matter (e.g. colophon,
 %% bibliography, tables of figures etc., index...)

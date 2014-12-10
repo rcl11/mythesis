@@ -1,0 +1,95 @@
+\chapter{Event Reconstruction}
+\label{chap:reco}
+The CMS detector is a multi-purpose detector, and the $H\rightarrow\tau\tau$
+analysis makes use of information from every sub-detector. The detector can be
+described in terms of the coordinate system conventionally used within CMS. The
+origin is placed at the interaction point with the $z$ axis collinear with the
+beam. Then the $x$ axis is chosen to point towards the centre of the LHC ring
+and forms a plane with $y$, the remaining transverse coordinate perpendicular to
+$x$ and $z$. The angle $\phi$ is the azimuthal angle with respect to the $x$
+axis and $\theta$ is the polar angle in the $x-y$ plane. Another coordinate
+often used is pseudorapidity, defined as $\eta = - \ln[\tan(\theta/2)]$. 
+
+CMS uses a particle-flow (PF)  algorithm \cite{CMS-PAS-PFT-09-001} to combine
+the individual track and energy deposits in each sub-detector. This allows the
+reconstruction of individual particles emerging from all vertices: charged
+hadrons, neutral hadrons, photons, muons and electrons. These particles are then
+used to calculate the missing transverse energy $E_{\rm{T}}^{\rm{miss}}$,
+reconstruct jets and quantify the isolation of leptons and photons. A separate
+algorithm is used to reconstruct hadronic decays of taus. This algorithm targets
+the decay modes of the tau by selecting PF candidates with one charged hadron
+and up to two neutral pions, or with three charged hadrons.
+
+One big challenge is separating the vertex belonging to the hard scattering
+process (``primary vertex") from the large number of proton-proton interactions
+occuring per LHC bunch crossing (``pileup"). The average number of pileup events
+is 9 in 2011 data and 21 in 2012, and this affects the identification of most of
+the physics objects. The tracking system is able to separate collision vertices
+as close as 0.5 mm along the beam direction \cite{clustering}. For each vertex,
+the sum of the p$_{\rm{T}}^{2}$ of all tracks associated with the vertex is
+calculated, and the vertex for which this quantity is the largest is assumed to
+be the primary vertex.
+
+Pileup events particularly affect the identification of jets. Particles from
+different pileup vertices can be clustered and identified as a jet, or overlap
+with a jet from the primary vertex affecting the measurement of the jet energy.
+Pileup jet identification (ID) is used to classify these events, which consists
+of a boosted decision tree (BDT) \cite{TMVA} with input variables such as
+momentum and spatial distribution of the jet particles. Jets are reconstructed
+using the anti-k$_{\rm{T}}$ jet algorithm \cite{antikt} using all PF candidates.
+The jet energy is corrected for remaining contributions from pileup. In addition
+a calibration factor is applied to account for imperfections in the
+neutral-hadron calibration, the jet energy containment and small differences
+between the simulated and observed response. Jets originating from b-quark
+hadronization are identified using the combined secondary-vertex b-tagging
+algorithm \cite{bjets}.
+
+The $E_{\rm{T}}^{\rm{miss}}$ is calculated as the opposite of the vectorial sum
+of the transverse momenta of all PF particles. The resolution of this PF
+$E_{\rm{T}}^{\rm{miss}}$ degrades rapidly with pileup. A more precise
+measurement of $E_{\rm{T}}^{\rm{miss}}$ can be achieved with MVA PF
+$E_{\rm{T}}^{\rm{miss}}$, which uses a BDT regression multivariate analysis
+including the PF $E_{\rm{T}}^{\rm{miss}}$ as one input, as well as the following
+versions of $E_{\rm{T}}^{\rm{miss}}$:
+\begin{itemize}
+\item charged hadrons from the primary vertex;
+\item charged hadrons from the primary vertex and neutral particles in jets
+passing the
+pileup jet ID;
+\item charged hadrons from pileup vertices and neutral particles in jets failing
+the pileup jet ID;
+\item charged hadrons from the primary vertex and all neutral particles in the
+event, to which is added the vectorial sum of the transverse momenta of neutral
+particles within jets failing the pileup jet identification.
+\end{itemize}
+
+The MVA PF $E_{\rm{T}}^{\rm{miss}}$ has a resolution which is much less
+dependent on pileup.
+
+To model the contributions of signal and background events in the analysis
+Monte-Carlo (MC) simulation is used. Simulation of signal events is generated
+using POWHEG \cite{powheg} interfaced to PYTHIA \cite{pythia}, and of
+background events using MADGRAPH \cite{madgraph}. Pileup is simulated using
+additional interactions from PYTHIA and reweighting the simulated events to
+match the observed pileup distribution in data, which is different depending on
+the run period. In addition, the $E_{\rm{T}}^{\rm{miss}}$ response in
+simulation is corrected for the $E_{\rm{T}}^{\rm{miss}}$ energy scale and
+resolution which is measured in $Z\rightarrow\mu\mu$ events. The generated
+events are then processed through a simulation of the CMS detector based on
+GEANT4 \cite{geant4} and are reconstructed with the same algorithms used in
+data.
+
+Since we are searching for events in which the tau decay products, both visible
+and invisible, are the decay products of the Higgs, reconstruction of the full
+di-tau mass is important to know the mass of the Higgs candidate. This can be
+achieved by combining only the visible products to evaluate a quantity known as
+visible mass, but greater accuracy is achieved if the full mass can be
+reconstructed. This is done using a likelihood based algorithm called SVFit,
+which combines the visible decay products and the reconstructed
+$E_{\rm{T}}^{\rm{miss}}$. More detail on the algorithm can be found in
+\cite{CMS-PAS-HIG-13-004}. The use of SVFit mass allows much better separation
+of Higgs signal from the $Z\rightarrow\tau\tau$ background. This results in an
+improvement of 30$\%$ in the overall separation of signal from background
+compared with using visible mass.
+
+

@@ -1,40 +1,58 @@
 \chapter{Theory}
 \label{chap:theory}
 
-%% Note that the citations in this chapter use the journal and 
-%% arXiv keys: I used the SLAC-SPIRES online BibTeX retriever 
-%% to build my bibliography. There are also quite a few non-standard
-%% macros, which come from my personal collection. You can have them
-%% if you want, or I might get round to properly releasing them at 
-%% some point myself.
+\section{The Standard Model of Particle Physics}
+\label{sec:theSM}
 
-%\chapterquote{Laws were made to be broken.}%
-%{Christopher North, 1785--1854}%: Blackwood's Magazine May 1830
+The \ac{SM} of fundamental interactions is the theory
+which describes the electromagnetic, weak and strong nuclear interactions, often
+represented as a collection of the elementary particles predicted by the theory.
+The SM has successfully described data from a wide range of experiments, and in the 
+years prior to the LHC, all of the predicted elementary particles were verified 
+except for one: the Higgs boson.
 
-Some stuff about the SM
+The \ac{SM} is a renormalisable quantum field theory, in which the constituents of
+matter are represented as spin-$\frac{1}{2}$ fermions which interact with
+forces mediated by spin-1 bosons. These interactions are described by a
+Lagrangian which is invariant under $SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$
+symmetries. The $SU(3)_{C}$ part describes the strong interaction, mediated by
+particles which carry colour charge (C). In these interactions, described by the
+theory of \ac{QCD}\cite{}, the force mediators are massless gluons
+and the coloured fermions are the quarks. The remaining fundamental fermions,
+the leptons, do not carry colour charge and hence do not interact via the strong
+force. Both the leptons and quarks participate in electroweak interactions,
+which are governed by the $SU(2)_{L} \times U(1)_{Y}$ symmetry.
 
-\section{Electroweak symmetry breaking}
-\label{sec:ewbreaking}
-We can go a long way with an effective Hamiltonian approach in
-canonical single-particle quantum mechanics. To do this we construct
-a wavefunction from a combination of a generic neutral meson state 
-$\ket{\Xzero}$ and its anti-state $\ket{\Xzerobar}$:
-%
+The electroweak symmetry describes the unified electromagnetic and weak
+interactions\cite{}, and was one of the major achievements of the twentieth
+century in the \ac{SM}. In electroweak theory the quantum numbers of interest are
+weak hypercharge $y$ and weak isospin $t_{1,2,3}$. These are related to the
+electric charge Q as: 
+
 \begin{equation}
-  \ket{\psi(t)} = a(t)\ket{\Xzero} + b(t)\ket{\Xzerobar}
+Q = t_{3} + \frac{y}{2}
 \end{equation}
-%
-which is governed by a time-dependent matrix differential equation,
-%
-\begin{equation}
-  \I \pdByd{}{t} \colvector{a \\ b}
-  =
-  \underbrace{%
-  \twomatrix{ M_{11}-\frac{\I}{2}\Gamma_{11}           
-            & M_{12}-\frac{\I}{2}\Gamma_{12} }
-            { M_{12}^\ast-\frac{\I}{2}\Gamma_{12}^\ast 
-            & M_{22}-\frac{\I}{2}\Gamma_{22} }
-  }_{\boldmatrix{H}}
-  \colvector{a \\ b}
-  .
-\end{equation}
+
+The gauge fields associated with these fields are the three weak isospin fields,
+$W_{\mu}^{i}$, $i = 1,2,3$, and the hypercharge field $B_{\mu}$.
+
+
+\cite{GlashowPartialSymmetries,WeinbergModelOfLeptons,SalamNobelSymposium}.
+
+\subsection{The Higgs Mechanism in the SM}
+\label{sec:SMHiggs}
+
+\section{Theories beyond the SM}
+\label{sec:BSM}
+
+Despite its successes, the \ac{SM} is known to have some shortcomings. One concerns
+the calculations of the Higgs Boson mass, and is known as the Hierarchy problem. 
+
+\subsection{The Higgs sector in the MSSM}
+
+\subsection{MSSM Models incorporating the LHC Higgs}
+
+\subsection{Other possibilities}
+
+
+

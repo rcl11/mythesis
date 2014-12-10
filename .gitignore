@@ -1,6 +1,7 @@
 *.log
 *.aux
 example*
+chap*
 mythesis.pdf
 mythesis.out
 mythesis.bbl

@@ -95,7 +95,8 @@ which is used to improve the electron energy resolution.
 
 %Backgrounds to electrons are expected to originate
 %in hadronic jets, for example where a $\Pgpz$ and $\Pgppm$ overlap, or where a
-%$\Pgppm$ showers early in the \ac{ECAL}. 
+%$\Pgppm$ showers early in the \ac{ECAL}.
+% read the paper and understand better what these backgrounds are!! pions?
 Electron ID criteria are used in many analyses to improve the efficiency of
 selecting real electrons over backgroundsi (which tend to originate from
 hadronic jets). The most commonly used variables are \cite{Baffioni:2006cd}:
@@ -225,8 +226,24 @@ if the track falls inside the cluster volume.
 \subsection{Jet Energy Corrections}
 \label{sec:JEC}
 
+Pileup events particularly affect the identification of jets. Particles from
+different pileup vertices can be clustered and identified as a jet, or overlap
+with a jet from the primary vertex affecting the measurement of the jet energy.
+Pileup jet identification (ID) is used to classify these events, which consists
+of a boosted decision tree (BDT) \cite{TMVA} with input variables such as
+momentum and spatial distribution of the jet particles. Jets are reconstructed
+using the anti-k$_{\rm{T}}$ jet algorithm \cite{antikt} using all PF candidates.
+The jet energy is corrected for remaining contributions from pileup. In addition
+a calibration factor is applied to account for imperfections in the
+neutral-hadron calibration, the jet energy containment and small differences
+between the simulated and observed response.
+
 \subsection{B-tagged jets}
 \label{sec:btag}
+
+Jets originating from b-quark
+hadronization are identified using the combined secondary-vertex b-tagging
+algorithm \cite{bjets}.
 
 \section{$\MET$}
 \label{sec:met}
@@ -250,8 +267,7 @@ versions of $\MET$:
 \begin{itemize}
 \item charged hadrons from the primary vertex;
 \item charged hadrons from the primary vertex and neutral particles in jets
-passing the
-pileup jet ID;
+passing the pileup jet ID;
 \item charged hadrons from pileup vertices and neutral particles in jets failing
 the pileup jet ID;
 \item charged hadrons from the primary vertex and all neutral particles in the
@@ -282,21 +298,37 @@ dependent on pileup, as can be seen in figures \ref{fig:mvamet}.
 \section{Di-tau Mass Reconstruction in $\PH \to \Pgt\Pgt$}
 \label{sec:svfit}
 
+Since we are searching for events in which the tau decay products, both visible
+and invisible, are the decay products of the Higgs, reconstruction of the full
+di-tau mass is important to know the mass of the Higgs candidate. This can be
+achieved by combining only the visible products to evaluate a quantity known as
+visible mass, but greater accuracy is achieved if the full mass can be
+reconstructed. This is done using a likelihood based algorithm called SVFit,
+which combines the visible decay products and the reconstructed
+$\MET$.
 
-Pileup events particularly affect the identification of jets. Particles from
-different pileup vertices can be clustered and identified as a jet, or overlap
-with a jet from the primary vertex affecting the measurement of the jet energy.
-Pileup jet identification (ID) is used to classify these events, which consists
-of a boosted decision tree (BDT) \cite{TMVA} with input variables such as
-momentum and spatial distribution of the jet particles. Jets are reconstructed
-using the anti-k$_{\rm{T}}$ jet algorithm \cite{antikt} using all PF candidates.
-The jet energy is corrected for remaining contributions from pileup. In addition
-a calibration factor is applied to account for imperfections in the
-neutral-hadron calibration, the jet energy containment and small differences
-between the simulated and observed response. Jets originating from b-quark
-hadronization are identified using the combined secondary-vertex b-tagging
-algorithm \cite{bjets}.
+Figure \ref{fig:svfit} shows the separation between signal and $\PZ \to \Pgt\Pgt$
+background in the case of using the visible mass or the mass from SVFit. It can
+clearly be seen that the shape separation is greatly improved in the SVFit case.
+The improvement in expected limit from using SVFit over visible mass in the $\PH
+\to \Pgt\Pgt$ analysis is around 40$\%$.
 
+
+\begin{figure}
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/reco/svFitPerformance_forColin_visMass.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth] 
+      {plots/reco/svFitPerformance_forColin_svFitMass.pdf}} 
+\end{center}
+\caption{
+}
+\label{fig:svfit}
+\end{figure}
+
+\section{\ac{MC} simulation of signal and backgrounds}
 
 To model the contributions of signal and background events in the analysis
 Monte-Carlo (MC) simulation is used. Simulation of signal events is generated
@@ -311,17 +343,5 @@ events are then processed through a simulation of the CMS detector based on
 GEANT4 \cite{geant4} and are reconstructed with the same algorithms used in
 data.
 
-Since we are searching for events in which the tau decay products, both visible
-and invisible, are the decay products of the Higgs, reconstruction of the full
-di-tau mass is important to know the mass of the Higgs candidate. This can be
-achieved by combining only the visible products to evaluate a quantity known as
-visible mass, but greater accuracy is achieved if the full mass can be
-reconstructed. This is done using a likelihood based algorithm called SVFit,
-which combines the visible decay products and the reconstructed
-$E_{\rm{T}}^{\rm{miss}}$. More detail on the algorithm can be found in
-\cite{CMS-PAS-HIG-13-004}. The use of SVFit mass allows much better separation
-of Higgs signal from the $Z\rightarrow\tau\tau$ background. This results in an
-improvement of 30$\%$ in the overall separation of signal from background
-compared with using visible mass.
 
 

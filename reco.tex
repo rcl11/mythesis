@@ -184,7 +184,7 @@ be found in section \ref{sec:datamcfactors}.
 \label{sec:jets}
 
 Jets result from the large numbers of quarks and gluons present in a hadron
-collider. The term jet is used to refer to the collimated shower of particles
+collider. The term `jet' is used to refer to the collimated shower of particles
 which is produced from the hadronisation of such a quark or gluon. In order to
 reconstruct the original parton, these showers of particles need to be collected
 and combined correctly. Before describing how this is done we must discuss an
@@ -223,20 +223,61 @@ if the track falls inside the cluster volume.
 \subsection{Jet Identification by Clustering}
 \label{sec:jetID}
 
+Jets are composed of a wide range of particle types which interact in the
+detector in different ways. These particles must be combined using a clustering
+algorithm. The choice of algorithm defines how the particles should be combined
+taking into account the distance between the objects. In particular the
+algorithm should be infrared- and collinear- safe, meaning that the jet
+reconstruction is not affected by soft \ac{QCD} radiation or gluon splitting.
+The algorithm used for the
+analyses in this thesis is the `anti-$k_{\text{T}}$' algorithm as implemented in
+the \textsc{fastjet} package \cite{Cacciari:fastjet1}, which considers all 
+objects within a certain jet `size' defined by a parameter $R=0.5$, and 
+sequentially combines them starting from the one with the
+smallest distance from the beamline. If this distance is smaller than the
+distance between this object and the closest second object then the first is
+taken to be a final state jet and removed from the object list,
+otherwise the two objects are combined into one and the process repeats. 
+This process is repeated for all objects until none remain in the list. The effect of this
+is to form a cluster around the hardest particles in a cone in $\eta$-$\phi$.
+
+Jet identification criteria are applied to reduce the contribution of jets from
+noise in the calorimeters. These include the following:
+\begin{itemize}
+\item Jets must consist of at least one \ac{PF} component. 
+\item It is required that the jet energy has contributions
+from both the \ac{ECAL} and \ac{HCAL}.
+\item The fraction of the total jet energy as a result of photons or neutral
+hadrons should be less than 0.99 of the total jet energy.
+\item Jets within the acceptance of the inner tracker must have at least one
+charged object and a charged energy fraction greater than zero and an electron
+energy fraction less than 0.99. 
+\end{itemize}
+
 \subsection{Jet Energy Corrections}
 \label{sec:JEC}
 
-Pileup events particularly affect the identification of jets. Particles from
-different pileup vertices can be clustered and identified as a jet, or overlap
-with a jet from the primary vertex affecting the measurement of the jet energy.
+An important aspect of jet identification is the correct measurement of the jet
+energy, which is typically different between reconstructed and true hadron-level jet energy
+due to experimental effects. This can be due to uninstrumented regions of the
+detector, non-linear calormeter responses and contamination by jets from \ac{PU}
+interactions. Particles from different pileup vertices can be clustered and identified as a
+jet, or overlap with a jet from the primary vertex affecting the measurement of the jet energy.
 Pileup jet identification (ID) is used to classify these events, which consists
-of a boosted decision tree (BDT) \cite{TMVA} with input variables such as
-momentum and spatial distribution of the jet particles. Jets are reconstructed
-using the anti-k$_{\rm{T}}$ jet algorithm \cite{antikt} using all PF candidates.
-The jet energy is corrected for remaining contributions from pileup. In addition
+of a \ac{BDT} \cite{TMVA} with input variables such as
+momentum and spatial distribution of the jet particles. In addition
 a calibration factor is applied to account for imperfections in the
 neutral-hadron calibration, the jet energy containment and small differences
 between the simulated and observed response.
+
+A correction to the jet energy scale is derived and applied sequentially
+\cite{CMS-JME-10-011}:
+
+\begin{equation}
+P_{\text{corr}}^{\mu} = C_{\text{offset}}(\pT^{\text{raw}},\eta) \cdot
+C_{\text{rel}}(\pT^{''},\eta) \cdot C_{\text{abs}}(\pT^{'},\eta) \cdot
+P_{\text{raw}}^{\mu}\, .
+\end{equation}
 
 \subsection{B-tagged jets}
 \label{sec:btag}
@@ -250,20 +291,20 @@ algorithm \cite{bjets}.
 
 Neutrinos and any other hypothetical weakly interacting stable particles do not
 interact with the CMS deterctor. We infer their production from the resulting
-imbalance in $\MET$ in a given event, which the hermeticity of the CMS detector
+imbalance in $\ET$ in a given event, which the hermeticity of the CMS detector
 allows us to measure to a high degree of accuracy. This is crucial not only in
-many searches for new physics involving such hypothetical particle, but also for
+many searches for new physics involving such hypothetical particles, but also for
 \ac{SM} processes involving neutrinos. In particular for the $\PH \to \Pgt\Pgt$
-analysis accurate measurement of the $\MET$ allows us to reconstruct the
+analysis accurate measurement of the $\MET$ is essential to reconstruct the
 candidate taus after they decay via the weak interaction.
 
 The \ac{PF} algorithm allows us to calculate $\MET$ as the opposite of the vectorial sum
-of the transverse momenta of all PF particles. The resolution of this PF
+of the transverse momenta of all \ac{PF} particles. The resolution of this PF
 $\MET$ degrades rapidly with pileup. A more precise
-measurement of $\MET$ can be achieved with MVA PF
-$\MET$, which uses a BDT regression multivariate analysis
-including the PF $\MET$ as one input, as well as the following
-versions of $\MET$:
+measurement of $\MET$ can be achieved with so-called `MVA
+$\MET$', which uses a \ac{BDT} regression multivariate analysis
+including the \ac{PF} $\MET$ as one input. Other inputs are versions of the
+$\MET$ calculated using the following combinations of \ac{PF} particles: 
 \begin{itemize}
 \item charged hadrons from the primary vertex;
 \item charged hadrons from the primary vertex and neutral particles in jets
@@ -275,7 +316,7 @@ event, to which is added the vectorial sum of the transverse momenta of neutral
 particles within jets failing the pileup jet identification.
 \end{itemize}
 
-The MVA PF $\MET$ has a resolution which is much less
+The MVA $\MET$ has a resolution which is much less
 dependent on pileup, as can be seen in figures \ref{fig:mvamet}.
 
 \begin{figure}
@@ -287,7 +328,8 @@ dependent on pileup, as can be seen in figures \ref{fig:mvamet}.
     \includegraphics[width=0.5\textwidth] 
       {plots/reco/U2Res.pdf}} 
 \end{center}
-\caption{
+\caption{Plots illustrating the dependence of $\MET$ resolution on the number of
+primary vertices in the event.
 }
 \label{fig:mvamet}
 \end{figure}
@@ -298,14 +340,13 @@ dependent on pileup, as can be seen in figures \ref{fig:mvamet}.
 \section{Di-tau Mass Reconstruction in $\PH \to \Pgt\Pgt$}
 \label{sec:svfit}
 
-Since we are searching for events in which the tau decay products, both visible
-and invisible, are the decay products of the Higgs, reconstruction of the full
-di-tau mass is important to know the mass of the Higgs candidate. This can be
-achieved by combining only the visible products to evaluate a quantity known as
+Reconstruction of the full di-tau mass gives us the mass of the Higgs candidate.
+This reconstruction is made less straightforward by the fact that the taus
+themselves decay. We can simply combine the visible products to evaluate a quantity known as
 visible mass, but greater accuracy is achieved if the full mass can be
-reconstructed. This is done using a likelihood based algorithm called SVFit,
-which combines the visible decay products and the reconstructed
-$\MET$.
+reconstructed including the invisible neutrinos. This can be achievied
+using a likelihood based algorithm called SVFit, which combines the visible decay products 
+and the reconstructed $\MET$.
 
 Figure \ref{fig:svfit} shows the separation between signal and $\PZ \to \Pgt\Pgt$
 background in the case of using the visible mass or the mass from SVFit. It can

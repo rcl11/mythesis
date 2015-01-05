@@ -380,6 +380,73 @@ primary vertices in the event.
 \section{Hadronic Taus}
 \label{sec:taus}
 
+Taus decay via the weak force, and decay into a final state consisting of a tau
+neutrini, an electron/muon and the associated electron/muon neutrino $\approx35\%$ of
+the time. This section describes the identification of taus in the other $\approx65\%$ of the time,
+when they decay hadronically into a tau neutrino plus a hadronic tau, $\tau_{h}$. The different
+possibilities for hadronic tau decays are listed in table \ref{tab:hadronictaus}.
+
+\begin{table}[bth]
+\begin{tabular}{|c|c|c|}
+Decay Mode & Intermediate Resonance & Branching Fraction [\%] \\
+\hline
+$\Pgtpm\to\Pgppm\Pgpz\Pgngt$ & $\Pgr$(770) & 26.0 \\
+\hline
+$\Pgtpm\to\Pgppm\Pgngt$ & -  & 11.6 \\
+\hline
+$\Pgtpm\to\Pgppm\Pgpz\Pgpz\Pgngt$ & $\text{a}_{1}$(1260) & 10.8 \\
+\hline
+$\Pgtpm\to\Pgppm\Pgpmp\Pgppm\Pgngt$ & $\text{a}_{1}$(1260) & 9.8 \\
+\hline
+$\Pgtpm\to\Pgppm\Pgpmp\Pgppm\Pgpz\Pgngt$ & -  & 4.8 \\
+\hline
+Other hadronic modes & - & 1.7 \\
+\hline
+Total & &  64.7 \\ 
+\end{tabular}
+\caption{List of the possible hadronic tau decay modes. The branching ratios for
+each is given, and where the decay proceeds via an intermediate resonance this
+is given along with its mass in $\MeV$\cite{PDG}.}
+\label{tab:hadronictaus}
+\end{table}
+
+The largest fraction of hadronic decays proceeds via the $\Pgr$(770) resonance
+resulting in one charged and one neutral pion. Other common modes produce
+different numbers of neutral or charged pions. Decays with more than 3 charged
+pions are included in the other hadronic modes and are relatively rare. This
+knowledge about the number of pions in the final state is used in the
+identification of hadronic taus, using the \ac{HPS} algorithm
+described in section \ref{sec:hps}.
+
+Hadronic taus are a collection of hadronic particles and as such the first level
+of identification is similar to jet ID. 
+Since the decay products come directly from the tau they are constrained by the
+tau mass, this results in a highly collimated hadronic system compared with the
+typical jet. This allows us to specificially identify hadronic taus compared
+with quark and gluon jets.
+
+\subsection{Hadron Plus Strips Algorithm}
+\label{sec:hps}
+
+For the $\PH \to \Pgt\Pgt$ analysis, the \ac{HPS} algorithm is used to identify
+hadronic taus. The \ac{HPS} makes us of \ac{PF} candidates to reconstruct the
+charged pions and the photons resulting from the decays of the neutral pions. In
+addition, the kinematic properties listed in table \ref{tab:hadronictaus} can be
+applied. 
+
+The algorithm is seeded by a PF jet which is reconstructed as described in
+section \ref{sec:jetID}.   
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]
+      {plots/reco/tau_decay_mode_inclusive_mt_2012.pdf}
+\end{center}
+\caption{Plots illustrating the tau decay modes.
+}
+\label{fig:taudecaymode}
+\end{figure}
+
 \section{Di-tau Mass Reconstruction in $\PH \to \Pgt\Pgt$}
 \label{sec:svfit}
 

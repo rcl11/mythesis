@@ -270,21 +270,64 @@ a calibration factor is applied to account for imperfections in the
 neutral-hadron calibration, the jet energy containment and small differences
 between the simulated and observed response.
 
-A correction to the jet energy scale is derived and applied sequentially
+A correction to the jet energy scale is derived
 \cite{CMS-JME-10-011}:
 
+%Read this paper when you have internet and find a better way to write this
+%equation
+
 \begin{equation}
-P_{\text{corr}}^{\mu} = C_{\text{offset}}(\pT^{\text{raw}},\eta) \cdot
-C_{\text{rel}}(\pT^{''},\eta) \cdot C_{\text{abs}}(\pT^{'},\eta) \cdot
+P_{\text{corr}}^{\mu} = C_{\text{PU}}(\pT^{\text{raw}},\eta) \cdot
+C_{\text{rel}}(\pT^{\text{PU}},\eta) \cdot C_{\text{abs}}(\pT^{\text{rel}},\eta) \cdot
 P_{\text{raw}}^{\mu}\, .
 \end{equation}
+
+In this equation, $C_{\text{PU}}$ is the correction for \ac{PU},
+$C_{\text{rel}}$ is a relative correction and $C_{\text{abs}}$ is an absolute
+correction. The corrections are applied sequentially such that the \ac{PU}
+correction is a function of raw jet $\pt$, the relative correction is a function
+of the $\pt$ corrected for the pileup effects ($\pt^{\text{PU}}$) and finally
+the absolute correction is a function of the relative-corrected $\pt$
+($\pt^{\text{rel}}$). All of the corrections are also applied as a function of
+jet $\eta$. These subsequent corrections are applied to the raw
+4-vector of the jet $P_{\text{raw}}^{\mu}$ to yield the corrected 4-vector
+$P_{\text{corr}}^{\mu}$.
+
+The \ac{PU} correction is determined using the $\pt$ density in the event to
+estimate the contribution from \ac{PU} on a per-jet basis. The relative
+correction is determined using a dijet $\pt$ balance method which uses dijet
+events containing a jet with $|\eta| < 1.3$ and exploits momentum conservation.
+The probe jet (which can have any value of $\eta$), is used to calculate the
+average of a balance quantity, defined as:
+$(\pT^{\text{probe jet}}-\pT^{\text{ref jet}})/\pT^{\text{average}}$, in bins of
+average dijet $\pt$ and probe $\eta$. Figure \ref{fig:jetresponse} shows the
+values of the response for \ac{MC} and data. The absolute correction is measured
+using the \ac{MPF} method \cite{Abe:1992sj}, using $\gamma$+jets and $\PZ$+jets
+events and enforcing momentum conservation in light of the fact that these
+events shouldn't contain any real $\MET$. Thus any measured $\MET$ can be used to
+calibrate the $\pt$ of the jets. The total uncertainty on the jet energy scale
+is given by the sum in quadrature of the estimated uncertainties in each of the
+correction factors. This uncertainty varies between approximately $3$ and $5\%$
+depending on $\pt$ and $\eta$. 
+
+%could add a JES uncert plot here.
 
 \subsection{B-tagged jets}
 \label{sec:btag}
 
-Jets originating from b-quark
+The identification of jets which originate from b-quarks is important in many
+\ac{SM} and \ac{BSM} processes. As a result of the fact that decays of b-quarks
+are suppressed by small CKM matrix elements, b-flavoured hadrons have relatively
+long lifetimes. These hadrons are also relatively heavy due to the large mass of
+the b-quark, and as such the decay products typically have large momenta
+perpendicular to the b-hadron momentum direction. Both of these features are
+exploited in identification of b-tagged jets.
+
+In the $\PH \to \Pgt\Pgt$ analysis, jets originating from b-quark
 hadronization are identified using the combined secondary-vertex b-tagging
-algorithm \cite{bjets}.
+algorithm \cite{bjets}. The long lifetime of the b-hadrons results in a
+secondary decay vertex which can be reconstructed.
+%some more to be added about CSV and b-tag uncertainties. 
 
 \section{$\MET$}
 \label{sec:met}

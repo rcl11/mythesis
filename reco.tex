@@ -180,6 +180,11 @@ than $96\%$ for muons with $\pt > 10~\GeV$. Some studies of the ID efficiency of
 muons in data and \ac{MC} in the context of the $\PH \to \Pgt\Pgt$ analysis can
 be found in section \ref{sec:datamcfactors}.
 
+\section{Lepton Isolation}
+\label{sec:leptonisolation}
+
+
+
 \section{Jets}
 \label{sec:jets}
 
@@ -429,23 +434,129 @@ with quark and gluon jets.
 \label{sec:hps}
 
 For the $\PH \to \Pgt\Pgt$ analysis, the \ac{HPS} algorithm is used to identify
-hadronic taus. The \ac{HPS} makes us of \ac{PF} candidates to reconstruct the
+hadronic taus \cite{CMS-PAS-TAU-11-001}. The \ac{HPS} makes us of \ac{PF} candidates to reconstruct the
 charged pions and the photons resulting from the decays of the neutral pions. In
 addition, the kinematic properties listed in table \ref{tab:hadronictaus} can be
-applied. 
+applied. In this algorithm only the visible products of the taus are considered
+- the tau neutrino forms part of the missing energy.
 
-The algorithm is seeded by a PF jet which is reconstructed as described in
-section \ref{sec:jetID}.   
+The algorithm is seeded by a \ac{PF} jet, which is reconstructed as described in
+section \ref{sec:jetID} with distance parameter $R=0.5$. The photons from the neutral pion decay have a high
+probability to convert to electron-positron pairs within the tracker, resulting
+in an EM shower spread in the $\phi$ direction. These candidates are clustered
+using strips with size $\Delta\eta = 0.05$ and $\Delta\phi = 0.2$ initially
+centred on the most energetic EM candidate in the \ac{PF} jet. Strips with
+$\pt>1\GeV$ are considered. The energy of the
+strip is required to be consistent with the mass of the neutral pion, and hence
+between 50 and 200 $\MeV$. The strips are then combined with the charged hadrons
+from \ac{PF} to give us 4 different cases:
+
+\begin{itemize}
+\item Single charged hadron or "prong", no strips: corresponds to $\Pgtpm\to\Pgppm\Pgngt$,
+with some contribution from $\Pgtpm\to\Pgppm\Pgngt\Pgpz$ in the case that the
+neutral pion is not energetic enough to be detected.
+\item Single charged hadron or "prong", one strip: this selects decays to the intermediate
+resonance of $\Pgr$(770), $\Pgtpm\to\Pgrpm\Pgngt\to\Pgppm\Pgpz\Pgngt$. In this
+case the combined system must have invariant mass consistent with either the
+$\Pgr$(770).
+%or $\text{a}_{1}$(1260), so between 300 and 1300 $\MeV$. %check - is the lower
+%bound 300 or 400? 
+\item Single charged hadron or "prong", two strips: corresponds to
+$\Pgtpm\to\Pgppm\Pgpz\Pgpz\Pgngt$. Here, consistency of the mass with the
+$\text{a}_{1}$(1260) resonance is required. 
+\item Three charged hadrons or "prongs": these correspond to
+$\Pgtpm\to\Pgppm\Pgpmp\Pgppm\Pgpz\Pgngt$ or $\Pgtpm\to\Pgppm\Pgpmp\Pgppm\Pgngt$. 
+In this case, the tracks are required
+to come from the same vertex, with a minimum inpact parameter in the tranverse
+plane of $2\mm$. The three candidates must also have total charge of 1, and a
+mass consistent with $\text{a}_{1}$(1260). 
+\end{itemize}
+
+In all of the above cases, the charged hadrons and strips must be contained
+within a cone defined by $\Delta R=2.8~\GeV/\pt^{\tau_{h}}$, where
+$\pt^{\tau_{h}}$ is the $\pt$ of the hadronic tau candidate, for taus with $28 <
+\pt^{\tau_{h}} < 56~\GeV$. For taus with $\pt^{tau_{h}} < 28~\GeV$ the cone is
+is fixed at 0.1 and for taus with $\pt^{\tau_{h}} > 56~\GeV$ at 0.05. 
+Figure \ref{fig:taudecaymode} illustrates the number of events reconstructed in
+each of the tau decay modes in the $\PH \to \Pgt\Pgt$ analysis.
 
 \begin{figure}
 \begin{center}
     \includegraphics[width=0.5\textwidth]
       {plots/reco/tau_decay_mode_inclusive_mt_2012.pdf}
 \end{center}
-\caption{Plots illustrating the tau decay modes.
+\caption{Plot illustrating the fraction of events in each tau decay mode in the
+$\mutau$ channel of the $\PH\to\Pgt\Pgt$ analysis. The term "prong" refers to a
+charged hadron. The "1 prong 1 \Pgpz" bin contains both single charged hadron
+with one strip and single charged hadron with two strips, defined in the text.
 }
 \label{fig:taudecaymode}
 \end{figure}
+
+\subsection{Isolation}
+
+A measure of the isolation of the hadronic tau candidate is used to exploit the
+collimated nature of the $\tau$-jets to reduce the background from quark and gluon
+jets. The isolation variable is constructed from the sum of the $\pt$ of the
+hadronic and photon \ac{PF} candidates with $\pt > 0.5~\GeV$ within a cone centred on 
+the $\tau_{h}$ with size $\Delta R = 0.5$. The charged hadrons in the sum are
+required to have $\Delta z < 2\mm$ with respect to the production vertex of the
+$\tau_{h}$. The charged hadrons associated with other vertices (i.e. with
+$\Delta Z > 2\mm$) are used to
+estimate and subtract the contribution to the isolation from photons produced in
+\ac{PU} interactions. The isolation variable is therefore given by:
+
+\begin{equation}
+I_{\tau} = \sum \pt^{\text{charged}} + \max \left( \pt^{\gamma} - \Delta \beta,
+0 \right) , 
+\label{eq:tauIsolation}
+\end{equation}
+
+Where $\pt^{\text{charged}}$ is the $\pt$ of charged hadrons with $\Delta z < 2\mm$, and
+$\Delta \beta$ is the \ac{PU} correction given by the sum of charged hadrons with $\Delta
+z > 2\mm$ within a cone of $\Delta R = 0.8$ multiplied by a factor ($\approx$0.45) which is the
+ratio of photons to charged hadrons in minimum bias events. Different working
+points of the value of $I_{\tau}$ are chosen to correspond to loose, medium and
+tight working points of tau isolation.
+
+\subsection{Electron and muon rejection}
+
+An electron can be misidentified as a hadronic tau with one charged hadron when
+it has an isolated energy deposit in the calorimeters. Electrons can also be
+reconstructed as hadronic taus when they emit photons via bremmstrahlung in the
+one charged hadron plus strips modes. A \ac{BDT} is trained to reduce
+misidentified electrons, using many of the same variables exploited in electron
+ID. The $\PH\to\Pgt\Pgt$ analysis makes use of this discriminator in the tight
+working point, which reduces the rate of misidentified electrons to around
+$3\%$. 
+
+The probability of a muon to produce a fake hadronic tau is much lower. Such
+cases are suppressed by requiring that the track of the leading charged hadron
+constituent in the hadronic tau is not also reconstructed as a tracker muon.
+Loose, medium and tight working points are available for this discriminator
+also, depending on how strict the criteria are in determining whether or not
+this track matches a signal in the muon systems. 
+
+\subsection{Energy Scale}
+
+As in the case of jets, corrections are needed to ensure that the energy scale
+of hadronic taus in \ac{MC} matches that in data. For the $\PH \to \Pgt\Pgt$
+analysis this is done by fitting the tau mass distribution separately for each
+decay mode for different ranges of tau $\pt$, allowing the tau energy scale to
+float freely in each fit. The result is a set of $\pt$ and decay mode dependent
+corrections which are applied to MC. Figure \ref{fig:taumass} shows the tau
+mass distribution for the $\mutau$ channel of the $\PH\to\Pgt\Pgt$ analysis. 
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]
+      {plots/reco/m_2_inclusive_mt_2012.pdf}
+\end{center}
+\caption{The invariant mass of the hadronic tau in $\mutau$ channel events of
+the $\PH\to\Pgt\Pgt$ analysis.}
+\label{fig:taumass}
+\end{figure}
+
 
 \section{Di-tau Mass Reconstruction in $\PH \to \Pgt\Pgt$}
 \label{sec:svfit}
@@ -463,7 +574,6 @@ background in the case of using the visible mass or the mass from SVFit. It can
 clearly be seen that the shape separation is greatly improved in the SVFit case.
 The improvement in expected limit from using SVFit over visible mass in the $\PH
 \to \Pgt\Pgt$ analysis is around 40$\%$.
-
 
 \begin{figure}
 \begin{center}

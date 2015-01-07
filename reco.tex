@@ -557,17 +557,78 @@ the $\PH\to\Pgt\Pgt$ analysis.}
 \label{fig:taumass}
 \end{figure}
 
-
 \section{Di-tau Mass Reconstruction in $\PH \to \Pgt\Pgt$}
 \label{sec:svfit}
 
-Reconstruction of the full di-tau mass gives us the mass of the Higgs candidate.
-This reconstruction is made less straightforward by the fact that the taus
-themselves decay. We can simply combine the visible products to evaluate a quantity known as
-visible mass, but greater accuracy is achieved if the full mass can be
-reconstructed including the invisible neutrinos. This can be achievied
-using a likelihood based algorithm called SVFit, which combines the visible decay products 
-and the reconstructed $\MET$.
+In $\PH \to \Pgt\Pgt$ events, evaluation of the mass of the Higgs requires reconstruction of the 
+full di-tau mass. This is important in distinguishing possible $\PH\to\Pgt\Pgt$
+events from, for example, the irreducible $\PZ \to \Pgt\Pgt$ process. 
+The reconstruction of the tau pair is made less straightforward
+by the fact that the taus themselves decay. We can simply combine the visible
+products of leptons or hadronic taus to evaluate a quantity known as visible mass,
+but greater accuracy is achieved if the full mass can be reconstructed including the
+invisible neutrinos. This can be achievied using a likelihood based algorithm called
+SVFit, which combines the visible decay products and the reconstructed $\MET$. A
+short description of this method is given in this section. A more detailed
+description can be found in \ref{CMS-PAS-HIG-13-004}.
+
+The inputs to the SVFit algorithm are the kinematics of the visible decay
+products and the missing transverse energy. If all visible components of a
+hadronic tau decay are treated as a single composite object, the visible part of
+the decay is specified by five parameters, which are chosen to be the momentum,
+polar and azimuthal angles in the lab frame, and two decay angles in the rest
+frame of the tau lepton. The invisible component of the decay adds another
+degree of freedom, which is chosen to be the invariant mass of the invisible
+system. Leptonic tau decays produce an additional neutrino, and so an additional
+variable is required which is chosen to be the invariant mass of the
+two-neutrino system. The unknown parameters are constrained by three
+observables: the momentum, polar and azimuthal angles of the visible products
+measured in the lab frame. Further constraints are provided by
+$E_{x}^{\text{miss}}$ and $E_{y}^{\text{miss}}$, the x and y components of the
+$\MET$, within the experimental resolution possible. This leaves either 2 or 3 
+unconstrained parameters for the hadronic or leptonic tau decay respectively. 
+These are chosen to be the following:
+
+\begin{itemize}
+\item $x$: the fraction of the energy of the tau carried by the visible decay
+products in the lab frame.
+\item $\phi$: the azimuthal angle of the tau in the lab frame. 
+\item $m_{\nu\nu}$: the mass of the neutrino system. This is set to zero for hadronic tau
+decays which have only one neutrino.
+\end{itemize}
+
+The SVFit algorithm employs a likelihood approach, in which possible
+$M_{\tau\tau}$ values are reconstructed by combining $E_{x}^{\text{miss}}$ and
+$E_{y}^{\text{miss}}$ with a probability model with terms to account for the tau
+decay kinematics and $\MET$ resolution. We define the vector $\vec{a}$ to
+specify the kinematics of the tau decay as $\vec{a} =
+\left(x_{1},\phi_{1},m_{\nu\nu}^{1},x_{2},\phi_{2},m_{\nu\nu}\right)$. Then the
+probability that we observe the values of $\vec{x} = E_{x}^{\text{miss}},
+E_{y}^{\text{miss}}$, given that the momenta of the visible decay products are
+equal to the observed $\vec{y} = \left(p_{1}^{vis},p_{2}^{vis} \right)$,
+yielding a value of $M_{\Pgt\Pgt}$ is given by: 
+
+\begin{equation} \label{eqn:svfit-prob}
+P(M_{\Pgt\Pgt}^{i}) = \int\delta\left(M_{\Pgt\Pgt}^{i} -
+M_{\Pgt\Pgt}(\vec{y},\vec{a})\right)p(\vec{x},\vec{y},\vec{a})\,\text{d}\vec{a}\,
+.
+\end{equation}
+
+for a series of mass hypotheses $M_{\Pgt\Pgt}^{i}$. The best estimate for the
+value of $M_{\Pgt\Pgt}$ is the value which maximises this probability. 
+
+Likelihood functions are used to model the tau decay kinematics.
+
+\begin{equation}
+\mathcal{L}_{\Pgt}^{\text{had}} = \frac{\text{d}\Gamma}{\text{d}x\,\text{d}\phi}
+\propto \frac{1}{1 - m_{\text{vis}}^{2} / m_{\Pgt}^{2}},
+\end{equation}
+
+\begin{equation}
+\mathcal{L}_{\Pgt}^{\text{lep}} =
+\frac{\text{d}\Gamma}{\text{d}x\,\text{d}m_{\nu\nu}\,\text{d}\phi} \propto
+\frac{m_{\nu\nu}}{4m_{\Pgt}^{2}}\left[(m_{\Pgt}^{2}+2m_{\nu\nu}^{2})(m_{\Pgt}^{2}-m_{\nu\nu}^{2})\right],
+\end{equation}
 
 Figure \ref{fig:svfit} shows the separation between signal and $\PZ \to \Pgt\Pgt$
 background in the case of using the visible mass or the mass from SVFit. It can

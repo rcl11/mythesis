@@ -183,7 +183,27 @@ be found in section \ref{sec:datamcfactors}.
 \section{Lepton Isolation}
 \label{sec:leptonisolation}
 
+In order to reduce background contributions from mis-identified jets from QCD,
+electrons and muons are required to be isolated. Isolation is computed as the
+scalar sum of transverse momenta of the \ac{PF} candidates within a cone in
+$\eta-\phi$ space of size $\Delta R = 0.4$ centred on the lepton direction. 
+This sum includes all charged particles, neutral hadrons and photon candidates. 
+To reduce the contamination of of particles which originate from \ac{PU} events 
+in this cone, charged \ac{PF} candidates with an impact parameter greater than 
+$0.1~\cm$ with the primary vertex are excluded from the sum. An estimate of the 
+neutral pileup contribution is made based on the charged pileup contamination,
+multiplied by a factor 0.5, which is approximately the ratio of neutral to
+charged components of the hadronisation, as determined from simulation.   
+The isolation is then defined as follows:
 
+\begin{equation}
+I = \sum^{\substack{\text{charged} \\ \text{non-pileup}}}\pT +
+\text{max}\left(0,\sum^{\text{neutral}}\pT+\sum^{\text{photon}}\pT-\frac{1}{2}\sum^{\substack{\text{charged}
+\\ \text{pileup}}}\pT\right).
+\end{equation}
+
+Then requirements are usually placed on relative isolation, defined as
+$I / \pt^{\text{lepton}}$.  
 
 \section{Jets}
 \label{sec:jets}
@@ -617,12 +637,19 @@ M_{\Pgt\Pgt}(\vec{y},\vec{a})\right)p(\vec{x},\vec{y},\vec{a})\,\text{d}\vec{a}\
 for a series of mass hypotheses $M_{\Pgt\Pgt}^{i}$. The best estimate for the
 value of $M_{\Pgt\Pgt}$ is the value which maximises this probability. 
 
-Likelihood functions are used to model the tau decay kinematics.
+Likelihood functions are used to model the tau decay kinematics. These are
+different for hadronic and leptonic tau decays. For hadronic tau decays, a model
+based on two-body phase space is used, in which all the decay products of the
+tau are grouped to be one particle:
 
 \begin{equation}
 \mathcal{L}_{\Pgt}^{\text{had}} = \frac{\text{d}\Gamma}{\text{d}x\,\text{d}\phi}
 \propto \frac{1}{1 - m_{\text{vis}}^{2} / m_{\Pgt}^{2}},
 \end{equation}
+
+which is valid in the physically allowed region of $m_{\text{vis}}^{2} /
+m_{\Pgt}^{2} \leq x \leq 1$. The leptonic function is derived using a matrix
+element approach from \cite{TauPol}:
 
 \begin{equation}
 \mathcal{L}_{\Pgt}^{\text{lep}} =
@@ -630,9 +657,29 @@ Likelihood functions are used to model the tau decay kinematics.
 \frac{m_{\nu\nu}}{4m_{\Pgt}^{2}}\left[(m_{\Pgt}^{2}+2m_{\nu\nu}^{2})(m_{\Pgt}^{2}-m_{\nu\nu}^{2})\right],
 \end{equation}
 
-Figure \ref{fig:svfit} shows the separation between signal and $\PZ \to \Pgt\Pgt$
+for which the physically allowed region constitutes $0 \leq x \leq 1$ and $0
+\leq m_{\nu\nu} \leq m_{\tau}\sqrt{1-x}$. The final part of the likelihood
+quantifies the compatibility of a particular tau decay hypothesis with the
+reconstructed $\MET$. The resolution of the neutrino energy measurement is
+modelling using a Gaussian resolution:
+
+\begin{equation}
+\mathcal{L}_{\nu}(E_{x}^{\text{miss}},E_{y}^{\text{miss}}) =
+\frac{1}{2\pi\sqrt{|V|}}\text{exp}\left[
+-\frac{1}{2}\begin{pmatrix}E_{x}^{\text{miss}}-\sum p_{x}^{\nu} \\
+E_{y}^{\text{miss}}-\sum p_{y}^{\nu}\end{pmatrix}^{T} V^{-1}
+\begin{pmatrix}E_{x}^{\text{miss}}-\sum p_{x}^{\nu} \\ E_{y}^{\text{miss}}-\sum
+p_{y}^{\nu}\end{pmatrix}\right].
+\end{equation}
+
+In this equation $V$ is the covariance matrix which accounts for the expected
+resolution of the $\MET$ reconstruction, and is determined for each event from
+the MVA MET algorithm described in section \ref{sec:met}. This resolution is
+typically of around $10$-$15~\GeV$. 
+
+Figure \ref{fig:svfit} shows the shape comparison between signal and $\PZ \to \Pgt\Pgt$
 background in the case of using the visible mass or the mass from SVFit. It can
-clearly be seen that the shape separation is greatly improved in the SVFit case.
+be seen that the shape separation is greatly improved in the SVFit case.
 The improvement in expected limit from using SVFit over visible mass in the $\PH
 \to \Pgt\Pgt$ analysis is around 40$\%$.
 
@@ -650,20 +697,20 @@ The improvement in expected limit from using SVFit over visible mass in the $\PH
 \label{fig:svfit}
 \end{figure}
 
-\section{\ac{MC} simulation of signal and backgrounds}
+%\section{\ac{MC} simulation of signal and backgrounds}
 
-To model the contributions of signal and background events in the analysis
-Monte-Carlo (MC) simulation is used. Simulation of signal events is generated
-using POWHEG \cite{powheg} interfaced to PYTHIA \cite{pythia}, and of
-background events using MADGRAPH \cite{madgraph}. Pileup is simulated using
-additional interactions from PYTHIA and reweighting the simulated events to
-match the observed pileup distribution in data, which is different depending on
-the run period. In addition, the $E_{\rm{T}}^{\rm{miss}}$ response in
-simulation is corrected for the $E_{\rm{T}}^{\rm{miss}}$ energy scale and
-resolution which is measured in $Z\rightarrow\mu\mu$ events. The generated
-events are then processed through a simulation of the CMS detector based on
-GEANT4 \cite{geant4} and are reconstructed with the same algorithms used in
-data.
+%To model the contributions of signal and background events in the analysis
+%Monte-Carlo (MC) simulation is used. Simulation of signal events is generated
+%using POWHEG \cite{powheg} interfaced to PYTHIA \cite{pythia}, and of
+%background events using MADGRAPH \cite{madgraph}. Pileup is simulated using
+%additional interactions from PYTHIA and reweighting the simulated events to
+%match the observed pileup distribution in data, which is different depending on
+%the run period. In addition, the $E_{\rm{T}}^{\rm{miss}}$ response in
+%simulation is corrected for the $E_{\rm{T}}^{\rm{miss}}$ energy scale and
+%resolution which is measured in $Z\rightarrow\mu\mu$ events. The generated
+%events are then processed through a simulation of the CMS detector based on
+%GEANT4 \cite{geant4} and are reconstructed with the same algorithms used in
+%data.
 
 
 

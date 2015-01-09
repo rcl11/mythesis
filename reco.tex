@@ -10,7 +10,7 @@ and \ref{sec:muons} describe the reconstruction of the electrons and muons in
 the event combining the tracks with information from the \ac{ECAL} and muon
 chambers respectively. Section \ref{sec:jets} describes the reconstruction and
 treatment of jets, followed by section \ref{sec:met} describing how the missing
-energy of the event is then calculated. Finally the reconstruction of hadronic taus
+energy of the event is computed. The reconstruction of hadronic taus
 is described in section \ref{sec:taus}.
 
 In addition to the reconstruction of the objects used in the $\PH \to \Pgt\Pgt$
@@ -20,20 +20,21 @@ di-tau pair mass, described in section \ref{sec:svfit}.
 
 \section{Primary Vertex Reconstruction}
 \label{sec:vertex}
+%Consider adding track reconstruction here too.
 
 The reconstruction of the \ac{PV} of the event allows us to identify the hard
 $pp$ interaction over the other vertices from multiple $pp$ collisions in the same
-bunch crossing, known as \ac{PU}. In 2011 data at CMS there was an average of 9
-\ac{PU} vertices and in 2012 data the average was even higher at 21. Correct
-identification of the \ac{PV} also allows us to distinguish "prompt" production of
+bunch crossing, known as \ac{PU}. At CMS there was an average of 9
+\ac{PU} vertices per event in 2011 data and 21 in 2012. Correct
+identification of the \ac{PV} also allows us to distinguish ''prompt" production of
 particles, i.e. production at the \ac{PV} from the hard interaction, from
 in-flight decays of hadrons or photon conversions.  
 
 The vertices are reconstructed using the tracks in the inner
 tracker. A clustering algorithm, called the \ac{DA} algorithm
 \cite{DetAnnealing}, is used to assign tracks to their most likely 
-vertex. Each vertex is seeded by at least 2 tracks separated in z by less than
-$1 \cm$ at the point of closest approach to the z axis.
+vertex. Each vertex is seeded by at least two tracks separated in $z$ by less than
+$1~\cm$ at the point of closest approach to the $z$ axis.
 The most likely position of each vertex is then determined using the
 adaptive vertex fitter \cite{adaptivevertex}. In
 this fitter each track is assigned a weight, $w_{i}$, which is close to 1 for tracks which
@@ -45,10 +46,10 @@ the vertex, and is used to distinguish real $pp$ interactions from
 mis-reconstructed vertices. For most analyses, quality cuts \cite{CMS-PAS-TRK-10-005} on each vertex are
 applied as follows:
 \begin{itemize}
-\item The distance in the z direction from the vertex to the nominal interaction
-point must be smaller than $24\cm$. 
+\item The distance in the $z$ direction from the vertex to the nominal interaction
+point must be smaller than $24~\cm$. 
 \item The corresponding distance in the transverse plane must be smaller than
-$2\cm$.
+$2~\cm$.
 \item $n_{dof}^{vertex} > 4$.
 \end{itemize}
 
@@ -60,8 +61,8 @@ associated tracks.
 
 Electrons are reconstructed by matching \ac{ECAL} deposits with tracks from the
 inner tracker. This is made more difficult by the fact that the electrons
-undergo bremsstrahlung when interacting with the material of the tracker
-detectors. The photons produced can also convert to $\Pep\Pem$ pairs before
+undergo bremsstrahlung when interacting with the material of the tracker.
+The photons produced can also convert to $\Pep\Pem$ pairs before
 reaching the \ac{ECAL}. This means that the energy deposited in the \ac{ECAL} 
 can be spread out in the $\phi$ direction. Hence dedicated algorithms are used
 to combine the energy deposits from both the initial electron and the
@@ -73,11 +74,12 @@ in the $\eta-\phi$ plane starting from the \ac{ECAL} crystal with the most energ
 continuing outwards to the surrounding crystals until there are no more
 unclustered crystals above a certain energy threshold. In the barrel, the
 ``hybrid'' clustering algorithm is used. In this algorithm the seed crystal has
-$\Et > 1 \GeV$ and the clustering is performed in a ``domino'' of $3\times1$ or
+$\Et > 1~\GeV$ and the clustering is performed in a ``domino'' of $3\times1$ or
 $5\times1$ crystals, with additional dominoes (which attempt to collect
 radiation deposits) stepping in both $\phi$
-directions around the seed up to $\Delta\phi\approx0.3$. The threshold upon
-which the clustering ends is $100\MeV$. In the endcaps the clustering algorithm
+directions around the seed up to $\Delta\phi\approx0.3$. The energy threshold
+below which crystals are not clustered  is $100~\MeV$. In the endcaps the
+approach is similar with a clustering algorithm
 is the ``Multi5$\times$5'' algorithm using $5\times5$ arrays of crystals within
 $\Delta\eta<0.07$ and $\Delta\phi<0.3$.
 
@@ -98,8 +100,8 @@ which is used to improve the electron energy resolution.
 %$\Pgppm$ showers early in the \ac{ECAL}.
 % read the paper and understand better what these backgrounds are!! pions?
 Electron ID criteria are used in many analyses to improve the efficiency of
-selecting real electrons over backgroundsi (which tend to originate from
-hadronic jets). The most commonly used variables are \cite{Baffioni:2006cd}:
+selecting real electrons over backgrounds which tend to originate from
+hadronic jets. The most commonly used variables are \cite{Baffioni:2006cd}:
 
 \begin{itemize}
 \item $\Delta\eta_{\text in}$ and $\Delta\phi_{\text in}$, the separation in the
@@ -110,12 +112,11 @@ smaller for prompt electrons).
 This is typically small for prompt electrons, which have a more localised
 cluster.
 \item $H/E$, the ratio of hadronic to electromagnetic energy in the region of
-the seed cluster (generally lower for prompt electrons).
+the seed cluster. This is also generally lower for prompt electrons.
 \end{itemize}
 
 Figure \ref{fig:electronID} shows the distributions of these variables in both simulated
-electrons and jets in the barrel, and it can clearly be seen that these variables provide
-excellent discrimination power:
+electrons and jets in the barrel, and the discrimination power can be seen.
 
 \begin{figure}
 \begin{center}
@@ -142,9 +143,38 @@ excellent discrimination power:
 \label{fig:electronID}
 \end{figure} 
 
-Conditions on the track quality and kinematic variables can also improve the
-efficiency of electron identification. The exact criteria used in the $\PH \to
-\Pgt\Pgt$ analysis are described in section \ref{chap:httSM}.
+The $\PH \to \Pgt\Pgt$ analysis makes use of these four variables and additional
+conditions on the track quality and kinematics \cite{Baffioni:2006cd} to provide
+improved identification efficiency. These variables are combined in a
+multivariate \ac{BDT} \cite{TMVA}, which is trained in two bins of
+$\pt$ and three bins of $\eta$ using $Z/\gamma^{*} \to \Pe\Pe$ events in data.
+The additional variables used as inputs to the \ac{BDT} are as follows:
+
+\begin{itemize}
+\item Quantities relating to the quality of the tracks, including the normalised
+$\chi^{2}$ and the number of valid hits in the track fit.
+\item Additional quantities to the above relating to the cluster shape, including the
+variable $f_{e}=1-e_{1\times5}/e_{5\times5}$, in which $e_{1\times5}$
+($e_{5\times5}$) denotes the energy deposited in an array of $1 \times 5$ ($5
+\times 5$) cells in the vicinity of the supercluster seed, and the variable
+$R_{9}$, which gives the fraction of the supercluster energy in an array of
+$3\times3$ cells in the vicinity of the supercluster seed.  
+\item Additional variables relating to the compatibility of the hadronic and EM
+energy with the track momentum, including the ratio of supercluster energy over
+the momentum of the associated track evaluated at the \ac{PV} (E/P), the
+quantity $1/E-1/p$ which quantifies the energy-momentum compatibility, the ratio
+of the electron cluster energy to the momentum of the associated track evaluated
+at the surface of the calorimeter and the ratio of the energy reconstructed in
+the pre-shower detector over the raw energy of the supercluster.  
+\end{itemize}
+
+The \ac{BDT} output is then a $\pt$ and $\eta$ dependent cut threshold. Finally
+non-prompt electrons from photons interacting with the tracker are suppressed
+by requiring there are no missing hits in the inner tracker and that the
+electron is not matched to a reconstructed conversion. The electron must also be
+consistent with the \ac{PV}, by having small impact parameters. More information
+on the efficiency of the electron ID in the $\PH \to \Pgt\Pgt$ analysis can be
+found in section \ref{sec:datamcfactors}.
 
 \section{Muons}
 \label{sec:muons}
@@ -174,8 +204,9 @@ tracking layers. The $\chi^{2}$ of the global track fit must be better than
 $10$, and the global track fit must include hits from at least one segment in
 the muon detector, both of which provide rejection of punch-through hadrons. In
 addition, track segments must be found in at least two stations of the muon
-detector. These conditions taken together provided the ``tight'' muon ID used in
-many analyses. The efficiency of CMS muon reconstruction is found to be better
+detector. These conditions taken together provide the ``tight'' muon ID used in
+many analyses, including the $\PH\to\Pgt\Pgt$ analysis.
+The efficiency of CMS muon reconstruction is found to be better
 than $96\%$ for muons with $\pt > 10~\GeV$. Some studies of the ID efficiency of
 muons in data and \ac{MC} in the context of the $\PH \to \Pgt\Pgt$ analysis can
 be found in section \ref{sec:datamcfactors}.
@@ -183,14 +214,14 @@ be found in section \ref{sec:datamcfactors}.
 \section{Lepton Isolation}
 \label{sec:leptonisolation}
 
-In order to reduce background contributions from mis-identified jets from QCD,
+In order to further reduce background contributions from mis-identified \ac{QCD} jets,
 electrons and muons are required to be isolated. Isolation is computed as the
-scalar sum of transverse momenta of the \ac{PF} candidates within a cone in
+scalar sum of transverse momenta of the candidates within a cone in
 $\eta-\phi$ space of size $\Delta R = 0.4$ centred on the lepton direction. 
 This sum includes all charged particles, neutral hadrons and photon candidates. 
-To reduce the contamination of of particles which originate from \ac{PU} events 
-in this cone, charged \ac{PF} candidates with an impact parameter greater than 
-$0.1~\cm$ with the primary vertex are excluded from the sum. An estimate of the 
+To reduce the contamination of particles which originate from \ac{PU} events 
+in this cone, charged  candidates with an impact parameter greater than 
+$0.1~\cm$ from the primary vertex are excluded from the sum. An estimate of the 
 neutral pileup contribution is made based on the charged pileup contamination,
 multiplied by a factor 0.5, which is approximately the ratio of neutral to
 charged components of the hadronisation, as determined from simulation.   
@@ -203,7 +234,8 @@ I = \sum^{\substack{\text{charged} \\ \text{non-pileup}}}\pT +
 \end{equation}
 
 Then requirements are usually placed on relative isolation, defined as
-$I / \pt^{\text{lepton}}$.  
+$I / \pt^{\text{lepton}}$. In the $\PH\to\Pgt\Pgt$ analysis the electrons and
+muons are both required to have $I / \pt^{\text{lepton}} < 0.1$. 
 
 \section{Jets}
 \label{sec:jets}
@@ -212,8 +244,9 @@ Jets result from the large numbers of quarks and gluons present in a hadron
 collider. The term `jet' is used to refer to the collimated shower of particles
 which is produced from the hadronisation of such a quark or gluon. In order to
 reconstruct the original parton, these showers of particles need to be collected
-and combined correctly. Before describing how this is done we must discuss an
-important algorithm which allows us to do this successfully. 
+and combined correctly. Before describing exactly how this is done, section
+\ref{sec:particleflow} decribes an important algorithm which greatly improves
+this reconstruction. 
 
 \subsection{Particle Flow}
 \label{sec:particleflow}
@@ -240,7 +273,7 @@ allows the separation of the neutral and charged hadrons. The clustering
 proceeds by first defining a cluster seed, which corresponds to the calorimeter
 cell with the highest local energy. The threshold for clustering neighbouring
 cells is that they must have energy greater than 2 standard deviations above
-noise level. After the clustering the different \ac{PF} elements are linked into
+noise level. After the clustering, the different \ac{PF} elements are linked into
 blocks to be interpreted as a particular particle. This can be done using
 extrapolation of tracks into the calorimeters, where the two elements are linked
 if the track falls inside the cluster volume.
@@ -285,18 +318,18 @@ energy fraction less than 0.99.
 An important aspect of jet identification is the correct measurement of the jet
 energy, which is typically different between reconstructed and true hadron-level jet energy
 due to experimental effects. This can be due to uninstrumented regions of the
-detector, non-linear calormeter responses and contamination by jets from \ac{PU}
-interactions. Particles from different pileup vertices can be clustered and identified as a
+detector, non-linear calorimeter responses and contamination by jets from \ac{PU}
+interactions. Particles from different \ac{PU} vertices can be clustered and identified as a
 jet, or overlap with a jet from the primary vertex affecting the measurement of the jet energy.
-Pileup jet identification (ID) is used to classify these events, which consists
+Pileup jet identification \cite{CMS-PAS-JME-13-005} is used to classify these events, which consists
 of a \ac{BDT} \cite{TMVA} with input variables such as
 momentum and spatial distribution of the jet particles. In addition
 a calibration factor is applied to account for imperfections in the
 neutral-hadron calibration, the jet energy containment and small differences
 between the simulated and observed response.
 
-A correction to the jet energy scale is derived
-\cite{CMS-JME-10-011}:
+To correct for remaining \ac{PU} and the other detector effects, a correction to the jet energy
+scale is derived \cite{CMS-JME-10-011}:
 
 %Read this paper when you have internet and find a better way to write this
 %equation
@@ -310,10 +343,11 @@ P_{\text{raw}}^{\mu}\, .
 In this equation, $C_{\text{PU}}$ is the correction for \ac{PU},
 $C_{\text{rel}}$ is a relative correction and $C_{\text{abs}}$ is an absolute
 correction. The corrections are applied sequentially such that the \ac{PU}
-correction is a function of raw jet $\pt$, the relative correction is a function
+correction is a function of raw jet $\pt$ ($\pt^{\text{raw}}$),
+the relative correction is a function
 of the $\pt$ corrected for the pileup effects ($\pt^{\text{PU}}$) and finally
 the absolute correction is a function of the relative-corrected $\pt$
-($\pt^{\text{rel}}$). All of the corrections are also applied as a function of
+($\pt^{\text{rel}}$). All of the corrections are applied as a function of
 jet $\eta$. These subsequent corrections are applied to the raw
 4-vector of the jet $P_{\text{raw}}^{\mu}$ to yield the corrected 4-vector
 $P_{\text{corr}}^{\mu}$.
@@ -335,24 +369,64 @@ is given by the sum in quadrature of the estimated uncertainties in each of the
 correction factors. This uncertainty varies between approximately $3$ and $5\%$
 depending on $\pt$ and $\eta$. 
 
-%could add a JES uncert plot here.
+\begin{figure}
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/reco/jes-response-a.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth] 
+      {plots/reco/jes-response-b.pdf}} 
 
-\subsection{B-tagged jets}
+\end{center}
+\caption{
+Relative jet energy response as a function of jet $\eta$ measured in dijet
+events, for jets with $40 < p_{T}^{\text{dijet}} < 55$ (left) and 
+$85 < p_{T}^{\text{dijet}} < 100$ in data and MC.       
+}
+\label{fig:jesresponse}
+\end{figure}
+
+\subsection{B-tagged Jets}
 \label{sec:btag}
 
 The identification of jets which originate from b-quarks is important in many
 \ac{SM} and \ac{BSM} processes. As a result of the fact that decays of b-quarks
 are suppressed by small CKM matrix elements, b-flavoured hadrons have relatively
-long lifetimes. These hadrons are also relatively heavy due to the large mass of
+long lifetimes. Such hadrons are also relatively heavy due to the large mass of
 the b-quark, and as such the decay products typically have large momenta
 perpendicular to the b-hadron momentum direction. Both of these features are
 exploited in identification of b-tagged jets.
 
 In the $\PH \to \Pgt\Pgt$ analysis, jets originating from b-quark
-hadronization are identified using the combined secondary-vertex b-tagging
+hadronization are identified using the \ac{CSV} b-tagging
 algorithm \cite{bjets}. The long lifetime of the b-hadrons results in a
-secondary decay vertex which can be reconstructed.
-%some more to be added about CSV and b-tag uncertainties. 
+secondary decay vertex which can be reconstructed. In the \ac{CSV} algorithm, a
+jet is considered b-tagged if it has $\pT>20\,\GeV$, $|\eta|<2.4$ and a
+\ac{CSV} discriminator output greater than a loose, medium or tight working
+point, chosen to give different levels of ID efficiency and mis-tag rates. The
+inputs to the calculation of the \ac{CSV} discriminator include secondary
+vertex information and the track-based lifetime information. Two likelihoods are
+built from these variables, one to discriminate between b and c jets and one to
+discriminate between b and light jets. 
+
+In the $\PH\to\Pgt\Pgt$ analysis, the medium working point of the \ac{CSV}
+discriminator is used to identify b-jets, corresponding to a discriminator
+output greater than 0.679. The distribution of the \ac{CSV} discriminator 
+can be seen in figure \ref{fig:csv}. The medium working point corresponds to a
+b-tag efficiency of $\approx 85\%$ and a mis-tag rate of $\approx 1\%$. 
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.6\textwidth]
+      {plots/reco/csv.png}
+\end{center}
+\caption{
+The distribution of the \ac{CSV} discriminator used to identify b-jets.    
+}
+\label{fig:csv}
+\end{figure}
+
 
 \section{$\MET$}
 \label{sec:met}
@@ -367,10 +441,23 @@ analysis accurate measurement of the $\MET$ is essential to reconstruct the
 candidate taus after they decay via the weak interaction.
 
 The \ac{PF} algorithm allows us to calculate $\MET$ as the opposite of the vectorial sum
-of the transverse momenta of all \ac{PF} particles. The resolution of this PF
-$\MET$ degrades rapidly with pileup. A more precise
-measurement of $\MET$ can be achieved with so-called `MVA
-$\MET$', which uses a \ac{BDT} regression multivariate analysis
+of the transverse momenta of all \ac{PF} particles. The resolution of the $\MET$
+can be degraded by a number of factors. These include minimum energy thresholds
+in the calorimeters, non-instrumented detector regions and multiple \ac{PU}
+interactions. The performance of the \ac{PF} $\MET$ response differs in data and
+MC, and a correction is derived from an independent $\PZ\to\mu\mu$ sample which
+does not contain any `real' $\MET$. The longitudinal and transverse component of
+the $\pt$ response and the resolution of the $\PZ$ boson recoil is parameterised
+as a function of $\pt$ and jet multiplicity. This parameterization is then
+applied to all simulated events as a function of the $\pt$ of the boson. Then
+finally the $\MET$ is the transverse energy of the vectorial sum of the visible
+decay proucsts and the recoil as parametrised in data. 
+%A number of techniques exist for correcting both the response and
+%resolution of the \ac{PF} $\MET$ \cite{Chatrchyan:2011tn}. 
+
+To further reduce the dependence of resolution on \ac{PU}, the $\PH\to\Pgt\Pgt$
+analysis makes use of so-called MVA $\MET$ \cite{CMS-PAS-JME-12-002}, 
+which uses a \ac{BDT} regression multivariate analysis
 including the \ac{PF} $\MET$ as one input. Other inputs are versions of the
 $\MET$ calculated using the following combinations of \ac{PF} particles: 
 \begin{itemize}
@@ -384,6 +471,19 @@ event, to which is added the vectorial sum of the transverse momenta of neutral
 particles within jets failing the pileup jet identification.
 \end{itemize}
 
+For each type of $\MET$ the recoil is calculated defined by:
+\begin{equation}
+\vec{u} = \MET \cdot \hat{\phi} - \sum_{i}{ \vec{\pt}^{\text{lep}}} ,
+\label{eq:recoil}
+\end{equation}
+
+where $\hat{\phi}$ is the direction of the $\MET$ in the transverse plane and
+$\vec{\pt}^{\text{lep}}$ is the $\pt$ vector of the leptons originating from the
+hard interaction. The \ac{BDT} produces a correction to both the angle and the
+magnitude of the \ac{PF} recoil. The final computed recoil is added to the
+vector sum of leptons as in equation \ref{eq:recoil} and the resulting corrected
+$\MET$ is then taken. 
+
 The MVA $\MET$ has a resolution which is much less
 dependent on pileup, as can be seen in figures \ref{fig:mvamet}.
 
@@ -396,8 +496,8 @@ dependent on pileup, as can be seen in figures \ref{fig:mvamet}.
     \includegraphics[width=0.5\textwidth] 
       {plots/reco/U2Res.pdf}} 
 \end{center}
-\caption{Plots illustrating the dependence of $\MET$ resolution on the number of
-primary vertices in the event.
+\caption{Plots illustrating the dependence of the resolution of the hadronic
+recoil response on the number of primary vertices in the event.
 }
 \label{fig:mvamet}
 \end{figure}
@@ -405,15 +505,17 @@ primary vertices in the event.
 \section{Hadronic Taus}
 \label{sec:taus}
 
-Taus decay via the weak force, and decay into a final state consisting of a tau
-neutrini, an electron/muon and the associated electron/muon neutrino $\approx35\%$ of
-the time. This section describes the identification of taus in the other $\approx65\%$ of the time,
-when they decay hadronically into a tau neutrino plus a hadronic tau, $\tau_{h}$. The different
+Taus decay via the weak force. Approximately $35\%$ of the time, they decay into a final state consisting of a tau
+neutrino, an electron/muon and the associated electron/muon neutrino. 
+This section describes the identification of taus for the other $\approx65\%$ of the time,
+when they decay into a tau neutrino plus quarks yielding a hadronic tau, $\tau_{h}$. The different
 possibilities for hadronic tau decays are listed in table \ref{tab:hadronictaus}.
 
 \begin{table}[bth]
 \begin{tabular}{|c|c|c|}
+\hline
 Decay Mode & Intermediate Resonance & Branching Fraction [\%] \\
+\hline
 \hline
 $\Pgtpm\to\Pgppm\Pgpz\Pgngt$ & $\Pgr$(770) & 26.0 \\
 \hline
@@ -427,7 +529,9 @@ $\Pgtpm\to\Pgppm\Pgpmp\Pgppm\Pgpz\Pgngt$ & -  & 4.8 \\
 \hline
 Other hadronic modes & - & 1.7 \\
 \hline
-Total & &  64.7 \\ 
+\hline
+Total & &  64.7 \\
+\hline
 \end{tabular}
 \caption{List of the possible hadronic tau decay modes. The branching ratios for
 each is given, and where the decay proceeds via an intermediate resonance this
@@ -438,8 +542,8 @@ is given along with its mass in $\MeV$\cite{PDG}.}
 The largest fraction of hadronic decays proceeds via the $\Pgr$(770) resonance
 resulting in one charged and one neutral pion. Other common modes produce
 different numbers of neutral or charged pions. Decays with more than 3 charged
-pions are included in the other hadronic modes and are relatively rare. This
-knowledge about the number of pions in the final state is used in the
+pions are included in the other hadronic modes listed in the table and are
+relatively rare. The knowledge of the number of pions in the final state is used in the
 identification of hadronic taus, using the \ac{HPS} algorithm
 described in section \ref{sec:hps}.
 
@@ -447,14 +551,15 @@ Hadronic taus are a collection of hadronic particles and as such the first level
 of identification is similar to jet ID. 
 Since the decay products come directly from the tau they are constrained by the
 tau mass, this results in a highly collimated hadronic system compared with the
-typical jet. This allows us to specificially identify hadronic taus compared
-with quark and gluon jets.
+typical jet. This allows us to differentiate hadronic taus from
+quark and gluon jets. This property is utilised in the tau isolation,
+described in section \ref{sec:tauisolation}.
 
 \subsection{Hadron Plus Strips Algorithm}
 \label{sec:hps}
 
 For the $\PH \to \Pgt\Pgt$ analysis, the \ac{HPS} algorithm is used to identify
-hadronic taus \cite{CMS-PAS-TAU-11-001}. The \ac{HPS} makes us of \ac{PF} candidates to reconstruct the
+hadronic taus \cite{CMS-PAS-TAU-11-001}. The \ac{HPS} algorithm, makes us of \ac{PF} candidates to reconstruct the
 charged pions and the photons resulting from the decays of the neutral pions. In
 addition, the kinematic properties listed in table \ref{tab:hadronictaus} can be
 applied. In this algorithm only the visible products of the taus are considered
@@ -466,7 +571,7 @@ probability to convert to electron-positron pairs within the tracker, resulting
 in an EM shower spread in the $\phi$ direction. These candidates are clustered
 using strips with size $\Delta\eta = 0.05$ and $\Delta\phi = 0.2$ initially
 centred on the most energetic EM candidate in the \ac{PF} jet. Strips with
-$\pt>1\GeV$ are considered. The energy of the
+$\pt>1~\GeV$ are considered. The energy of the
 strip is required to be consistent with the mass of the neutral pion, and hence
 between 50 and 200 $\MeV$. The strips are then combined with the charged hadrons
 from \ac{PF} to give us 4 different cases:
@@ -477,7 +582,7 @@ with some contribution from $\Pgtpm\to\Pgppm\Pgngt\Pgpz$ in the case that the
 neutral pion is not energetic enough to be detected.
 \item Single charged hadron or "prong", one strip: this selects decays to the intermediate
 resonance of $\Pgr$(770), $\Pgtpm\to\Pgrpm\Pgngt\to\Pgppm\Pgpz\Pgngt$. In this
-case the combined system must have invariant mass consistent with either the
+case the combined system must have invariant mass consistent with the
 $\Pgr$(770).
 %or $\text{a}_{1}$(1260), so between 300 and 1300 $\MeV$. %check - is the lower
 %bound 300 or 400? 
@@ -488,7 +593,7 @@ $\text{a}_{1}$(1260) resonance is required.
 $\Pgtpm\to\Pgppm\Pgpmp\Pgppm\Pgpz\Pgngt$ or $\Pgtpm\to\Pgppm\Pgpmp\Pgppm\Pgngt$. 
 In this case, the tracks are required
 to come from the same vertex, with a minimum inpact parameter in the tranverse
-plane of $2\mm$. The three candidates must also have total charge of 1, and a
+plane of $2~\mm$. The three candidates must also have total charge of 1, and a
 mass consistent with $\text{a}_{1}$(1260). 
 \end{itemize}
 
@@ -498,7 +603,7 @@ $\pt^{\tau_{h}}$ is the $\pt$ of the hadronic tau candidate, for taus with $28 <
 \pt^{\tau_{h}} < 56~\GeV$. For taus with $\pt^{tau_{h}} < 28~\GeV$ the cone is
 is fixed at 0.1 and for taus with $\pt^{\tau_{h}} > 56~\GeV$ at 0.05. 
 Figure \ref{fig:taudecaymode} illustrates the number of events reconstructed in
-each of the tau decay modes in the $\PH \to \Pgt\Pgt$ analysis.
+each of the tau decay modes in the backgrounds to the $\PH \to \Pgt\Pgt$ analysis.
 
 \begin{figure}
 \begin{center}
@@ -514,15 +619,18 @@ with one strip and single charged hadron with two strips, defined in the text.
 \end{figure}
 
 \subsection{Isolation}
+\label{sec:tauisolation}
 
 A measure of the isolation of the hadronic tau candidate is used to exploit the
 collimated nature of the $\tau$-jets to reduce the background from quark and gluon
-jets. The isolation variable is constructed from the sum of the $\pt$ of the
+jets. The isolation is similar to that used for electrons and muons described in
+section \ref{sec:leptonisolation}. The isolation variable is constructed from 
+the sum of the $\pt$ of the
 hadronic and photon \ac{PF} candidates with $\pt > 0.5~\GeV$ within a cone centred on 
 the $\tau_{h}$ with size $\Delta R = 0.5$. The charged hadrons in the sum are
 required to have $\Delta z < 2\mm$ with respect to the production vertex of the
 $\tau_{h}$. The charged hadrons associated with other vertices (i.e. with
-$\Delta Z > 2\mm$) are used to
+$\Delta z > 2\mm$) are used to
 estimate and subtract the contribution to the isolation from photons produced in
 \ac{PU} interactions. The isolation variable is therefore given by:
 
@@ -532,9 +640,9 @@ I_{\tau} = \sum \pt^{\text{charged}} + \max \left( \pt^{\gamma} - \Delta \beta,
 \label{eq:tauIsolation}
 \end{equation}
 
-Where $\pt^{\text{charged}}$ is the $\pt$ of charged hadrons with $\Delta z < 2\mm$, and
+Where $\pt^{\text{charged}}$ is the $\pt$ of charged hadrons with $\Delta z < 2~\mm$, and
 $\Delta \beta$ is the \ac{PU} correction given by the sum of charged hadrons with $\Delta
-z > 2\mm$ within a cone of $\Delta R = 0.8$ multiplied by a factor ($\approx$0.45) which is the
+z > 2~\mm$ within a cone of $\Delta R = 0.8$ multiplied by a factor ($\approx$0.45) which is the
 ratio of photons to charged hadrons in minimum bias events. Different working
 points of the value of $I_{\tau}$ are chosen to correspond to loose, medium and
 tight working points of tau isolation.
@@ -590,7 +698,7 @@ but greater accuracy is achieved if the full mass can be reconstructed including
 invisible neutrinos. This can be achievied using a likelihood based algorithm called
 SVFit, which combines the visible decay products and the reconstructed $\MET$. A
 short description of this method is given in this section. A more detailed
-description can be found in \ref{CMS-PAS-HIG-13-004}.
+description can be found in \cite{HIG-13-004}.
 
 The inputs to the SVFit algorithm are the kinematics of the visible decay
 products and the missing transverse energy. If all visible components of a
@@ -622,9 +730,9 @@ $M_{\tau\tau}$ values are reconstructed by combining $E_{x}^{\text{miss}}$ and
 $E_{y}^{\text{miss}}$ with a probability model with terms to account for the tau
 decay kinematics and $\MET$ resolution. We define the vector $\vec{a}$ to
 specify the kinematics of the tau decay as $\vec{a} =
-\left(x_{1},\phi_{1},m_{\nu\nu}^{1},x_{2},\phi_{2},m_{\nu\nu}\right)$. Then the
-probability that we observe the values of $\vec{x} = E_{x}^{\text{miss}},
-E_{y}^{\text{miss}}$, given that the momenta of the visible decay products are
+\left(x_{1},\phi_{1},m_{\nu\nu}^{1},x_{2},\phi_{2},m_{\nu\nu}^{2}\right)$. Then the
+probability that we observe the values of $\vec{x} = \left(E_{x}^{\text{miss}},
+E_{y}^{\text{miss}}\right)$, given that the momenta of the visible decay products are
 equal to the observed $\vec{y} = \left(p_{1}^{vis},p_{2}^{vis} \right)$,
 yielding a value of $M_{\Pgt\Pgt}$ is given by: 
 
@@ -639,7 +747,7 @@ value of $M_{\Pgt\Pgt}$ is the value which maximises this probability.
 
 Likelihood functions are used to model the tau decay kinematics. These are
 different for hadronic and leptonic tau decays. For hadronic tau decays, a model
-based on two-body phase space is used, in which all the decay products of the
+based on two-body phase space is used\cite{PDG}, in which all the decay products of the
 tau are grouped to be one particle:
 
 \begin{equation}
@@ -677,11 +785,12 @@ resolution of the $\MET$ reconstruction, and is determined for each event from
 the MVA MET algorithm described in section \ref{sec:met}. This resolution is
 typically of around $10$-$15~\GeV$. 
 
-Figure \ref{fig:svfit} shows the shape comparison between signal and $\PZ \to \Pgt\Pgt$
-background in the case of using the visible mass or the mass from SVFit. It can
+Figure \ref{fig:svfit} shows the shape comparison between $\PH\to\Pgt\Pgt$ signal
+and $\PZ \to \Pgt\Pgt$ background in the case of using the visible mass or the mass from SVFit. It can
 be seen that the shape separation is greatly improved in the SVFit case.
 The improvement in expected limit from using SVFit over visible mass in the $\PH
-\to \Pgt\Pgt$ analysis is around 40$\%$.
+\to \Pgt\Pgt$ analysis is around 40$\%$. The use of SVFit mass in the
+$\PH\to\Pgt\Pgt$ analysis is discussed further in the next chapter.
 
 \begin{figure}
 \begin{center}

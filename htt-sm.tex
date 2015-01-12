@@ -38,7 +38,7 @@ This section describes how the objects described in chapter
 The following sections describe in more detail the selections
 used for each of the $\mutau$ and $\etau$ channels.
 
-\subsection{$\etau$ Channel}
+\subsection{Candidate Pair in the $\etau$ Channel}
 
 Events in the $\etau$ channel are selected requiring an electron and hadronic tau
 candidate. The electron is required to have $\pt$ larger than ($20~\GeV$)
@@ -61,7 +61,8 @@ small. As described in section \ref{sec:tauleptonrejection}, tau candidates are
 required to pass criteria to reduce the mis-identification of electrons and
 muons. In the $\etau$ channel, a tight working point for electron rejection is
 used, and a loose working point for muon rejection. Isolation as described in
-section \ref{tauisolation} is applied is an optimised working point.  
+section \ref{sec:tauisolation} is applied is an optimised working point.  
+
 
 The electron and hadronic tau are required to be of opposite charge. 
 The $\pt$ and $\eta$ distributions of the candidate pair in the
@@ -69,41 +70,142 @@ $\etau$ channel are shown in figure \ref{fig:etauelectrons} for the electron and
 \ref{fig:etautaus} for the tau. 
 
 
-\begin{figure}
+\begin{figure}[htb]
 \begin{center}
 \subfloat[]{
     \includegraphics[width=0.5\textwidth]
-      {plots/htt-sm/}}
+      {plots/htt-sm/pt_1_inclusive_et_2012.pdf}}
 \subfloat[]{
     \includegraphics[width=0.5\textwidth] 
-      {plots/htt-sm/}} 
+      {plots/htt-sm/eta_1_inclusive_et_2012.pdf}} 
 
 \end{center}
 \caption{
-     
+   some caption  
 }
 \label{fig:etauelectrons}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[htb]
 \begin{center}
 \subfloat[]{
     \includegraphics[width=0.5\textwidth]
-      {plots/htt-sm/}}
+      {plots/htt-sm/pt_2_inclusive_et_2012.pdf}}
 \subfloat[]{
     \includegraphics[width=0.5\textwidth] 
-      {plots/htt-sm/}} 
+      {plots/htt-sm/eta_2_inclusive_et_2012.pdf}} 
 
 \end{center}
 \caption{
-     
+    some caption 
 }
 \label{fig:etautaus}
 \end{figure}
 
+\subsection{Candidate Pair in the $\mutau$ Channel}
+
+Events in the $\mutau$ channel are selected requiring an muon and hadronic tau
+candidate. The muon is required to have $\pt$ larger than ($17~\GeV$)
+$20~\GeV$ in (2011) 2012 data. In all data taking periods the $\eta$ requirement
+on the muon is $|\eta| < 2.1$. The muon is required to pass tight muon ID as
+defined in section \ref{sec:muons}. The isolation definition described in 
+section \ref{sec:leptonisolation} is
+applied with a threshold of 0.1. The muon must be compatible with
+originating at the chosen \ac{PV}, and so the impact parameters in the
+transverse and beam directions, $d_{xy}$ and $d_{z}$ respectively, must be
+small. 
+
+The hadronic tau has the same ID and isolation definition as described for the $\etau$
+channel, with the exception of the anti-electron and anti-muon discriminators.
+In the $\mutau$ channel a tight anti-muon discriminator and a loose
+anti-electron discriminator are used. 
+
+The muon and hadronic tau are required to be of opposite charge. 
+The $\pt$ and $\eta$ distributions of the candidate pair in the
+$\mutau$ channel are shown in figure \ref{fig:mutaumuons} for the muon and
+\ref{fig:mutautaus} for the tau. 
 
 
+\begin{figure}[htb]
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/htt-sm/pt_1_inclusive_mt_2012.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth] 
+      {plots/htt-sm/eta_1_inclusive_mt_2012.pdf}} 
+
+\end{center}
+\caption{
+    some caption 
+}
+\label{fig:mutaumuons}
+\end{figure}
+
+
+\begin{figure}[htb]
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/htt-sm/pt_2_inclusive_mt_2012.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth] 
+      {plots/htt-sm/eta_2_inclusive_mt_2012.pdf}} 
+
+\end{center}
+\caption{
+     some caption
+}
+\label{fig:mutautaus}
+\end{figure}
+
+
+
+\subsection{Extra lepton vetos}
+
+\subsection{Topological Selection}
+
+After selection of the candidate pair, a large background from $\WJets$ remains
+in the $\etau$ and $\mutau$ channels, usually with the lepton from the $\PW$ and
+a jet faking the hadronic tau. A useful quantity to reduce this background is
+the transverse mass between the lepton and the $\MET$:
+
+\begin{equation}
+m_{\text{T}}\equiv\sqrt{2\pt^{\ell}\MET(1-\cos(\Delta\phi))},
+\end{equation}
+
+where $\pt{\ell}$ is the $\pt$ of the electron or muon and $\Delta\phi$ is the
+difference in azimuthal angle between the lepton and the $\MET$. In real tau
+events from $\PZ\to\Pgt\Pgt$ or $\PH\to\Pgt\Pgt$ the neutrinos in the $\Pgt$
+decay tend to be produced collinearly with the visible products, whereas in
+$\WJets$ events the neutrinos originate from the $\PW$ which has a much higher
+mass than the $\Pgt$, and hence the neutrino is more likely to travel in the
+opposite direction to the lepton in the transverse plane. Hence $\WJets$ events
+have a higher transverse mass than signal events, and so a cut of
+$m_{\text{T}}<30\,\GeV$ is found to reduce a large amount of $\WJets$ events
+whilst still retaining a good signal efficiency.
+
+Figure \ref{fig:transversemass} shows the distribution of $m_{\text{T}}$ for all
+events in the $\mutau$ channel before the $m_{\text{T}}<30\,\GeV$ cut is
+applied.
+
+\begin{figure}[htb]
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/htt-sm/mt_1_inclusive_mt_2012.pdf}}
+
+\end{center}
+\caption{
+ some caption    
+}
+\label{fig:transversemass}
+\end{figure}
+
+
+\section{Event Categorisation}
+\label{sec:eventcategorisation}
 
 
 \section{Backgrounds}

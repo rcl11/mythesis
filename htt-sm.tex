@@ -3,18 +3,18 @@
 
 As described in chapter \ref{chap:theory}, the Higgs boson is the final missing 
 piece of the Standard Model of particle physics. In order to complete the
-\ac{SM}, this Higgs boson should have all the predicted properties of the Standard Model
-Higgs, including decaying to tau leptons at the predicted rate. This
+\ac{SM}, this Higgs boson should have all the predicted properties of the
+\ac{SM} Higgs, including decaying to tau leptons at the predicted rate. This
 chapter describes the search for the Higgs boson of the Standard Model 
 decaying into two tau leptons.
 
-This chapter outlines the "legacy" result from run 1 of the LHC, including the
+This chapter outlines the "legacy" result from run 1 of the \ac{LHC}, including the
 full dataset collected in 2011 and 2012 by CMS. This corresponds to an
 integrated luminosity of 4.9 fb$^{-1}$ at a centre of mass energy of 7 TeV and
 19.7 fb$^{-1}$ at 8 TeV. The results in this chapter are parts of a publication 
-in the Journal of High Energy Physics \cite{}. The material in this chapter is
-particularly focussed towards the parts of the analysis which included the work
-of the author. 
+in the Journal of High Energy Physics \cite{HIG-13-004}. The material included 
+in this chapter is particularly focussed towards the parts of the analysis which 
+included the work of the author. 
 
 The $\PH \to \Pgt\Pgt$ analysis is performed in different final states dependent
 on the final decay products of the taus. Taus can decay into electrons $e$,
@@ -25,23 +25,85 @@ analysis and the analyses in the subsequent chapters was for the $\etau$ and
 $\mutau$ channels, although considerable work was also done on the statistical
 interpretation side using results from all channels. 
 As such the analysis details described in sections \ref{sec:eventSelection},
-\ref{sec:backgrounds}, \ref{sec:datamcfactors} and \ref{} related to these
-channels only , whilst results including the combination of all
-channels are shown in \ref{sec:results}. 
+\ref{sec:backgrounds}, \ref{sec:datamcfactors} and \ref{} are focussed on the
+$\etau$ and $\mutau$ channels, whilst results including the combination of all
+six channels are shown in \ref{sec:results}. More detail on the other channels
+can be found in \cite{HIG-13-004}. 
 
 \section{Event Selection}
 \label{sec:eventSelection}
 
-The event selection makes use of the objects described in chapter
-\ref{chap:reco}. The following sections describe in more detail the selections
+This section describes how the objects described in chapter
+\ref{chap:reco} are used to select the most signal-like events. 
+The following sections describe in more detail the selections
 used for each of the $\mutau$ and $\etau$ channels.
 
 \subsection{$\etau$ Channel}
 
-Events in the $\etau$ channel are selected requiring an electron and tau
-candidate. The electron is required to have p$_{T}$ larger than bla blah. The ID
-requirements on the electron are that the electron should pass the tight MVA
-based identification criteria and isolation requirements.  
+Events in the $\etau$ channel are selected requiring an electron and hadronic tau
+candidate. The electron is required to have $\pt$ larger than ($20~\GeV$)
+$24~\GeV$ in (2011) 2012 data. In all data taking periods the $\eta$ requirement
+on the electron is $|\eta| < 2.1$. The electron is required to pass the electron
+ID \ac{BDT} as described in section \ref{sec:electrons}, using a $\pt$ and
+$\eta$ dependent cut which corresponds to the tight working point.  
+The isolation definition described in section \ref{sec:leptonisolation} is
+applied with a threshold of 0.1. The electron must be compatible with
+originating at the chosen \ac{PV}, and so the impact parameters in the
+transverse and beam directions, $d_{xy}$ and $d_{z}$ respectively, must be
+small. 
+
+The hadronic tau is selected with $\pt$ of larger than $30~\GeV$ and
+$|\eta|<2.3$. The tau is identified using the \ac{HPS} algorithm as described in 
+section \ref{sec:hps}. The tau must be compatible with
+originating at the chosen \ac{PV}, and so the impact parameters in the
+transverse and beam directions, $d_{xy}$ and $d_{z}$ respectively, must be
+small. As described in section \ref{sec:tauleptonrejection}, tau candidates are
+required to pass criteria to reduce the mis-identification of electrons and
+muons. In the $\etau$ channel, a tight working point for electron rejection is
+used, and a loose working point for muon rejection. Isolation as described in
+section \ref{tauisolation} is applied is an optimised working point.  
+
+The electron and hadronic tau are required to be of opposite charge. 
+The $\pt$ and $\eta$ distributions of the candidate pair in the
+$\etau$ channel are shown in figure \ref{fig:etauelectrons} for the electron and
+\ref{fig:etautaus} for the tau. 
+
+
+\begin{figure}
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/htt-sm/}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth] 
+      {plots/htt-sm/}} 
+
+\end{center}
+\caption{
+     
+}
+\label{fig:etauelectrons}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/htt-sm/}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth] 
+      {plots/htt-sm/}} 
+
+\end{center}
+\caption{
+     
+}
+\label{fig:etautaus}
+\end{figure}
+
+
+
 
 
 \section{Backgrounds}

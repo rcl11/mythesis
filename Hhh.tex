@@ -28,6 +28,121 @@ to design a new analysis to target $\PH \to hh \to \Pgt\Pgt bb$.
 
 \section{Event Selection}
 
+In signal events of all $M_{H}$ hypotheses, the reconstructed $m_{bb}$ and
+$m_{\tau\tau}$ will be consistent with a $125 \GeV$ $\Ph$ decay. This fact is exploited to greatly
+enhance the selection of signal over background events, by cutting in window of
+$70 < m_{bb} < 150~\GeV$ and $90 < m_{\tau\tau} < 150~\GeV$. 
+
+\section{Kinematic Fitting to extract $M_{H}$}
+
+In addition to applying cuts on $m_{bb}$ and $m_{\tau\tau}$, the condition that
+both values should be consistent with $125~\GeV$ can be used further in
+calculating the reconstructed $M_{H}$. This quantity can be reconstructed simply
+by combining the visible taus, $\MET$ and the b-jets, denoted by $M_{\tau\tau bb}$.
+A better reconstruction is obtained by using the conditions on $m_{bb}$ and
+$m_{\tau\tau}$ in a kinematic fit. 
+
+In this method, observables related to the
+event kinematics are varied within the measurement uncertainties in order to
+find the values which best fulfil a kinematic constraint. In this case, the
+variables being varied correspond to the energies of the taus and b-jets and the
+kinematic constraints are that $m_{bb} = m_{\tau\tau} = m_{h} = 125~\GeV$. Differences
+between the measured value and the constraint are accounted for in a cost
+function $\chi^{2}$ which is minimised in the fitting procedure.  
+
+For the b-jets, it is assumed that the reconstructed position in terms of the
+angles $\eta_{j}$ and $\phi_{j}$ is known to great accuracy, and the largest
+uncertainty is in the measurement of the energy. Thus in the fit, only the
+energy of the jets is varied, and the position is kept constant. To first
+approximation any uncertainty in energy directly translates to an uncertainty in
+momentum related by the quantity $\beta = p/E$, which is assumed to be constant and 
+not varied in the fit. The energy of the first b-jet is varied, and then the
+energy of the second b-jet can be related to the first using the following
+kinematic conditions:
+
+\begin{equation}
+m_{H}^{2} = p_{b_{1}}^{2} + p_{b_{2}}^{2,fit} + 2p_{b_{1}}p_{b_{2}}^{fit} 
+          = m_{b_{1}}^{2} + \frac{E_{b_{2}}^{2,fit}}{\gamma_{b_{2}}^{2}} + 2E_{b_{1}}E_{b_{2}}^{fit}\left(1-\beta_{b_{1}}\beta_{b_{2}}\right),   
+\label{eq:bjetkinfit}         
+\end{equation}
+
+where $\gamma_{b_{1,2}} = 1/\sqrt{1-\beta_{b_{1,2}}^{2}}$. The term A is
+assumed to be constant and hence can be derived from the pre-fit event
+kinematics as:
+
+\begin{equation}
+A = \frac{m_{b_{1}b_{2}}^{2} - m_{b_{1}}^{2} - m_{b_{2}}^{2}}{2E_{b_{1}}E_{b_{2}}} , 
+\end{equation}
+
+which allows equation \ref{eq:bjetkinfit} to be reduced to:
+
+\begin{equation}
+E_{b_{2}}^{fit} = E_{b_{1}}A\gamma_{b_{2}}^{2}\left(-1 + \sqrt{1 +
+\frac{m_{h}^{2} -
+m_{b_{1}^{2}}}{\left(E_{b_{1}}A\gamma_{b_{2}}\right)^{2}}}\right) .
+\label{eq:bjetrelation}
+\end{equation}
+
+A $\chi^{2}$ quantity can then be constructed to quantify how much the fit has
+modified the b-jet energy as:
+
+\begin{equation}
+\chi_{b_{1,2}}^{2} = \frac{E_{b_{1,2}}^{fit} -
+E_{b_{1,2}}^{meas}}{\sigma_{b_{1,2}}}
+\end{equation}
+
+where $E_{b_{1,2}}^{meas}$ is the measured b-jet energy and $\sigma_{b_{1,2}}$
+is the b-jet energy resolution. The value of $\sigma_{b_{1,2}}$ is estimated
+using a \ac{MC} sample in different bins of $\eta$ and $\pt$. 
+
+The $\Pgt$s are treated in a slightly different way in the fit due to the $\MET$
+associated with their decays. It is assumed that the collinear approximation
+holds such that the visible products are produced in the same direction as the
+original tau. This direction is assumed to be known to a high degree of
+accuracy, as in the case of the b-jets, and so is not varied in the fit. Thus as
+in the case of the b-jets, only the energy of one $\Pgt$ is free in the fit, and
+the energy of the other $\Pgt$ can be related to the first in an analogous way
+to in equation \ref{eq:bjetrelation}. The mass of either $\Pgt$ lepton is kept
+constant at $m_{\Pgt}$.  
+
+In order to find the correct $\Pgt$ energies, additional constraints are put on
+the event using the $\MET$ to enforce that the heavy Higgs recoil from the fit
+is close to the reconstructed recoil. The recoil from the fit can be defined as:
+%check this equation - should they all be p_T?
+\begin{equation}
+p_{T,recoil}^{fit} = - p_{T,b_{1}}^{fit} - p_{T,b_{2}}^{fit} -
+p_{T,\Pgt_{1}}^{fit} - p_{T,\Pgt_{2}}^{fit} = - p_{T,H}^{fit} ,
+\end{equation}
+
+and the measured recoil as:
+
+\begin{equation}
+p_{T,recoil}^{meas} = - p_{T,miss}^{meas} - p_{T,b_{1}}^{meas} - p_{T,b_{2}}^{meas} -
+p_{T,\Pgt_{1}^{vis}}^{meas} - p_{T,\Pgt_{2}^{vis}}^{meas} = - p_{T,H}^{meas}
+\end{equation}
+
+The $\chi^{2}$ term corresponding to the agreement between these two quantities
+can be constructed as:
+
+%\begin{equation}
+%\chi_{recoil}^{2} = 
+%\end{equation}
+
+The total $\chi^{2}$ to be minimised by the fit is then given by:
+
+\begin{equation}
+\chi^{2}= \chi_{b_{1}}^{2} + \chi_{b_{2}}^{2} + \chi_{recoil}^{2},
+\end{equation}
+
+which is a two dimensional function in variables $E_{b_{1}}$ and $\Pgt_{b_{1}}$.
+
+The output of the kinematic fit is the 4-vector of each of the taus and b-jets,
+with the energy and momentum corrected by the result of the fit. Figure \ref{}
+shows the difference between the heavy Higgs mass as reconstructed by
+$M_{\Pgt\Pgt bb}$ and from the kinematic fit, denoted $M_{H}^{kinfit}$. It can
+be seen that both the mean and resolution of $M_{H}$ is greatly improved in
+signal.
+
 \section{Control Plots}
 
 For the preselection and separation of events into categories, there are several

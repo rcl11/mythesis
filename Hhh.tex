@@ -110,23 +110,48 @@ the event using the $\MET$ to enforce that the heavy Higgs recoil from the fit
 is close to the reconstructed recoil. The recoil from the fit can be defined as:
 %check this equation - should they all be p_T?
 \begin{equation}
-p_{T,recoil}^{fit} = - p_{T,b_{1}}^{fit} - p_{T,b_{2}}^{fit} -
-p_{T,\Pgt_{1}}^{fit} - p_{T,\Pgt_{2}}^{fit} = - p_{T,H}^{fit} ,
+p_{\text{T},\text{recoil}}^{\text{fit}} = - p_{\text{T},b_{1}}^{\text{fit}} -
+p_{\text{T},b_{2}}^{\text{fit}} -
+p_{\text{T},\Pgt_{1}}^{\text{fit}} - p_{\text{T},\Pgt_{2}}^{\text{fit}} = -
+p_{\text{T},\text{H}}^{\text{fit}} ,
 \end{equation}
 
 and the measured recoil as:
 
 \begin{equation}
-p_{T,recoil}^{meas} = - p_{T,miss}^{meas} - p_{T,b_{1}}^{meas} - p_{T,b_{2}}^{meas} -
-p_{T,\Pgt_{1}^{vis}}^{meas} - p_{T,\Pgt_{2}^{vis}}^{meas} = - p_{T,H}^{meas}
+p_{\text{T},\text{recoil}}^{\text{meas}} = - p_{\text{T},\text{miss}}^{\text{meas}} -
+p_{\text{T},b_{1}}^{\text{meas}} - p_{\text{T},b_{2}}^{\text{meas}} -
+p_{\text{T},\Pgt_{1}^{\text{vis}}}^{\text{meas}} -
+p_{\text{T},\Pgt_{2}^{\text{vis}}}^{\text{meas}} = -
+p_{\text{T},\text{H}}^{\text{meas}}
 \end{equation}
 
 The $\chi^{2}$ term corresponding to the agreement between these two quantities
 can be constructed as:
 
-%\begin{equation}
-%\chi_{recoil}^{2} = 
-%\end{equation}
+\begin{equation}
+\chi_{\text{recoil}}^{2} = p_{\text{T},\text{recoil}}^{\text{res},\text{T}} \cdot
+\text{COV}_{\text{recoil}}^{-1} \cdot
+p_{\text{T},\text{recoil}}^{\text{res}} ,  
+\end{equation}
+
+where $p_{\text{T},\text{recoil}}^{\text{res}}$ is the residuum vector between
+$p_{\text{T},\text{recoil}}^{\text{fit}}$
+and $p_{\text{T},\text{recoil}}^{\text{meas}}$, and
+$p_{\text{T},\text{recoil}}^{\text{res},\text{T}}$ indicates the
+transverse vector. The covariance matrix of the recoil vector is estimated from
+the covariance matrix of the $p_{\text{T},\text{miss}}$ and the uncertainties of the b-jets as
+follows:
+
+\begin{equation}
+\text{COV}_{\text{recoil}} = \text{COV}_{p_{T,miss}} - \text{COV}_{b_{1}} -
+\text{COV}_{b_{2}} .
+\end{equation}
+
+The covariance matrices of the b-jets can be expressed entirely in terms of the
+b-jet energy/momentum and position. Hence with inputs of the values and
+covariance matrix of the missing tranverse momentum this component of the
+$\chi^{2}$ is entirely specified. 
 
 The total $\chi^{2}$ to be minimised by the fit is then given by:
 
@@ -134,7 +159,7 @@ The total $\chi^{2}$ to be minimised by the fit is then given by:
 \chi^{2}= \chi_{b_{1}}^{2} + \chi_{b_{2}}^{2} + \chi_{recoil}^{2},
 \end{equation}
 
-which is a two dimensional function in variables $E_{b_{1}}$ and $\Pgt_{b_{1}}$.
+which is a two dimensional function in variables $E_{b_{1}}$ and $E_{\Pgt_{1}}$.
 
 The output of the kinematic fit is the 4-vector of each of the taus and b-jets,
 with the energy and momentum corrected by the result of the fit. Figure \ref{}

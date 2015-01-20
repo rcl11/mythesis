@@ -62,11 +62,12 @@ kinematic conditions:
 
 \begin{equation}
 m_{H}^{2} = p_{b_{1}}^{2} + p_{b_{2}}^{2,fit} + 2p_{b_{1}}p_{b_{2}}^{fit} 
-          = m_{b_{1}}^{2} + \frac{E_{b_{2}}^{2,fit}}{\gamma_{b_{2}}^{2}} + 2E_{b_{1}}E_{b_{2}}^{fit}\left(1-\beta_{b_{1}}\beta_{b_{2}}\right),   
+          = m_{b_{1}}^{2} + \frac{E_{b_{2}}^{2,fit}}{\gamma_{b_{2}}^{2}} +
+          2E_{b_{1}}E_{b_{2}}^{fit}\left(\underbrace{1-\vec{\beta}_{b_{1}}\vec{\beta}_{b_{2}}}_{A}\right),   
 \label{eq:bjetkinfit}         
 \end{equation}
 
-where $\gamma_{b_{1,2}} = 1/\sqrt{1-\beta_{b_{1,2}}^{2}}$. The term A is
+where $\gamma_{b_{1,2}} = 1/\sqrt{1-\beta_{b_{1,2}}^{2}}$. The term $A$ is
 assumed to be constant and hence can be derived from the pre-fit event
 kinematics as:
 
@@ -110,41 +111,43 @@ the event using the $\MET$ to enforce that the heavy Higgs recoil from the fit
 is close to the reconstructed recoil. The recoil from the fit can be defined as:
 %check this equation - should they all be p_T?
 \begin{equation}
-p_{\text{T},\text{recoil}}^{\text{fit}} = - p_{\text{T},b_{1}}^{\text{fit}} -
-p_{\text{T},b_{2}}^{\text{fit}} -
-p_{\text{T},\Pgt_{1}}^{\text{fit}} - p_{\text{T},\Pgt_{2}}^{\text{fit}} = -
-p_{\text{T},\text{H}}^{\text{fit}} ,
+\vec{p}_{\text{T},\text{recoil}}^{\text{~~fit}} = -
+\vec{p}_{\text{T},b_{1}}^{\text{~~fit}} -
+\vec{p}_{\text{T},b_{2}}^{\text{~~fit}} -
+\vec{p}_{\text{T},\Pgt_{1}}^{\text{~~fit}} - \vec{p}_{\text{T},\Pgt_{2}}^{\text{~~fit}} = -
+\vec{p}_{\text{T},\text{H}}^{\text{~~fit}} ,
 \end{equation}
 
 and the measured recoil as:
 
 \begin{equation}
-p_{\text{T},\text{recoil}}^{\text{meas}} = - p_{\text{T},\text{miss}}^{\text{meas}} -
-p_{\text{T},b_{1}}^{\text{meas}} - p_{\text{T},b_{2}}^{\text{meas}} -
-p_{\text{T},\Pgt_{1}^{\text{vis}}}^{\text{meas}} -
-p_{\text{T},\Pgt_{2}^{\text{vis}}}^{\text{meas}} = -
-p_{\text{T},\text{H}}^{\text{meas}}
+\vec{p}_{\text{T},\text{recoil}}^{\text{~~meas}} = -
+\vec{p}_{\text{T},\text{miss}}^{\text{~~meas}} -
+\vec{p}_{\text{T},b_{1}}^{\text{~~meas}} - \vec{p}_{\text{T},b_{2}}^{\text{~~meas}} -
+\vec{p}_{\text{T},\Pgt_{1}^{\text{vis}}}^{\text{~~meas}} -
+\vec{p}_{\text{T},\Pgt_{2}^{\text{vis}}}^{\text{~~meas}} = -
+\vec{p}_{\text{T},\text{H}}^{\text{~~meas}}
 \end{equation}
 
 The $\chi^{2}$ term corresponding to the agreement between these two quantities
 can be constructed as:
 
 \begin{equation}
-\chi_{\text{recoil}}^{2} = p_{\text{T},\text{recoil}}^{\text{res},\text{T}} \cdot
+\chi_{\text{recoil}}^{2} = \vec{p}_{\text{T},\text{recoil}}^{\text{~~res},\text{T}} \cdot
 \text{COV}_{\text{recoil}}^{-1} \cdot
-p_{\text{T},\text{recoil}}^{\text{res}} ,  
+\vec{p}_{\text{T},\text{recoil}}^{\text{~~res}} ,  
 \end{equation}
 
-where $p_{\text{T},\text{recoil}}^{\text{res}}$ is the residuum vector between
-$p_{\text{T},\text{recoil}}^{\text{fit}}$
-and $p_{\text{T},\text{recoil}}^{\text{meas}}$, and
-$p_{\text{T},\text{recoil}}^{\text{res},\text{T}}$ indicates the
-transverse vector. The covariance matrix of the recoil vector is estimated from
-the covariance matrix of the $p_{\text{T},\text{miss}}$ and the uncertainties of the b-jets as
+where $\vec{p}_{\text{T},\text{recoil}}^{\text{~~res}}$ is the residuum vector between
+$\vec{p}_{\text{T},\text{recoil}}^{\text{~~fit}}$
+and $\vec{p}_{\text{T},\text{recoil}}^{\text{~~meas}}$, and
+$\vec{p}_{\text{T},\text{recoil}}^{\text{~~res},\text{T}}$ indicates the
+transpose. The covariance matrix of the recoil vector is estimated from
+the covariance matrix of the $\vec{p}_{\text{T},\text{miss}}$ and the uncertainties of the b-jets as
 follows:
 
 \begin{equation}
-\text{COV}_{\text{recoil}} = \text{COV}_{p_{T,miss}} - \text{COV}_{b_{1}} -
+\text{COV}_{\text{recoil}} = \text{COV}_{\vec{p}_{T,miss}} - \text{COV}_{b_{1}} -
 \text{COV}_{b_{2}} .
 \end{equation}
 

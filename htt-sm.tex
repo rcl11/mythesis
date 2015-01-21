@@ -419,6 +419,12 @@ and jet reconstruction are much smaller.
 \subsection{$\PZ\to\ell\ell$}
 \label{sec:backgroundEstimation_Zll}
 
+The $\PZ\to\ell\ell$ background results when one lepton provides the electron or
+muon and either the other lepton or an associated jet fakes the hadronic tau. This
+background is much smaller than $\ZToTauTau$ but especially important in the
+$\etau$ channel where electrons have a $3$-$4\%$ probability to pass the
+anti-electron discrimination in the tau ID. Both yield and shape of this
+background are taken from simulation.
 
 \subsection{$\WJets$}
 \label{sec:backgroundEstimation_WplusJets}
@@ -433,12 +439,16 @@ subtracting all other backgrounds from data and taking the rest to be W.
 An extrapolation factor, to take the estimate from the high $m_{\text{T}}$ region to
 give an estimate in the signal region with $m_{\text{T}}< 30~\GeV$, is calculated from MC.
 
-The shape of the W is taken from MC in each category. 
+The shape of the W is taken from MC in each category. Due to the low number of
+events passing the VBF categories, the $m_{jj}$ and $|\Delta\eta_{jj}|$
+conditions are relaxed in both calculating the extrapolation factor and
+obtaining the shape.
 
 \subsection{QCD}
 \label{sec:backgroundEstimation_QCD}
 
-QCD is estimated entirely from data. It is expected that the contribution of
+QCD occurs when both the lepton and the tau are misidentified jets, and is estimated 
+entirely from data. It is expected that the contribution of
 same sign and opposite sign events from QCD is roughly the same. Thus the same
 sign data is used with all other backgrounds subtracted, to predict the rate of
 QCD in the opposite sign events. For the background subtraction, the W+jets is
@@ -446,13 +456,24 @@ estimated as described in the previous section and all other background
 contributions are estimated from MC. The opposite sign/same sign rates from QCD
 are not quite exactly the same, and an extrapolation factor of 1.06, measured
 using data with the electron/muon isolation inverted, is applied to correct for
-this.
+this. This is the method for extracting the norm in all of the 0-jet and 1-jet
+categories, with the exception of 1-jet high-$\pT^{\Pgth}$ boosted.
 
-Due to the low statistics in some categories, it is necessary to define another
+Due to the low statistics in the 1-jet high-$\pT^{\Pgth}$ boosted and the VBF
+categories, it is necessary to define another
 sideband from which to extract the QCD estimate. This is done by inverting the
-electron/muon isolation and also the tau isolation in same-sign events. 
+electron/muon isolation to $0.2<R^{\Pe/\Pgm}<0.5$ in same-sign events. The
+inclusive same-sign yield is taken from the normal isolation region, and scaled
+by the efficiency to go from the inclusive to the category selection as
+estimated in the anti-isolated data. 
 
-The anti-isolated sideband is also used for the shapes.
+In the 0-jet low-$\pT^{\Pgth}$ category the shape is taken from the normal
+isolated same-sign data with other backgrounds subtracted. In all other
+categories the anti-isolated data is used for the shapes. The high purity for
+QCD multijet events in anti-isolated same sign data makes it unnecessary to
+subtract other backgrounds, which are negligible. In the 1-jet
+high-$\pT^{\Pgth}$ boosted and tight VBF-tag categories the isolation on the
+$\Pgt_{had}$ is also loosened to obtain a sufficiently smooth shape.  
 
 \subsection{$\ttbar$}
 \label{sec:backgroundEstimation_TT}
@@ -465,7 +486,7 @@ derive a scale factor to the \ac{MC} normalisation.
 
 \subsection{Diboson and single top}
 Both the normalisation and shapes of these backgrounds are estimated using MC.
-The contributions from these backgrounds are much smaller.
+The contributions from these backgrounds are much smaller than the others.
 
 \section{Data/MC Correction Factors}
 \label{sec:datamcfactors}

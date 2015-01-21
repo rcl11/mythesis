@@ -8,7 +8,7 @@ piece of the Standard Model of particle physics. In order to complete the
 chapter describes the search for the Higgs boson of the Standard Model 
 decaying into two tau leptons.
 
-This chapter outlines the "legacy" result from run 1 of the \ac{LHC}, including the
+This chapter outlines the ``legacy'' result from run 1 of the \ac{LHC}, including the
 full dataset collected in 2011 and 2012 by CMS. This corresponds to an
 integrated luminosity of 4.9 fb$^{-1}$ at a centre of mass energy of 7 TeV and
 19.7 fb$^{-1}$ at 8 TeV. The results in this chapter are parts of a publication 
@@ -17,7 +17,8 @@ in this chapter is particularly focussed towards the parts of the analysis which
 included the work of the author. 
 
 The $\PH \to \Pgt\Pgt$ analysis is performed in different final states dependent
-on the final decay products of the taus. Taus can decay into electrons $e$,
+on the final decay products of the taus. As discussed in section
+\ref{sec:hadronictaus}, taus can decay into electrons $e$,
 muons $\mu$ and hadrons (denoted $\tau_{h}$), all with associated neutrinos.
 This gives a total of six possible final states, $\ee$, $\mumu$, $\emu$,
 $\etau$, $\mutau$ and $\tautau$. The most direct involvement of the author in this
@@ -27,7 +28,8 @@ interpretation side using results from all channels.
 As such the analysis details described in sections \ref{sec:eventSelection},
 \ref{sec:backgrounds}, \ref{sec:datamcfactors} and \ref{} are focussed on the
 $\etau$ and $\mutau$ channels, whilst results including the combination of all
-six channels are shown in \ref{sec:results}. More detail on the other channels
+six channels, and additional channels from a dedicated $\PW\PH\to\Pgt\Pgt$ and
+$\PZ\PH\to\Pgt\Pgt$ analysis, are shown in \ref{sec:results}. More detail on the other channels
 can be found in \cite{HIG-13-004}. 
 
 \section{Event Selection}
@@ -40,9 +42,19 @@ used for each of the $\mutau$ and $\etau$ channels.
 
 \subsection{Candidate Pair in the $\etau$ Channel}
 
-Events in the $\etau$ channel are selected requiring an electron and hadronic tau
-candidate. The electron is required to have $\pt$ larger than ($20~\GeV$)
-$24~\GeV$ in (2011) 2012 data. In all data taking periods the $\eta$ requirement
+Events in the $\etau$ channel require an electron and hadronic tau
+candidate. The events are first selected by a trigger algorithm which requires
+an electron and tau object. At the \ac{L1} trigger the requirement is simply a
+single electron. Then at \ac{HLT} loose ID and isolation requirements are placed on the
+electron, and additionally a $\tau_{h}$ object is required. For
+this a simplified version of the \ac{PF} algorithm is used, and a loose
+isolation is applied. These ID and isolation requirements are only approximate
+compared to the more sophisticated algorithms which can be applied offline.  
+
+In the offline selection the electron is required to have $\pt$ larger than ($20~\GeV$)
+$24~\GeV$ in (2011) 2012 data. The higher $\pt$ cut in 2012 data is necessary
+due to increased trigger thresholds necessary to maintain stable rates in the
+higher instantaneous luminosity conditions. In all data taking periods the $\eta$ requirement
 on the electron is $|\eta| < 2.1$. The electron is required to pass the electron
 ID \ac{BDT} as described in section \ref{sec:electrons}, using a $\pt$ and
 $\eta$ dependent cut which corresponds to the tight working point.  
@@ -50,21 +62,23 @@ The isolation definition described in section \ref{sec:leptonisolation} is
 applied with a threshold of 0.1. The electron must be compatible with
 originating at the chosen \ac{PV}, and so the impact parameters in the
 transverse and beam directions, $d_{xy}$ and $d_{z}$ respectively, must be
-small. 
+small (less than ... ). 
 
 The hadronic tau is selected with $\pt$ of larger than $30~\GeV$ and
 $|\eta|<2.3$. The tau is identified using the \ac{HPS} algorithm as described in 
 section \ref{sec:hps}. The tau must be compatible with
 originating at the chosen \ac{PV}, and so the impact parameters in the
 transverse and beam directions, $d_{xy}$ and $d_{z}$ respectively, must be
-small. As described in section \ref{sec:tauleptonrejection}, tau candidates are
-required to pass criteria to reduce the mis-identification of electrons and
+small (less than...). As described in section \ref{sec:tauleptonrejection}, 
+tau candidates are required to pass criteria to reduce the mis-identification of electrons and
 muons. In the $\etau$ channel, a tight working point for electron rejection is
 used, and a loose working point for muon rejection. Isolation as described in
-section \ref{sec:tauisolation} is applied is an optimised working point.  
+section \ref{sec:tauisolation} is applied using an optimised working point of
+$1.5~\GeV$.  
 
-The electron and hadronic tau are required to be of opposite charge. 
-The $\pt$ and $\eta$ distributions of the candidate pair in the
+The electron and hadronic tau are required to be of opposite charge. If more
+than one such pair exists in the event, then the pair with the highest sum $\pt$
+is selected. The $\pt$ and $\eta$ distributions of the selected pair in the
 $\etau$ channel are shown in figure \ref{fig:etauelectrons} for the electron and
 \ref{fig:etautaus} for the tau. 
 
@@ -106,9 +120,15 @@ channel.
 
 \subsection{Candidate Pair in the $\mutau$ Channel}
 
-Events in the $\mutau$ channel are selected requiring an muon and hadronic tau
-candidate. The muon is required to have $\pt$ larger than ($17~\GeV$)
-$20~\GeV$ in (2011) 2012 data. In all data taking periods the $\eta$ requirement
+Events in the $\mutau$ channel require a muon and hadronic tau
+candidate. The events are first selected by a trigger algorithm which requires
+a muon and tau object. This is done in the same way as for the $\etau$ channel,
+where the trigger object at \ac{L1} is a muon and the hadronic tau is
+reconstructed at \ac{HLT} level.
+
+In the offline selection the muon is required to have $\pt$ larger than ($17~\GeV$)
+$20~\GeV$ in (2011) 2012 data. As for the $\etau$ channel, the higher $\pt$ cut is necessary for the
+higher trigger threshold in 2012. In all data taking periods the $\eta$ requirement
 on the muon is $|\eta| < 2.1$. The muon is required to pass tight muon ID as
 defined in section \ref{sec:muons}. The isolation definition described in 
 section \ref{sec:leptonisolation} is
@@ -122,8 +142,9 @@ channel, with the exception of the anti-electron and anti-muon discriminators.
 In the $\mutau$ channel a tight anti-muon discriminator and a loose
 anti-electron discriminator are used. 
 
-The muon and hadronic tau are required to be of opposite charge. 
-The $\pt$ and $\eta$ distributions of the candidate pair in the
+The muon and hadronic tau are required to be of opposite charge. If more
+than one such pair exists in the event, then the pair with the highest sum $\pt$
+is selected. The $\pt$ and $\eta$ distributions of the candidate pair in the
 $\mutau$ channel are shown in figure \ref{fig:mutaumuons} for the muon and
 \ref{fig:mutautaus} for the tau. 
 
@@ -163,9 +184,20 @@ channel.
 \label{fig:mutautaus}
 \end{figure}
 
-
-
 \subsection{Extra lepton vetos}
+
+The contribution of certain backgrounds is reduced by vetoing events with extra
+leptons in them. This is also crucial to ensure there is no event overlap
+between categories, for example between the $\mutau$ channel and the
+$\PW\PH\to\Pgt\Pgt$ analysis in the $\mu\mu\tau_{h}$ final state. In the
+$\mutau$ and $\etau$ channels, events are vetoed if they contain an extra muon
+or electron respectively, to reduce contribution from $\PZ\to\ell\ell$ in which
+the $\tau_{h}$ is a fake from an extra misidentified jet in the event. In these
+vetos, the definition of the extra lepton is slightly looser than the lepton ID
+used for the candidate pair - with a $\pt$ requirement of $> 15~\GeV$ and
+passing loose versions of the ID and isolation. A further veto on all events
+containing any additional electron or muon candidate is applied, also with
+relaxed selections. 
 
 \subsection{Topological Selection}
 
@@ -195,9 +227,8 @@ applied.
 
 \begin{figure}[htb]
 \begin{center}
-\subfloat[]{
     \includegraphics[width=0.5\textwidth]
-      {plots/htt-sm/mt_1_inclusive_mt_2012.pdf}}
+      {plots/htt-sm/mt_1_inclusive_mt_2012.pdf}
 
 \end{center}
 \caption{
@@ -210,102 +241,199 @@ applied.
 \section{Event Categorisation}
 \label{sec:eventcategorisation}
 
+The selection as described up until this point is referred to as the
+``inclusive'' $\HToTauTau$ selection. 
 Events with a good candidate lepton and tau pair are further categorised in
 order to group events which are more background-like or signal-like. The
 categorisation uses properties consistent with the different production modes of
 the Higgs boson as described in section \ref{sec:theory}. Figure
-\ref{fig:categories} illustrates these categories for the $\mutau$ and $\etau$
+\ref{fig:smcategories} illustrates these categories for the $\mutau$ and $\etau$
 channels.
 
 \begin{figure}[htb]
 \begin{center}
-\subfloat[]{
-    \includegraphics[width=0.7\textwidth]
-      {plots/htt-sm/categories_2012.pdf}}
-
+    \includegraphics[width=0.8\textwidth]
+      {plots/htt-sm/categories_2012.pdf}
 \end{center}
 \caption{
  Categories used in the $\etau$ and $\mutau$ channels of the \ac{SM}
- $\HToTauTau$ analysis.  
+ $\HToTauTau$ analysis \cite{HIG-13-004}.  
 }
-\label{fig:transversemass}
+\label{fig:smcategories}
 \end{figure}
+
+The categorisation separates events which have 0,1 or 2 jets with $\pt>30~\GeV$
+and $|\eta| < 4.7$. The jets are required to be separate from the lepton
+candidates by $\Delta R > 0.5$. Events which contain a b-tagged jet as described in section
+\ref{sec:btag} are vetoed to reduce the contribution of the $\ttbar$ background. 
+The 0-jet categories are background dominant, and are included in the final
+signal extraction to provide constraints on the backgrounds for the more signal
+sensitive categories. The 1-jet categories are sensitive to gluon fusion Higgs
+production in association with a jet and VBF Higgs production where one jet is
+not picked up by the detector. The 2-jet categories are sensitive to
+\ac{VBF} Higgs production, and the additional cuts on $m_{jj}$ and $\Delta
+\eta_{jj}$ exploit the topology of this process. Events with additional jets in
+the $\Delta \eta_{jj}$ gap are vetoed to reduce the \ac{QCD} background.
+
+To improve sensitivity, categories are further separated into more signal-like
+and background-like events. The 0-jet and 1-jet categories are separated by
+$\tau_{h}$ $\pt$. The high $\pt^{\tau_{h}}$ events are more likely to be
+consistent with a $\HToTauTau$ event than a $\ZToTauTau$ event due to the higher
+mass of the Higgs than the $\PZ$. This also reduces contributions from \ac{QCD}
+and $\WJets$ processes, where the jet faking the hadronic tau is likely to be
+softer. An additional boosted category is used in 1-jet high $\pt^{\tau_{h}}$
+events with a cut on the di-tau $\pt$, defined as:
+\begin{equation}
+\pt^{\Pgt\Pgt} = |\vec{\pt}^{L} + \vec{\pt}^{L'}+\vecMET|,
+\end{equation}
+with the requirement $\pt^{\Pgt\Pgt}>100~\GeV$. The VBF categories are split into VBF
+``tight'' and ``loose'' based on tighter or looser $m_{jj}$ and
+$\Delta\eta_{jj}$ cuts and the inclusion of the same ditau $\pt$ cut as in the
+boosted 1-jet category. The distribution of the $\pt^{\Pgt\Pgt}$ in the
+$\mutau$ channel is shown in figure \ref{fig:ditaupt}. 
+
+\begin{figure}[htb]
+\begin{center}
+    \includegraphics[width=0.5\textwidth]
+      {plots/htt-sm/pt_tt_inclusive_mt_2012_log.pdf}
+\end{center}
+\caption{
+ Di-tau $\pt$ in the $\mutau$ channel as used for the separation of events into
+ categories. 
+}
+\label{fig:ditaupt}
+\end{figure}
+
+The boosted 1-jet and the VBF tight categories are very 
+signal sensitive, and also select events wth the best $m_{\tau\tau}$ resolution.
+The VBF tight category is not possible in 2011 data due to the lower statistics,
+so the VBF tight and VBF loose categories are merged. 
+
+In the $\etau$ channel, 1-jet categories have an additional cut of $\MET >
+30~\GeV$ to reduce the background from $\PZ\to\Pe\Pe$. This cut suppresses the
+signal and $\ZToTauTau$ events with low $\pt^{\Pgt\Pgt}$, and as such the 1-jet low
+$\pt^{\Pgt\Pgt}$ category is not possible in the $\etau$ channel.  
+
 \section{Datasets and \ac{MC} samples}
 \label{sec:dataandMC}
 
+The data used in this analysis corresponds to that collected during the 2011 and
+2012 running periods of the \ac{LHC}. Samples of background and signal events are produced using several different
+\ac{MC} generators. The \textsc{madgraph}~\cite{Alwall:2011uj} matrix element
+generator is used for the $\ZJets$, $\WJets$, diboson ($\PW\PW$, $\PZ\PZ$ and
+$\PW\PZ$) and $\ttbar$ backgrounds. 
+In order to have high enough statistics to evaluate the
+backgrounds in the categories based on jet multiplicity, extra samples are
+generated with fixed jet multiplicities up to 4 jets. These are combined with
+inclusive samples using the expected ratio to retain the correct cross-section
+ratios between jet multiplicity bins. The single top samples are generated using
+\textsc{powheg}~\cite{Frixione:2007vw,Alioli:2010xd,Alioli:2010xa}, as are the
+signal samples for gluon-fusion and \ac{VBF} at \ac{NLO} precision. Signal
+samples for production in association with a vector boson are generated using
+\textsc{pythia}~\cite{Sjostrand:2006za} at \ac{LO} precision only. In all
+samples, \textsc{pythia} is used for parton showering and hadronisation and
+\textsc{tauola}~\cite{TAUOLA} is used for tau decays. Minimum bias events
+generated by \textsc{pythia} are added to all generated Monte Carlo samples
+to simulate additional proton-proton interactions, and then the events are
+weighted to match the pile-up profile observed in data. 
+
+For the signal, \ac{MC} samples are produced in $5~\GeV$ steps between
+$m_{H}=90~\GeV$ and $m_{H}=145~\GeV$. The cross-sections and branching ratios 
+are taken from the \ac{LHCHXSWG}
+\cite{LHCHiggsCrossSectionWorkingGroup:2011ti,Dittmaier:2012vm,Heinemeyer:2013tqia}.
+The full set of simulated processes, the \ac{MC} generators used and the
+cross-sections of the processes can be found in table \ref{tab:datasetsandMC}.
+
+\begin{table}
+\begin{tabular}{|l|c|c|c|}
+\hline
+Process & \ac{MC} Generator & \multicolumn{2}{c}{Cross Section [$\picobarn$]} \\
+\cline{3-4}
+&  & 7 \TeV & 8 \TeV \\
+\hline
+\hline
+$\PW\to L\nu$ & \textsc{madgraph} & $31314$  & $36257$ \\
+$\Pqt\Paqt$ & \textsc{madgraph}   & $164.4$   & $249.5$ \\
+$\PZ\to LL$ & \textsc{madgraph}                      & $3048$    & $3504$ \\
+$\PW\PZ\to \Pq\Pq'LL$ & \textsc{madgraph}          & $1.8$     & $2.2$ \\
+$\PW\PZ\to L\Pnu LL$ & \textsc{madgraph}            & $0.9$     & $1.1$ \\
+$\PZ\PZ\to LLLL$ & \textsc{madgraph}           & $0.06$    & $0.18$ \\
+$\PZ\PZ\to LL\Pq\Pq$ & \textsc{madgraph}           & $0.8$     & $2.5$ \\
+$\PZ\PZ\to LL\Pnu\Pnu$ & \textsc{madgraph}         & $0.3$     & $0.7$ \\
+Single-top ($\Pqt\PW$ channel) & \textsc{powheg}            & $15.7$    & $22.2$ \\
+\hline
+SM $\Pg\Pg\PH(\Pgt\Pgt)$ & \textsc{powheg} & $0.96$ & $1.22$ \\
+SM $\Pq\Pq\PH(\Pgt\Pgt)$ & \textsc{powheg} & $0.077$ & $0.010$ \\
+SM $\PZ\PH(\Pgt\Pgt)$+$\PW\PH(\Pgt\Pgt)$+$\Pqt\Paqt\PH(\Pgt\Pgt)$ &
+\textsc{pythia} & $0.063$ & $0.079$ \\
+\hline
+\end{tabular}
+\caption{
+Summary of the background and signal processes used in the $\HToTauTau$ analysis along with the
+\ac{MC} generator and cross-section for the process in $7~\TeV$ and $8~\TeV$
+conditions. The notation $L$ indicates a leptonic decay into $\Pe$, $\Pmu$ or
+$\Pgt$, and $q$ indicates a quark. For the $\PW$, $\PZ$ and diboson backgrounds
+samples are produced for jet multiplicities of 0, 1, 2, 3 and 4. The
+cross-sections listed for the signal process are for $m_{H}=125~\GeV$.
+}
+\label{tab:datasetsandMC}
+\end{table}
 
 \section{Background Estimation}
 \label{sec:backgrounds}
 
+The backgrounds to $\HToTauTau$ are many, and it is essential to estimate well
+the contribution of each in each category. Where possible, data driven methods
+are used to minimise systematic uncertainty related to the modelling in the
+\ac{MC}. It is essential to accurately estimate both the shape and the overall
+yield of each background.
+
 \subsection{Drell-Yan $\PZ \to\Pgt\Pgt$}
 \label{sec:backgroundEstimation_Ztautau}
 
-The $\PZ \to \Pgt\Pgt$ component is usually referred to as ``irreducible", due to its final
-state involving two taus which only differ from the $\PH \to \Pgt\Pgt$ signal by
-having an invariant mass closer to the mass of the Z instead of the Higgs. In
-a final state with 2 taus and 2 b's, the $\PZ \to \Pgt\Pgt$ component is greatly reduced
-by the requirement of at least 2 jets in the event, and still further reduced by
-the b-tagging requirements and the mass constraint on m$_{\tau\tau}$.
-However, it still remains an important background, in particular in the 2jet--0tag category. 
-
-As described in section~\ref{sec:datasets_and_MonteCarloSamples}, an embedded
-sample is used to better model this contribution. A Drell-Yan $\PZ \to\Pgt\Pgt$
-sample is also used to esimate the overall yield of this background. 
-The yield in each category is estimated by calculating the inclusive yield
-using Drell-Yan $\PZ \to\Pgt\Pgt$ MC, and then scaling it by the efficiency for 
+The $\PZ \to \Pgt\Pgt$ component is the largest and is usually referred to as ``irreducible", due to its final
+state involving two real taus which only differ from the $\PH \to \Pgt\Pgt$ signal by
+having an invariant mass closer to the mass of the $\PZ$ instead of the Higgs.
+The contribution from $\ZToTauTau$ in each category is estimated using an
+``embedded'' sample. In this process a sample of $\PZ\to\Pmu\Pmu$ events are
+collected and the muons replaced with simulated taus. These muons are required
+to pass \ac{PF} identification and loose isolation and be of opposite charge.
+The simulated taus are assigned the 4-momenta of the muons, and all other
+quantities such as jets, $\MET$ and tau isolation are recomputed. The taus
+are simulated by \textsc{tauola}. The $\ZToTauTau$ sample is used to esimate 
+the inclusive yield of this background without the topological $m_{\text{T}}$
+cut. 
+The yield in each category is estimated by scaling this inclusive yield by the efficiency for 
 inclusive events to pass the category selection, which is estimated using the
 embedded sample. The shape is then taken from the embedded sample within the
-category selection.
+category selection. The advantage of this is that the majority of event objects
+are taken from data, and hence the systematic uncertainties related to $\MET$
+and jet reconstruction are much smaller. 
 
-To account for the known contamination of $t \bar{t}$ events in the embedded
-samples, the embedded $t \bar{t}$ samples described in
-section~\ref{sec:datasets_and_MonteCarloSamples} are used to evaluate the
-expected contribution from such events, and then this is directly subtracted
-from the $\PZ \to\Pgt\Pgt$ contribution.
+%To account for the known contamination of $t \bar{t}$ events in the embedded
+%samples, the embedded $t \bar{t}$ samples described in
+%section~\ref{sec:datasets_and_MonteCarloSamples} are used to evaluate the
+%expected contribution from such events, and then this is directly subtracted
+%from the $\PZ \to\Pgt\Pgt$ contribution.
 
-\subsection{$\ttbar$}
-\label{sec:backgroundEstimation_TT}
+\subsection{$\PZ\to\ell\ell$}
+\label{sec:backgroundEstimation_Zll}
 
-For the $t \bar{t}$ both shape and normalisation are taken from MC. Both are checked
-against data by defining control regions which are at least 90$\%$ pure in
-$t \bar{t}$. In the $\PH \to \Pgt\Pgt$ analysis, this is normally done using the
-$\Pe\Pgm$ final state of the taus, events which are not used in this analysis
-because of the large $t \bar{t}$ background after the 2 jet requirement. The control
-region is defined with events passing the $\emu$ selection as defined in
-\cite{HIG-13-004}, in addition to containing at least 2 jets, at least one b-tagged jet
-and $\MET$ $>$ 80~$\GeV$. This control region has 91$\%$ $\ttbar$ purity.
-An additional control region can be defined in the $\mu\tau_{had}$ and
-$e\tau_{had}$ channels. Here, events with at least 2 b-tagged jets and $m_{T}$
-$>$ 70~$\GeV$ are used. This control region has lower statistics than the $\emu$ one
-but a higher $t \bar{t}$ purity of 95$\%$. The plots showing some important variables
-in these control regions can be found in figure~\ref{fig:backgroundsTTControl}.
-
-A reweighting is applied to $t \bar{t}$ events. The correction has been developed by the Top
-group to better match the top quark $P_{T}$ distribution observed in data~\cite{TopPtReweighting}. 
 
 \subsection{$\WJets$}
 \label{sec:backgroundEstimation_WplusJets}
 
 W plus jets is a background in this analysis where there is a real electron or
 muon from the W and one of the associated jets fakes a hadronic tau. This
-background is largely reduced by the $m_{T}$ $<$ 30 GeV cut described in
+background is largely reduced by the $m_{\text{T}}< 30~\GeV$ cut described in
 section~\ref{sec:eventSelection}. To estimate the remaining contribution the
-events with $m_{T}$ $>$ 70 GeV are used, which are dominated by W+jets and $t
-\bar{t}$
-events. This sideband is used to estimate the sideband normalisation of the W+jets, by
+events with $m_{\text{T}}> 70~\GeV$ are used, which are dominated by W+jets 
+events. This is used to estimate the sideband normalisation of the W+jets, by
 subtracting all other backgrounds from data and taking the rest to be W.
-An extrapolation factor, to take the estimate from the high m$_{T}$ region to
-give an estimate in the signal region with $m_{T}$ $<$ 30 GeV, is calculated from MC.
+An extrapolation factor, to take the estimate from the high $m_{\text{T}}$ region to
+give an estimate in the signal region with $m_{\text{T}}< 30~\GeV$, is calculated from MC.
 
-In the 2jet--2tag category, where there is a much larger contribution from $t
-\bar{t}$ events in the $m_{T}$ $>$ 70 GeV region, the control region is instead
-defined as 60 $<$ $m_{T}$ $<$ 120 GeV, which gives a larger amount of statistics for
-the W estimate after subtracting the other backgrounds.
-
-The shape of the W is taken from MC in each category. Due to the low event statistics in the
-categories, the category selections for the 2jet--1tag and 2jet--2tag W
-estimates are relaxed to include b-tagged jets passing the loose CSV working point 
-instead of the medium.
+The shape of the W is taken from MC in each category. 
 
 \subsection{QCD}
 \label{sec:backgroundEstimation_QCD}
@@ -316,33 +444,28 @@ sign data is used with all other backgrounds subtracted, to predict the rate of
 QCD in the opposite sign events. For the background subtraction, the W+jets is
 estimated as described in the previous section and all other background
 contributions are estimated from MC. The opposite sign/same sign rates from QCD
-are in fact not exactly the same, and an extrapolation factor of 1.06, measured
+are not quite exactly the same, and an extrapolation factor of 1.06, measured
 using data with the electron/muon isolation inverted, is applied to correct for
 this.
 
-Due to the low statistics in the categories, it is necessary to define another
+Due to the low statistics in some categories, it is necessary to define another
 sideband from which to extract the QCD estimate. This is done by inverting the
-electron/muon isolation in same-sign events. In the 2jet--2tag category, this
-anti-isolated sideband is used to calculate an extrapolation factor from events
-with at least 2 jets to events passing the full 2jet--2tag selection. Then this
-extrapolation factor is used to scale the normalisation of the same-sign
-subtracted data in events with at least 2 jets.
+electron/muon isolation and also the tau isolation in same-sign events. 
 
-The anti-isolated sideband is also used for the shapes. For the 2jet--0tag
-category, the shape is directly taken from the anti-isolated data passing the
-full category selection. The shapes for the 2jet--1tag
-and 2jet--2tag categories are taken from the anti-isolated data with a 
-looser category definition. This looser definition is the same as that used in
-the W estimation, where the b-tag working point is loosened to the loose CSV
-working point instead of the medium.
+The anti-isolated sideband is also used for the shapes.
 
-\subsection{Other backgrounds}
-The remaining backgrounds are from $\PZ \to \ell\ell$, diboson and single top.
+\subsection{$\ttbar$}
+\label{sec:backgroundEstimation_TT}
+
+For the $t \bar{t}$ both shape and normalisation are taken from MC. Both are checked
+against data by defining a control region which is at least 90$\%$ pure in
+$t \bar{t}$. This is done using the $\emu$ channel, which has a much higher
+quantity of $\ttbar$ than $\etau$ and $\mutau$. The control region is used to
+derive a scale factor to the \ac{MC} normalisation. 
+
+\subsection{Diboson and single top}
 Both the normalisation and shapes of these backgrounds are estimated using MC.
 The contributions from these backgrounds are much smaller.
-The contribution of $Z/\gamma^{*} \to ee$ background to the $e\tau_{had}$ channel
-is additionally corrected by $e \to \tau_{had}$ fake--rate Monte Carlo--to--data
-scale--factors.
 
 \section{Data/MC Correction Factors}
 \label{sec:datamcfactors}
@@ -350,12 +473,17 @@ scale--factors.
 Whilst data-driven methods are used wherever possible, MC is still
 relied on in predicting expected shapes and yields of signal and backgrounds.
 As such is it important that the MC is corrected for
-any effects which are known to be imperfectly modeled. For ID, isolation and
+any effects which are known to be imperfectly modeled. 
+
+\subsection{ID, isolation and trigger efficiencies}
+
+For ID, isolation and
 trigger efficiencies of the candidates in the analysis, the \ac{MC} is corrected
 for measured differences in the efficiency in data and \ac{MC}.
 
 This section documents measurements of these efficiences for the light leptons
-of the $\etau$ and $\mutau$ channels. This is done using a ``tag and probe" method.
+of the $\etau$ and $\mutau$ channels. This is done using a ``tag and probe"
+method \cite{Khachatryan:2010xn}.
 The tag and probe method makes use of a well known and measured resonance decaying
 into a light lepton pair, in this case $\PZ\to\Pe\Pe$ or $\PZ\to\Pmu\Pmu$, 
 in which one the light leptons is assigned as the `tag' and one is the `probe'. 
@@ -442,6 +570,22 @@ in 2012 data and MC in the (left) barrel and (right) endcaps.}
 $<$ $|\eta|$ $<$ 1.2 and (bottom) $|\eta|$ $>$ 1.2.}
 \label{fig:muontrg}
 \end{figure}
+
+\subsection{Other corrections}
+
+An additional correction is applied in the \ac{SM} gluon-gluon fusion signal
+samples to exploit recent improved predictions. Events are weighted to match the
+Higgs boson $\pT$ distribution calculated at \ac{NNLO} using the
+\textsc{HRes}~\cite{deFlorian:2012mx} program. This also includes the
+resummation at \ac{NNLL} accuracy of terms of the form
+$\ln(m_{\PH}^{2}/\pT^{2})$ which are particularly important for low Higgs boson
+$\pT$. An event weight for the difference between the finite and infinite top
+mass approximations is also applied \cite{Grazzini:2013mca}.
+A reweighting is applied to $t \bar{t}$ events. The correction has been developed by the Top
+group to better match the top quark $P_{T}$ distribution observed in data~\cite{TopPtReweighting}. 
+The contribution of $Z/\gamma^{*} \to ee$ background to the $e\tau_{had}$ channel
+is additionally corrected by $e \to \tau_{had}$ fake--rate Monte Carlo--to--data
+scale--factors.
 
 \section{Systematics}
 \label{sec:systematics}

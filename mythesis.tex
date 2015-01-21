@@ -19,6 +19,7 @@
 \newcommand{\tautau}{\Pgth\Pgth}
 \newcommand{\vecMET}{\ensuremath{\vec E_\mathrm{T}^\mathrm{miss}}\xspace}
 \newcommand{\WJets}{\ensuremath{\PW}{+}\text{jets}\xspace}
+\newcommand{\ZJets}{\ensuremath{\PZ}{+}\text{jets}\xspace}
 \newcommand{\mhmax}{\ensuremath{m_{\Ph}^{\text{max}}}\xspace}
 \newcommand{\ttbar}{\ensuremath{\Pqt\Paqt}\xspace}
 \newcommand{\ZToTauTau}{\ensuremath{\PZ\to\Pgt\Pgt}\xspace}
@@ -44,19 +45,19 @@ pdfauthor = {\textcopyright\ Rebecca Lane}
 \begin{document}
 
 %% Define the un-numbered front matter (cover pages, rubrik and table of contents)
-%\begin{frontmatter}
-%  \input{frontmatter}
-%\end{frontmatter}
+\begin{frontmatter}
+  \input{frontmatter}
+\end{frontmatter}
 
 %% Start the content body of the thesis
 \begin{mainmatter}
   %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
-%  \input{theory}
-%  \input{detector}
+  \input{theory}
+  \input{detector}
   \input{reco}
-%  \input{htt-sm}
-%  \input{htt-mssm}
-%  \input{Hhh}
+  \input{htt-sm}
+  \input{htt-mssm}
+  \input{Hhh}
   %% To ignore a specific chapter while working on another,
   %% making the build faster, comment it out like this:
   %\input{chap4}

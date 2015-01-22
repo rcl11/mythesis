@@ -210,7 +210,7 @@ the transverse mass between the lepton and the $\MET$:
 m_{\text{T}}\equiv\sqrt{2\pt^{\ell}\MET(1-\cos(\Delta\phi))},
 \end{equation}
 
-where $\pt{\ell}$ is the $\pt$ of the electron or muon and $\Delta\phi$ is the
+where $\pt^{\ell}$ is the $\pt$ of the electron or muon and $\Delta\phi$ is the
 difference in azimuthal angle between the lepton and the $\MET$. In real tau
 events from $\PZ\to\Pgt\Pgt$ or $\PH\to\Pgt\Pgt$ the neutrinos in the $\Pgt$
 decay tend to be produced collinearly with the visible products, whereas in
@@ -382,8 +382,8 @@ cross-sections listed for the signal process are for $m_{H}=125~\GeV$.
 \section{Background Estimation}
 \label{sec:backgrounds}
 
-The backgrounds to $\HToTauTau$ are many, and it is essential to estimate well
-the contribution of each in each category. Where possible, data driven methods
+There are many backgrounds to $\HToTauTau$, and it is essential to estimate well
+the contribution in each category. Where possible, data driven methods
 are used to minimise systematic uncertainty related to the modelling in the
 \ac{MC}. It is essential to accurately estimate both the shape and the overall
 yield of each background.
@@ -494,15 +494,17 @@ The contributions from these backgrounds are much smaller than the others.
 Whilst data-driven methods are used wherever possible, MC is still
 relied on in predicting expected shapes and yields of signal and backgrounds.
 As such is it important that the MC is corrected for
-any effects which are known to be imperfectly modeled. 
+any effects which are known to be imperfectly modeled. Many of these corrections
+are derived by studying the agreement between \ac{MC} and data in dedicated
+samples or control regions.
 
 \subsection{ID, isolation and trigger efficiencies}
 
-For ID, isolation and
-trigger efficiencies of the candidates in the analysis, the \ac{MC} is corrected
-for measured differences in the efficiency in data and \ac{MC}.
+For ID, isolation and trigger efficiencies of the candidate electron/muon 
+and tau in the analysis, the \ac{MC} is corrected for measured differences in 
+the efficiency in data and \ac{MC}.
 
-This section documents measurements of these efficiences for the light leptons
+This section documents measurements of these efficiences for the electron/muon 
 of the $\etau$ and $\mutau$ channels. This is done using a ``tag and probe"
 method \cite{Khachatryan:2010xn}.
 The tag and probe method makes use of a well known and measured resonance decaying
@@ -510,23 +512,23 @@ into a light lepton pair, in this case $\PZ\to\Pe\Pe$ or $\PZ\to\Pmu\Pmu$,
 in which one the light leptons is assigned as the `tag' and one is the `probe'. 
 The tag is constrained by a very tight selection such that it is known with near 
 certainty to be a real electron/muon. The probe is subject to a looser selection, 
-but only tag/probe pairs with a
-combined invariant mass close to the $\PZ$ mass are used. This ensures that the
-prove is also an electron/muon with high probabiliy. Then the probe can be 
-subjected to further cuts or constraints to measure the efficiency of such a 
-selection to select real leptons.
+but only tag/probe pairs with an invariant mass close to the $\PZ$ mass are used. 
+This ensures that the probe is also a true electron/muon with high probabiliy. 
+Then the probe can be subjected to further cuts or constraints to measure the 
+efficiency of such a selection to select real leptons.
 
 The invariant mass distributions of the tag and probe events are used to extract
-the different
-selection efficiencies. A simultaneous fit of the mass shapes is performed, and
-the ratio of the integral of the fitted $\PZ$ signal in the pass and fail
-distributions is used to extract the efficiency. To account for any background
-to the real $\PZ$ events, signal and background are both accounted for in the
-fit.
+the different selection efficiencies. A simultaneous fit of the passing and failing probe 
+mass shapes is performed, and the ratio of the integral of the fitted $\PZ$ signal 
+in the pass and fail distributions is used to extract the efficiency. To account for any background
+to the real $\PZ$ events, signal and background are both accounted for
+separately in the fit. An example of such a fit can be seen in figure
+\ref{fig:tandp}.
 
 The electron/muon ID efficiency is measured with a reconstructed
-electron/muon as the probe. Then the electron/muon isolation efficiency is measured
-with a probe which already fulfills the full ID selection criteria. 
+electron/muon as the probe, subject only to $\pt$ and $\eta$ cuts. 
+Then the electron/muon isolation efficiency is measured
+with a probe which already fulfils the full ID selection criteria. 
 
 The efficiencies for combined ID and isolation are shown in Figures
 \ref{fig:electronIdIso} and \ref{fig:muonIdIso}, measured in the complete 2012
@@ -535,7 +537,7 @@ The scale factor which is used in the analysis is given by the ratio of the
 measured efficiency in data (black) and MC (red), and is evaluated separately in
 selected $\pt$ and $\eta$ bins.
 
-\begin{figure}[h!]
+\begin{figure}[htb]
 \subfloat[]{
 \includegraphics[width=0.5\textwidth]{plots/TagAndProbe/ElectronIdIsoEta2012DatavsMC.pdf}}
 \subfloat[]{
@@ -545,7 +547,7 @@ function of (left) $\eta$ and (right) $\pt$}
 \label{fig:electronIdIso}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[htb]
 \subfloat[]{
 \includegraphics[width=0.5\textwidth]{plots/TagAndProbe/MuonIdIsoEta2012DatavsMC.pdf}}
 \subfloat[]{
@@ -555,28 +557,43 @@ of (left) $\eta$ and (right) $\pt$}
 \label{fig:muonIdIso}
 \end{figure}
 
-\noindent The same method can be used to measure the efficiencies of the trigger
+The same method is used to measure the efficiencies of the trigger
 in data and MC. In this case a probe is used which has already passed both ID
 and isolation, and the passing probe condition is that the lepton is responsible
-for firing the lepton leg of the lepton+tau trigger. Figures
+for firing the lepton leg of the lepton plus tau trigger. Figures
 \ref{fig:electrontrg} and \ref{fig:muontrg} show the trigger efficiency as a
-function of p$_{\rm{T}}$ measured in both 2012 data and MC. For the
+function of $\pt$ measured in both 2012 data and MC. For the
 electrons, the trigger is measured separately in the barrel and endcap
 regions, which correspond to $|\eta| < 1.479$ and $|\eta| > 1.479$
 respectively. For the muons, the trigger is measured in 3 regions, corresponding
-to .
+to the different regions of the muon chambers.
 
-\begin{figure}[h!]
+\begin{figure}[htb]
+\subfloat[]{
+\includegraphics[width=0.5\textwidth]{plots/TagAndProbe/ee_TP_fit.pdf}}
+\subfloat[]{
+\includegraphics[width=0.5\textwidth]{plots/TagAndProbe/ee_TF_fit.pdf}}
+\caption{Fitted $m_{ee}$ peaks for $\PZ\to\Pe\Pe$ tag and probe data events with a probe passing (a) and
+failing (b) matching to the electron leg of the $\etau$ trigger. This example
+fit is for electrons with $26 <\pt< 30~\GeV$ in the barrel. A separate function is fitted for the
+background and signal ($\PZ\to\Pe\Pe$) contributions. The ratio of the integrals
+of these two fits gives the trigger efficiency of the electrons, which is
+approximately $80\%$ for this $\pt$ and $\eta$ range.}
+\label{fig:tandp}
+\end{figure}
+
+
+\begin{figure}[htb]
 \subfloat[]{
 \includegraphics[width=0.5\textwidth]{plots/TagAndProbe/ElectronBarrel2012DatavsMC.pdf}}
 \subfloat[]{
 \includegraphics[width=0.5\textwidth]{plots/TagAndProbe/ElectronEndcap2012DatavsMC.pdf}}
-\caption{Trigger efficiency as a function of electron $\pt$ measured
+\caption{Efficiency of the electron leg of the $\etau$ trigger as a function of electron $\pt$ measured
 in 2012 data and MC in the (left) barrel and (right) endcaps.}
 \label{fig:electrontrg}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[htb]
 \subfloat[]{
 \includegraphics[width=0.5\textwidth]{plots/TagAndProbe/MuonAbsEta082012DatavsMC.pdf}}
 \subfloat[]{
@@ -586,7 +603,7 @@ in 2012 data and MC in the (left) barrel and (right) endcaps.}
 \subfloat[]{
 \includegraphics[width=0.5\textwidth]{plots/TagAndProbe/MuonAbsEndcap2012DatavsMC.pdf}}
 \end{center}
-\caption{Trigger efficiency as a function of muon $\pt$ measured in
+\caption{Efficiency of the muon leg of the $\mutau$ trigger as a function of muon $\pt$ measured in
 2012 data and MC in the region (top left) $|\eta|$ $<$ 0.8, (top right) 0.8
 $<$ $|\eta|$ $<$ 1.2 and (bottom) $|\eta|$ $>$ 1.2.}
 \label{fig:muontrg}
@@ -606,7 +623,9 @@ A reweighting is applied to $t \bar{t}$ events. The correction has been develope
 group to better match the top quark $P_{T}$ distribution observed in data~\cite{TopPtReweighting}. 
 The contribution of $Z/\gamma^{*} \to ee$ background to the $e\tau_{had}$ channel
 is additionally corrected by $e \to \tau_{had}$ fake--rate Monte Carlo--to--data
-scale--factors.
+scale--factors
+
+b-tag scale factors - add equation.
 
 \section{Systematics}
 \label{sec:systematics}

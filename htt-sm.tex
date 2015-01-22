@@ -340,7 +340,7 @@ weighted to match the pile-up profile observed in data.
 For the signal, \ac{MC} samples are produced in $5~\GeV$ steps between
 $m_{H}=90~\GeV$ and $m_{H}=145~\GeV$. The cross-sections and branching ratios 
 are taken from the \ac{LHCHXSWG}
-\cite{LHCHiggsCrossSectionWorkingGroup:2011ti,Dittmaier:2012vm,Heinemeyer:2013tqia}.
+\cite{LHCHiggsCrossSectionWorkingGroup:2011ti,Dittmaier:2012vm,Heinemeyer:2013tqa}.
 The full set of simulated processes, the \ac{MC} generators used and the
 cross-sections of the processes can be found in table \ref{tab:datasetsandMC}.
 
@@ -499,6 +499,7 @@ are derived by studying the agreement between \ac{MC} and data in dedicated
 samples or control regions.
 
 \subsection{ID, isolation and trigger efficiencies}
+\label{sec:idisotrigger}
 
 For ID, isolation and trigger efficiencies of the candidate electron/muon 
 and tau in the analysis, the \ac{MC} is corrected for measured differences in 
@@ -610,22 +611,47 @@ $<$ $|\eta|$ $<$ 1.2 and (bottom) $|\eta|$ $>$ 1.2.}
 \end{figure}
 
 \subsection{Other corrections}
+\label{sec:othercorrections}
 
-An additional correction is applied in the \ac{SM} gluon-gluon fusion signal
-samples to exploit recent improved predictions. Events are weighted to match the
-Higgs boson $\pT$ distribution calculated at \ac{NNLO} using the
-\textsc{HRes}~\cite{deFlorian:2012mx} program. This also includes the
-resummation at \ac{NNLL} accuracy of terms of the form
-$\ln(m_{\PH}^{2}/\pT^{2})$ which are particularly important for low Higgs boson
-$\pT$. An event weight for the difference between the finite and infinite top
+Corrections for the tau trigger efficiency are obtained in a similar way as for the
+light leptons, using $\PZ\to\Pgt\Pgt\to\Pmu\Pgt_{h}$ events. As described in
+section \ref{sec:tauenergyscale}, a correction to \ac{MC} for the tau energy
+scale is derived by fitting the di-tau mass and applied to the \ac{MC} samples
+which contain real taus. 
+
+B-tagging is only used in this analysis as a veto, to reduce the contribution of
+$\ttbar$ background, but still the \ac{MC} must be corrected for differing b-tag
+and light jet mis-tag efficiencies in data and \ac{MC}. The description of how
+these efficiencies are obtained can be found in \cite{CMS-PAS-BTV-11-004} for
+2011 data and \cite{CMS-PAS-BTV-13-001} for 2012 data. Since the categorisation 
+depends only on the number of b-tagged jets (which should be 0 for selected events), 
+we apply this efficiency using a promote/demote method to reclassify jets in \ac{MC} 
+to make the overall b-tagging rate in the \ac{MC} match the data. This is done
+by assigning each jet a probability defined as:
+
+\begin{equation}
+P(\text{demote})  = 1 - \text{b-tag}_{SF} \quad \text{for } \text{b-tag}_{SF} < 1 \\
+P(\text{promote}) = \frac{\left(\text{b-tag}_{SF} -
+1\right)}{\frac{\text{b-tag}_{SF}}{\epsilon_{MC}-1} } \quad \text{for } \text{b-tag}_{SF} > 1 ,
+\end{equation}
+
+where $\text{b-tag}_{SF}$ is the $\pt$ and $\eta$ dependent scale factor and
+$\epsilon_{MC}$ is the tagging efficiency in \ac{MC}.
+
+A correction is applied in the \ac{SM} gluon-gluon fusion signal
+samples to account for the difference in Higgs $\pt$ distribution at \ac{NNLO}
+compared with \ac{NLO}. Events are reweighted to make the Higgs $\pt$
+distribution match that obtained in the \ac{NNLO} \textsc{HRes}~\cite{deFlorian:2012mx} program. 
+A correction for the difference between the finite and infinite top
 mass approximations is also applied \cite{Grazzini:2013mca}.
-A reweighting is applied to $t \bar{t}$ events. The correction has been developed by the Top
-group to better match the top quark $P_{T}$ distribution observed in data~\cite{TopPtReweighting}. 
-The contribution of $Z/\gamma^{*} \to ee$ background to the $e\tau_{had}$ channel
-is additionally corrected by $e \to \tau_{had}$ fake--rate Monte Carlo--to--data
-scale--factors
 
-b-tag scale factors - add equation.
+A reweighting is applied to $t \bar{t}$ events. The correction has been developed by the Top
+group to better match the top quark $\pt$ distribution observed in data~\cite{TopPtReweighting}. 
+
+The contribution of $Z/\gamma^{*} \to ee$ background to the $\etau$ channel
+is additionally corrected by $e \to \tau_{had}$ fake-rate \ac{MC} to data
+scale factors. These are obtained by fitting the distribution of the $\Pe$ +
+$\Pgt_{h}$ visible mass for taus reconstructed in different decay modes. 
 
 \section{Systematics}
 \label{sec:systematics}
@@ -651,115 +677,143 @@ section separately for the normalisation and shape uncertainties.
 The uncertainties in the analysis which contribute to the normalisation of the
 background or signal processes are as follows:
 
-\begin{itemize}
-\item \textbf{ID, isolation and trigger efficiencies for the electrons, muons and
-hadronic taus}.\\
-Data to MC scale factors as described in \cite{CMS_AN_2013-171}
-are measured for this analysis and applied to correct for differences in these
-efficiencies in MC compared with data. The estimated uncertainty in these
+\subsubsection{\textbf{ID, isolation and trigger efficiencies for the electrons, muons and
+hadronic taus}}
+As discussed in the previous section, data to MC scale factors are measured for this 
+analysis and applied to correct \ac{MC}. The estimated uncertainty in these
 measurements are combined in quadrature. For the electrons and muons, this
-amounts to a 2$\%$ normalisation uncertainty, which is applied to all
+amounts to a $2\%$ normalisation uncertainty, which is applied to all
 backgrounds in which the yield is taken from MC and signal.
-For the hadronic taus a 6$\%$ uncertainty
+For the hadronic taus a $6\%$ uncertainty
 is measured on the tau identification efficiency using 
-$Z/\gamma^{*} \to \tau\tau \to \mu\tau_{had}$
-events~\cite{TauIDRecommendation}. For the hadronic tau leg of the trigger, the
-uncertainty is 3.0$\%$ for the triggers of the $e\tau_{had}$ and $\mu\tau_{had}$
-channels and 4.5$\%$ for each leg of the trigger in the $\tau_{had}\tau_{had}$
-channels. These uncertainties are applied to all backgrounds in which the yield
-is taken from MC and signal.
-\item \textbf{$e \to \tau_{had}$ and $\mu \to \tau_{had}$ fake--rates} \\
-The uncertainty on the $e \to \tau_{had}$ fakerate is determined as part of
-its measurement, and a description can be found in \cite{CMS_AN_2013-171}.
-This amounts to an uncertainty of $30\%$, correlated between $\tau_{had}$ candidates
-reconstructed in any tau decay mode. The uncertainty on the rate of $\mu \to \tau_{had}$
-fakes is taken from the Tau POG~\cite{TauIDRecommendation}, amounting to $30\%$. 
-\item \textbf{b--tag scale--factors} \\
-Uncertainties on b--tagging efficiencies and mistag rates as function of jet
-$P_{T}$ and $\eta$ for a particular b-tag working point of the CSV discriminator
-(in the case of this analysis the medium working point) are provided by the BTV 
-POG~\cite{BTagSFRecommendation}. The effect of these uncertainties on the
-analysis is evaluated by varying the scale factors applied within their
-recommended uncertiainties and evaluating the overall change in yield as a
-result in each channel and category for each background. For those backgrounds
+$Z/\gamma^{*} \to \Pgt\Pgt \to \Pmu\Pgt_{h}$ events~\cite{Chatrchyan:2012zz}. 
+For the hadronic tau leg of the trigger, the
+uncertainty is $3\%$ for the $\etau$ and $\mutau$ triggers.
+These uncertainties are applied to signal and all backgrounds in which the yield
+is taken from \ac{MC}.
+
+\subsubsection{\textbf{b-tag scale factors}} 
+Uncertainties on b-tagging efficiencies and mistag rates as function of jet
+$\pt$ and $\eta$ are incorporated through variations of the scale factors
+described in the previous section within their estimated uncertainties to modify
+the promote/demote probabilities. This results in an overall change in yield for
+backgrounds and signal as a result of the b-jet veto. For those backgrounds
 with a non-negligible variation as a result of this uncertainty the yield change
-is applied as a normalisation uncertainty.
-\item \textbf{$Z$--recoil correction} \\
+is applied as a normalisation uncertainty. The largest effect of this
+uncertainty is on the $\ttbar$ background which contains real b-jets and can
+vary by up to $10\%$ as a result of this uncertainty.
+
+\subsubsection{\textbf{$\MET$ scale uncertainty}}
 Uncertainties on \MET resolution and response are accounted for
-by varying the $Z$--recoil correction parameters within the uncertainties determined within the method.
-\MET and all \MET related observables (including $M_{\tau\tau}$) are recomputed after each such variation.
-\item \textbf{Background Normalisation} \\
-The normalisation uncertainties on the backgrounds are evaluated where possible
-by using alternative methods for estimation and studying the difference in yield,
-and/or an uncertainty is applied which covers the statistical uncertainty on the
-yield prediction from the default method. 
+by varying the $Z$-recoil correction parameters within the uncertainties determined within the method.
+This can result in a change in yield as a result of the $m_{\text{T}}$ cut, and
+also affects the $m_{\Pgt\Pgt}$ distribution. In the $\etau$ channel it directly
+effects the 1-jet categories via the $\MET > 30~\GeV$ cut. The $\MET$ scale
+uncertainty is controlled to within $5\%$ by the recoil fits and the resulting
+uncertainty on each category is similar. 
 
-The normalization of the $Z/\gamma^{*} \to \tau\tau$ embedded samples in the inclusive event
-category, obtained using Monte Carlo samples as described in
-section~\ref{sec:backgroundEstimation_Ztautau}, is attributed an uncertainty of
-$3\%$. The uncertainty as a result of extrapolation from the inclusive selection
-to the category selection is 5$\%$ in the 2jet--0tag and 2jet--1tag categories,
-and 6$\%$ in the 2jet--2tag category. An additional uncertainty on the $Z/\gamma^{*} \to \tau\tau$ 
-is included to account for the subtraction of
-the $t \bar{t}$ contamination in the embedded samples, where the size of the
-uncertainty is equal to the size of the contamination. 
+\subsubsection{\textbf{Jet energy scale}}
+Uncertainty on jet energy scale was discussed in section
+\ref{sec:jetenergyscale}. This uncertainty can change the number of events in
+each category via the change in jet $\pt$ and $m_{jj}$. Thus the largest
+variations as a result of this uncertainty can be found in the VBF categories
+and are in the range of $5$-$15\%$. 
 
-The $Z/\gamma^{*} \to \ell\ell$ ($\ell = e$, $\mu$) background is very small
-after the requirement of 2 jets, and so the dominant uncertainty is from the
-statistical uncertainty on the yield estimate. This uncertainty is estimated separately
-for the components where it is either a jet or a lepton which fakes the hadronic 
-tau. The uncertainty on the jet component is 20$\%$ (20$\%$) in the 2jet--0tag,
-20$\%$ (25$\%$) int the 2jet--1tag and 90$\%$ (70$\%$) in the 2jet--2tag
-category in the $\mu\tau_{had}$ and $e\tau_{had}$ channels respectively.
-The corresponding uncertainties on the leptonic component
-are 30$\%$ (20$\%$) in 2jet--0tag, 60$\%$ (20$\%$) in 2jet--1tag and 60$\%$
-(40$\%$) in 2jet--2tag. 
-
-The uncertainty on the $t \bar{t}$ cross-section amounts to $10\%$, and on the single top and di--boson
-production cross--sections amounts to $15\%$.
+\subsubsection{\textbf{Background Normalisation}}
+The systematic uncertainty of the $\ZToTauTau$ estimate is significantly reduced
+through the use of embedded samples. However, systematics must be evaluated for
+the embedding process to account for imperfections in the removal of the
+$\PZ\to\Pgm\Pgm$ event. This process is studied by applying the embedding
+procedure to $\PZ\to\Pmu\Pmu$ \ac{MC} and comparing with pure $\ZToTauTau$
+\ac{MC}, and an uncertainty of approximately $5\%$ in the category efficiencies
+is observed. An overall uncertainty of $3\%$ on the inclusive normalisation from
+$\PZ\to LL$ \ac{MC} is also applied, to both the $\ZToTauTau$ and
+$\PZ\to\ell\ell$ predictions.
 
 The normalization of the $W$ + jets background is obtained from data, 
-using the high $M_{T}$ sideband extrapolation method described in
-section~\ref{sec:backgroundEstimation_WplusJets}. The uncertainty on the W
-estimate is dominated by the data statistics available in this control region, and
-amounts to 10$\%$ in the 2jet--0tag category, 40$\%$ in the 2jet--1tag category
-and 100$\%$ in the 2jet-2tag category. 
+using the high $m_{\text{T}}$ sideband extrapolation method described in
+section~\ref{sec:backgroundEstimation_WplusJets}. Uncertainties on the
+extrapolation factor obtained using \ac{MC} are found to be in the region of
+$10$-$25\%$ depending on category. These are estimated by comparing the shape of
+the $m_{\text{T}}$ distribution in data and \ac{MC} in a sample of
+$\PZ\to\Pgm\Pgm$ events in which one muon is treated as invisible in the event
+reconstruction to mimic a $\PW$ decay. 
 
 The uncertainty on the normalization of QCD background is obtained by adding the
 statistical uncertainty on the yield of events selected in the QCD dominated control regions
 described in section~\ref{sec:backgroundEstimation_QCD} in quadrature with the
-uncertainty on opposite sign - same sign factor of 1.06, which is around 10$\%$. 
+uncertainty on opposite sign - same sign factor of 1.06, which is found to be
+10$\%$ as measured in an anti-isolated sample.
 
-%\item \textbf{Theoretical Uncertainties} \\
-\item \textbf{Luminosity} \\
-  The uncertainty on the luminosity amounts to $2.6\%$ for $2012$ data.
-  This uncertainty is applied to the signal
-  and to $Z/\gamma^{*} \to \ell\ell$ ($\ell = e$, $\mu$), $Z/\gamma^{*} \to
-  \tau\tau$, $t \bar{t}$, single top and di--boson backgrounds. 
-  The normalization of the $W$ + jets and QCD backgrounds is obtained from data and hence not subject to the luminosity uncertainty.
-\end{itemize}
+The uncertainty on the $t \bar{t}$ cross-section amounts to $10\%$, and on the single top and di-boson
+production cross-sections amounts to $15\%$ \cite{Chatrchyan:2013oev,Chatrchyan:2012ep}.
+ 
+\subsubsection{\textbf{$\Pgt_{h}$ fake-rates}} 
+The uncertainty on the $\Pe \to \Pgt_{h}$ fakerate is determined as part of
+its measurement. This amounts to an uncertainty of $30\%$, correlated between
+$\Pgt_{h}$ candidates reconstructed in any tau decay mode. 
+The uncertainty on the rate of $\Pmu \to \Pgt_{h}$
+fakes is taken from the Tau POG~\cite{TauIDRecommendation}, amounting to $30\%$.
+The uncertainty on the rate of jets faking taus is $20\%$ and primarily affects
+the $\PZ\to\ell\ell$ background, and not the QCD or \WJets which are data
+driven.
+
+\subsubsection{\textbf{Luminosity}} 
+The uncertainty on the luminosity amounts to $2.2\%$ for the 2011 data and
+$2.6\%$ for the 2012 data as described in \cite{CMS-PAS-SMP-12-008,CMS-PAS-LUM-13-001}.
+This uncertainty is applied to the signal and to $Z/\gamma^{*} \to \ell\ell$ ($\ell = e$, $\mu$), $Z/\gamma^{*} \to
+\tau\tau$, $t \bar{t}$, single top and di--boson backgrounds. 
+The normalization of the $W$ + jets and QCD backgrounds is obtained from data and hence not subject to the luminosity uncertainty.
+
+\subsubsection{\textbf{Theoretical Uncertainties}} 
+Theoretical uncertainties on the \ac{MC} predictions of the different signal
+contributions are estimated in the form of an uncertainty on the acceptance in
+each category. The \ac{PDF} uncertainty is estimated by calculating the
+acceptance with several different \ac{PDF} sets and taking the largest possible
+variation. The uncertainties as a result of the choice of \ac{PDF} amount oto
+approximately $2\%$ for gluon fusion and $1\%$ for \ac{VBF}. The uncertainties
+on the inclusive cross-sections for gluon-fusion and \ac{VBF} are $7.5\%$ and
+$2.8\%$ respectively from
+\cite{LHCHiggsCrossSectionWorkingGroup:2011ti,Dittmaier:2012vm,Heinemeyer:2013tqa}.
+Uncertainties due to the renormalisation and factorisation scale uncertainties
+are around $5$-$20\%$ for gluon fusion and $1$-$5\%$ for \ac{VBF} dependent on
+category. An additional uncertainty on the gluon-fusion contribution in the
+VBF categories is estimated to account for the fact that the gluon-fusion is
+simulated using \textsc{powheg} which only includes up to one jet in the matrix
+element calculation. This is done by comparing the acceptances from other
+generators, \textsc{madgraph}, \textsc{powheg+minlo} \cite{Hamilton:2012np} and
+a\textsc{mc@nlo} \cite{Frixione:2002ik}, resulting in an uncertainty of $30\%$.
+Uncertainty in the underlying event simulation and parton showering is between
+$2$ and $10\%$ depending on the category. 
+
 
 \subsection{Shape Uncertainties}
 \label{sec:systematicUncertainties_yield}
 
-\begin{itemize}
-
-\item \textbf{$\tau_{had}$ energy scale} \\
+\subsubsection{$\tau_{had}$ energy scale} 
 When studying mass distributions, the shape of the distribution is directly
 dependent on the energy scale of the objects making up the mass. Thus the
 $m_{\tau\tau}$ and 4 body mass shapes are sensitive to the tau energy scale.
 To incorporate this uncertainty, the energy scale of hadronically decaying taus is varied by $3\%$,
 following the recommendation of the Tau POG~\cite{TauIDRecommendation}. 
 in the previous section.
-\item \textbf{$Z \to \ell\ell$ lepton energy scale}\\
-A shape uncertainty is also added for the $Z \to \ell\ell$ contribution for the
-events in the $e\tau_{had}$ and $\mu\tau_{had}$ channels where a lepton fakes a
-hadronic tau, to account for the effect of the energy scale of the lepton fake.
-This energy scale mismeasurement is estimated to give a shift of up to 2$\%$ in the
-mass shape of the contribution, and hence a shape systematic amounting to the
-2$\%$ shift up and down is included to cover for this effect.
 
-\end{itemize}
+\subsubsection{\textbf{$Z \to \ell\ell$ lepton energy scale}}
+A shape uncertainty is also added for the $Z \to \ell\ell$ contribution for the
+events where a lepton fakes a hadronic tau, to account for the effect of the energy 
+scale of the lepton fake. This energy scale mismeasurement is estimated to give a 
+shift of up to $2\%$ in the mass shape of the contribution, and hence a shape systematic amounting to the
+$2\%$ shift up and down is included to cover for this effect.
+
+\subsubsection{\textbf{Bin-by-bin statistical uncertainties}}
+As described when discussing the background methods, selections are often
+relaxed to obtain smooth templates for certain backgrounds in the most signal
+sensitive categories. Despite this, low statistics in background templates must
+still be accounted for in the fit. This often affects particular bins in the
+template more than others, in particular at low or high $m_{\Pgt\Pgt}$ values
+where event statistics are naturally lower. For these bins the statistical
+uncertainty in the bin is considered a single uncorrelated source of
+uncertainty, using a method described in \cite{Barlow1993219}. 
 
 \section{Results}
 \label{sec:results}

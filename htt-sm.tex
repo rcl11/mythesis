@@ -312,7 +312,12 @@ so the VBF tight and VBF loose categories are merged.
 In the $\etau$ channel, 1-jet categories have an additional cut of $\MET >
 30~\GeV$ to reduce the background from $\PZ\to\Pe\Pe$. This cut suppresses the
 signal and $\ZToTauTau$ events with low $\pt^{\Pgt\Pgt}$, and as such the 1-jet low
-$\pt^{\Pgt\Pgt}$ category is not possible in the $\etau$ channel.  
+$\pt^{\Pgt\Pgt}$ category is not possible in the $\etau$ channel. 
+
+In all categories in the $\etau$ and $\mutau$ channel, the final discriminating
+distribution for signal extraction is the SVFit di-tau mass, as described in
+section \ref{sec:ditaumass}. The method used for signal extraction is described
+further in section \ref{sec:signalextraction}.
 
 \section{Datasets and \ac{MC} samples}
 \label{sec:dataandMC}
@@ -344,7 +349,7 @@ are taken from the \ac{LHCHXSWG}
 The full set of simulated processes, the \ac{MC} generators used and the
 cross-sections of the processes can be found in table \ref{tab:datasetsandMC}.
 
-\begin{table}
+\begin{table}[tbh]
 \begin{tabular}{|l|c|c|c|}
 \hline
 Process & \ac{MC} Generator & \multicolumn{2}{c}{Cross Section [$\picobarn$]} \\
@@ -821,34 +826,275 @@ uncertainty, using a method described in \cite{Barlow1993219}.
 \subsection{Signal Extraction}
 \label{sec:signalextraction}
 
+The discriminating distribution used for signal extraction is the di-tau mass,
+reconstructed using the SVFit algorithm. The methods employed in the statistical
+interpretation of the data were developed by the LHC Higgs Combination Group and
+are common methods used across the ATLAS and CMS experiments \cite{LHC-HCG-Report}.
+
+The final $m_{\Pgt\Pgt}$ distribution for each category of each channel gives
+us a prediction for the number of expected background events and the predicted number of signal
+events in the presence of a \ac{SM} Higgs. From the observed data, we can assess
+the consistency of this data with either the background only or
+signal-plus-background hypotheses. We use all bins of the $m_{\Pgt\Pgt}$
+distribution for this, i.e. we perform a shape analysis rather than just a
+counting experiment. Thus we build a likelihood for an observed dataset,
+dependent on the predictions for signal and background and taking into account
+the systematic uncertainties described in the previous section.
+
+The likelihood function $\mathcal{L}$ is given by the product of Poisson probabilities 
+$Poisson(n_{i} \vert \nu_{i}(\mu, \theta))$ to observe $n_{i}$ events in each bin
+$i$ of the $m_{\Pgt\Pgt}$ distribution:
+\begin{equation}
+\mathcal{L} = \prod_{i} \mathrm{Poisson}(n_{i} \vert \nu_{i}(\mu, \theta)) \cdot
+\prod_{j} \mathrm{Constraint}(\theta_{j}, \tilde{\theta}_{j}),
+\label{eq:LikelihoodFunction}
+\end{equation}
+with
+\begin{equation}
+\mathrm{Poisson} ( n_{i} \vert \nu_{i}(\mu, \theta )) = \frac{\nu_{i}^{n_{i}}}{n_{i}!} \exp ( -\nu_{i} ),
+\label{eq:PoissonDistribution}
+\end{equation}
+where we denote by $\nu_{i}$ the number of events expected in that bin,
+given by the sum of expected signal plus expected background events,
+to which we refer to as $\mu \cdot s_{i}$ and $b_{i}$ respectively.
+The parameter $\mu$ is known as \emph{signal strength modifier}. 
+It represents the unknown rate of the signal and can be given in reference to a
+benchmark cross-section times branching ratio, in this case that of the \ac{SM}
+Higgs. Background-only hypothesis implies $\mu = 0$ and any signal hypothesis $
+\mu > 0$, with \ac{SM} Higgs predictions corresponding to $\mu = 1$.
+Both the number of signal and the number of background events expected in bin $i$ 
+are functions of a set of nuisance parameters $\theta$:
+$s_{i} = s_{i} ( \theta )$ and $b_{i} = b_{i} ( \theta )$.
+Individual components $\theta_{j}$ each represent one of the systematic uncertainties
+discussed in section~\ref{sec:systematicUncertainties}.
+
+The first product in Eq.~\ref{eq:LikelihoodFunction} extends over all bins $i$
+of the $m_{\tau\tau}$ distributions in all of the 0-jet, 1-jet and VBF categories 
+for the $\etau$ and $\mutau$ channels, as well as the other channels included in
+the final combination: $\emu$, $\tau_{h}\tau_{h}$, $ee$, $\mu\mu$ and all the
+associated production channels $WH$ and $ZH$. 
+The second product reflects the knowledge that one has about the values of nuisance parameters:
+Each $Constraint$ term represents the probability for the true value of a nuisance parameter to be equal to $\theta_{j}$,
+given that the best estimate that one has for that parameter is
+$\tilde{\theta}_{j}$.
+
+The functional form of the $Constraint$ term depends on the type of systematic uncertainty that it represents:
+These can take the form of both yield and shape uncertainties as discussed in
+section \ref{sec:systematicUncertainties}. Yield uncertainties which correspond
+to multiplicative factors on the signal or background yield are represented by
+log--normal constraints, while yield uncertainties of a statistical origin,
+such as the number of events in a control region, are represented by a Gamma
+distribution function. 
+
+Shape uncertainties for signal as well as background processes are accounted 
+for by the ``vertical template morphing'' technique. For each quantity that affects the shape,
+multiple instances of the template are produced by varying the quantity on which it 
+depends upon by $\pm 1$ standard deviation. A nuisance parameter $\lambda$ is added to the likelihood model 
+to smoothly interpolate between the nominal template
+and the templates representing the variations by $+1 \sigma$ and $-1 \sigma$.
+
+A ratio of likelihoods can be used to defined a test statistic, which is a
+single value which can be used to distinguish between two hypotheses and set
+upper limits on the rate of signal production. The definition of this test
+statistic for LHC Higgs analyses is: 
+\begin{equation}
+q_{\mu} = -2
+\ln\frac{\mathcal{L}(\mathrm{data}\mid\mu,\hat{\theta}_{\mu})}{\mathcal{L}(\mathrm{data}\mid\hat{\mu},\hat{\theta})},
+\;\; \text{with the constraint} \; 0\leq\hat{\mu}\leq\mu\, ,
+\end{equation}
+
+where $\mu$ is the signal hypothesis being tested, $\hat{\theta}_{\mu}$ are the
+values ofthe nuisance parameters which maximise the likelihood for that $\mu$
+and $\hat{\mu}$ and $\hat{\theta}$ are the values which give the global maximum
+of the likelihood. The constraint $0\leq\hat{\mu}$ avoids unphysical negative
+signal strengths. Small values of $q_{\mu}$ indicate good compatibility between
+the data and the $\mu$ hypothesis. The confidence can then be defined as the
+probability of finding a value of $q_{\mu}$ at least as large as the observed
+value $q_{\mu}^{\mathrm{obs}}$: 
+
+\begin{equation} \label{eqn:cl_splusb}
+\mathrm{CL_{s+b}} =
+\int_{q_{\mu}^{\mathrm{obs}}}^{\infty}f(q_{\mu}\mid\mu,\hat{\theta}_{\mu})\mathrm{d}q_{\mu}\,
+,
+\end{equation}
+
+and 
+\begin{equation}
+\mathrm{CL_{s}} = \frac{\mathrm{CL_{s+b}}}{\mathrm{CL_{b}}}.
+\end{equation}
+
+In the above equations, $f(q_{\mu}\mid\mu,\hat{\theta}_{\mu})$ is the
+probability distribution function for $q_{\mu}$. 
+
+Finally the $95\%$ confidence level (CL) upper limit on \ac{SM} Higgs boson production
+cross--section times branching fraction is determined by the value of $\mu$ (or
+in this case the cross-section times branching-ratio forfor which the value of 
+$CL_{s}$ equals $0.05$. This is referred to as the modified frequentist approach
+\cite{Read2}.
+
+Toy \ac{MC} datasets are used to determine the distributions of 
+$f(q_{\mu}\mid\mu,\hat{\theta}_{\mu})$ and $f(q_{\mu}\mid0,\hat{\theta}_{0})$.
+In these toys the nuisance parameters are
+fixed to the values found in the fit to the observed data. The value of
+$q_{\mu}$ is then calculated for each toy. The effect of systematic
+uncertainties is incorporated by sampling a set of pseudo-measurements
+$\tilde{\theta}$ in each toy using the chosen nuisance \ac{pdf}.
+Typically it is useful to compare the observed exclusion limit to the expectation 
+from the background-only hypothesis. Thus background-only toys are generated and
+a distribution for the 95\% CL limit is built in a cumulative \ac{pdf}, from
+which the median, $\pm$1 sigma and $\pm$2 sigma exclusions can be calculated.
+
+Generating large numbers of toys can be very computationally expensive, and this
+can be avoided by using a slightly modified version of the test statistic:
+
+\begin{equation}
+q_{0} = -2
+\ln\frac{\mathcal{L}(\mathrm{data}\mid0,\hat{\theta}_{0})}{\mathcal{L}(\mathrm{data}\mid\hat{\mu},\hat{\theta})},
+\;\; \text{with the constraint} \; \hat{\mu}\geq 0,
+\end{equation}
+
+known as the profile likelihood ratio. From this, the p-value for the observed
+data can be defined as:
+
+\begin{equation}
+p_{0} =
+\int_{q_{0}^{\mathrm{obs}}}^{\infty}f(q_{0}\mid0,\hat{\theta}_{0})\mathrm{d}q_{0}
+.
+\end{equation}
+
+In the limit of a large data sample, the distribution $f(q_{\mu})$ follows a known formula
+\cite{Cowan:2011aa} known as the asymptotic limit approximation. Using the form
+removes the need to generate toys. It is also possible to derive a formular for
+the median expected limit and uncertainty bands using this method, completely
+removing the need to generate toys and greatly improving the speed of the
+statistical interpretation.
+
+\subsection{Post-fit $m_{\Pgt\Pgt}$ Distributions}
+
+A simultaneous maximum likelihood fit is performed for all channels and
+categories. The result of the fit is to select the values of the nuisance
+parameters which maximise the likelihood for the signal plus background fit.
+This results in small changes in the shape and yield of the backgrounds. The
+$m_{\Pgt\Pgt}$ distributions in the VBF-tight and 1-jet high $\pt^{\Pgt_{h}}$
+boost categories obtained as a result of this fit can be seen in
+figure \ref{fig:postfitmass} for the $\mutau$ and $\etau$ channels. The signal
+component shown is that expected in the \ac{SM} for a 125 $\GeV$ Higgs bosonThe full set
+of distributions for all channels and categories can be found in
+\cite{HIG-13-004}.
+
+\begin{figure}[tbh]
+\subfloat[]{
+\includegraphics[width=0.5\textwidth]{plots/htt-sm/muTau_1jet_high_mediumhiggs_postfit_8TeV_LIN.pdf}}
+\subfloat[]{
+\includegraphics[width=0.5\textwidth]{plots/htt-sm/muTau_vbf_tight_postfit_8TeV_LIN.pdf}}
+
+\subfloat[]{
+\includegraphics[width=0.5\textwidth]{plots/htt-sm/eleTau_1jet_high_mediumhiggs_postfit_8TeV_LIN.pdf}}
+\subfloat[]{
+\includegraphics[width=0.5\textwidth]{plots/htt-sm/muTau_vbf_tight_postfit_8TeV_LIN.pdf}}
+\caption{Post-fit $m_{\Pgt\Pgt}$ distributions for the 1-jet high
+$\pt^{\Pgt_{h}}$ boosted (left) and VBF-tight categories. Plots are shown for
+the $\mutau$ channel (top) and $\etau$ channel (bottom) \cite{HIG-13-004}.}
+\label{fig:postfitmass}
+\end{figure}
+
+
 \subsection{Limit and Significance}
 \label{sec:significance}
+
+The compatibility of the data with either the signal plus background or
+background only hypothesis is assessed in terms of the expected and observed
+limit and significance from the combination of all channels and categories. The
+expected limit can be seen in figure \ref{fig:results-limit}. The left hand plot
+shows the expected and observed limit on $\mu$ in the context of the
+background-only hypothesis for a range of Higgs mass hypotheses $\mu$. 
+It can clearly be seen that the observed limit does not agree with the background 
+only hypothesis, indicating an excess in data over the background-only
+prediction. The right hand plot compares the same observed limit this time with
+an expected prediction that includes a \ac{SM} $125~\GeV$ Higgs. The observed
+agrees much more closely with the expected including an \ac{SM} Higgs,
+indicating the possible presence of an \ac{SM} Higgs in our data. 
 
 \begin{figure}[h!]
 \subfloat[]{
 \includegraphics[width=0.5\textwidth]{plots/htt-sm/cmb_limit.pdf}}
 \subfloat[]{
 \includegraphics[width=0.5\textwidth]{plots/htt-sm/cmb_limit_signalinjected.pdf}}
-\caption{Expected and observed limit}
+\caption{Expected and observed limits obtained using the asymptotic $CL_{s}$
+method. The left hand plot compares the observed limit with the expected limit
+for the backgroun-only hypothesis, and the right hand plot compares the observed
+limit with the expected limit for background only plus \ac{SM} Higgs of
+$125~\GeV$ \cite{HIG-13-004}. }
 \label{fig:results-limit}
 \end{figure}
+
+Figure \ref{fig:results-pvalue} shows the expected and observed significance for
+each $m_{H}$ hypothesis. The significance is obtained from the p-value by
+determining the number of standard deviations of a one-sided normal distribution
+which would yield a tail probability of the p-value. The observed (expected)
+significance at $125~\GeV$ corresponds to $3.2\sigma$ ($3.7\sigma$). The
+significance is larger than $3\sigma$ for values of $m_{H}$ between $115~\GeV$
+and $130~\GeV$.
 
 \begin{figure}[h!]
 \includegraphics[width=0.5\textwidth]{plots/htt-sm/cmb_p-value.pdf}
-\caption{P value}
-\label{fig:results-limit}
+\caption{Significance/p-value of the observed data, compared with the expected
+significance for an \ac{SM} Higgs boson at each $m_{H}$ hypothesis
+\cite{HIG-13-004}.}
+\label{fig:results-pvalue}
 \end{figure}
-
 
 \subsection{Consistency with $125~\GeV$ Higgs}
 \label{sec:consistency}
+
+Having seen that there is an excess in data, the compatibility with a $125~\GeV$
+Higgs Boson predicted by the \ac{SM} can be established. From figures
+\ref{fig:results-limit} and \ref{fig:results-pvalue}, it can be seen the excess
+in data is not only consistent with signal plus background hypothesis for a
+$125~\GeV$ Higgs but also for several other masses. Figure
+\ref{fig:results-limit} b) already indicates that this is to be expected - it
+can clearly be seen that the expected limit for a $125~\GeV$ Higgs is broad
+across several mass points, and the observed limit that we see is consistent
+with this shape. We can also look at this in the form of a mass scan. Figure
+\ref{fig:results-properties} a) shows the value of the observed likelihood at
+each mass point compared with the expected likelihood for a $125~\GeV$ \ac{SM}
+Higgs boson. The expected distribution of likelihoods is obtained by running
+toys with an \ac{SM} Higgs injected, and the 1 and 2 sigma bands come from the
+spread in distribution of these toys. A parabolic fit is performed to the
+observed values, yielding a best likelihood value at $122~\GeV$. The uncertainty
+on this number is obtained from the 1 sigma width of the likelihood curve in
+combination with an estimated systematic uncertainty from the energy scales of
+the objects, yielding a total uncertainty of $7~\GeV$. Hence the result is
+consistent with $125~\GeV$ within the large uncertainty on this measurement,
+which is the result of the fact that the di-tau mass resolution is not good
+enough to distinguish between values of $m_{H}$ any better than this.
+
+The consistency of the excess with a $125~\GeV$ \ac{SM} Higgs also relies on the
+Higgs being produced at the predicted rates according to the \ac{SM}
+cross-section times branching ratio. Figure \ref{fig:results-properties} b) shows
+for a mass of $125~\GeV$ the  best fit values for $\kappa_{f}$ and $\kappa_{V}$,
+the couplings to fermions and vector bosons respectively, normalised to the the
+\ac{SM} predictions such that the value (1,1) would be perfectly consistent with
+the \ac{SM}. The best fit value is shown in the black cross, and the contours
+indicate the uncertainty on this value. It can be seen that the couplings are
+consistent with the \ac{SM} within the uncertainties.
 
 \begin{figure}[h!]
 \subfloat[]{
 \includegraphics[width=0.5\textwidth]{plots/htt-sm/cmb-mass_scan.pdf}}
 \subfloat[]{
 \includegraphics[width=0.5\textwidth]{plots/htt-sm/cmb-scan-hww-CV-CF-125.pdf}}
-\caption{Mass scan and couplings}
+\caption{Figures indicating the compatibility of the observed excess in data
+with a $125~\GeV$ \ac{SM} Higgs Boson. The left hand plot indicates the best fit
+value of the mass of the Higgs, and the right hand plot indicates the best fit
+value of the couplings to vector bosons and fermions compared with the \ac{SM}
+predictions \cite{HIG-13-004}.}
 \label{fig:results-properties}
 \end{figure}
+
+Hence the data indicates an excess over the background-only prediction which is
+consistent with a $125~\GeV$ Higgs boson predicted by the \ac{SM}. The
+significance of this excess is larger than $3\sigma$, constituting evidence for
+$\HToTauTau$.
+
 

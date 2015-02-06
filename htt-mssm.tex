@@ -276,8 +276,20 @@ from the \ac{SM} Higgs.
 \subsection{Model Dependent limits}
 \label{sec:modeldependent}
 
-The sensitivity to the \ac{SM} Higgs becomes even more important when
-considering a model-dependent result. As discussed in
+The model independent results described in the previous section are open to
+interpretation in a variety of models. It is also interesting to look more
+closely at the interpretation of the results in particular benchmarks scenarios.
+Such results are referred to as `model-dependent'. Model-dependent searches are
+conducted in a plane of the two free parameters in the model, usually $m_{\PA}$
+and $\tan\beta$. At each point in the phase space, the cross-section times
+branching ratio for each of the three neutral Higgs bosons is calculated, taking
+into account both production processes. The contribution of the three Higgs
+bosons is then combined into one template. Hence, unlike in the
+model-independent `single resonance' search, the consistency of the data with
+all three Higgs bosons is considered. 
+
+The sensitivity to the \ac{SM} Higgs becomes even more important in a
+model-dependent result. As discussed in
 section~\ref{sec:MSSMBenchmarks}, the \ac{MSSM} benchmark scenarios being tested in this
 analysis are required to be consistent with experimental measurements of the
 $125~\GeV$ Higgs bosons. Hence in such scenarios, one of the three neutral Higgs
@@ -287,7 +299,7 @@ lot like the \ac{SM} signal, with the exception of the requirement of the
 additional two Higgs bosons.
 
 Hence when interpreting the results of the \ac{MSSM} search in the context of an
-\ac{MSSM} benchmark scenario, we cannot simply construct a limit from
+\ac{MSSM} benchmark scenario, it is not enough to simply construct a limit from
 considering the background-only hypothesis compared with the
 signal-plus-background hypothesis. Instead, we must build a limit based on
 whether the data agrees better than the background plus \ac{SM} signal or
@@ -295,11 +307,68 @@ background plus \ac{MSSM} signal hypothesis.
 
 \subsubsection{\ac{MSSM} and \ac{SM} hypothesis testing}
 
-Insert statistics here
+To compare two different signal hypotheses, the likelihood function as desribed
+in equation~\ref{eq:LikelihoodFunction} must be modified. As described in the
+text, this likelihood compares the observed data with an expected constructed as
+$\mu \cdot s_{i}(\theta) + b_{i}(\theta)$. This must be modified to compare the data with the
+following:
+\begin{equation}
+\mathcal{L}(\text{data} | \mu \cdot s_{i}(\theta) + b_{i}(\theta)) \rightarrow
+\mathcal{L}(\text{data}|M(\mu,\theta)),
+\end{equation}
+with
+\begin{equation}
+M(\mu,\theta) = \mu \cdot s_{i}^{\text{MSSM}}(\theta) + (1-\mu) \cdot
+s_{i}^{\text{SM}}(\theta) + b_{i}(\theta), 
+\end{equation}
 
+where $s_{i}^{\text{MSSM}}(\theta)$ and $s_{i}^{\text{SM}}(\theta)$ are the
+signal expectations in the \ac{MSSM} and \ac{SM} hypotheses respectively. In
+this likelihood the signal strength modifier $\mu$ connects both expectations,
+with the null hypothesis being the \ac{SM} for $\mu=0$ and the alternative
+hypothesis the \ac{MSSM} for $\mu=1$. 
+
+With this likelihood, a slightly different form of the test statistic must be
+built compared with that in equation~\ref{eq:ProfileLikelihood}. In the test
+statistic used at the \ac{LHC}, the numerator is defined for some signal
+strength $\mu$ compared with the signal strength which maxmises the likelihood,
+$\hat{\mu}$. Here we instead want a version of the test statistic which tests
+two fixed values of $\mu$ against on another. For this we use a test statistic
+which was used at the Tevatron, and hence is referred to as the ``TEV'' test
+statistic, which takes the general form:
+
+\begin{equation}
+%q_{0} = -2\ln ( \frac{\mathcal{L}(\text{data}|\mu\cdot s(\hat{\theta_{\mu}}) + b(\hat{\theta_{\mu}})) }
+%{\mathcal{L}(\text{data}|b(\hat{\theta_{0}}))} )
+q_{0} = -2\ln\frac{\mathcal{L}(\text{data}| \mu,\hat{\theta_{\mu}} ) }
+{\mathcal{L}(\text{data}|\mu=0,\hat{\theta_{0}})}
+\;\; \text{with the constraint} \; 0\leq\mu\, .
+\end{equation}
+
+In this test statistic a numerator corresponding to the signal strength $\mu$ is
+compared with a denominator corresponding to $\mu=0$. Hence for form of this
+test statistic for our hypothesis testing corresponds to the comparison between
+$\mu=1$ and $\mu=0$, hence:
+
+\begin{equation}
+q_{\text{MSSMvsSM}} = -2\ln\frac{\mathcal{L}(\text{data}| M(1,\hat{\theta_{1}}) ) }
+{\mathcal{L}(\text{data}| M(0,\hat{\theta_{0}}) )}.
+\label{eq:qMSSMvsSM}
+\end{equation}
+
+The disadvantage of a test statistic of this type is that there is no asymptotic
+approximation, and so the distributions of the probability distribution
+functions for the test statistic must be generated using toys. Figure
+\ref{fig:toydistribution} shows the distributions obtained using toys with
+either the \ac{SM} or \ac{MSSM} signal hypothesis, and the observed value of the
+test statistic is shown. For this example $m_{\PA}-\tan\beta$ point, it can be
+seen that the separation between the two distributions is good, and hence this
+point is able to be excluded in the absence of an excess. It can be seen that
+the observed agrees better with the \ac{SM} hypothesis than the \ac{MSSM}
+hypothesis, indicating the lack of such an excess. 
 
 \begin{figure}[tbh]
-\includegraphics[width=0.7\textwidth]{plots/htt-mssm/sigsep_13.pdf}
+\includegraphics[width=0.7\textwidth]{plots/htt-mssm/sigsep_13.png}
 \caption{Distributions of the test statistic for toys with \ac{MSSM} or \ac{SM}
 signal for $m_{\PA} = 300~\GeV$, $\tan\beta = 13$ in the $m_{h}^{\text{max}}$
 scenario. The black vertical line indictates the observed value of the test
@@ -308,8 +377,33 @@ excluded at 95$\%$ C.L.}
 \label{fig:toydistribution}
 \end{figure}
 
+The CL$_{s}$ values are obtained using these probability distributions as
+follows:
 
-Figure \ref{fig:hypotestcompare} shows the
+\begin{equation}
+A = \int_{q_{0}^{x}}^{\infty}f(q_{0},\hat{\theta}_{0})\mathrm{d}q_{0}\, \\
+B = \int_{q_{1}^{x}}^{\infty}f(q_{1},\hat{\theta}_{1})\mathrm{d}q_{1}\, \\
+\mathrm{CL_{s}} = \frac{B}{A},
+\end{equation}
+
+where $x$ is either the 0.025, 0.16, 0.5, 0.84 or 0.975 quantile of the SM
+probability density function (corresponding to -2$\sigma$, -1$\sigma$, expected,
+$+1\sigma$, $+2\sigma$ exclusion) or the observed value. To obtain the final limit, 
+a scan is performed in the two parameter plane and
+the $\mathrm{CL_{s}}$ is calculated at each point in the grid. Each point is excluded at
+95$\%$ C.L. if CL$_{s}<0.05$. A contour is drawn to connect the excluded points
+using interpolation between neighbouring points in the grid.
+
+Figure \ref{fig:hypotestcompare} shows the comparison between the exclusion
+limits obtained using the conventional method of comparing \ac{MSSM} signal
+hypothesis against background-only and using this new method to compare the
+\ac{MSSM} and \ac{SM} hypotheses for the example of the $m_{\Ph}^\text{max}$
+scenario. The left hand plot includes a line which shows
+the effect of injecting an \ac{SM} signal into this limit. It can clearly be
+seen that the effect of a possible \ac{SM} Higgs is not negligible and that a
+possible excess in these plots could be the result of the \ac{SM} Higgs in our
+dataset. In these results the data are consistent with both the background only
+and the background plus \ac{SM} signal hypotheses.
 
 \begin{figure}[tbh]
 \subfloat[]{
@@ -323,6 +417,18 @@ separation testing compares the \ac{MSSM} hypothesis with the \ac{SM}
 hypothesis \cite{,HIG-13-021}.}
 \label{fig:hypotestcompare}
 \end{figure}
+
+
+Note that the red areas indicated in figure \ref{fig:hypotestcompare} show the
+region of phase space which is already ruled out by the constraint on the Higgs
+mass being close to $125~\GeV$, with a $\pm 3~\GeV$ uncertainty due to
+theoretical calculations in the \ac{MSSM}. The $m_{\Ph}^{\text{max}}$ scenario
+is almost entirely ruled out by this constraint, as discussed in
+section~\ref{sec:}. Figures \ref{fig:mhmodpmhmodm} to \ref{fig:tauphobiclowmH}
+show the result interpreted in newer scenarios which better incorporate a
+$125~\GeV$ Higgs. Large areas of the phase space in these scenarios is ruled out
+by the lack of an excess in this analysis.
+
 
 \begin{figure}[tbh]
 \subfloat[]{

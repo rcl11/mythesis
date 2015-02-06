@@ -922,12 +922,14 @@ statistic for \ac{LHC} Higgs analyses is:
 q_{\mu} = -2
 \ln\frac{\mathcal{L}(\mathrm{data}\mid\mu,\hat{\theta}_{\mu})}{\mathcal{L}(\mathrm{data}\mid\hat{\mu},\hat{\theta})},
 \;\; \text{with the constraint} \; 0\leq\hat{\mu}\leq\mu\, ,
+\label{eq:ProfileLikelihood}
 \end{equation}
 
 where $\mu$ is the signal hypothesis being tested, $\hat{\theta}_{\mu}$ are the
 values of the nuisance parameters which maximise the likelihood for that $\mu$
 and $\hat{\mu}$ and $\hat{\theta}$ are the values which give the global maximum
-of the likelihood. The constraint $0\leq\hat{\mu}$ avoids unphysical negative
+of the likelihood. This is known as the profile likelihood test statistic. 
+The constraint $0\leq\hat{\mu}$ avoids unphysical negative
 signal strengths. Small values of $q_{\mu}$ indicate good compatibility between
 the data and the $\mu$ hypothesis. The confidence can then be defined as the
 probability of finding a value of $q_{\mu}$ at least as large as the observed
@@ -965,8 +967,9 @@ from the background-only hypothesis. Thus background-only toys are generated and
 a distribution for the 95\% CL limit is built in a cumulative \ac{pdf}, from
 which the median, $\pm$1 sigma and $\pm$2 sigma exclusions can be calculated.
 
-Generating large numbers of toys can be very computationally expensive, and this
-can be avoided by using a slightly modified version of the test statistic:
+In the case that an excess of events is observed, one useful quantity is the
+p-value - the probability that such an excess could be the result of the
+background-only hypothesis. This is computed by modifying the test statistic as:
 
 \begin{equation}
 q_{0} = -2
@@ -974,8 +977,7 @@ q_{0} = -2
 \;\; \text{with the constraint} \; \hat{\mu}\geq 0,
 \end{equation}
 
-known as the profile likelihood ratio. From this, the p-value for the observed
-data can be defined as:
+From this, the p-value for the observed data can be defined as:
 
 \begin{equation}
 p_{0} =
@@ -984,8 +986,9 @@ p_{0} =
 \end{equation}
 
 In the limit of a large data sample, the distribution $f(q_{\mu})$ follows a known formula
-\cite{Cowan:2011aa} known as the asymptotic limit approximation. Using the form
-removes the need to generate toys. It is also possible to derive a formula for
+\cite{Cowan:2011aa} known as the asymptotic limit approximation. Using this form
+removes the need to generate toys, which can be very computationally expensive.
+It is also possible to derive a formula for
 the median expected limit and uncertainty bands using this method, completely
 removing the need to generate toys and greatly improving the speed of the
 statistical interpretation.

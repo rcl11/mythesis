@@ -189,8 +189,9 @@ $5$--$25\%$ for gluon-gluon fusion and $8$--$15\%$ for b-associated production
 
 The discriminating variable used for signal extraction is the same as in the
 \ac{SM} analysis - the di-tau mass. Other than the fact that the distribution is
-included in the fit up to $1.5~\GeV$, the maximum likelihood fit is the same as
-described in section~\ref{sec:} using equations~\ref{eq:LikelihoodFunction} and
+included in the fit up to $1.5~\GeV$, the maximum likelihood fit works as
+described in section~\ref{sec:} using a simultaneous fit to all channels and
+categories as described in equations~\ref{eq:LikelihoodFunction} and
 \ref{eq:PoissonDistribution}.
 
 Figure \ref{fig:mssmpostfitmass} shows the di-tau mass distribution in the
@@ -215,13 +216,85 @@ the $\mutau$ channel (top) and $\etau$ channel (bottom), for the combination of
 \label{fig:mssmpostfitmass}
 \end{figure}
 
-The \ac{MSSM} analysis differs from the \ac{SM} analysis when we 
-interpret the result of the maximum likelihood fit in the form of a limit. This
-is done differently for the two types of limit producted - referred to as `model 
+The \ac{MSSM} analysis differs from the \ac{SM} analysis when we try to  
+interpret the results of the maximum likelihood fit. This
+is done differently for the two types of result producted - referred to as `model 
 independent' and `model dependent'. 
 
-\subsection{Model Independent limits}
+\subsection{Model Independent Results}
 \label{sec:modelindependent}
+
+\subsubsection{2D Likelihood Scan}
+
+As discussed in section~\ref{sec:signalextraction}, the maximum-likelihood fit
+is generally performed in the signal plus background hypothesis, allowing the
+signal to float as controlled by the signal strength modifier $\mu$. In the
+\ac{SM} analysis the contributions from all different types of \ac{SM} Higgs
+signal: gluon fusion, \ac{VBF} and associated production, are controlled by the
+same $\mu$ which is normalised to the \ac{SM} predictions. For the \ac{MSSM}
+analysis we have many alternative predictions for the cross-section times
+branching ratio for each of the two productions processes: gluon fusion and
+b-associated production, dependent on the choice of the parameters of the
+\ac{MSSM} model. Hence we can use the maximum likelihood fit to obtain the best
+choice of cross-section times branching ratio for each of the two production
+processes from the fit to data, by letting them both float independently.
+
+To do this we define our signal prediction as follows:
+\begin{equation}
+\mu \cdot s = \mu_{gg\Pphi} \cdot s_{gg\Pphi} + \mu_{bb\Pphi} \cdot s_{bb\Pphi} ,
+\end{equation}
+
+where $s_{gg\Pphi}$ and $s_{bb\Pphi}$ are the signal expectations for the gluon
+fusion and b-associated production process and $\mu{gg\phi}$ and $\mu_{bb\phi}$
+the signal strength modifiers. This can be directly inserted into the likelihood
+term defined in equation~\ref{eq:LikelihoodFunction} to obtain a modified
+likelihood which depends on two signal strength modifiers instead of one. A
+likelihood scan is performed restricting the signal strength modifiers to both
+be positive in steps of cross-section times branching ratio in picobarns. For
+each point in the 2-D plane of the two signal strength modifiers, the negative
+log likelihood, defined as:
+\begin{equation}
+NLL = - \ln \mathcal{L} ,  
+\end{equation}
+is evaluated. The lowest value of $NLL$ in the 2D plane is the best fit value
+for the two signal strength modifiers. The one and two sigma contours are
+calculated as the points $x$ in the plane where:
+
+\begin{equation}
+\Delta(NLL)_{1\sigma} = NLL(\text{best fit}) - NLL(x) = 0.5 ,\\ 
+\Delta(NLL)_{2\sigma} = NLL(\text{best fit}) - NLL(x) = 1.92 ,\\ 
+\end{equation}
+
+where $NLL(\text{best fit})$ is the lowest $NLL$ value in the plane.
+
+A likelihood scan is performed for each mass hypothesis $m_{\Pphi}$. Figure
+\ref{fig:2Dlikelihood} shows the result for four sample mass points across the
+plane. The best fit point is indicated by a black cross and the 1 and 2 $\sigma$
+contours are shown. The fit result is compared with the result obtained in the
+case where an \ac{SM} Higgs is in our dataset and no \ac{MSSM} Higgs is present
+- this indicates that a small positive value of cross-section times branching
+ratio for the gluon fusion production mode can be obtained as a result of the
+\ac{SM} gluon fusion production.
+
+\begin{figure}[tbh]
+\subfloat[]{
+\includegraphics[width=0.5\textwidth]{plots/htt-mssm/bbb-ggH-bbH-scan-GGH-BBH-125.pdf}}
+\subfloat[]{
+\includegraphics[width=0.5\textwidth]{plots/htt-mssm/bbb-ggH-bbH-scan-GGH-BBH-300.pdf}}
+
+\subfloat[]{
+\includegraphics[width=0.5\textwidth]{plots/htt-mssm/bbb-ggH-bbH-scan-GGH-BBH-500.pdf}}
+\subfloat[]{
+\includegraphics[width=0.5\textwidth]{plots/htt-mssm/bbb-ggH-bbH-scan-GGH-BBH-1000.pdf}}
+\caption{2-D likelihood scans showing the best fit values for the cross-section
+times branching ratio of the gluon fusion (x-axis) and b-assocated production
+(y-axis) processes using 8~\TeV data. The best fit point is indicated along with the best fit
+point which would be obtained if there was a 125~\GeV \ac{SM} Higgs boson in the data \cite{HIG-13-021}.}
+\label{fig:2Dlikelihood}
+\end{figure}
+
+
+\subsubsection{Limits on $\sigma \times BR$}
 
 The simplest type of limit produced in the \ac{MSSM} analysis is analogous to the 
 expected limit on $\mu$ produced in the \ac{SM} analysis (figure

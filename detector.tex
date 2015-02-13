@@ -4,15 +4,15 @@
 \section{The \LHC}
 \label{sec:theLHC}
 
-The Large Hadron Collider (LHC) \cite{theLHC} is synchrotron acceralator
-with a $27 km$ circumference designed to
+The Large Hadron Collider (LHC) \cite{theLHC} is a synchrotron acceralator
+with a $27~\kilo\metre$ circumference designed to
 collide beams of protons at centre of mass energies as high as $14~\TeV$. It is
 hosted in the former tunnel of the Large Electron Positron (LEP) \cite{LEP:1983aa} experiment on the French-Swiss border
 near Geneva and operated by the European Organisation for Nuclear Research
 (CERN). As well as proton-proton collisions, the LHC also accelerates beams of
 lead ions to produce both lead-lead (PbPb) and proton-lead (pPb) collisions.
 
-The protons originate from hydrogen gas, the atoms of which are stripped of
+Protons originate from hydrogen gas, the atoms of which are stripped of
 their electrons using an electric field. The protons are then accelerated to an
 energy of $50~\MeV$ in the Linac 2 accelerator. Proton bunches are formed inside
 the \ac{PSB}, increasing the energy to $1.4~\GeV$. The \ac{PS} creates proton
@@ -29,7 +29,7 @@ schematic of the LHC ring and the detectors is shown in figure
 \ref{fig:LHCschematic}.
 
 \begin{figure}[htbp]
-   \includegraphics[width=0.6\textwidth]{plots/detector/LHC_layout_sch.jpg}
+   \includegraphics[width=0.7\textwidth]{plots/detector/LHC_layout_sch.jpg}
 \caption{Schematic of the LHC accelerator, showing the positions of the four
 large detectors.}
 \label{fig:LHCschematic}
@@ -73,20 +73,21 @@ the total cross-section \cite{stirling:xsecs}.}
 \label{fig:LHCcrosssections}
 \end{figure}
 
-The \ac{LHC} began its first major physics run in May 2010 with a centre of mass
+The LHC began its first major physics run in May 2010 with a centre of mass
 energy of $\sqrt{s} = 7~\TeV$ and produced $44.2~\invpb$ in its first run
-before stopping for the winter break. It then continued at $\sqrt{s} = 7~\TeV$
-producing an integrated luminosity of $5.6~\invfb$, before increasing to
+before the winter break. It then continued at $\sqrt{s} = 7~\TeV$
+producing an integrated luminosity of $5.6~\invfb$ in 2011, before increasing to
 $\sqrt{s} = 8~\TeV$ for the 2012 run, where it collected $23.3~\invfb$.
-During this time the LHC operated with a bunch spacing of $50~\ns$. It
-was after the 2011 run and $\approx6~\invfb$ of the 2012 run that the
-observation of a boson consistent with the Higgs boson of the \ac{SM} was
-announced in July 2012. Figure~\ref{fig:detlumi} shows the summary of the
+During this time the LHC operated with a bunch spacing of $50~\ns$. 
+Figure~\ref{fig:detlumi} shows the summary of the
 integrated luminosity collected by the CMS detector during run 1 of the LHC,
 which concluded in early 2013. Not all luminosity delivered by the LHC is
 certified for use in physics analyses - only those events where it is known that
 the whole CMS detector was operating successfully, and so this reduced the
 usable dataset to $5.1\,\invfb$ in 2011 and $19.7\,\invfb$ in 2012.
+It was after the 2011 run and $\approx6~\invfb$ of the 2012 run that the
+observation of a boson consistent with the Higgs boson of the \ac{SM} was
+announced in July 2012. 
 
 \begin{figure}[htbp]
    \includegraphics[width=0.7\textwidth]{plots/detector/int_lumi_cumulative_pp_2.pdf}
@@ -96,8 +97,8 @@ LHC, split into the 3 years of running \cite{cmslumitwiki}.}
 \end{figure}
 
 Since the LHC operates at such high luminosity, the probability of multiple
-proton-proton collisions ocurring in each bunch crossing is very high. Figure
-~\ref{fig:reco-nint} shows the number of interactions per bunch crossing in the
+proton-proton collisions ocurring in each bunch crossing is very high. Figure 
+\ref{fig:PU} shows the number of interactions per bunch crossing in the
 2012 dataset, where the average number was 21. The number for 2011 was slightly
 lower due to the lower instantaneous luminosity at 9. 
 These additional collisions on top of the interesting
@@ -106,20 +107,20 @@ underlying process in an event are referred to as pileup.
 \begin{figure}[htbp]
    \includegraphics[width=0.7\textwidth]{plots/detector/pileup_pp_2012-2.pdf}
 \caption{Distribution of number of pileup events per bunch crossing in 2012 data \cite{cmslumitwiki}.}
-\label{fig:detlumi}
+\label{fig:PU}
 \end{figure}
 
 \section{The \CMS experiment}
 \label{sec:CMSInDetail}
 
 The CMS detector is a general purpose detector designed to search for the
-\ac{SM} Higgs and new physics. As discussed in section~\ref{sec:smhiggs}, the
-mass of the Higgs boson is not directly predicted by the \ac{SM}, and hence it
-was important that CMS be able to achieve sensitivity to the \ac{SM} Higgs for a
-wide range of possible masses. As shown in figure~\ref{fig:SMbrs}, at different
+\ac{SM} Higgs and new physics. As discussed in section~\ref{sec:SMHiggs}, the
+mass of the Higgs boson is not directly predicted by the \ac{SM}, and hence upon
+design it was important that CMS be able to achieve sensitivity to the \ac{SM} Higgs for a
+wide range of possible masses. As shown in figure~\ref{fig:SMHiggsBRs}, at different
 Higgs masses the branching ratios of the Higgs boson to different final states
 vary a lot, and as such CMS must be able to detect the particles from all
-possible decay channels. To achieve this, CMS is a hermetic detector featuring
+possible decay channels. As such, CMS is a hermetic detector featuring
 a layered system of different subdetectors, each of importance to the detection
 of different particles. A slice of the CMS detector can be seen in
 figure~\ref{fig:CMSslice}.
@@ -133,7 +134,7 @@ indicated.}
 \end{figure}
 
 The first layer is the tracker, which records the tracks of charged particles,
-from which can be extracted the particles momentum and the location of the
+from which can be extracted the particle's momentum and the location of the
 vertex it originated from. This is followed by the \ac{ECAL} which measures
 energy desposited in electromagnetic showers from electrons or photons. The
 \ac{HCAL} does a similar job for the hadronic activity, by providing energy
@@ -144,9 +145,9 @@ increase the depth of the calorimeter to around 11 radiation lengths. The
 \ac{HCAL} coverage is increased in the forward regions by the addition of 
 the \ac{HF} calorimeter. The tracker and calorimeters are encased within a 3.8T axial magnetic
 field provided by a superconducting magnet which forms the next layer. This
-magnet field provides the mechanism for directing the charged particle tracks in
-a curve such that their momentum can be measured by the size of the curve and
-their charge by the direction. The
+magnetic field provides the mechanism for deflecting the charged particle paths in
+a curve such that their momentum can be measured by the size of the curve in the
+track and their charge by the direction. The
 outermost layers form the muon detector systems, interspersed with iron plates
 of the return yoke of the magnet. Muons desposit little energy
 through the detector and often travel through to the surrounding cavern. The
@@ -170,46 +171,50 @@ Another important quantity relating to the measurement of collisions is the
 projection of the momentum of a particle onto the transverse plane: $\pt =
 \sqrt{p_{x}^{2} + p_{y}^{2}}$. The corresponding transverse energy is referred
 to as $E_{\text T}$. Hard collisions generally produce particles with
-high $\pt$.
+high $\pt$. Descriptions of the detector often separate the regions of
+``barrel'' and ``endcaps'', which correspond to the main cyclindrical body of
+the detector or the circular ends enclosing the cylinder respectively. 
+%The corresponding $\eta$ range covered by the barrel and endcaps varies slightly in each
+%subdetector and is stated accordingly in the following sections. 
 
 \subsection{Tracker}
 \label{sec:tracker}
 
 The CMS tracker is designed to reconstruct charged particles close to the
 interaction point \cite{Chatrchyan:2008aa}. The magnetic field in combination with the tracker allows
-measurement of the particles momenta and charges. This requires a high level of
+measurement of the particle's momentum and charge. This requires a high level of
 granularity to make precise measurements of positions of particles and hence to
-locate the vertex from which they originate. Due to the design bunch spacing of
-$25ns$ of the LHC the rate of collision is extremely high, and so the tracker is
-required to be fast response and radiation hard. This motivates the use of a
+locate the vertex from which they originate. Due to the design bunch spacing
+of the LHC of $25~\ns$, the rate of collision is extremely high, and so the tracker is
+required to be both fast response and radiation hard. This motivates the use of a
 silicon based tracking system.
 
 The tracker is composed of layers of silicon pixel and strip detectors covering
 the pseudorapidity range $|\eta| < 2.5$. The pixel detector consists of 66
 million individual silicon pixels, each $100~\micron \times 150~\micron$
 in size, forming three layers in the barrel region and two in each endcap. The
-resolution of the pixel detector is $15$--$20\micron$ in the $r$-$\phi$ plane
+resolution of the pixel detector is $15$--$20\micron$ in the $r$--$\phi$ plane
 and the $z$ direction, allowing a three-dimensional vertex reconstruction.
 Surrounding the pixel detector are layers of strip detectors. These consist of
 four cyclindrical layers which extend to $r=55\,\cm$ referred to as the
 \ac{TIB}, and three disks in each endcap refered to as the \ac{TID}. Each strip
 is $10$--$20\,\cm$ long and $80$--$180\,\micron$ wide. Surrounding the \ac{TIB}
 and \ac{TID} is the \ac{TOB}, which which extends to $r=116\,\cm$ and
-$z\pm118\,\cm$ and contains six barrel layers. The \ac{TEC} is comprised of nine
+$z=\pm118\,\cm$ and contains six barrel layers. The \ac{TEC} is comprised of nine
 disks covering the endcaps. This geometry is shown in figure
 \ref{fig:trackerlayout}.
 
 \begin{figure}[htbp]
    \includegraphics[width=0.9\textwidth]{plots/detector/tracker_layout.png}
 \caption{Cross-section of the CMS tracking system, indicating the pixel and
-strip detectors and their positions inside the detector \cite{Chatrchyan:2008aa}.}
+strip detectors and their positions relative to the interaction point \cite{Chatrchyan:2008aa}.}
 \label{fig:trackerlayout}
 \end{figure}
 
 Tracks are reconstructed using multiple precise measurements throughout the
 tracking system. The reconstruction is seeded by triplets of hits in the inner
 tracking layers. The trajory of this seed is extrapolated to the outer tracking
-layers using the Kalman filter method \cite{}. The hits found in each layer
+layers using the Kalman filter method \cite{Fruhwirth:1987fm}. The hits found in each layer
 which are compatible are added to the trajectory and its uncertainties are
 updated until no more compatible hits are found. The use of the tracks to
 reconstruct the \ac{PV} is discussed further in section \ref{sec:vertex}.
@@ -232,12 +237,12 @@ thus electrons and photons deposit most of their energy within the crystals.
 The atoms in the $\mathrm{PbWO_{4}}$ de-excite by producing scintillation light that is read by
 photodetectors. The decay time of the scintillation light is short, such that
 about 80\% is emitted before the next bunch crossing (within $25~\ns$). This
-results in a calorimter with excellent energy resoltuion, granularity and timing
+results in a calorimeter with excellent energy resolution, granularity and timing
 precision.
 
 Figure \ref{fig:ecal} shows the layout of the \ac{ECAL}. The EB covers the
 pseudorapidity range $|\eta|<1.479$. The crystals are arranged in 36 modules such
-that the gap between modules are offset by $3\circ$ with respect to the axis
+that the gap between modules are offset by $3~\circ$ with respect to the axis
 from the detector origin to avoid particles travelling along the gaps between
 crystals. In
 the endcaps the crystals are arranged in an $x$-$y$ grid each with an area of
@@ -252,7 +257,9 @@ this region. Overall the \ac{ECAL} covers a pseudorapidity range of $|\eta|<3$.
 
 \begin{figure}[htbp]
    \includegraphics[width=0.9\textwidth]{plots/detector/ecal_layout.pdf}
-\caption{Transverse section through the \ac{ECAL}, indicating its geometry \cite{Chatrchyan:2008aa}.}
+\caption{Transverse section through the \ac{ECAL}, indicating its geometry. The
+parts of the detector in the barrel (EB) and endcaps (EE) are indicated
+\cite{TDR}.}
 \label{fig:ecal}
 \end{figure}
 
@@ -265,7 +272,7 @@ three unrelated uncertainties as follows:
 
 where $E$ is the energy of the incident particle and $A$, $B$ and $C$ are the
 stochastic, noise and constant contributions respectively. The constants are
-derived from test beam data \ref{}. The stochastic term, ($A=2.83\pm0.3\%$),
+derived from test beam data \cite{Chatrchyan:2008aa}. The stochastic term, ($A=2.83\pm0.3\%$),
 parametrises stochastic fluctuations in scintillation and shower shape, and is
 very low for lead tungstate since the shower can mostly be contained within the
 crystals. The noise term $B=0.12~\GeV$ is determined by the electronics. The
@@ -317,23 +324,109 @@ section~\ref{sec:met}.
 
 \begin{figure}[htbp]
    \includegraphics[width=0.9\textwidth]{plots/detector/hcal_layout.pdf}
-\caption{Transverse section through the \ac{HCAL}, indicating its geometry \cite{Chatrchyan:2008aa}.}
+\caption{Illustration of the \ac{HCAL} in the r--z plane, indicating its geometry \cite{Chatrchyan:2008aa}.}
 \label{fig:hcal}
 \end{figure}
 
 Both the granularity and the energy resolution of the \ac{HCAL} are worse than
 the \ac{ECAL}. The resolution is measured using a test beam of charged pions and
-found to be:
+found to be \cite{Chatrchyan:2008aa}:
 
 \begin{equation}
-\frac{\sigma}{E} = \frac{1.2\GeV^{0.5}}{\sqrt{E}} \oplus 0.069,
+\frac{\sigma}{E} = \frac{1.2\GeV^{1/2}}{\sqrt{E}} \oplus 0.069,
 \end{equation}
 
 where $E$ is the energy of the showering particle. 
 
-
 \subsection{Muon Detector}
 \label{sec:muondetector}
 
+The iron return flux of the magnet is instrumented with the muon detectors
+\cite{Chatrchyan:2008aa}, covering a pseudorapidity range of $|\eta|<2.4$. Due
+to the fact that muons have considerably higher masses than electrons, they lose
+little energy via bremsstrahlung or ionisation, and so typically pass through
+the calorimeters and the solenoid without depositing much energy. The muon
+systems are therefore used for efficient identification of muons, as well as
+being able to provide a complementary measurement of their momentum additional
+to the one made in the tracker. The best momentum resolution is achieved by 
+combining hits in the tracker and the muon chambers, as described in section~\ref{sec:muons}. 
+
+The muon detector is shown in figure \ref{fig:muondetectors}. The barrel region
+(covering $|\eta|<1.2$) consists of the \ac{DT} chambers arranged in four
+cynlindrical layers positioned betwee the plates of the magnet return yoke. The
+\ac{DT}s are augmented by \ac{RPC} in the range covering $|\eta|<1.6$. The
+\ac{DT} chambers consist of a tube of cross-section $13\times42\,\text{mm}^{2}$,
+each filled with wires about $2.4\,\metre$ long. The tubes are filled with a
+mixture of argon and carbon dioxide gas. When a muon travels through the tube,
+it ionises the gas, and free electrons drift towards the anode wire resulting in
+an electrical signal. Each chamber consists of several layers of tubes, oriented
+in different directions to measure the muon $\phi$ direction and the $z$
+coordinate. The position resolution of the \ac{DT}s is approximately
+$200~\micron$.
+
+\begin{figure}[htbp]
+   \includegraphics[width=0.9\textwidth]{plots/detector/muon_layout.pdf}
+\caption{Layout of one quandrant of the muon systems, indicating the positions
+of the \ac{DT}, \ac{CSC} and \ac{RPC} \cite{TDR}.}
+\label{fig:muondetectors}
+\end{figure}
+
+The endcaps use \ac{CSC}, which have a fast response, fine segmentation and are
+radiation hard. This is necessary in the endcaps due to the higher rate of muons
+and backgrounds. Each \ac{CSC} has six gas layers with cathode strips running
+radially outward to measure hits in the $r$-$\phi$ plane, with anode wires
+running perpendicular to the cathodes to measure $\eta$. The position resolution
+of the \ac{CSC}s varies between 100 and $200~\micron$ depending on $\eta$. In the region
+$|\eta|<1.6$, the \ac{CSC}s are augmented by \ac{RPC}s, as in the barrel. The
+\ac{RPC}s consist of a gas gap enclosed by parallel anode and cathode plates, in
+which the muon ionisation is detected by arrays of metallic strips running
+parallel to the beam axis. The \ac{RPC}s have worse resolution than the \ac{DT}
+and \ac{CSC} but an extremely fast time response of
+$1~\ns$, meaning they can be used to correctly identify the bunch crossing in
+which a muon originates, and can be used as a dedicated muon trigger.
+
+
 \subsection{Triggering and data processing}
 \label{sec:trigger}
+
+At the design specification of the LHC, the proton bunch crossing rate is
+$40~\MHz$, and to date collisions have been recorded at $20~\MHz$, which will
+increase to the design $40~\MHz$ in run 2 starting this year. Each event
+consists of approximately $1~\text{MB}$ of data and it is not feasible to write
+data at this rate to tape, nor is it feasible for the \ac{DAQ} system to perform
+read-out of the events at this rate. Thus the rate at which events are saved is
+reduced to $\mathcal{O}(100\,\Hz)$ using a trigger system to select the
+interesting events.
+
+The first stage of the trigger system is the \ac{L1} trigger, which is
+constructed using custom electronics to incorporate information from the
+calorimeters and muon systems only. The \ac{L1} starts with local information
+such as calorimeter energy deposits and hit patterns in the muon chambers. A
+regional trigger combines this local trigger information from different sections
+of the detector to give a $\pt$ sorted list of candidate objects. Finally the
+global trigger issues a decision to accept or reject the event based on the
+\ac{L1} information from all parts of the detector. This decision is made within
+$3.2\,\micro\second$ and hence uses only the front-end electronics. The \ac{L1}
+trigger reduces the rate to around $(100\,\kHz)$.  
+
+Events accepted by the \ac{L1} trigger are then read out to the \ac{HLT}. This
+operates on a processor farm of several thousand CPU cores and processes the 
+complete detector information, including from the tracker. The \ac{HLT}
+is capable of detemining the object momenta with much greater accuracy, and
+apply tighter identification criteria, using algorithms much closer to those
+used in offline reconstruction. Due to the fact that the instantanous luminosity
+increased across the run 1 period, the trigger $\pt$ and energy thresholds were
+changed several times in order to retain a stable rate of read-out. Over the run
+1 period, CMS operated at a rate of $1\,\kHz$, with $300\,\Hz$ being promptly
+reconstructed and the rest being ``parked'' to be reconstructed after the LHC running
+finished when more computing power was freed \cite{CMS:2012ooa}.
+
+Even incorporating the trigger, the rate of production of data by CMS is at
+several petabytes per year. The CMS and the other LHC experiments make use of
+the \ac{WLCG} \cite{web:grid}, a global data storage and analysis network which
+integrates the computing facilities of universities and research institutes
+around the world. The system consists of different tiers: the Tier~0 centre at
+CERN performs full event reconstruction, before all data are distributed to at
+least one Tier~1 centre, to keep a copy at several sites across the globe. A
+larger number of Tier~2 centres process this data for specific analyses to give
+access to researchers across the globe. 

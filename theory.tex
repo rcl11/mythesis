@@ -97,7 +97,7 @@ the calculations of the Higgs Boson mass, and is known as the Hierarchy problem.
 \section{Previous Searches for a Neutral Higgs boson}
 \label{sec:previoussearches}
 
-\subsection{MSSM Models incorporating the LHC Higgs}
+\section{MSSM Models incorporating the LHC Higgs}
 \label{sec:mssmbenchmarks}
 
 With the discovery of a 125$~\GeV$ Higgs-like particle at the LHC, the number of
@@ -105,13 +105,15 @@ possible MSSM scenarios is reduced to those which can incorporate this boson
 with its measured properties. This section details some possible MSSM scenarios
 which can incorporate this 125$~\GeV$ boson, whilst also exhibiting interesting
 phenomenology motivated by experimental measurements. In particular the
-scenarios must fulfil the condition $m_{\PH} = 125 \pm 3 \GeV$ over a wide range
+scenarios must fulfil the condition $m_{\PH} = 125 \pm 3~\GeV$ over a wide range
 of parameter space, and satisfy the boundaries set by previous searches at LEP,
 the Tevatron and the LHC. The $3~\GeV$ uncertainty on the Higgs mass is
 dominated by theoretical uncertainties in the MSSM models. All of the scenarios 
 considered are defined without allowing CP violation. The scenarios follow those
 described in~\cite{MSSMScenarios}, with some small modifications. More detail
-can be found in~\cite{HIG-14-021}. 
+can be found in~\cite{HIG-13-021}, where these scenarios are discussed in the context
+of the MSSM $\Pphi \to \Pgt\Pgt$ analysis, which is discussed in
+chapter~\ref{chap:htt-mssm}. 
 
 As described previously, at tree level the masses of the five Higgs bosons are
 defined by $m_{\PA}$ and $\tan\beta$. These masses are adjusted via radiative
@@ -140,6 +142,7 @@ at the GUT scale as:
 
 \begin{equation}
 M_{1} = \frac{5}{3}\frac{{\sin{\theta_{W}}}^{2}}{{\cos{\theta_{W}}}^{2}} M_{2},
+\label{eq:GUTrelation}
 \end{equation}
 
 with $\sin{\theta_{W}} = \sqrt{1-{\cos{\theta_{W}}}^{2}}$ and 
@@ -169,6 +172,10 @@ with the current exclusion limits in direct searches:
 leptons, $A_{f} = 0$.
 \end{itemize}
 
+A summary of the scenarios considered is given in table
+\ref{tab:mssmbenchmarks}, and a short description of each is given in the
+following sections.
+
 \subsubsection{The $m_{h}^{\text{max}}$ scenario}
 \label{sec:mhmaxscenario}
 
@@ -184,24 +191,146 @@ since there is only a small amount of parameter space where this maximised light
 Higgs mass is consistent with $125~\GeV$. Figure~\ref{fig:mhmaxmass} indicates
 the region ruled out by this constraint. 
 
+\begin{figure}[htbp]
+   \includegraphics[width=0.5\textwidth]{plots/theory/cmb_mhmax-HypoTest.pdf}
+\caption{Region of $m_{\PA}$-$\tan\beta$ space which yields a Higgs mass not
+consistent with $125~\GeV$ in the $m_{h}^{\text{max}}$ scenario.}
+\label{fig:mhmaxmass}
+\end{figure}
+
 \subsubsection{The $m_{h}^{\text{mod}}$ scenario}
 \label{sec:mhmodscenario}
 
 As the name suggests, the $m_{h}^{\text{mod}}$ is a slightly modified version of
 the $m_{h}^{\text{max}}$, such that the mass of the light Higgs is consistent
-with $125~\GeV$ over a much wider range of phase space.
+with $125~\GeV$ over a much wider range of phase space. This is achieved by
+decreasing the ratio of the stop mixing parameter and the masses of the third
+generation squarks, $|X_{\Pqt}/M_{\text{SUSY}}|$. In the $m_{h}^{\text{mod+}}$
+scenario, the stop mixing is positive, $X_{\Pqt} = 1.5 \cdot M_{\text{SUSY}}$,
+which gives better agreement with the experimental measurements of $(g-2)_{\mu}$
+\cite{Miller:2007kk}. In the $m_{h}^{\text{mod-}}$ scenario, the stop mixing parameter is
+negative, $X_{\Pqt} = -1.9 \cdot M_{\text{SUSY}}$, which results in a
+BR($\Pqb\to\Pqs\Pphoton$) with better agreement with measurements
+\cite{Lees:2012wg}.
+
+Figure \ref{fig:mhmodmass} indicates the region of parameter space which yields
+a Higgs consistent with $125~\GeV$. It can be seen that the area is a lot larger
+than in the $m_{h}^{\text{max}}$ case. In all subsequent scenarios, the allowed
+region is very similar, excluding only very low $\tan\beta$ values. For the
+other scenarios these allowed regions are shown in chapter~\ref{chap:htt-mssm},
+in the context of the results of the MSSM $\Pphi \to \Pgt\Pgt$ analysis which
+are interpreted in these scenarios.
+
+\begin{figure}[htbp]
+\subfloat[]{
+   \includegraphics[width=0.5\textwidth]{plots/theory/cmb_mhmodp-HypoTest.pdf}}
+\subfloat[]{
+   \includegraphics[width=0.5\textwidth]{plots/theory/cmb_mhmodm-HypoTest.pdf}}
+\caption{Region of $m_{\PA}$-$\tan\beta$ space which yields a Higgs mass not
+consistent with $125~\GeV$ in the $m_{h}^{\text{mod+}}$ (left) and
+s$m_{h}^{\text{mod-}}$ (right) scenarios.}
+\label{fig:mhmodmass}
+\end{figure}
 
 \subsubsection{The light stop scenario}
 \label{sec:lightstopscenario}
 
+The mass of the lightest CP-even Higgs depends logarithmically on the stop mass,
+and therefore a value of $125~\GeV$ can be reached even with values of
+$M_{\text{SUSY}} < 1~\TeV$ provided the mixing in the stop sector is large. This
+leads to light stops, which could modify the gluon-fusion Higgs production rate.
+Such a scenario is referred to as the light-stop scenario. This scenario is
+defined to be in agreement with current results of direct searches for stops.
+Note that in this scenario $M_{1}$ and $M_{2}$ are not related by the GUT
+relation in equation~\ref{eq:GUTrelation}. 
+%An assumption used for the calculation of cross-sections in this scenario assumes
+%that $m_{\PH} < 2\times $
+
 \subsubsection{The light stau scenario}
 \label{sec:lightstauscenario}
+
+The light stau scenario is motivated by the excess of events in the decay
+channel of the $\PH\to\Pphoton\Pphoton$ measured by ATLAS
+\cite{ATLAS-CONF-2013-012}. Light staus
+lead to a modification of the ratio of the lightest Higgs boson decaying into
+two photons with respect to the \ac{SM} expectation:
+\begin{equation}
+r_{\Pphoton\Pphoton} =
+\frac{\Gamma(\Ph\to\Pphoton\Pphoton)_{\text{MSSM}}}{\Gamma(\Ph\to\Pphoton\Pphoton)_{\text{SM}}}
+.
+\end{equation}
+
+For high values of $\tan\beta$ and $m_{\PA}$ this ratio can be as high as 1.3. 
 
 \subsubsection{The $\Pgt$-phobic scenario}
 \label{sec:tauphobicscenario}
 
+Similarly to the case of the light stau scenario, the $\Pgt$-phobic scenario is
+motivated by the possibility to allow reduced couplings to down-type fermions.
+In high $\tan\beta$ and $m_{\PA}$, the ratios:
+\begin{equation}
+r_{\Pqb\Pqb} =
+\frac{\Gamma(\Ph\to\Pqb\Pqb)_{\text{MSSM}}}{\Gamma(\Ph\to\Pqb\Pqb)_{\text{SM}}}
+, \quad
+r_{\Pgt\Pgt} =
+\frac{\Gamma(\Ph\to\Pgt\Pgt)_{\text{MSSM}}}{\Gamma(\Ph\to\Pgt\Pgt)_{\text{SM}}}
+\end{equation}
+
+can be significantly lower than 1.
+
 \subsubsection{The low-$m_{\PH}$ scenario}
 \label{sec:lowmHscenario}
+
+The low-$m_{\PH}$ scenario is somewhat different from the other scenarios due to
+the fact that in this scenario, the Higgs boson with mass of $125~\GeV$ is
+assumed to be the heavier scalar Higgs $\PH$. This means that the mass of the
+pseudoscalar Higgs must be chosen to be not too high, and is fixed at $m_{\PA} =
+110~\GeV$. Since $m_{\PA}$ is fixed in this scenario, the 2-D parameter space
+for the scan is chosen as $\mu$-$\tan\beta$, with $\mu$ varied between 300 and
+$3100~\GeV$ and $\tan\beta$ between 1.5 and 9.5. All the other parameters are
+very similar to those in the $\Pgt$-phobic scenario. In this scenario, the
+couplings of the lightest Higgs boson $\Ph$ to gauge bosons is significantly
+reduced compared with the \ac{SM} expectations by a factor 2-10, to ensure that
+the \Ph is not already excluded by LEP limits. 
+
+\begin{table}[tbh]
+\begin{tabular}{|l|c|c|c|}
+\hline
+Parameter & $m_{h}^{\text{max}}$ & $m_{h}^{\text{mod+}}$ & $m_{h}^{\text{mod-}}$ \\
+\hline
+$m_{\PA}$ & $90-1000~\GeV$ & $90-1000~\GeV$ & $90-1000~\GeV$\\
+$\tan\beta$ & 0.5-60 & 0.5-60 & 0.5-60 \\
+$M_{\text{SUSY}}$ & $1000~\GeV$ & $1000~\GeV$ & $1000~\GeV$\\
+$\mu$ & $200~\GeV$ & $200~\GeV$ & $200~\GeV$\\
+$M_{1}$ & $(5/3)M_{2}\tan{\theta_{W}}^{2}$ & $(5/3)M_{2}\tan{\theta_{W}}^{2}$ & $(5/3)M_{2}\tan{\theta_{W}}^{2}$\\
+$M_{2}$ & $200~\GeV$ & $200~\GeV$ & $200~\GeV$ \\
+$X_{\Pgt}$ & $2M_{\text{SUSY}}$ & $1.5M_{\text{SUSY}}$ & $-1.9M_{\text{SUSY}}$ \\
+$A_{\Pqb},A_{\Pqt},A_{\Pgt}$ & $A_{\Pqb} = A_{\Pqt} = A_{\Pgt}$ & $A_{\Pqb} = A_{\Pqt} = A_{\Pgt}$ & $A_{\Pqb} = A_{\Pqt} = A_{\Pgt}$\\
+$m_{\PSgluino}$ & $1500~\GeV$ & $1500~\GeV$ & $1500~\GeV$\\
+$m_{\PSlepton_{3}}$ & $1000~\GeV$ & $1000~\GeV$ & $1000~\GeV$\\
+\hline
+\end{tabular}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+Parameter & light-stop & light-stau & $\Pgt$-phobic & low-$m_{\PH}$ \\
+\hline
+$m_{\PA}$ & $90-1000~\GeV$ & $90-1000~\GeV$ & $90-1000~\GeV$ & $110~\GeV$\\
+$\tan\beta$ & 0.7-60 & 0.5-60 & 0.9-50 & 1.5-9.5\\
+$M_{\text{SUSY}}$ & $500~\GeV$ & $1000~\GeV$ & $1500~\GeV$ & $1500~\GeV$\\
+$\mu$ & $400~\GeV$ & $500~\GeV$ & $2000~\GeV$ & $300-3100~\GeV$\\
+$M_{1}$ & $340~\GeV$ & $(5/3)M_{2}\tan{\theta_{W}}^{2}$ & $(5/3)M_{2}\tan{\theta_{W}}^{2}$  & $(5/3)M_{2}\tan{\theta_{W}}^{2}$ \\
+$M_{2}$ & $400~\GeV$ & $200~\GeV$ & $200~\GeV$ & $200~\GeV$\\
+$X_{\Pgt}$ & $2M_{\text{SUSY}}$ & $1.6M_{\text{SUSY}}$ & $2.45M_{\text{SUSY}}$ & $2.45M_{\text{SUSY}}$ \\
+$A_{\Pqb},A_{\Pqt},A_{\Pgt}$ & $A_{\Pqb} = A_{\Pqt} = A_{\Pgt}$ & $A_{\Pqb} = A_{\Pqt}, A_{\Pgt} = 0$ & $A_{\Pqb} = A_{\Pqt} = A_{\Pgt}$ & $A_{\Pqb} = A_{\Pqt} = A_{\Pgt}$ \\
+$m_{\PSgluino}$ & $1500~\GeV$ & $1500~\GeV$  & $1500~\GeV$ & $1500~\GeV$ \\
+$m_{\PSlepton_{3}}$ & $1000~\GeV$ & $245~\GeV$ & $500~\GeV$ &  $1000~\GeV$ \\
+\hline
+\end{tabular}
+\caption{Parameters defining the $m_{h}^{\text{max}}$, $m_{h}^{\text{mod+}}$,
+$m_{h}^{\text{mod-}}$, light-stop, light-stau, $\Pgt$-phobic and
+low-$m_{\PH}$ MSSM benchmark scenarios \cite{HIG-13-021}.}
+\label{tab:mssmbenchmarks}
+\end{table}
 
 \subsection{Modification of MSSM models at low $\tan\beta$}
 \label{sec:lowtanbscenario}
@@ -209,10 +338,11 @@ with $125~\GeV$ over a much wider range of phase space.
 In all of the scenarios discussed in the previous sections, the mass of either
 the lighter or heavier scalar Higgs boson is consistent with $125~\GeV$ over a
 wide range of phase space. However, one thing common to all of these scenarios
-is the fact that in general the mass is not consistent at very low $\tan\beta$,
-where the mass of the lightest Higgs becomes too light to be consistent. As
-results such as those discussed in chapter~\ref{chap:htt-mssm} rule out larger
-regions of phase space at high $\tan\beta$, attention turns to this low
+is the fact that in general the mass is not consistent at very low $\tan\beta$
+values, where the mass of the lightest Higgs becomes too light to be consistent
+with $125Z\GeV$. As results such as those discussed in chapter~\ref{chap:htt-mssm} 
+rule out larger regions of phase space at high $\tan\beta$, attention turns to this low
 $\tan\beta$ region and analyses which could access it. 
+
 
 

@@ -7,11 +7,15 @@
 The \ac{SM} of fundamental interactions is the theory
 which describes the electromagnetic, weak and strong nuclear interactions, often
 represented as a collection of the elementary particles predicted by the theory.
-The SM has successfully described data from a wide range of experiments, and in the 
+The \ac{SM} has successfully described data from a wide range of experiments, and in the 
 years prior to the LHC, all of the predicted elementary particles were verified 
-except for one: the Higgs boson.
+except for one: the Higgs boson. This chapter briefly describes the theory
+behind the \ac{SM} and the Higgs mechanism, before discussing previous
+experimental results in \ac{SM} Higgs boson searches and a outlining the theory
+and motivation behind a possible extension to the \ac{SM} - the \ac{MSSM}.
 
 \subsection{Particles and Forces} 
+\label{sec:particlesandforces}
 
 The \ac{SM} is a renormalisable quantum field theory, in which the constituents of
 matter are represented as spin-$\frac{1}{2}$ fermions which interact with
@@ -19,14 +23,18 @@ forces mediated by spin-1 bosons. These interactions are described by a
 Lagrangian which is invariant under $SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$
 symmetries. The $SU(3)_{C}$ part describes the strong interaction, mediated by
 particles which carry colour charge (C). In these interactions, described by the
-theory of \ac{QCD}\cite{}, the force mediators are massless gluons
-and the coloured fermions are the quarks. The remaining fundamental fermions,
+theory of \ac{QCD}~\cite{Griffiths:2008nx,Perkins:2000uq}, the force mediators are massless gluons
+and the coloured fermions are the quarks. A notable property of QCD interactions
+is confinement, in which the coupling strength decreases and the interaction
+becomes asymptotically free at high energy, leading to quarks being bound at 
+small distances in hadrons \cite{Gross:1973id,Politzer:1973fx}. The remaining fundamental fermions,
 the leptons, do not carry colour charge and hence do not interact via the strong
 force. Both the leptons and quarks participate in electroweak interactions,
 which are governed by the $SU(2)_{L} \times U(1)_{Y}$ symmetry.
 
 The electroweak symmetry describes the unified electromagnetic and weak
-interactions\cite{}, and was one of the major achievements of the twentieth
+interactions~\cite{GlashowPartialSymmetries,WeinbergModelOfLeptons,SalamNobelSymposium}, 
+and was one of the major achievements of the twentieth
 century in the \ac{SM}. In electroweak theory the quantum numbers of interest are
 weak isospin $t_{1,2,3}$ and hypercharge $y$. These are related to the
 electric charge Q as: 
@@ -40,7 +48,7 @@ $W_{\mu}^{i}$, $i = 1,2,3$, and the hypercharge field $B_{\mu}$. The weak
 isospin fields act on doublets: 
 
 \begin{equation}
-\begin{pmatrix} u_{i} \\ d_{i} \end{pmatrix}_{L} ,   
+\psi_{L} =  \begin{pmatrix} u_{i} \\ d_{i} \end{pmatrix}_{L} ,   
 \begin{pmatrix} \nu_{i} \\ {l_{i}} \end{pmatrix}_{L}
 \end{equation}
 
@@ -49,10 +57,11 @@ where $u_{i}$ are the up-type quarks ($u,c,t$), $d_{i}$ are the down-type quarks
 corresponding neutrinos ($\nu_{e},\nu_{\mu},\nu_{\tau}$). The index $i$ indicates first, second or third
 generation fermions. The subscript $L$ indicates that the doublets correspond to
 the left handed projection of the fermions. The weak force only interacts with
-left handed fermions, and as such is maximally parity violating. The right handed projections
+left handed fermions, and as such is maximally parity violating. The right
+handed projections $\psi_{R}$
 transform as singlet states, which are invariant under $SU(2)_{L}$.
 
-The physical $\gamma, Z$ and $W$ bosons result from mixing between the gauge
+The physical $\gamma, \PZ$ and $\PWpm$ bosons result from mixing between the gauge
 fields:
 
 \begin{equation}
@@ -62,40 +71,155 @@ fields:
 \begin{pmatrix} B_{\mu} \\ W_{\mu}^{3} \end{pmatrix}
 \end{equation}
 
-where $A_{mu}$ is the photon field and $\theta_{W}$ is the weak mixing angle,
+where $A_{\mu}$ is the photon field, $Z_{\mu}^{0}$ is the $\PZ$ field
+and $\theta_{W}$ is the weak mixing angle,
 which can be related to the couplings of the weak neutral ($g$) and electromagnetic
-interactions ($g'$) as $\theta_{W}=\tan^{-1}{\frac{g'}{g}}$. 
+interactions ($g'$) as $\theta_{W}=\tan^{-1}{\frac{g'}{g}}$. The fields
+corresponding to the $\PWpm$ bosons are related to the weak isospin fields as
+$W_{\mu}^{\pm} = (1/\sqrt{2})(W_{\mu}^{1} \mp W_{\mu}^{2})$. Weak neutral
+currents were discovered at the Gargamelle bubble chamber experiment in CERN in
+1973 \cite{Hasert:1973ff}, and the $\PZ$ and $\PWpm$ bosons themselves were
+discovered by the UA1 and UA2 collaborations at CERN in
+1983~\cite{Arnison:1983rp,Banner:1983jy,Arnison:1983mk,Bagnaia:1983zx}.
 
-No mass terms. Need to add either lagrangian to prove this or find a hand wavey
-way using the doublets and the interaction terms. Then we move on to EWSB,
-having motivated it.
+Crucially, this leads to a Lagrangian which doesn't contain any mass terms.
+Gauge mass terms of the form $-M^{2}W_{\mu}W^{\mu}$ break the gauge invariance
+of the Lagrangian. Similarly fermion mass terms of the form
+$-m\overline{\psi}\psi = -m(\overline{\psi_{R}}\psi_{L} +
+\overline{\psi_{L}}\psi_{R})$, where $\overline\psi$ indicates the adjoint of
+the field, contain field pairs of left and right handed components which transform differently
+under the $SU(2)_{L}$ and $U(1)_{Y}$ groups, and so also break gauge invariance.
+Experimental results confirm the photon to be massless, but the $\PW$ and $\PZ$
+bosons have finite masses of $\approx80.4~\GeV$ and $\approx91.2~\GeV$
+respectively, and the fermions also have a range of finite masses~\cite{PDG}. As
+such the electroweak symmetry must be spontaneously broken. The mechanism of
+electroweak symmetry breaking in the \ac{SM} is the Higgs mechanism.
 
-\cite{GlashowPartialSymmetries,WeinbergModelOfLeptons,SalamNobelSymposium}.
-
-\subsection{The Higgs Mechanism in the \ac{SM}}
+\subsection{The Higgs Mechanism in the Standard Model}
 \label{sec:SMHiggs}
+
+A symmetry in a quantum field theory is spontaneously broken when the Lagrangian
+itself remains invariant whilst the vacuum state does
+not\cite{AitchisonGaugeTheories}. For electroweak
+theory, this is achieved by introducing a complex scalar field which attains a
+non-zero vacuum expectation value (VEV). This field is an $SU(2)$ doublet,
+defined as:
+\begin{equation}
+\phi = \begin{pmatrix}\phi^{+} \\ \phi^{0} \end{pmatrix}
+\end{equation}
+The electroweak Lagrangian can be written in the following simple form:
+\begin{equation}
+\mathcal{L_{EW}} = -\frac{1}{4}(\bf{F_{\mu\nu}}\cdot\bf{F^{\mu\nu}} +
+G_{\mu\nu}G^{\mu\nu}), 
+\end{equation}
+where $\bf{F_{\mu\nu}}$ and $G_{\mu\nu}$ are the weak isospin and field strength
+tensors respectively, related to the fields as:
+\begin{equation}
+\bf{F_{\mu\nu}} = \partial_{\mu} \bf{W_{\nu}} - \partial_{\nu}\bf{W_{\mu}} -
+g\bf{W_{\mu}} \times \bf{W_{\nu}} , 
+\end{equation}
+where $\bf{W_{\mu}} = (W_{\mu}^{1},W_{\mu}^{2},W_{\mu}^{3})$. Introducing the
+complex scalar field $\phi$ yields an additional term of the form:
+\begin{equation}
+\mathcal{L_{\phi}} = (D_{\mu}\phi)^{\dagger}(D^{\mu}\phi) - V(\phi), \\ 
+\text{with} \quad D_{\mu} = \partial_{\mu} - \frac{1}{2}(igT_{i}W_{\mu}^{i} - ig'B_{\mu}),
+\end{equation}
+where $T_{i}$ are the $SU(2)$ group generators. The term $V(\phi)$ is the
+potential term, given by:
+\begin{equation}
+V(\phi) = \lambda(\phi^{\dagger}\phi)^{2} - \mu_{SM}\phi^{\dagger}\phi,
+\end{equation}
+where $\lambda$ and $\mu_{SM}$ are constants parametrising the self-interactions
+and masses of the scalar fields. The vacuum states correspond to the minima of
+$V(\phi)$ with expectation values of $\bra{0}\phi\ket{0}$, which are given by:
+\begin{equation}
+\bra{0}\phi\ket{0} = \frac{1}{\sqrt{2}} \begin{pmatrix}0 \\ v \end{pmatrix}, \\
+\text{with} \quad v=\sqrt{\frac{\mu_{SM}^{2}}{\lambda}}.
+\end{equation}
+To obtain the physical particles, perturbations around the vacuum state are
+considered. If $\theta_{i}$ and $\hat{H}$ represent small variations in the four
+degrees of freedom of the field $\phi$ then:
+\begin{equation}
+\phi = exp(-i\theta_{i}T^{i}/2v)\left(\frac{0}{\frac{v+H_{SM}}{\sqrt{2}}} \right)
+\end{equation}
+An appropriate gauge transformation can set the phase fields $\theta_{i}$ to be
+zero, leaving only $H_{SM}$. Inserting this into the Lagrangian, $H_{SM}$ is
+identified as a scalar field with mass $\sqrt{2}\mu_{SM}$ and the $W_{\mu}^{\pm}$
+and $Z_{\mu}^{0}$ fields acquire mass terms $m_{W}$ and $m_{Z}$ related by:
+\begin{equation}
+m_{W} = m_{Z}\cos{\theta_{W}}=\frac{gv}{2}. 
+\end{equation}
+Fermion mass terms are introduced via Yukawa interactions between the fermion
+and Higgs fields, with the form:
+\begin{equation}
+-\lambda_{f}( \overline{\psi_{L}}\phi\psi_{R} +
+\overline{\psi_{R}}\phi\psi_{L}),  
+\label{eq:HiggsCoupling}
+\end{equation}
+where $\lambda_{f}$ is the coupling for each fermion. They are proportional to
+the mass of the fermion $m_{f}$, such that heavier fermions have stronger
+coupling to the Higgs boson. The \ac{SM} does not predict values for these
+couplings, but they can be determined using the experimentally measured masses
+of the fermions. The experimentally measured $\PW$ and $\PZ$ masses can be used
+alongside measured value of the fine structure constant to determine
+$\sin{\theta_{W}}^{2}$, $v$ and $g$, but the value of $\mu_{SM}$ cannot be
+predicted. Hence the mass of the Higgs boson associated with the Higgs field,
+$m_{H}=\sqrt{2}\mu_{SM}$, is not predicted by the \ac{SM}, either directly or
+indirectly using previous experimental measurements.
+
+\subsection{Searching for the SM Higgs boson}
+\label{sec:LHCHiggs}
+
+Since the mass of the Higgs boson is not directly predicted by the \ac{SM},
+searches covering a wide range of potential masses must be performed.
+The Higgs boson is produced in particle accelerators and searched for via a signature 
+resulting from its decay to either fermions or bosons. The coupling of the
+Higgs to a particular final state is determined as~\ref{eq:HiggsCoupling} and
+dependent on both the mass of the Higgs boson and the mass of the final state
+particles. 
+
+Production of the Higgs boson occurs via the processes shown in
+figure~\ref{fig:SMFeynmanDiagrams}
+
+\begin{figure}[htbp]
+\subfloat[]{
+   \includegraphics[width=0.45\textwidth]{plots/theory/feynman_ggH.pdf}}
+\subfloat[]{
+   \includegraphics[width=0.45\textwidth]{plots/theory/feynman_qqH.pdf}}
+
+\subfloat[]{
+   \includegraphics[width=0.45\textwidth]{plots/theory/feynman_VH.pdf}}
+\subfloat[]{
+   \includegraphics[width=0.45\textwidth]{plots/theory/feynman_ttH.pdf}}
+\caption{Feynman diagrams for the dominant production processes of the SM Higgs
+boson. Top left is gluon fusion, top right vector boson fusion, bottom shows
+associated production with (left) vector bosons and (right) top quarks.}
+\label{fig:SMFeynmanDiagrams}
+\end{figure}
 
 
 \begin{figure}[htbp]
    \includegraphics[width=0.5\textwidth]{plots/theory/Higgs_BR.pdf}
-\caption{Higgs boson branching ratios in the \ac{SM}\cite{}.}
+\caption{Higgs boson branching ratios in the SM\cite{}.}
 \label{fig:SMHiggsBRs}
 \end{figure}
 
+%\subsection{Previous Searches for the SM Higgs boson}
+%\label{sec:previousSMsearches}
 
-\subsection{Motivation for theories beyond the \ac{SM}}
+\section{Theories beyond the Standard Model}
+\label{sec:BSM}
+
+\subsection{Motivation for theories beyond the Standard Model}
 
 Despite its successes, the \ac{SM} is known to have some shortcomings. One concerns
 the calculations of the Higgs Boson mass, and is known as the Hierarchy problem. 
 
-\section{Theories beyond the SM}
-\label{sec:BSM}
-
 \subsection{The Higgs sector in the MSSM}
 \label{sec:mssmhiggs}
 
-\section{Previous Searches for a Neutral Higgs boson}
-\label{sec:previoussearches}
+\subsection{Previous Searches for an MSSM Higgs boson}
+\label{sec:previousSMsearches}
 
 \section{MSSM Models incorporating the LHC Higgs}
 \label{sec:mssmbenchmarks}

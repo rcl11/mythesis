@@ -148,7 +148,8 @@ zero, leaving only $H_{SM}$. Inserting this into the Lagrangian, $H_{SM}$ is
 identified as a scalar field with mass $\sqrt{2}\mu_{SM}$ and the $W_{\mu}^{\pm}$
 and $Z_{\mu}^{0}$ fields acquire mass terms $m_{W}$ and $m_{Z}$ related by:
 \begin{equation}
-m_{W} = m_{Z}\cos{\theta_{W}}=\frac{gv}{2}. 
+m_{W} = m_{Z}\cos{\theta_{W}}=\frac{gv}{2}.
+\label{eq:vaccummw}
 \end{equation}
 Fermion mass terms are introduced via Yukawa interactions between the fermion
 and Higgs fields, with the form:
@@ -302,16 +303,159 @@ The most recent CMS results for the search for the Higgs boson in the $\HToTauTa
 decay channel, corresponding to the complete Run 1 dataset and as included in
 the most recent combination, are reported in chapter~\ref{chap:htt-sm}.
 
-\section{Theories beyond the Standard Model}
+\section{Higgs Physics Beyond the Standard Model}
 \label{sec:BSM}
 
 \subsection{Motivation for theories beyond the Standard Model}
+\label{sec:hierarchyproblem}
 
-Despite its successes, the \ac{SM} is known to have some shortcomings. One concerns
-the calculations of the Higgs Boson mass, and is known as the Hierarchy problem.
+Despite its successes, the \ac{SM} is known to have some shortcomings. As a
+theory, it does not predict a candidate to account for the large fraction of
+non-radiating, non-baryonic dark matter in the universe. It also does not
+predict the non-zero neutrino masses which are inferred from experimental
+results of neutrino oscillations \cite{PDG}. As a theory it also suffers from a
+shortcoming in that the weak and strong coupling constants associated with the
+$SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$ gauge group do not intersect at a
+high energy scale, aswould be hoped for in a unified theory. It also does not
+incorporate gravity. Finally, one shortcoming is of particular relevance 
+in the Higgs sector, and is known as the Hierarchy problem.
+
+It is generally accepted that the \ac{SM} is an effective theory up to some
+energy scale $\Lambda$ where the effect of new physics becomes important. 
+The Higgs mass at tree level is given by $\sqrt{2}\mu_{SM}$. Radiative
+corrections adjust the mass as:
+\begin{equation}
+m_{\PH_{SM}}^{2} = 2\mu_{SM}^{2} - \Delta m_{\PH}^{2}. 
+\end{equation}
+It can be shown that the size of the correction, $\Delta m_{\PH}^{2}$, is
+quadratically dependent on $\Lambda$ \cite{Carena:2002es}:
+\begin{equation}
+\Delta m_{\PH}^{2} \sim \mathcal{O}(\Lambda^{2}).
+\end{equation}
+The scale $\Lambda$ can be as high as the Planck scale, where gravitational
+interactions become significant \cite{Griffiths:2008nx}. For a $\Lambda$ at the Planck scale then
+$\Delta m_{\PH}^{2}$ is some 30 orders of magnitude larger than 
+$m_{\PH_{SM}}^{2}$ for $m_{\PH_{SM}}<1~\TeV$. This means that the bare Higgs
+boson mass requires extreme fine tuning of the bare mass term $2\mu_{SM}^{2}$ to
+allow cancellation. Figure \ref{fig:HiggsMassLoops} indicates the radiative
+corrections to the Higgs mass resulting from a fermion and a boson.
+
+\begin{figure}[htbp]
+\subfloat[]{
+   \includegraphics[width=0.48\textwidth]{plots/theory/HiggsMass_fermionLoop.pdf}}
+\subfloat[]{
+   \includegraphics[width=0.48\textwidth]{plots/theory/HiggsMass_bosonLoop.pdf}}
+\caption{Feynman diagrams illustrating the one-loop radiative corrections to the Higgs
+mass for a fermion, $f$, and scalar boson, $S$.}
+\label{fig:HiggsMassLoops}
+\end{figure}
+
+Many \ac{BSM} theories are proposed which provide solutions to this Hierarchy
+problem. One of the most popular is supersymmetry (SUSY). In SUSY, a new
+symmetry between fermions and bosons is introduced \cite{Martin:1997ns}. This
+can be used to solve the issue with the Higgs mass correction by exploiting the
+fact that the bosonic and fermionic loop contributions illustrated in figure
+\ref{fig:HiggsMassLoops} contribute with opposite signs. Thus the symmetry
+between bosons and fermions permits the cancellation of $\Delta m_{\PH}^{2}$
+terms. In SUSY models, each \ac{SM} fermion has a boson superpartner and each
+\ac{SM} boson has a fermion superpartner. If SUSY is an unbroken symmetry then
+the superpartners have exactly the same mass as their \ac{SM} partner. Since
+none of these superpartner particles have been observed in nature, SUSY must be
+an unbroken symmetry in which the superpartner masses are larger than the
+\ac{SM} masses. The necessity to avoid further fine tuning means the scale of
+SUSY cannot be much larger than $\mathcal{O}(1\,\TeV)$. An additional motivation
+for SUSY is the fact that the lightest SUSY particles, if stable, could provide
+a candidate for dark matter. Also the behaviour of the running coupling
+constants is modified such that all three intersect at
+$\mathcal{O}(10^{16}\,\GeV)$ \cite{Amaldi:1991cn}.
 
 \subsection{The Higgs sector in the MSSM}
 \label{sec:mssmhiggs}
+
+The simplest addition of SUSY to the \ac{SM} results in the \ac{MSSM}. The
+\ac{MSSM} is an extension to the \ac{SM} which minimises the numbers of
+additional fields and interactiosn while preserving R-parity \cite{Dimopoulos:1981zb}. R-parity
+is an operator with eigenvalues of 1 for \ac{SM} particles and -1 for
+superparners. It is required to be conserved in order to explain the stability
+of the proton. In order to generate the appropriate mass terms for the up-type 
+and down-type fermions, two complex scalar weak isospin doublet fields
+$\phi_{\Pqu}$ and $\phi_{\Pqd}$ are added:
+\begin{equation}
+\phi_{\Pqu} = \begin{pmatrix}\phi_{\Pqu}^{+} \\ \phi_{\Pqu}^{0} \end{pmatrix}, \quad
+\phi_{\Pqd} = \begin{pmatrix}\phi_{\Pqd}^{0} \\ \phi_{\Pqd}^{-} \end{pmatrix}. 
+\end{equation}
+This results in an \ac{MSSM} Lagrangian with potential terms as:
+\begin{equation}
+V=\mu(\phi_{\Pqu}^{+}\phi_{\Pqd}^{-} - \phi_{\Pqu}^{0}\phi_{\Pqd}^{0}),
+\end{equation}
+where $\mu$ is the \ac{MSSM} equivalent of the \ac{SM} Higgs mass parameter
+$\mu_{SM}$. This potential provides spontaneous symmetry breaking as in the
+\ac{SM} case yielding VEVs parameterised by:
+\begin{equation}
+\bra{0}\phi_{\Pqu}\ket{0} = \begin{pmatrix} 0 \\ v_{\Pqu}  \end{pmatrix}, \quad
+\bra{0}\phi_{\Pqd}\ket{0} = \begin{pmatrix} v_{\Pqd} \\ 0 \end{pmatrix},
+\end{equation}
+which are related to the \ac{SM} value and hence $m_{W}$ by: 
+\begin{equation}
+v^{2} = v_{\Pqu}^{2} +  v_{\Pqd}^{2} =  \frac{2m_{W}^{2}}{g},
+\end{equation}
+Thus in the \ac{MSSM}, the
+phenomenology is conveniently described in terms of the ratio of the VEVs,
+$\tan\beta = v_{u}/v_{d}$, which is not directly predicted by the model.
+Of the eight initial degrees of freedom, three become longitudinal states of the
+$\PW^{\pm}$ and $\PZ$ bosons which leaves five massive Higgs fields. These
+result in five physical Higgs bosons; a neutral pseudoscalar $\PA$, two neutral
+scalars $\Ph,\PH$ and two charged scalars $\PH^{\pm}$. These bosons are defined
+by the mixing of $\phi_{\Pqu}$ and $\phi_{\Pqd}$, parameterised by a mixing
+angle $\alpha$ in addition to $\beta$:
+%Check this - typo in Mike's thesis?
+\begin{equation}
+\PA = \sqrt{2}(\text{Im}(\phi_{\Pqu}^{0})\cos\beta +
+\text{Im}(\phi_{\Pqd}^{0})\sin\beta), \\ 
+\begin{pmatrix} h \\ H \end{pmatrix} = \sqrt{2} 
+\begin{pmatrix} \cos\alpha & -\sin\alpha \\ \sin\alpha & \cos\alpha \end{pmatrix}
+\begin{pmatrix} \text{Re}(\phi_{\Pqu}^{0}) - v_{u} \\ \text{Re}(\phi_{u}^{0}) -
+v_{d}\end{pmatrix}, \\
+\PH^{+} = \phi_{\Pqu}^{+} \cos \beta + \phi_{d}^{-\dagger} \sin \beta,\\
+\PH^{-} = \phi_{\Pqu}^{+\dagger} \cos \beta + \phi_{d}^{-} \sin \beta.
+\end{equation}
+The self interactions of the scalar fields are not independent parameters in the
+\ac{MSSM} and can be expressed in terms of $g$ and $g'$. As a result, the masses
+and couplings of the \ac{MSSM} Higgs bosons can be determined at tree level by
+two free parameters: $\tan\beta$ and the mass of one of the Higgs bosons,
+conventionally chosen to the the mass of the pseudoscalar, $m_{\PA}$. The masses
+of the other Higgs bosons can then be expressed as:
+\begin{equation}
+m_{\Ph}^{2} = \frac{1}{2} \left( m_{\PA}^{2} + m_{\PZ}^{2} - \sqrt{(m_{\PA}^{2} +
+m_{\PZ}^{2})^{2} - 4m_{\PZ}^{2}m_{\PA}^{2}\cos{2\beta}^{2} }\right) , \\
+m_{\PH}^{2} = \frac{1}{2} \left( m_{\PA}^{2} + m_{\PZ}^{2} + \sqrt{(m_{\PA}^{2} +
+m_{\PZ}^{2})^{2} - 4m_{\PZ}^{2}m_{\PA}^{2}\cos{2\beta}^{2} }\right) , \\
+m_{\PH^{\pm}} = m_{\PA}^{2} + m_{\PW}^{2},
+\end{equation}
+where $m_{\Ph}$, $m_{\PH}$ and $m_{\PH^{\pm}}$ are the masses of the $\Ph$,
+$\PH$ and $\PH^{pm}$ bosons respectively. This yields a constraint on $\alpha$:
+\begin{equation}
+\cos^{2}(\beta-\alpha) = \frac{m_{\Ph}^{2}(m_{\PZ}^{2} -
+m_{\Ph}^{2})}{m_{\PA}^{2}(m_{\PH}^{2} - m_{\Ph}^{2}) }.
+\end{equation}
+The equation for $m_{\Ph}$ yields an upper bound on $m_{\Ph}$:
+\begin{equation}
+m_{\Ph} \leq m_{\PZ} |\cos{2\beta}|. 
+\end{equation}
+
+This means that at tree level, the mass of the lightest scalar Higgs cannot
+exceed that of the $\PZ$ boson ($90.2\GeV$). However, the tree level masses and
+couplings are modified by higher order corrections. The dominant effect is from
+incomplete cancellation of the top and stop (the superpartner of the top) loops.
+These corrections, as illustrated in figure \ref{fig:HiggsMassLoops}, do not
+completely cancel in the case that SUSY is broken. Hence the size of the
+corrections are strongly dependent on the top and stop masses, where the stop
+mass depends on $\mu$ and the parameters describing SUSY breaking. The upper
+bound of $m_{\Ph}$ is increased by these radiative corrections and is maximised
+for large $m_{\PA}$ ($>>m_{\PZ}$) and $\tan\beta$ ($>>1$). The maximum value of
+$m_{\Ph}$ for a particular choice of $m_{\PA}$ and $\tan\beta$ is denoted
+$m_{\Ph}^{\text{max}}$. If the scale of SUSY breaking, $M_{\text{SUSY}}$ is
+chosen to be $1~\TeV$, $m_{\Ph}^{\text{max}} \approx 130~\GeV$. 
 
 \subsection{Previous Searches for an MSSM Higgs boson}
 \label{sec:previousSMsearches}

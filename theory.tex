@@ -113,7 +113,7 @@ The electroweak Lagrangian can be written in the following simple form:
 \mathcal{L_{EW}} = -\frac{1}{4}(\bf{F_{\mu\nu}}\cdot\bf{F^{\mu\nu}} +
 G_{\mu\nu}G^{\mu\nu}), 
 \end{equation}
-where $\bf{F_{\mu\nu}}$ and $G_{\mu\nu}$ are the weak isospin and field strength
+where $\bf{F_{\mu\nu}}$ and $\bf{G_{\mu\nu}}$ are the weak isospin and field strength
 tensors respectively, related to the fields as:
 \begin{equation}
 \bf{F_{\mu\nu}} = \partial_{\mu} \bf{W_{\nu}} - \partial_{\nu}\bf{W_{\mu}} -
@@ -138,7 +138,7 @@ $V(\phi)$ with expectation values of $\bra{0}\phi\ket{0}$, which are given by:
 \text{with} \quad v=\sqrt{\frac{\mu_{SM}^{2}}{\lambda}}.
 \end{equation}
 To obtain the physical particles, perturbations around the vacuum state are
-considered. If $\theta_{i}$ and $\hat{H}$ represent small variations in the four
+considered. If $\theta_{i}$ and $\hat{H_{SM}}$ represent small variations in the four
 degrees of freedom of the field $\phi$ then:
 \begin{equation}
 \phi = exp(-i\theta_{i}T^{i}/2v)\left(\frac{0}{\frac{v+H_{SM}}{\sqrt{2}}} \right)
@@ -162,11 +162,10 @@ the mass of the fermion $m_{f}$, such that heavier fermions have stronger
 coupling to the Higgs boson. The \ac{SM} does not predict values for these
 couplings, but they can be determined using the experimentally measured masses
 of the fermions. The experimentally measured $\PW$ and $\PZ$ masses can be used
-alongside measured value of the fine structure constant to determine
+alongside the measured value of the fine structure constant to determine
 $\sin{\theta_{W}}^{2}$, $v$ and $g$, but the value of $\mu_{SM}$ cannot be
 predicted. Hence the mass of the Higgs boson associated with the Higgs field,
-$m_{H}=\sqrt{2}\mu_{SM}$, is not predicted by the \ac{SM}, either directly or
-indirectly using previous experimental measurements.
+$m_{H}=\sqrt{2}\mu_{SM}$, is not predicted by the \ac{SM}.
 
 \subsection{Searching for the SM Higgs boson}
 \label{sec:LHCHiggs}
@@ -180,33 +179,128 @@ dependent on both the mass of the Higgs boson and the mass of the final state
 particles. 
 
 Production of the Higgs boson occurs via the processes shown in
-figure~\ref{fig:SMFeynmanDiagrams}
+figure~\ref{fig:SMFeynmanDiagrams}: gluon-gluon fusion, \ac{VBF} and associated
+production with either a vector boson or a pair of top quarks. The Higgs does
+not couple directly to gluons since they are massless, and hence this process
+proceeds via a quark loop. All four of these dominant production modes are
+accessible at the LHC. 
 
 \begin{figure}[htbp]
 \subfloat[]{
-   \includegraphics[width=0.45\textwidth]{plots/theory/feynman_ggH.pdf}}
+   \includegraphics[width=0.48\textwidth]{plots/theory/feynman_ggH.pdf}}
 \subfloat[]{
-   \includegraphics[width=0.45\textwidth]{plots/theory/feynman_qqH.pdf}}
+   \includegraphics[width=0.4\textwidth]{plots/theory/feynman_qqH.pdf}}
 
 \subfloat[]{
-   \includegraphics[width=0.45\textwidth]{plots/theory/feynman_VH.pdf}}
+   \includegraphics[width=0.48\textwidth]{plots/theory/feynman_VH.pdf}}
 \subfloat[]{
-   \includegraphics[width=0.45\textwidth]{plots/theory/feynman_ttH.pdf}}
+   \includegraphics[width=0.4\textwidth]{plots/theory/feynman_ttH.pdf}}
 \caption{Feynman diagrams for the dominant production processes of the SM Higgs
 boson. Top left is gluon fusion, top right vector boson fusion, bottom shows
 associated production with (left) vector bosons and (right) top quarks.}
 \label{fig:SMFeynmanDiagrams}
 \end{figure}
 
+Previous searches for the Higgs boson were carried out at LEP and the
+Tevatron. The LEP experiment collided electrons and positrons at centre of mass
+energies ($\sqrt{s}$) between $90$ and $209\,\GeV$. In such collisions the Higgs
+boson is predominantly produced in association with a $\PZ$ boson, a process
+known as ``Higgsstrahlung''. The decay channels used were predominantly decays
+to $\Pqb\Paqb$ and $\Pgtp\Pgtm$ pairs. The fact that the Higgs boson was not
+observed at LEP yields the exclusion of masses with $m_{H}<114.4\,\GeV$ at the
+95\% \ac{CL} \cite{Barate:2003sz}. Searches were also performed by the CDF and D0 Collaborations at
+the Tevatron accelerator, which collided protons and antiprotons with
+$\sqrt{s}=1.96\,\TeV$. The searches were performed in a mass range of
+$90$--$200\,\GeV$ and focussed on decays into $\Pqb\Paqb$, $\PWp\PWm$,
+$\gamma\gamma$ and $\Pgtp\Pgtm$ pairs, with  $\Pqb\Paqb$ and $\PWp\PWm$ offering
+the highest sensitivity. The combined results from the Tevatron yielded
+exclusions of $m_{\PH}$ in the ranges $90$--$109\,\GeV$ and $140$--$184\,\GeV$
+\cite{Aaltonen:2013kxa}. The results of such direct searches
+can be combined with precision measurements of electroweak observables at LEP
+and by the SLAC Large Detector (SLD) to constrain the mass of the Higgs
+boson to $94^{+29}_{-24}\,\GeV$ \cite{lepewwg}, 
+where the uncertainty incorporates experimental effects only.
+
+The LHC provides a higher centre of mass energy than the Tevatron, and hence
+gives access to high cross-sections and a wider range of Higgs masses. Figure
+\ref{fig:SMHiggsXS} indictates the cross-sections of the different production
+processes, for proton-proton collisions at $\sqrt{s}=8~\TeV$ as during the 
+2012 operating period of the LHC. The gluon fusion production processes dominates 
+over the others. Despite the
+fact that the other production processes are at least one order of magnitude smaller in
+cross-section, they have specific topologies which can be exploited 
+in the selection of signal-like events and so still yield high sensitivity to the
+Higgs. The \ac{VBF} process is characterised by the two outgoing quarks which
+hadronise to form jets with high momentum, typically found in the forward
+detector region. Production via the Higgstrahlung process consists of a vector
+boson in the final state, yielding multi-lepton and multi-jet final states with
+reduced backgrounds from other \ac{SM} processes.
 
 \begin{figure}[htbp]
-   \includegraphics[width=0.5\textwidth]{plots/theory/Higgs_BR.pdf}
-\caption{Higgs boson branching ratios in the SM\cite{}.}
+   \includegraphics[width=0.7\textwidth]{plots/theory/Higgs_XS_8TeV_lx.pdf}
+\caption{Cross sections for Higgs production processes at $\sqrt{s}=8~\TeV$
+\cite{Heinemeyer:2013tqa}.}
+\label{fig:SMHiggsXS}
+\end{figure}
+
+The branching fractions to the different decay channels are shown in
+figure \ref{fig:SMHiggsBRs} for a range of possible Higgs masses. At low Higgs
+boson masses, a variety of different decay channels are accessible. The decay
+into two photons occurs via a fermion loop, and decays to $\PWp\PWm$, $\PZ\PZ$,
+$\Pqb\Paqb$ and $\Pgtp\Pgtm$ pairs are also possible. At higher Higgs masses
+above $130~\GeV$, the decays into $\PWp\PWm$, $\PZ\PZ$ are more kinematically
+favourable and hence dominate. In discovery of a Higgs boson, identication of
+any of these decay channels is important, and the most sensitive channels for
+discovery in the low mass region are $\Pphoton\Pphoton$ and $\PZ\PZ$ due to
+their clean signatures. However,
+upon discovery of a Higgs boson, decays into fermions are particularly important
+to establish the Yukawa couplings. In the fermionic decays, the decay into
+$\Pqb\Paqb$ dominates with a branching fraction of $\sim 80\%$ in this mass
+range. However, this final state is difficult to disentangle from the large QCD
+jet background at the LHC, meaning that the $\Pgtp\Pgtm$ has higher sensitivity.
+
+\begin{figure}[htbp]
+   \includegraphics[width=0.6\textwidth]{plots/theory/Higgs_BR.pdf}
+\caption{Higgs boson branching ratios in the SM \cite{Heinemeyer:2013tqa}.}
 \label{fig:SMHiggsBRs}
 \end{figure}
 
-%\subsection{Previous Searches for the SM Higgs boson}
-%\label{sec:previousSMsearches}
+On 4 July 2012 the ATLAS and CMS Collaborations announced the discovery of a new
+boson with a mass around $125\,\GeV$ \cite{CMSobservation125,ATLASobservation125}. 
+Both experiments analysed approximately $5\,\invfb$ of data collected at 
+$\sqrt{s}=7\,\TeV$ and $5$--$6\,\invfb$ at $\sqrt{s}=8\,\TeV$. The discovery was
+made predominantly using the $\PZ\PZ$ and $\Pphoton\Pphoton$ decay modes with a
+combined excess of events in data yielding a $5\sigma$ deviation from the
+background-only expectation.
+
+Run 1 of the LHC was completed in early 2013, increasing the dataset to
+$\approx20\,\invfb$ at $8~\TeV$. The increased dataset allows access to the less
+sensitive decay modes. The most recent combination of CMS Higgs results yields a
+best fit mass of
+$125.02^{+0.26}_{-0.27}(\text{stat})^{+0.14}_{-0.15}(\text{syst})~\GeV$ and a
+signal strength relative to the \ac{SM} expectation of
+$1.00\pm1.09(\text{stat})^{+0.08}_{-0.07}(\text{theo})\pm0.01(\text{syst})$,
+combining results from the $\Pphoton\Pphoton$, $\PWp\PWm$, $\PZ\PZ$,
+$\Pqb\Paqb$, $\Pgtp\Pgtm$ and $\APmuon\Pmuon$ final states, as well as 
+searches for the $\Pqt\Pqt\PH$ production mode and searches for an invisible
+Higgs \cite{CMScomb}. Within the combination is a study of the compatibility of
+the couplings in each decay mode with the \ac{SM}. 
+These channels all show consistency with the \ac{SM}
+predictions for a $125~\GeV$ Higgs boson. Other analyses from ATLAS have
+studied the production rates and couplings in various channels
+~\cite{Aad:2014eva,Aad:2014lwa,Aad:2015vsa}, and results from both ATLAS and CMS study 
+the spin-parity quantum
+numbers~\cite{Chatrchyan:2013mxa,Chatrchyan:2013iaa,Aad:2013xqa} and limits on
+the decay width ~\cite{Khachatryan:2014iha} and invisible branching
+fraction~\cite{Aad:2014iia,Chatrchyan:2014tja}. No significant deviations from \ac{SM}
+predictions have been found to date in any of these results.
+
+Future studies will further test the compatibility of the observed boson with
+the \ac{SM} Higgs, including discovery and precision measurements in the
+channels which are less sensitive and require more data. 
+The most recent CMS results for the search for the Higgs boson in the $\HToTauTau$
+decay channel, corresponding to the complete Run 1 dataset and as included in
+the most recent combination, are reported in chapter~\ref{chap:htt-sm}.
 
 \section{Theories beyond the Standard Model}
 \label{sec:BSM}
@@ -214,7 +308,7 @@ associated production with (left) vector bosons and (right) top quarks.}
 \subsection{Motivation for theories beyond the Standard Model}
 
 Despite its successes, the \ac{SM} is known to have some shortcomings. One concerns
-the calculations of the Higgs Boson mass, and is known as the Hierarchy problem. 
+the calculations of the Higgs Boson mass, and is known as the Hierarchy problem.
 
 \subsection{The Higgs sector in the MSSM}
 \label{sec:mssmhiggs}

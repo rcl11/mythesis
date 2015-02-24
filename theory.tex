@@ -169,7 +169,7 @@ predicted. Hence the mass of the Higgs boson associated with the Higgs field,
 $m_{H}=\sqrt{2}\mu_{SM}$, is not predicted by the \ac{SM}.
 
 \subsection{Searching for the SM Higgs boson}
-\label{sec:LHCHiggs}
+\label{sec:LHCSMHiggs}
 
 Since the mass of the Higgs boson is not directly predicted by the \ac{SM},
 searches covering a wide range of potential masses must be performed.
@@ -455,16 +455,119 @@ bound of $m_{\Ph}$ is increased by these radiative corrections and is maximised
 for large $m_{\PA}$ ($>>m_{\PZ}$) and $\tan\beta$ ($>>1$). The maximum value of
 $m_{\Ph}$ for a particular choice of $m_{\PA}$ and $\tan\beta$ is denoted
 $m_{\Ph}^{\text{max}}$. If the scale of SUSY breaking, $M_{\text{SUSY}}$ is
-chosen to be $1~\TeV$, $m_{\Ph}^{\text{max}} \approx 130~\GeV$. 
+chosen to be $1~\TeV$, $m_{\Ph}^{\text{max}} \approx 135~\GeV$.
 
-\subsection{Previous Searches for an MSSM Higgs boson}
-\label{sec:previousSMsearches}
+\subsection{Searching for a neutral MSSM Higgs boson}
+\label{sec:LHCMSSMHiggs}
+
+It is important that the phenomenology of Higgs bosons, including the higher
+order corrections, is understood in order to define the masses of the neutral
+Higgs bosons and hence optimise an experimental search for them. This is
+complicated by the number of SUSY breaking parameters in the \ac{MSSM}. Hence it
+is conventional to study particular benchmark scenarios where the SUSY breaking
+parameters and $\mu$ are fixed to a choice of values and only $m_{\PA}$ and
+$\tan\beta$ are varied \cite{Carena:2002es}. One such scenario is the $m_{\Ph}^{\text{max}}$ scenario
+in which $m_{\Ph}=m_{\Ph}^{\text{max}}$ for high $m_{\PA}$ and $\tan\beta$
+values, using the choice $M_{\text{SUSY}} = 1~\TeV$ and $\mu = \pm 200~\GeV$.
+Other alternative benchmark scenarios are discussed in 
+section~\ref{sec:mssmbenchmarks}. 
+
+Figure \ref{fig:mhmaxmasses} indicates the
+masses of each of the Higgs bosons in the $m_{h}^{\text{max}}$ scenario
+for $\tan\beta=3$ and $\tan\beta=30$ as a function of the mass of the
+pseudoscalar $m_{\PA}$. Two different regimes of the $m_{\Ph}^{\text{max}}$
+scenario can be considered, in which one of the neutral scalars is approximately
+degenerate in mass with the pseudoscalar and has similar couplings. 
+At large $\tan\beta$ and for $m_{\PA} \gg m_{\Ph}^{\text{max}}$, $m_{\PA}
+\approx m_{\Ph}$ and the couplings of the $\PA$ and $\Ph$ are very similar. The
+couplings of the $\PA$ and $\Ph$ bosons to down-type fermions 
+are enhanced by a factor $\sim \tan\beta$ relative to the \ac{SM} value, with
+negligible couplings to vector bosons. The scalar $\PH$ has couplings
+close to those in the \ac{SM}. In the limit where $m_{\PA} \gg m_{\PZ}$, 
+$m_{\PA} \approx m_{\PH}$ and the couplings of the $\PA$ and $\PH$ are
+very similar. The couplings of the $\PA$ and $\PH$ bosons to down-type fermions 
+are enhanced by a factor $\sim \tan\beta$ relative to the \ac{SM} value, 
+with neglible couplings to vector bosons. The scalar $\Ph$ has couplings
+close to those in the \ac{SM}. 
+
+\begin{figure}[htbp]
+   \includegraphics[width=0.7\textwidth]{plots/theory/mssm_masses_mhmax.pdf}
+\caption{Masses of the $\Ph$, $\PH$ and $\PH^{\pm}$ bosons in the
+$m_{\Ph}^{\text{max}}$ scenario as a function of $m_{\PA}$. Values are shown for
+$\tan\beta=3$ and $\tan\beta=30$ \cite{Carena:2002es}.}
+\label{fig:mhmaxmasses}
+\end{figure}
+
+The effect of enhanced couplings to down-type fermions is illustrated by the
+braching ratios of the $\PA$, shown in figure \ref{fig:mhmaxBRs} for $\tan\beta$
+values of 10 and 50. It can be seen that the $\Pgt\Pgt$ decay mode has a large
+branching ratio for a large range of $m_{\PA}$ and $\tan\beta$ points. This
+motivates searches for the \ac{MSSM} Higgs bosons in final states of $\Pgt\Pgt$
+or $\Pqb\Pqb$. Chapter \ref{chap:htt-mssm} discusses the most recent results 
+from direct searches for neutral \ac{MSSM} Higgs bosons using the $\Pgt\Pgt$
+final state with the CMS detector.
+
+\begin{figure}[htbp]
+\subfloat[]{
+   \includegraphics[width=0.5\textwidth]{plots/theory/BR_A_tanb10_mhmax.pdf}}
+\subfloat[]{
+   \includegraphics[width=0.5\textwidth]{plots/theory/BR_A_tanb50_mhmax.pdf}}
+\caption{Branching ratios of the pseudoscalar Higgs boson $\PA$ in the
+$m_{\Ph}^{\text{max}}$ scenario for $\tan\beta=10$ (left) and $\tan\beta=50$
+(right) \cite{Heinemeyer:2013tqa}.}
+\label{fig:mhmaxBRs}
+\end{figure}
+
+Analogously to the \ac{SM} Higgs production, the dominant production mode at
+small $\tan\beta$ is the gluon-gluon fusion process, denoted
+$\Pgluon\Pgluon\to\Pphi$, where $\Pphi$ denotes any of the three neutral Higgs
+bosons, $\Pphi=\PH,\PA,\Ph$. As in the \ac{SM} case the gluon fusion procees
+proceeds via a quark loop, which at low $\tan\beta$ is dominated by top quarks
+but at high $\tan\beta$ the $\Pqb$-quark loops dominate due to enhanced couplings to
+down-type fermions. At large $\tan\beta$, the dominant production mechanism is
+Higgs radiation by $\Pqb$-quarks, denoted $\Pgluon\Pgluon\to\Pqb\Pqb\Pphi$.
+Example tree level Feynman diagrams illustrating these two production processes
+are shown in figure~\ref{fig:mssmfeynman}. The cross-sections for each of these 
+production processes are shown in
+figure~\ref{fig:mhmaxXSs} for $\sqrt{s}=8~\TeV$, evaluated in the $m_{\Ph}^{\text{max}}$
+scenario.
+
+\begin{figure}[htbp]
+\subfloat[]{
+   \includegraphics[width=0.55\textwidth]{plots/theory/feynman_mssm_ggH.pdf}}
+\subfloat[]{
+   \includegraphics[width=0.45\textwidth]{plots/theory/feynman_mssm_bbH.pdf}}
+\caption{Feynman diagrams.}
+\label{fig:mssmfeynman}
+\end{figure}
+
+\begin{figure}[htbp]
+\subfloat[]{
+   \includegraphics[width=0.5\textwidth]{plots/theory/YR3HXS_XSectSummary_mhmax8TeV_tanbeta5.pdf}}
+\subfloat[]{
+   \includegraphics[width=0.5\textwidth]{plots/theory/YR3HXS_XSectSummary_mhmax8TeV_tanbeta30.pdf}}
+\caption{Cross-sections for the production of neutral MSSM Higgs bosons in the 
+$m_{\Ph}^{\text{max}}$ scenario for $\tan\beta=5$ (left) and $\tan\beta=30$
+(right) \cite{Heinemeyer:2013tqa}.}
+\label{fig:mhmaxXSs}
+\end{figure}
+
+Previous searches for neutral \ac{MSSM} Higgs bosons were conducted at LEP, with
+interpretation in the $m_{\Ph}^{max}$ scenario \cite{Schael:2006cr}.
+The results were negative and yielded limits $m_{\PA} > 93.4~\GeV$ at $95\%$ CL.  
+Results from the Tevatron \cite{Benjamin:2010xb} provide complementary exclusion 
+limits at high $\tan\beta$, considering masses up to $m_{\PA}=200~\GeV$. The
+higher centre of mass energy of the LHC provides access to $m_{\PA}$ values as
+high as $1~\TeV$. The most recent results from the LHC exclude large regions of
+previously unreachable phase space in the $m_{h}^{\text{max}}$ scenario
+\cite{Aad:2014vgg,HIG-13-021}. The results discussed in
+chapter~\ref{chap:htt-mssm} follow those in \cite{HIG-13-021}.
 
 \section{MSSM Models incorporating the LHC Higgs}
 \label{sec:mssmbenchmarks}
 
 With the discovery of a 125$~\GeV$ Higgs-like particle at the LHC, the number of
-possible MSSM scenarios is reduced to those which can incorporate this boson
+possible \ac{MSSM} scenarios is reduced to those which can incorporate this boson
 with its measured properties. This section details some possible MSSM scenarios
 which can incorporate this 125$~\GeV$ boson, whilst also exhibiting interesting
 phenomenology motivated by experimental measurements. In particular the

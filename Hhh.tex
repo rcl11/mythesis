@@ -68,7 +68,9 @@ $\pt$ value, the two leading selected jets will not be the correct jets
 originating from the $\Pqb$ quarks. A higher success rate for selecting the
 correct two jets is achieved if the jets are ordered by their \ac{CSV}
 discriminator value, and the two jets with the highest \ac{CSV} discriminator
-value are taken to be the $\Ph\to\Pqb\Pqb$ candidate.  
+value are taken to be the $\Ph\to\Pqb\Pqb$ candidate. Figure\ref{fig:Hhhcsv} 
+shows the \ac{CSV} values for the leading and subleading
+jets in the $\mutau$ channel, when the jets are ordered in this way.
 
 \begin{figure}
 \begin{center}
@@ -104,8 +106,6 @@ $\Ph\to\Ph\Ph$ signal. Distribution shown for the $\mutau$ (left) and $\etau$
 \label{fig:Hhhnbjets}
 \end{figure} 
 
-Figure\ref{fig:Hhhcsv} shows the \ac{CSV} values for the leading and subleading
-jets in the $\mutau$ channel.
 
 \begin{figure}
 \begin{center}
@@ -150,22 +150,94 @@ since the requirement of 2 b-tagged jets greatly reduces the backgrounds with
 the exception of $\ttbar$.  
 \end{itemize}
 
-
-
-
-
-
-
-In signal events of all $M_{H}$ hypotheses, the reconstructed $m_{bb}$ and
-$m_{\tau\tau}$ will be consistent with a $125 \GeV$ $\Ph$ decay. This fact is exploited to greatly
+In signal events of all $M_{H}$ hypotheses, the reconstructed $m_{\Pqb\Pqb}$ and
+$m_{\Pgt\Pgt}$ will be consistent with a $125 \GeV$ $\Ph$ decay. This fact is exploited to greatly
 enhance the selection of signal over background events, by cutting in window of
-$70 < m_{bb} < 150~\GeV$ and $90 < m_{\tau\tau} < 150~\GeV$. 
+$70 < m_{\Pqb\Pqb} < 150~\GeV$ and $90 < m_{\Pgt\Pgt} < 150~\GeV$.
+Figures \ref{fig:2jet0tagmttmbb}, \ref{fig:2jet1tagmttmbb} and
+\ref{fig:2jet2tagmttmbb} illustrate the distributions of $m_{\Pgt\Pgt}$ and
+$m_{\Pqb\Pqb}$ for events in the 2jet--0tag, 2jet--1tag and 2jet--2tag
+categories respectively. For all subsequent results in this chapter these cuts
+on $m_{\Pqb\Pqb}$ and $m_{\Pgt\Pgt}$ are applied unless otherwise stated. 
+
+\begin{figure}
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/m_sv_2jet0tagSF_mt_2012.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth] 
+      {plots/Hhh/prebjet_mjj_2jet0tagSF_mt_2012.pdf}} 
+
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/m_sv_2jet0tagSF_et_2012.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth] 
+      {plots/Hhh/prebjet_mjj_2jet0tagSF_et_2012.pdf}} 
+\end{center}
+\caption{
+Distributions of $m_{\Pgt\Pgt}$ (left) and $m_{\Pqb\Pqb}$ (right) in the $\mutau$ (top) and
+$\etau$ (bottom) channels for the 2jet--0tag category. The signal peaks close to $125~\GeV$ in both
+variables, motivating the application of cuts in a window around $125~\GeV$ to
+select the most signal-like events.}
+\label{fig:2jet0tagmttmbb}
+\end{figure} 
+
+\begin{figure}
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/m_sv_2jet1tagSF_mt_2012.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth] 
+      {plots/Hhh/prebjet_mjj_2jet1tagSF_mt_2012.pdf}} 
+
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/m_sv_2jet1tagSF_et_2012.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth] 
+      {plots/Hhh/prebjet_mjj_2jet1tagSF_et_2012.pdf}} 
+\end{center}
+\caption{
+Distributions of $m_{\Pgt\Pgt}$ (left) and $m_{\Pqb\Pqb}$ (right) in the $\mutau$ (top) and
+$\etau$ (bottom) channels for the 2jet--1tag category. The signal peaks close to $125~\GeV$ in both
+variables, motivating the application of cuts in a window around $125~\GeV$ to
+select the most signal-like events.}
+\label{fig:2jet1tagmttmbb}
+\end{figure} 
+
+\begin{figure}
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/m_sv_2jet2tagSF_mt_2012.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth] 
+      {plots/Hhh/prebjet_mjj_2jet2tagSF_mt_2012.pdf}} 
+
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/m_sv_2jet2tagSF_et_2012.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth] 
+      {plots/Hhh/prebjet_mjj_2jet2tagSF_et_2012.pdf}} 
+\end{center}
+\caption{
+Distributions of $m_{\Pgt\Pgt}$ (left) and $m_{\Pqb\Pqb}$ (right) in the $\mutau$ (top) and
+$\etau$ (bottom) channels for the 2jet--2tag category. The signal peaks close to $125~\GeV$ in both
+variables, motivating the application of cuts in a window around $125~\GeV$ to
+select the most signal-like events.}
+\label{fig:2jet2tagmttmbb}
+\end{figure} 
 
 \section{Kinematic Fitting to extract $M_{H}$}
+\label{sec:kinematicfit}
 
 In addition to applying cuts on $m_{bb}$ and $m_{\tau\tau}$, the condition that
 both values should be consistent with $125~\GeV$ can be used further in
-calculating the reconstructed $M_{H}$. This quantity can be reconstructed simply
+calculating the reconstructed $M_{\PH}$. This quantity can be reconstructed simply
 by combining the visible taus, $\MET$ and the b-jets, denoted by $M_{\tau\tau bb}$.
 A better reconstruction is obtained by using the conditions on $m_{bb}$ and
 $m_{\tau\tau}$ in a kinematic fit. 
@@ -293,156 +365,96 @@ The total $\chi^{2}$ to be minimised by the fit is then given by:
 which is a two dimensional function in variables $E_{b_{1}}$ and $E_{\Pgt_{1}}$.
 
 The output of the kinematic fit is the 4-vector of each of the taus and b-jets,
-with the energy and momentum corrected by the result of the fit. Figure \ref{}
+with the energy and momentum corrected by the result of the fit. Figure
+\ref{fig:kinfitvsmttbb}
 shows the difference between the heavy Higgs mass as reconstructed by
-$M_{\Pgt\Pgt bb}$ and from the kinematic fit, denoted $M_{H}^{kinfit}$. It can
-be seen that both the mean and resolution of $M_{H}$ is greatly improved in
+$M_{\Pgt\Pgt \Pqb\Pqb}$ and from the kinematic fit, denoted $M_{\PH}^{kinfit}$,
+in signal events with $m_{\PH}=300~\GeV$. It can
+be seen that both the mean and resolution of $M_{\PH}$ is greatly improved in
 signal.
 
-\section{Control Plots}
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/m_H_kinfit_vs_mttbb_2jet2tagSFMassCuts_mt_ggHTohh300.pdf}
 
-For the preselection and separation of events into categories, there are several
-kinematic variables of interest. A selection of these including b-jet related
-variables, kinematics of the tau candidates, $\MET$ and $m_{T}$ are shown in
-Figs.~\ref{fig:resultsControlPlotsTauPairMuTau}
-and~\ref{fig:resultsControlPlotsJetPairMuTau} for the $\mu\tau_{had}$ channel
-, Figs.~\ref{fig:resultsControlPlotsTauPairETau} and
-~\ref{fig:resultsControlPlotsJetPairETau} for the $e\tau_{had}$ channel.
-These plots are made before events are split into categories, and use all events
-with all least 2 jets (no additional b-tag requirements).
+\end{center}
+\caption{
+Four body mass of the candidate \PH in $\PH\to\Ph\Ph$ signal events with
+$m_{\PH}=300~\GeV$, as reconstructed using a simple sum of the
+individual components (without kinematic fit) or using a kinematic fit as
+described in the text. Shown for events in the 2jet--2tag category of the
+$\mutau$ channel.}
+\label{fig:kinfitvsmttbb}
+\end{figure} 
 
 
 \begin{figure}
 \begin{center}
 \subfloat[]{
-    \includegraphics[width=0.4\textwidth]
-      {plots/Hhh/ControlPlots/mutau/mt_1_2jetinclusive_mt_2012.pdf}}
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/mjj_tt_2jet1tagSFMassCuts_mt_2012.pdf}}
 \subfloat[]{
-    \includegraphics[width=0.4\textwidth] 
-      {plots/Hhh/ControlPlots/mutau/met_2jetinclusive_mt_2012.pdf}} 
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/m_H_hh_2jet1tagSFMassCuts_mt_2012.pdf}}
 
-\subfloat[]{
-    \includegraphics[width=0.4\textwidth]
-      {plots/Hhh/ControlPlots/mutau/pt_1_2jetinclusive_mt_2012.pdf}}
-\subfloat[]{
-    \includegraphics[width=0.4\textwidth]
-      {plots/Hhh/ControlPlots/mutau/pt_2_2jetinclusive_mt_2012.pdf}} 
-
-\subfloat[]{
-    \includegraphics[width=0.4\textwidth]
-      {plots/Hhh/ControlPlots/mutau/eta_1_2jetinclusive_mt_2012.pdf}}
-\subfloat[]{
-    \includegraphics[width=0.4\textwidth]
-      {plots/Hhh/ControlPlots/mutau/eta_2_2jetinclusive_mt_2012.pdf}}
 \end{center}
 \caption{
-  Distributions of relevant kinematic variables for events with at least 2 jets
-  in the $\mu\tau_{had}$ channel. The variable shown in a) is $m_{T}$, on which
-  a cut of $m_{T} < 30$ is applied for the rest of the plots, which
-  show b) $\MET$, c) $\pt$ of the muon, d) $\pt$ of the tau, e) $\eta$ of the
-  muon and f) $\eta$ of the tau. 
-  Expected background contributions are shown for the values of nuisance parameters
-  obtained by fitting the signal plus background hypothesis to the data.
-}
-\label{fig:resultsControlPlotsTauPairMuTau}
+Four body mass of the candidate \PH as reconstructed using a simple sum of the
+individual components (left) or using a kinematic fit (right) as
+described in the text. Shown for events in the 2jet--2tag category of the
+$\mutau$ channel. The effect of the kinematic fit on the backgrounds is to force
+a minimum at $2\times125=250~\GeV$, but otherwise the shapes are largely
+unchanged.}
+\label{fig:kinfitvsmttbb}
 \end{figure} 
+
+\section{Background methods}
+\label{sec:Hhhbackgrounds}
+
+Inclusively, the background composition is the same as discussed in the previous
+chapters. The additional requirement that the events contain at least two jets
+changes the composition slighly, with the largest effect being an increase in
+$\ttbar$ background and a decrease in $\ZToTauTau$, $\WJets$ and QCD. The
+variation with category is large, with 2jet--0tag events containing mostly
+$\ZToTauTau$, $\WJets$ and QCD, and 2jet--2tag events containing almost entirely
+$\ttbar$. In general the background methods follow those described in the
+previous chapters, with the exception of adaptations necessary to deal with the
+increased amount of $\ttbar$ and the generally lower statistics in the
+categories after applying the mass cuts on $m_{\Pqb\Pqb}$ and $m_{\Pgt\Pgt}$.
+
+\subsection{$\ZToTauTau$}
+
+\subsection{$\ttbar$}
 
 \begin{figure}
 \begin{center}
 \subfloat[]{
-    \includegraphics[width=0.4\textwidth]
-      {plots/Hhh/ControlPlots/mutau/prebjetpt_1_2jetinclusive_mt_2012.pdf}}
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/TTBarControl/prebjetpt_1_2jetGT1tagSF_em_2012.pdf}}
 \subfloat[]{
-    \includegraphics[width=0.4\textwidth] 
-      {plots/Hhh/ControlPlots/mutau/prebjetpt_2_2jetinclusive_mt_2012.pdf}} 
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/TTBarControl/prebjetpt_2_2jetGT1tagSF_em_2012.pdf}}
 
 \subfloat[]{
-    \includegraphics[width=0.4\textwidth]
-      {plots/Hhh/ControlPlots/mutau/prebjeteta_1_2jetinclusive_mt_2012.pdf}}
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/TTBarControl/prebjetpt_1_2jet2tagSF_mt_2012.pdf}}
 \subfloat[]{
-    \includegraphics[width=0.4\textwidth]
-      {plots/Hhh/ControlPlots/mutau/prebjeteta_2_2jetinclusive_mt_2012.pdf}} 
-
-\subfloat[]{
-    \includegraphics[width=0.4\textwidth]
-      {plots/Hhh/ControlPlots/mutau/prebjetbcsv_1_2jetinclusive_mt_2012.pdf}}
-\subfloat[]{
-    \includegraphics[width=0.4\textwidth]
-      {plots/Hhh/ControlPlots/mutau/prebjetbcsv_2_2jetinclusive_mt_2012.pdf}}
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/TTBarControl/prebjetpt_2_2jet2tagSF_mt_2012.pdf}}
 \end{center}
 \caption{
-  Distributions of relevant kinematic variables related to the b-jet candidates for
-  events with at least 2 jets in the $\mu\tau_{had}$ channel. The plots/Hhh show the
-  $\pt$ (top), $\eta$ (centre) and CSV discriminator (bottom) for the leading
-  jet (left) and sub-leading jet (right). Here leading and sub-leading refers to
-  the jet with the highest and second highest CSV value respectively.
-  Expected background contributions are shown for the values of nuisance parameters
-  obtained by fitting the signal plus background hypothesis to the data.
-}
-\label{fig:resultsControlPlotsJetPairMuTau}
+Leading and subleading b-jet $\pt$ in the $\ttbar$ control regions for the
+$\emu$ and $\mutau$ channels as defined in the text..}
+\label{fig:ttbarcontrol}
 \end{figure} 
 
-\begin{figure}
-\setlength{\unitlength}{1mm}
-\begin{center}
-\begin{picture}(150,210)(0,0)
-\put(-5.5, 140.0){\mbox{\includegraphics*[height=68mm]
-  {plots/Hhh/ControlPlots/etau/mt_1_2jetinclusive_et_2012.pdf}}}
-\put(78.0, 140.0){\mbox{\includegraphics*[height=68mm]
-  {plots/Hhh/ControlPlots/etau/met_2jetinclusive_et_2012.pdf}}}
-\put(-5.5, 70.0){\mbox{\includegraphics*[height=68mm]
-  {plots/Hhh/ControlPlots/etau/pt_1_2jetinclusive_et_2012.pdf}}}
-\put(78.0, 70.0){\mbox{\includegraphics*[height=68mm]
-  {plots/Hhh/ControlPlots/etau/pt_2_2jetinclusive_et_2012.pdf}}}
-\put(-5.5, 0.0){\mbox{\includegraphics*[height=68mm]
-  {plots/Hhh/ControlPlots/etau/eta_1_2jetinclusive_et_2012.pdf}}}
-\put(78.0, 0.0){\mbox{\includegraphics*[height=68mm]
-  {plots/Hhh/ControlPlots/etau/eta_2_2jetinclusive_et_2012.pdf}}}
-\end{picture}
-\end{center}
-\caption{
-  Distributions of relevant kinematic variables for events with at least 2 jets
-  in the $e\tau_{had}$ channel. The variable $m_{T}$ is shown in the top left
-  plot and a cut of $m_{T} < 30$ is applied for the rest of the plots/Hhh, which
-  show the $\MET$ (top right) $\pt$ of the electron (left centre) and tau (right
-  centre), and $\eta$ of the electron (left bottom) and tau (right bottom).
-  Expected background contributions are shown for the values of nuisance parameters
-  obtained by fitting the signal plus background hypothesis to the data.
-}
-\label{fig:resultsControlPlotsTauPairETau}
-\end{figure} 
+\subsection{$\WJets$}
 
-\begin{figure}
-\setlength{\unitlength}{1mm}
-\begin{center}
-\begin{picture}(150,210)(0,0)
-\put(-5.5, 140.0){\mbox{\includegraphics*[height=68mm]
-  {plots/Hhh/ControlPlots/etau/prebjetpt_1_2jetinclusive_et_2012.pdf}}}
-\put(78.0, 140.0){\mbox{\includegraphics*[height=68mm]
-  {plots/Hhh/ControlPlots/etau/prebjetpt_2_2jetinclusive_et_2012.pdf}}}
-\put(-5.5, 70.0){\mbox{\includegraphics*[height=68mm]
-  {plots/Hhh/ControlPlots/etau/prebjeteta_1_2jetinclusive_et_2012.pdf}}}
-\put(78.0, 70.0){\mbox{\includegraphics*[height=68mm]
-  {plots/Hhh/ControlPlots/etau/prebjeteta_2_2jetinclusive_et_2012.pdf}}}
-\put(-5.5, 0.0){\mbox{\includegraphics*[height=68mm]
-  {plots/Hhh/ControlPlots/etau/prebjetbcsv_1_2jetinclusive_et_2012.pdf}}}
-\put(78.0, 0.0){\mbox{\includegraphics*[height=68mm]
-  {plots/Hhh/ControlPlots/etau/prebjetbcsv_2_2jetinclusive_et_2012.pdf}}}
-\end{picture}
-\end{center}
-\caption{
-  Distributions of relevant kinematic variables related to the b-jet candidates for
-  events with at least 2 jets in the $e\tau_{had}$ channel. The plots/Hhh show the
-  $\pt$ (top), $\eta$ (centre) and CSV discriminator (bottom) for the leading
-  jet (left) and sub-leading jet (right). Here leading and sub-leading refers to
-  the jet with the highest and second highest CSV value respectively.
-  Expected background contributions are shown for the values of nuisance parameters
-  obtained by fitting the signal plus background hypothesis to the data.
-}
-\label{fig:resultsControlPlotsJetPairETau}
-\end{figure} 
+\subsection{QCD}
 
+\subsection{$\PZ\to\ell\ell$, single top and diboson}
 
-
-
+\section{Systematic uncertainties}
+\label{sec:Hhhsystematics}
 

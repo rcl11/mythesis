@@ -365,13 +365,22 @@ The total $\chi^{2}$ to be minimised by the fit is then given by:
 which is a two dimensional function in variables $E_{b_{1}}$ and $E_{\Pgt_{1}}$.
 
 The output of the kinematic fit is the 4-vector of each of the taus and b-jets,
-with the energy and momentum corrected by the result of the fit. Figure
+with the energy and momentum corrected by the result of the fit. These 4-vectors
+can be combined to yield the 4-body mass of the candidate $m_{\PH}$. Figure
 \ref{fig:kinfitvsmttbb}
 shows the difference between the heavy Higgs mass as reconstructed by
 $M_{\Pgt\Pgt \Pqb\Pqb}$ and from the kinematic fit, denoted $M_{\PH}^{kinfit}$,
 in signal events with $m_{\PH}=300~\GeV$. It can
 be seen that both the mean and resolution of $M_{\PH}$ is greatly improved in
-signal.
+signal. Figure \ref{fig:kinfitsignalmasses} shows what this $m_{\PH}$
+distribution looks like for different signal mass hypotheses in the range
+considered, for the example points of $m_{\PH}=260$, $300$ and $350~\GeV$. From
+this plot it can be seen that the 4-body mass from the kinematic fit provides
+good discrimination between the different mass hypotheses, such that in the
+event of a signal, it would provide a good variable to make a prediction for
+$m_{\PH}$. This is not true, for example, in variables such as $m_{\Pgt\Pgt}$
+and $m_{\Pqb\Pqb}$ where the signal looks very similar with a peak at $125~\GeV$
+for all $m_{\PH}$ hypotheses.
 
 \begin{figure}
 \begin{center}
@@ -388,6 +397,23 @@ $\mutau$ channel.}
 \label{fig:kinfitvsmttbb}
 \end{figure} 
 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/m_H_kinfit_signalmasses_2jet2tagSFMassCuts_mt.pdf}
+
+\end{center}
+\caption{
+Four body mass of the candidate \PH in $\PH\to\Ph\Ph$ signal events with
+$m_{\PH}=260$, $300$ or $350~\GeV$, as reconstructed using the kinematic fit}
+\label{fig:kinfitsignalmasses}
+\end{figure} 
+
+Finally, figure \ref{fig:kinfitvsmttbbstacked} shows the effect of the kinematic
+fit on the full distribution including all of the backgrounds and data, for the
+example of events in the 2jet--1tag category. The shape of the backgrounds is
+not altered much by the fit, with the exception of forcing a minimum at
+$250~\GeV$ due to the threshold for $2\times m_{\Ph}$. 
 
 \begin{figure}
 \begin{center}
@@ -406,7 +432,7 @@ described in the text. Shown for events in the 2jet--2tag category of the
 $\mutau$ channel. The effect of the kinematic fit on the backgrounds is to force
 a minimum at $2\times125=250~\GeV$, but otherwise the shapes are largely
 unchanged.}
-\label{fig:kinfitvsmttbb}
+\label{fig:kinfitvsmttbbstacked}
 \end{figure} 
 
 \section{Background methods}
@@ -425,7 +451,48 @@ categories after applying the mass cuts on $m_{\Pqb\Pqb}$ and $m_{\Pgt\Pgt}$.
 
 \subsection{$\ZToTauTau$}
 
+The $\ZToTauTau$ background exists in the categories from $\PZ$ plus $\geq 2$
+jet events. This is greatly reduced by the b-tagging requirements, and so most
+events fall in the 2jet--0tag category. This component is also reduced somewhat
+by the mass cut on $m_{\Pgt\Pgt}$, but the lower edge of the window at $90~\GeV$
+is such that the higher half of the $\ZToTauTau$ peak is still retained in the
+signal region.  
+
+As in the previous analyses, the $\ZToTauTau$ component is estimated using an
+embedded sample. As in the \ac{MSSM} analysis, there is a known contamination in
+this sample from $\ttbar$ events. This contribution is more important in this
+analysis, since we don't apply the jet veto applied in the b--tag category of
+the \ac{MSSM} analysis and hence are really selecting very $ttbar$-like events,
+especially in the 2jet--1tag and 2jet--2tag categories. The contribution is
+estimated using a $\ttbar$ embedded sample as described in section
+\ref{sec:mssmBackgrounds}. The contribution to the total normalisation is
+approximately $10\%$ in 2jet--1tag and $27\%$ in 2jet--2tag. This is much larger
+than in the \ac{MSSM} analysis, and so a more careful method is used to subtract
+this contribution to avoid double counting. Instead of simply reducing the yield
+of the $\ttbar$ prediction to account for this, the normalised shape of the
+embedded $\ttbar$ is subtracted from the $\ZToTauTau$ estimate.
+
 \subsection{$\ttbar$}
+
+For the estimate of the large $\ttbar$ background, both shape and normalisation
+are taken from \ac{MC}. Since this background is so large in this analysis, it
+is extremely important that this estimate is accurate. To improve the confidence
+in this estimate, both shape and normalisation are checked against a data
+control region. In the \ac{SM} and \ac{MSSM} $\HToTauTau$ analyses, this is done
+using events in the $\emu$ final state, and the crucial distributions to check
+the shapes are mostly related to the taus, in particular $m_{\Pgt\Pgt}$. In this
+analysis we are particularly concerned that the b-jets are well modelled in the
+$\ttbar$ \ac{MC}. Since we do not actually use the $\emu$ final state for this
+analysis, we are also more concerned with checking $\mutau$ and $\etau$ events.
+Hence two $\ttbar$ control regions are defined: the first is the same as is used
+normally in the $\emu$ channel, and uses events with at least 2 jets, at least
+one b-tagged jet and $\MET>80~\GeV$. The second is defined using events from the
+$\mutau$ final state and uses events with at least two b-tagged jets and in the
+high $m_{\text{T}}>100~\GeV$ region. Both control regions have purity in
+$\ttbar$ events of larger than $90\%$. Figure~\ref{fig:ttbarcontrol} shows
+distributions made in these control regions for the example distribution of the
+leading and subleading b-jet $\pt$. There are no obvious differences in shape or
+normalisation between the data and the \ac{MC}.
 
 \begin{figure}
 \begin{center}
@@ -451,10 +518,213 @@ $\emu$ and $\mutau$ channels as defined in the text..}
 
 \subsection{$\WJets$}
 
+The $\WJets$ background estimation follows that in the previous analyses, with
+the normalisation in a high $m_{\text{T}}$ control region taken from data with
+other backgrounds subtracted, and extrapolated to the low $m_{\text{T}}$ signal
+region using a scale factor from \ac{MC}. Here,
+care must be taken due to the high quantity of $\ttbar$ in the $\WJets$ control
+region at high $m_{\text{T}}$ in the 2jet--1tag and 2jet--2tag categories. 
+Figure \ref{fig:2jet1tag2jet2tagmt} shows the 
+$m_{\text{T}}$ distribution in the 2jet--1tag and 2jet--2tag categories for
+events in the $\mutau$ channel. It can
+be seen that the contribution of $\ttbar$ in the high $m_{\text{T}}$ control
+regions is extremely high. If the $\ttbar$ prediction is trusted, then the data
+driven subtraction method is still safe. Additional checks were performed by
+using events in the high $m_{\text{T}}$ region and fitting a variable in data
+with good shape discrimination between $\WJets$ and $\ttbar$. Figure
+\ref{fig:highmtfit} shows an example of such a fit in the 2jet--1tag category
+using the discriminator of leading jet $\pt$. In the fit the contribution of
+both backgrounds are allowed to float unconstrained, such that only the shapes of
+the templates affect the fit. The results of such fits were generally found to be
+consistent with the subtraction method within the statistical uncertainties.
+The subtraction method is kept as the default method for its simplicity. 
+
+\begin{figure}
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/mt_1_2jet1tagSFMassCuts_mt_2012.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/mt_1_2jet2tagSFMassCuts_mt_2012.pdf}}
+
+\end{center}
+\caption{
+Transverse mass distribution for events in the 2jet--1tag (left) and
+2jet--2tag (right). The $\PW$ normalisation is taken from data in the high
+$m_{\text{T}}$ region, and extrapolated to low $m_{\text{T}}$ using \ac{MC}. The
+shape is also taken from \ac{MC}. In these categories, a large amount of
+$\ttbar$ is present in the high $m_{\text{T}}$ region. The plots are made without any
+fit to data and the uncertainty band contains only statistical uncertainty.}
+\label{fig:2jet1tag2jet2tagmt}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/W_TT_fit_prebjetpt_1_2jet1tag.pdf}
+
+\end{center}
+\caption{
+Example of a template fit for events in the high $m_{\text{T}}$ region of the
+2jet--1tag category, using the variable leading jet $\pt$. }
+\label{fig:2jet1tag2jet2tagmt}
+\end{figure}
+
+A small modification in the normalisation estimate is made to deal with the
+extremely low statistics in the 2jet--2tag category. A higher purity of $\WJets$
+compared with $\ttbar$ is found if the high $m_{\text{T}}$ control region is modified
+slightly from $m_{\text{T}}>70~\GeV$ to $60<m_{\text{T}}<120~\GeV$.
+Additionally, to avoid a huge statistical uncertainty on the extrapolation
+factor estimated in \ac{MC}, the calculation is done for a relaxed category
+selection using the loose \ac{CSV} working point instead of medium. 
+The $\WJets$ shape is taken from the \ac{MC} estimate within the category. As
+in the previous analyses, in places it it necessary to relax the category
+definition to obtain a smooth shape. For both the 2jet--1tag and the 2jet--2tag
+categories, this is achieved by relaxing the b-tagging condition to use the
+loose \ac{CSV} working point. This is found to introduce minimal bias in the
+shape of the kinematic fit distribution. 
+
 \subsection{QCD}
 
+The QCD estimation is performed in the same data-driven way as in the previous
+analyses. In the 2jet--0tag and 2jet--1tag categories, the normalisation is
+taken from the same-sign data with other backgrounds subtracted. In 2jet--1tag
+and 2jet--2tag, there is again a reasonable contribution from $\ttbar$ in the
+data control region. The normalisation estimate is cross-checked using the anti-isolated
+same-sign data, which is presumed to be entirely QCD and hence does not have the
+same issues with background subtraction. The same-sign estimate for inclusive
+events including at least 2 jets is extrapolated to the 2jet--1tag or 2jet--2tag
+categories using an extrapolation factor calculated using the anti-isolated
+data. This prediction is found to be consistent with the prediction from the
+default method within the statistical uncertainties. Thus the default method is
+retained for 2jet--1tag, while for 2jet--2tag the anti-isolated method is
+used due to its reduced statistical uncertainty. 
+
+Shapes are taken from anti-isolated data. As used previously, in the 2jet--1tag
+and 2jet--2tag categories the shape is taken from a relaxed category definition
+in which the \ac{CSV} b-tag working point is relaxed to loose.
+
 \subsection{$\PZ\to\ell\ell$, single top and diboson}
+
+Estimates for the remaining smaller backgrounds are taken from \ac{MC}. For the
+$\PZ\to\ell\ell$ component, the \ac{CSV} b-tagging condition is relaxed to the
+loose working point to obtain smooth shapes in 2jet--1tag and 2jet--2tag.
 
 \section{Systematic uncertainties}
 \label{sec:Hhhsystematics}
 
+The effect of the b-tag scale factor uncertainties in this analysis is
+illustrated in figure~\ref{fig:Hhhbtagsystematic}. The figure on the left hand
+side shows \ac{MC} events which have exactly one jet with \ac{CSV} value passing the medium
+working point, and so in the absence of a correction would fall into the
+2jet--1tag category. It can be seen that jets are promoted or demoted such that
+after the correction is applied some of the events have zero or two b-tagged
+jets. Hence after the correction, only events in the central bin would fall into
+the 2jet--1tag category, and the other events are reassigned to either the
+2jet--0tag tag category (first bin) or the 2jet--2tag category (third bin). The
+right hand plot shows the same effect for the events which originally have 2
+b-tagged jets and would fall in the 2jet--2tag category. After the re-tagging,
+some events have zero or one b-tagged jet and are reassigned to the 2jet--0tag
+or 2jet--1tag categories respectively. All remaining events in the third bin and
+above fall into the 2jet--2tag category. It can be seen from this plot that the
+number of events being reassigned is relatively small, and the largest effect is
+approximately $5\%$ on $\ttbar$ events.
+
+\begin{figure}
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/n_prebjets_SF_2jet1tagMassCuts_mt_2012_log.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/n_prebjets_SF_2jet2tagMassCuts_mt_2012_log.pdf}}
+
+\end{center}
+\caption{
+Number of b-tagged jets after the b-tag scale factor is applied for events which
+are originally in the 2jet--1tag (left) and 2jet--2tag (right) categories. Jets
+are promoted and demoted such that afterwards the events from one category
+migrate to the other categories.}
+\label{fig:Hhhbtagsystematic}
+\end{figure} 
+
+\section{Results}
+
+The final kinematic fit distributions are shown in
+figures\ref{fig:PostFitMHmutau} and \ref{fig:PostFitMHetau}.
+
+\begin{figure}
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/muTau_2jet0tag_postfit_8TeV_LIN.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/muTau_2jet1tag_postfit_8TeV_LIN.pdf}}
+
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/muTau_2jet2tag_postfit_8TeV_LIN.pdf}}
+\end{center}
+\caption{
+Distributions of kinematic fit mass following the maximum likelihood fit
+described in .}
+\label{fig:PostFitMHmutau}
+\end{figure} 
+
+
+\begin{figure}
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/eleTau_2jet0tag_postfit_8TeV_LIN.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/eleTau_2jet1tag_postfit_8TeV_LIN.pdf}}
+
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/eleTau_2jet2tag_postfit_8TeV_LIN.pdf}}
+\end{center}
+\caption{
+Distributions of kinematic fit mass following the maximum likelihood fit
+described in .}
+\label{fig:PostFitMHetau}
+\end{figure} 
+
+\begin{figure}
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/mt_ggHTohh-limit.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/et_ggHTohh-limit.pdf}}
+
+\end{center}
+\caption{
+Expected and observed limits on cross-section times branching ratio for the
+$\Pgluon\Pgluon\to\PH\to\Pgt\Pgt\Pqb\Pqb$ process for the $\mutau$ (left) and
+$\etau$ (right) channels.}
+\label{fig:Hhhlimits}
+\end{figure} 
+
+\begin{figure}
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/et-mt_ggHTohh-limit.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/cmb_ggHTohh-limit.pdf}}
+
+\end{center}
+\caption{
+Combined expected and observed limits on cross-section times branching ratio for the
+$\Pgluon\Pgluon\to\PH\to\Pgt\Pgt\Pqb\Pqb$ process. The left hand plot is the
+combination of the $\etau$ and $\mutau$ channels discussed in this chapter, and
+the right hand plot includes combination with the $\tau\tau$ channel.}
+\label{fig:HhhCmblimits}
+\end{figure} 

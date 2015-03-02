@@ -615,6 +615,9 @@ loose working point to obtain smooth shapes in 2jet--1tag and 2jet--2tag.
 \section{Systematic uncertainties}
 \label{sec:Hhhsystematics}
 
+The systematic uncertainties follow those discussed in the previous analyses,
+with some differences. 
+
 The effect of the b-tag scale factor uncertainties in this analysis is
 illustrated in figure~\ref{fig:Hhhbtagsystematic}. The figure on the left hand
 side shows \ac{MC} events which have exactly one jet with \ac{CSV} value passing the medium
@@ -648,7 +651,57 @@ are originally in the 2jet--1tag (left) and 2jet--2tag (right) categories. Jets
 are promoted and demoted such that afterwards the events from one category
 migrate to the other categories.}
 \label{fig:Hhhbtagsystematic}
+\end{figure}
+
+The uncertainties relating to the background normalisations are re-considered
+for this analysis. Some aspects, such as the $\ZToTauTau$ extrapolation factor
+uncertainty, fake-rates for $\PZ\to\ell\ell$ and cross-section uncertainties on
+$\ttbar$ and diboson, are the same as the previous analysis. For the
+$\PZ\to\ell\ell$ background, the statistical uncertainty on the estimate is not
+negligible in the 2jet--1tag and 2jet--2tag categories, and so is added in
+quadrature with the uncertainty due to fake-rate. The uncertainty on the
+$\PW$ and QCD estimates are dominated by limited statistics in the data control
+region, and are as high as $100\%$ in 2jet--2tag. The uncertainty on the QCD
+estimate includes the $10\%$ uncertainty on the opposite sign to same sign ratio
+added in quadrature. For the $\PW$ estimate in 2jet--1tag, the uncertainty is
+separated into two parts: one part is the propagated effect of the $10\%$
+uncertainty on the $\ttbar$ control region, affecting the subtraction of
+$\ttbar$ in the data control region - this is $25\%$ and is anti-correlated with
+the corresponding uncertainty on the $\ttbar$ normalisation. The second part
+covers the limited statistics in the data control region and is uncorrelated
+with any other uncertainty, with a size of $30\%$.
+
+An additional uncertainty on the $\ZToTauTau$ estimate, corresponding to the
+size of the subtraction of the $\ttbar$ contamination in the embedded, is
+included. 
+
+Since the discriminating variable in this analysis is computed using the taus
+and the jets, both the tau and jet energy scales must be applied as a shape
+uncertainty. The size of the jet energy scale uncertainty is computed exactly as
+in section \ref{sec:systematicUncertainties_yield}, but the change in the shape
+as a result of the shift up and down in energy scale is retained instead of
+simply computing the change in normalisation. The effect of the jet energy scale
+of the shape of the distributions for the $\ttbar$ background and the signal is
+shown in figure~\ref{fig:kinfitjes}.
+
+\begin{figure}
+\begin{center}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/ggHTohh300_jes_2jet2tag_mt.pdf}}
+\subfloat[]{
+    \includegraphics[width=0.5\textwidth]
+      {plots/Hhh/TT_jes_2jet2tag_mt.pdf}}
+
+\end{center}
+\caption{
+Effect of the jet energy scale uncertainty on the kinematic fit distribution for
+the signal with $m_{\PH}=300~\GeV$ (left) and the $\ttbar$ background (right).}
+\label{fig:kinfitjet}
 \end{figure} 
+
+The treatment for templates with bins with large statistical uncertainties
+follows the bin-by-bin approach used in the \ac{SM} analysis.
 
 \section{Results}
 

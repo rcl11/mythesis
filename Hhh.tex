@@ -1,6 +1,6 @@
 \chapter{Search for MSSM $\PH \to hh \to \Pgt\Pgt bb$}
 \label{chap:Hhh}
-\cite{}
+
 As described in detail in section~\ref{sec:mssmscenarios}, there are many popular
 \ac{MSSM} models which can incorporate a $125~\GeV$ Higgs consistent with the boson
 discovered at the LHC. As seen in chapter \ref{chap:htt-mssm}, the 
@@ -435,6 +435,24 @@ unchanged.}
 \label{fig:kinfitvsmttbbstacked}
 \end{figure} 
 
+\section{Datasets and MC samples}
+\label{sec:Hhhdatasets}
+
+The dataset used for this analysis corresponds to the complete 2012 dataset at
+$\sqrt{s}=8~\TeV$. Samples of background events correspond exactly to those
+described in section \ref{sec:dataandMC}. For the signal, \ac{MC} samples are
+produced for $m_{\PH}$ masses between $260~\GeV$ and $350~\GeV$ in $10~\GeV$
+steps using \textsc{pythia}
+for parton showering and hadronisation and \textsc{tauola}~\cite{TAUOLA} for tau
+decays. No cross-section values are assumed for the signal, since the analysis
+sets an upper limit on cross-section times branching ratio in a model
+independent way, however recommended
+values for a typical \ac{MSSM} or 2HDM scenario are available from the \ac{LHCHXSWG}
+\cite{LHCHiggsCrossSectionWorkingGroup:2011ti,Dittmaier:2012vm,Heinemeyer:2013tqa}.
+For displaying the signal on figures, a benchmark point in the \ac{MSSM}
+$m_{\Ph}^{\text{mod+}}$ scenario described in section~\ref{sec:MSSMScenarios} is
+chosen for illustration purposes.
+
 \section{Background methods}
 \label{sec:Hhhbackgrounds}
 
@@ -701,11 +719,16 @@ the signal with $m_{\PH}=300~\GeV$ (left) and the $\ttbar$ background (right).}
 \end{figure} 
 
 The treatment for templates with bins with large statistical uncertainties
-follows the bin-by-bin approach used in the \ac{SM} analysis.
+follows the bin-by-bin approach used in the \ac{SM} analysis and described in
+section \ref{sec:systematicUncertainties_shape}.
 
 \section{Results}
+\label{sec:Hhhresults}
 
-The final kinematic fit distributions are shown in
+The 4-body mass after kinematic fit is used as the discriminating variable for
+signal extraction. A maximum likelihood fit is performed in all channels and
+categories simultaneously following exactly the methods described in section
+\ref{sec:signalextraction}. The final kinematic fit distributions are shown in
 figures\ref{fig:PostFitMHmutau} and \ref{fig:PostFitMHetau}.
 
 \begin{figure}
@@ -747,6 +770,35 @@ described in .}
 \label{fig:PostFitMHetau}
 \end{figure} 
 
+An expected limit on cross-section times branching ratio for the $\Hhh$
+process is obtained using the methods described in \ref{sec:signalextraction}
+with a signal strength modifier $\mu$ corresponding to the cross-section times
+branching ratio in $\picobarn$. This result is analogous to the model independent
+limits in the \ac{MSSM} analysis. Figure \ref{fig:Hhhlimits} shows these
+expected and observed limits for the $\etau$ and $\mutau$ channels separately.
+Figure \ref{fig:HhhCmblimits} shows the result for the combination of the
+$\etau$ and $\mutau$ channels (left) and a further combination with the fully
+hadronic channel not described in this thesis (right).
+
+Note that in all of these results, unlike in the \ac{MSSM} analysis, no possible
+contribution of the \ac{SM} Higgs has been considered in the statistical
+analysis. The \ac{SM} Higgs contributions are possible via both the $\PH\to\Pgt\Pgt$
+and $\PH\to\Pqb\Pqb$ processes, and their contributions in these event
+categories have been evaluated. The largest contribution occurs in the
+2jet--0tag category, where gluon fusion production dominates. In the more signal
+sensitive categories, associated production, especially
+$\PZ\PH\to\Pgt\Pgt\Pqb\Pqb$ or $\Pqb\Pqb\Pgt\Pgt$, is possible. 
+However, these contributions are
+reduced somewhat by the mass cuts on $m_{\Pqb\Pqb}$ and $m_{\Pgt\Pgt}$, and 
+are less than $10\%$ when compared with the cross-section times branching ratio
+the analysis is sensitive to in $\PH\to\Ph\Ph$. The effect on the expected limit
+has been estimated by injecting the \ac{SM} signal and found to be smaller than
+$3\%$. Thus it is sufficient to neglect the \ac{SM} contribution for now. In
+future this relative contribution will become more important, as more data are
+obtained and the analysis becomes more sensitive, and measures following those
+described for the \ac{MSSM} $\Pphi\to\Pgt\Pgt$ analysis will need to be
+employed. 
+
 \begin{figure}
 \begin{center}
 \subfloat[]{
@@ -778,6 +830,7 @@ $\etau$ (right) channels.}
 Combined expected and observed limits on cross-section times branching ratio for the
 $\Pgluon\Pgluon\to\PH\to\Pgt\Pgt\Pqb\Pqb$ process. The left hand plot is the
 combination of the $\etau$ and $\mutau$ channels discussed in this chapter, and
-the right hand plot includes combination with the $\tau\tau$ channel.}
+the right hand plot includes combination with the $\tautau$ channel.}
 \label{fig:HhhCmblimits}
-\end{figure} 
+\end{figure}
+

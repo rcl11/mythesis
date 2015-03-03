@@ -1,23 +1,73 @@
 %% Title
-\titlepage[of Imperial College London]%
-{A dissertation submitted to Imperial College London\\
-  for the degree of Doctor of Philosophy}
+\titlepage[Imperial College London\\Department of Physics]%
+{A thesis submitted to Imperial College London\\
+for the degree of Doctor of Philosophy}
+
+\begin{abstract}[]
+The copyright of this thesis rests with the author and is made available under a
+Creative Commons Attribution Non-Commercial No Derivatives licence. Researchers
+are free to copy, distribute or transmit the thesis on the condition that they
+attribute it, that they do not use it for commercial purposes and that they do
+not alter, transform or build upon it. For any reuse or redistribution,
+researchers must make clear to others the licence terms of this work.
+\end{abstract}
 
 %% Abstract
 \begin{abstract}%[\smaller \thetitle\\ \vspace*{1cm} \smaller {\theauthor}]
   %\thispagestyle{empty}
-  \LHCb is a \bphysics detector experiment which will take data at
-  the \unit{14}{\TeV} \LHC accelerator at \CERN from 2007 onward\dots
+  The Compact Muon Solenoid (CMS) detector is located at the CERN Large Hadron
+  Collider. It is a general purpose detector designed to test predictions of the
+  Standard Model (SM) and search for the Higgs Boson, as well as search for
+  signatures of new physics beyond the SM. The analyses described in
+  this thesis use proton-proton collision data recorded by CMS during 2011 and
+  2012. Searches for neutral Higgs bosons decaying into tau pairs are presented.
+  The searches are performed in the context of the SM Higgs Boson or the neutral
+  Higgs bosons of the minimal supersymmetric standard model (MSSM). The MSSM
+  searches are separated into two analysis. The first contains a direct search 
+  for any one of the MSSM neutral Higgs bosons in the mass range from $90\,\GeV$ to 
+  $1\,\TeV$ decaying directly into taus. The second searches for the signature 
+  from a heavy neutral Higgs boson of the MSSM decaying into two light MSSM Higgs 
+  bosons with SM-like properties in the final state with two b-quarks and two
+  taus. The SM and MSSM $\Pgt\Pgt$ analyses use $4.9\,\invfb$ of data collected
+  at $7\,\TeV$ and $19.7\,\invfb$ collected at $8\,\TeV$. In the SM analysis, an
+  excess of events in data above the background expectation is observed with an
+  observed (expected) local significance of $3.0$ ($3.1$) standard deviations at
+  $125\,\GeV$. This excess is found to be consistent with the $125\,\GeV$ Higgs
+  boson of the SM in mass and coupling strength. No significance excess is
+  observed in either MSSM search. For both MSSM analyses, upper limits
+  are set on cross-section times branching ratio for the Higgs production
+  processes at the $95\%$ confidence level. For the MSSM $\Pgt\Pgt$ analysis, 
+  limits are also set in $m_{\PA}$-$\tan\beta$ parameter space of several interesting
+  scenarios.
 \end{abstract}
 
 
 %% Declaration
 \begin{declaration}
-  This dissertation is the result of my own work, except where explicit
-  reference is made to the work of others, and has not been submitted
-  for another qualification to this or any other university. This
-  dissertation does not exceed the word limit for the respective Degree
-  Committee.
+  I declare that the work contained in this thesis is my own. Where figures and
+  results are taken from other sources this is indicated by an appropriate
+  reference. All figures labelled ``CMS'' are sourced directly from CMS
+  publications, including those made by myself, and as such include the
+  relevent reference in the caption. The label ``CMS (unpublished)'' or ``CMS
+  Preliminary'' is reserved for figures not directly included in a paper but 
+  made public via a public twiki page or other preliminary public document.
+  Studies conducted and results produced by myself are indicated in the main
+  body of the text. For the analyses in chapters \ref{chap:htt-sm} to \ref{chap:Hhh}
+  the work was conducted as part of the CMS $\PH\to\Pgt\Pgt$ working group. I
+  contributed to measurement of identification and trigger efficiencies and
+  the statistical interpretation for the results in chapters \ref{chap:htt-sm}
+  and \ref{chap:htt-mssm}. These results are those from the most recent legacy results
+  from Run 1 of the LHC~\cite{HIG-13-004,HIG-13-021}, and my work
+  was also included in the preliminary results that predated them with subsets
+  of the Run 1 data available at the time; at the HCP 2012
+  \cite{CMS-PAS-HIG-12-050,CMS-PAS-HIG-12-043}
+  and Moriond 2013~\cite{CMS-PAS-HIG-13-004-mor} conferences, as well as for a preliminary result
+  produced in November 2013 \cite{CMS-PAS-HIG-13-021}. The final analysis in
+  chapter \ref{chap:Hhh} is to date not yet published. For this
+  analysis, my work included designing event selections, studying
+  background methods and evaluating systematics and further work on statistical
+  interpretation. For this analysis I provided the main result for two out of
+  the three channels included in the final version of the analysis to be published.
   \vspace*{1cm}
   \begin{flushright}
     Rebecca Lane
@@ -27,21 +77,31 @@
 
 %% Acknowledgements
 \begin{acknowledgements}
-  Of the many people who deserve thanks, some are particularly prominent,
-  such as my supervisor\dots
+  I would like to thank the STFC and Imperial College for giving me the
+  opportunity to conduct this research, and especially for providing me with two
+  years of valuable experience working at CERN. Thanks to my supervisor David
+  Colling for persuading me towards the exciting field of Higgs physics and for
+  guiding me through my PhD research. I also thank M\'{o}nica for her
+  support and advice during my time at CERN, and Sasha for his friendly
+  enthusiasm. I owe a huge amount to Andrew, for teaching me the important
+  aspects of an analysis with exceptional patience. I thank all of the friends I
+  made on LTA at CERN for providing some extremely fun distractions from work, and those
+  back home for not minding when I missed all their social events while I was
+  away. Finally I thank my parents, Kevin and Shirley, my brother Tom and my
+  boyfriend Tom for their love and support.  
 \end{acknowledgements}
 
 
 %% Preface
-\begin{preface}
-  This thesis describes my research on various aspects of the \LHCb
-  particle physics program, centred around the \LHCb detector and \LHC
-  accelerator at \CERN in Geneva.
+%\begin{preface}
+%  This thesis describes my research on various aspects of the \LHCb
+%  particle physics program, centred around the \LHCb detector and \LHC
+%  accelerator at \CERN in Geneva.
 
-  \noindent
-  For this example, I'll just mention \ChapterRef{chap:SomeStuff}
-  and \ChapterRef{chap:MoreStuff}.
-\end{preface}
+% \noindent
+%  For this example, I'll just mention \ChapterRef{chap:SomeStuff}
+%  and \ChapterRef{chap:MoreStuff}.
+%\end{preface}
 
 %% ToC
 \tableofcontents

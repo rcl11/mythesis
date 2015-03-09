@@ -1,35 +1,46 @@
 
 \begin{table}[tbhp]
+\small
 \begin{center}
     \begin{tabular}{|l|c|c|c|c|}
     \hline
-    \multicolumn{2}{|c|}{Source of uncertainty and affected signal/backgrounds} & \multicolumn{3}{|c|}{Event yield uncertainty}  \\
-    \multicolumn{2}{|c|}{} & \multicolumn{3}{|c|}{by event category} \\
+    \multicolumn{2}{|c|}{Source of uncertainty} & \multicolumn{3}{|c|}{Yield changes}  \\
+    \multicolumn{2}{|c|}{and affected processes} & \multicolumn{3}{|c|}{by event category} \\
     \hline
-     Experimental uncertainty                                  & Affected processes &  0--jet    &  1--jet  &  2--jet (VBF)      \\
+     Experimental uncertainty                                  & Affected process &  0--jet    &  1--jet  &  2--jet (VBF)      \\
      \hline
-     Integrated luminosity $8\,\TeV$                           & All MC & 2.6\% & 2.6\% & 2.6\%       \\
-     Electron ID and trigger                                   & All MC &  2\%  & 2\%  & 2\%       \\
-     Muon ID and trigger                                       & All MC & 2--3\%       &   2--3\%    & 2--3\%       \\
-     Tau ID and trigger                                        & All MC & 8\%  & 8\% & 8\%           \\
-     b-tagging efficiency                                      & All MC & \% &   \%  & \% \\
-     b-mistag rate                                             & All MC & \% & \%  & \%       \\
+     Integrated lumi. $7$/$8\,\TeV$                 & All MC & 2.2/2.6\% & 2.2/2.6\% & 2.2/2.6\%       \\
+     \Pe ID \& trigger                                   & All MC &  2\%  & 2\%  & 2\%       \\
+     \Pmu ID \& trigger                                       & All MC &  2\%  & 2\%  & 2\%       \\
+     \Pgt ID \& trigger                                        & All MC &  8\%  & 8\% & 8\%           \\
+%somehwere there is an extra 3%- for high pt taus? something like that
+     b-tag efficiency                                      & All MC & 2--10\% & 2--10\%  &  3--15\% \\
+ %    b-mistag rate                                             & All MC & \% & \%  & \%       \\
      \hline
      $\PZ$ production                                          & $\ZToTauTau$, $\PZ\to\ell\ell$ & 3.3\%     &   3.3\%    & 3.3\%      \\
-     $\PZ\to\Pgt\Pgt$: category selection                      & $\ZToTauTau$ & \%  & \% & \%        \\
-     Norm. $\ttbar$                                            & $\ttbar$ & 10\%  &   10\%  &  10\%        \\
-     Norm. di-boson                                            & diboson & 15\%   &   15\%  &  15\%      \\
-     Norm. QCD                                                 & QCD  & \% &  \% & \%         \\
-     Norm. $\WJets$                                            & $\WJets$ & \% &  \% & \%             \\
-     $\Pe$ misidentified as $\Pgth$                            & $\PZ\to\Pe\Pe$ & \%     & \%   & \%      \\
-     $\Pgm$ misidentified as $\Pgth$                           & $\PZ\to\Pmu\Pmu$ & \%     & \% & \%         \\
-     Jet misidentified as $\Pgth$                              & $\PZ+$jets & \%  & \% & \%             \\
+     $\PZ\to\Pgt\Pgt$: category                                & $\ZToTauTau$ & 3--5\%  & 3--5\% & 10--15\%        \\
+%ttbar needs checking - why sometimes 8% in VBF?
+     Norm. $\ttbar$                                            & $\ttbar$ & 10\%  &   10\%  &  10--34\%        \\
+     Norm. di-boson                                            & diboson & 15\%   &   15\%  &  15--52\%      \\
+     Norm. QCD                                                 & QCD  & 6--20\% &  10\% & 22--100\%         \\
+     Norm. $\WJets$                                            & $\WJets$ & 20\% & 10--17\% & 20--55\%             \\
+     $\Pe$ misid. as $\Pgth$                            & $\PZ\to\Pe\Pe$ & 30\%     & 30\%   & 30\%      \\
+     $\Pgm$ misid. as $\Pgth$                           & $\PZ\to\Pmu\Pmu$ & 30\%  & 30\%  & 30\%         \\
+     Jet misid. as $\Pgth$                              & $\PZ+$jets & 20\%  & 20\% & 20--80\%             \\
+     Shape misid. $\Pe/\Pgm$                            & $\PZ\to\ell\ell$  & shape     & shape     & shape         \\
      Shape QCD                                                 & QCD & shape & shape & shape \\
      \hline
-     Tau energy scale                                          & All MC & shape & shape & shape \\
-     Jet energy scale                                          & All MC & \%  &   \%  & \%       \\
-     \MET scale                                                & All MC & \% &   \%  & \%      \\
+     Tau energy scale                                          & All MC & 1--27\%, shape & 1--13\%, shape & 1--7\%, shape \\
+     Jet energy scale                                          & All MC & 1--16\%  &  1--6\%  & 3--25\%       \\
+     \MET scale                                                & All MC & 1--7\% &   1--12\%  & 1--10\%      \\
      \hline
+     PDF ($\Pq\Pq$)                                           & signal & 1--10\% & 10\% & 10\% \\   
+     PDF ($\Pg\Pg$)                                           & signal & 1--4\% & 2--4\% & 2--4\% \\  
+     Scale variation                                          & signal & 1--8\% & 1--20\% & 2--31\% \\   
+     UE \& PS                                                 & signal & 1--9\% & 1--5\% & 1--12\% \\  
+    \hline
+    Limited bin statistics            & all backgrounds       & shape     & shape     & shape         \\ 
+    \hline
      \end{tabular}
     \caption[Systematic uncertainties that affect the estimated number of signal or
     background events in the $\HToTauTau$ analysis.]{

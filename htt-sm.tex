@@ -23,8 +23,8 @@ muons $\Pmu$ and hadrons (denoted $\Pgth$), all with associated neutrinos.
 This gives a total of six possible final states: $\ee$, $\mumu$, $\emu$,
 $\etau$, $\mutau$ and $\tautau$. The analysis details in this chapter focus on
 the $\mutau$ and $\etau$ final states, whilst results including the combination of all
-six $\HToTauTau$ channels, and additional channels from a dedicated $\PW\PH\to\Pgt\Pgt$ and
-$\PZ\PH\to\Pgt\Pgt$ analysis, are shown in \ref{sec:results}. More detail on the other channels
+six $\HToTauTau$ channels, and additional channels from a dedicated $\PW\PH$, $\PH\to\Pgt\Pgt$ and
+$\PZ\PH$, $\PH\to\Pgt\Pgt$ analysis, are shown in \ref{sec:results}. More detail on the other channels
 not described here can be found in \cite{HIG-13-004}. 
 
 \section{Event Selection}
@@ -41,41 +41,41 @@ Selected events in the $\etau$ channel require an electron and hadronic tau
 candidate. The events are first selected by a trigger algorithm which requires
 an electron and tau object. At the \ac{L1} trigger the requirement is simply a
 single electron. At the \ac{HLT}, loose ID and isolation requirements are placed on the
-electron, and additionally a $\Pgth$ object is required. For
-the $\Pgth$ a simplified version of the \ac{PF} algorithm is used, and a loose
-isolation is applied. These ID and isolation requirements are only approximate
-compared to the more sophisticated algorithms which can be applied offline.  
+electron, and additionally a $\Pgth$ object is required. A simplified version of
+the \ac{PF} algorithm is used to select the $\Pgth$ candidate, and a loose
+isolation is applied. Such ID and isolation requirements are looser and more approximate
+than the more sophisticated algorithms which can then be applied offline.  
 
-In the offline selection the electron is required to have $\pt$ larger than ($20~\GeV$)
-$24~\GeV$ in (2011) 2012 data. The higher $\pt$ cut in 2012 data is necessary
+In the offline selection the electron is required to have $\pt$ larger than $20\,\GeV$
+or $24\,\GeV$ in 2011 or 2012 data respectively. The higher $\pt$ cut in 2012 data is necessary
 due to increased trigger thresholds necessary to maintain stable rates in the
 higher instantaneous luminosity conditions. In all data taking periods the $\eta$ requirement
 on the electron is $|\eta| < 2.1$. The electron is required to pass the electron
-ID \ac{BDT} as described in section \ref{sec:electrons}, using a $\pt$ and
+ID \ac{BDT} as described in section~\ref{sec:electrons}, using a $\pt$ and
 $\eta$ dependent cut which corresponds to the tight working point.  
-The isolation definition described in section \ref{sec:leptonisolation} is
+The isolation definition described in section~\ref{sec:leptonisolation} is
 applied with a threshold of $I_{\text{rel}} < 0.1$. Finally, the electron must be compatible with
 originating at the chosen \ac{PV}, and so the impact parameters in the
 transverse and beam directions, $d_{xy}$ and $d_{z}$ respectively, must be 
-less than $0.045~\cm$ and $0.2~\cm$. 
+less than $0.045\,\cm$ and $0.2\,\cm$. 
 
-The selected hadronic tau has $\pt > 30~\GeV$ and $|\eta|<2.3$. 
+The selected hadronic tau has $\pt > 30\,\GeV$ and $|\eta|<2.3$. 
 The tau is identified using the \ac{HPS} algorithm as described in 
 section \ref{sec:hps}. The tau must be compatible with
 originating at the chosen \ac{PV}, and so the impact parameter in the beam
-direction, $d_{z}$, must be smaller than $0.2~\cm$. 
-As described in section \ref{sec:tauleptonrejection}, 
+direction, $d_{z}$, must be smaller than $0.2\,\cm$. %note: find out why no d_xy cut
+As described in section~\ref{sec:tauleptonrejection}, 
 tau candidates are required to pass criteria to reduce the mis-identification of electrons and
 muons. In the $\etau$ channel, a tight working point for electron rejection is
 used, and a loose working point for muon rejection. Isolation as described in
-section \ref{sec:tauisolation} is applied using an optimised working point of
+section~\ref{sec:tauisolation} is applied using an optimised working point of
 $1.5~\GeV$.  
 
 The electron and hadronic tau are required to be of opposite charge. If more
 than one such pair exists in the event, then the pair with the highest sum $\pt$
 is selected. The $\pt$ and $\eta$ distributions of the selected pair in the
-$\etau$ channel are shown in figure \ref{fig:etauelectrons} for the electron and
-\ref{fig:etautaus} for the tau. 
+$\etau$ channel are shown in figure~\ref{fig:etauelectrons} for the electron and
+figure~\ref{fig:etautaus} for the tau. 
 
 
 \begin{figure}[htb]
@@ -113,16 +113,17 @@ channel.
 \label{fig:etautaus}
 \end{figure}
 
-\subsection{Candidate Pair in the $\mutau$ Channel}
+\subsection{Candidate Events in the $\mutau$ Channel}
 
 Selected events in the $\mutau$ channel require a muon and hadronic tau
 candidate. The events are first selected by a trigger algorithm which requires
-a muon and tau object. This is done in the same way as for the $\etau$ channel,
+a muon and tau object. This is done analogously to the $\etau$ channel,
 where the trigger object at \ac{L1} is a muon and the hadronic tau is
 reconstructed at \ac{HLT} level.
 
-In the offline selection the muon is required to have $\pt$ larger than ($17~\GeV$)
-$20~\GeV$ in (2011) 2012 data. As for the $\etau$ channel, the higher $\pt$ cut is necessary for the
+In the offline selection the muon is required to have $\pt$ larger than
+$17\,\GeV$ or $20\,\GeV$ in 2011 or 2012 data respectively. 
+As in the $\etau$ channel, the higher $\pt$ cut is necessary for the
 higher trigger threshold in 2012. In all data taking periods the $\eta$ requirement
 on the muon is $|\eta| < 2.1$. The muon is required to pass tight muon ID as
 defined in section \ref{sec:muons}. The isolation definition described in 
@@ -138,8 +139,8 @@ anti-electron discriminator are used.
 Similarly to the $\etau$ channel, the muon and hadronic tau are required to be of 
 opposite charge, and if more than one such pair exists then the pair with the highest sum $\pt$
 is selected. The $\pt$ and $\eta$ distributions of the candidate pair in the
-$\mutau$ channel are shown in figure \ref{fig:mutaumuons} for the muon and
-\ref{fig:mutautaus} for the tau. 
+$\mutau$ channel are shown in figure~\ref{fig:mutaumuons} for the muon and
+figure~\ref{fig:mutautaus} for the tau. 
 
 
 \begin{figure}[htb]
@@ -180,24 +181,31 @@ channel.
 \subsection{Extra lepton vetos}
 
 The contribution of certain backgrounds is reduced by vetoing events with extra
-leptons in them. This is also crucial to ensure there is no event overlap
-between categories, for example between the $\mutau$ channel and the
-$\PW\PH\to\Pgt\Pgt$ analysis in the $\mu\mu\tau_{h}$ final state. In the
-$\mutau$ and $\etau$ channels, events are vetoed if they contain an extra muon
-or electron respectively, to reduce contribution from $\PZ\to\ell\ell$ in which
-the $\tau_{h}$ is a fake from an extra misidentified jet in the event. In these
-vetos, the definition of the extra lepton is slightly looser than the lepton ID
-used for the candidate pair - with a $\pt$ requirement of $> 15~\GeV$ and
-passing loose versions of the ID and isolation. A further veto on all events
-containing any additional electron or muon candidate is applied, also with
-relaxed selections. 
+leptons in them. In the $\mutau$ and $\etau$ channels, events are vetoed if they contain an extra
+opposite sign muon or electron respectively, to reduce contribution from 
+$\PZ\to\ell\ell$ events in which the $\Pgth$ is a fake from a misidentified 
+jet in the event. In this veto, the definition of the extra lepton is slightly 
+looser than the lepton ID used for the candidate pair, with a $\pt$ requirement
+of $>15\,\GeV$ and passing loose ID and isolation. 
+An additional veto is applied which ensures that the number of
+electrons/muons with $\pt>10\,\GeV$ passing a slightly tighter ID and isolation
+is exactly one/zero in the $\etau$ channel and exactly zero/one in the $\mutau$ channel, with no charge
+requirement. This reduces the contribution of backgrounds such as $\PW\PZ$
+events which can decay to combinations of two or three electrons and muons. 
+It was found that the combination of both vetoes was optimal for signal
+efficiency compared with background rejection. Note that such vetoes are also crucial 
+to ensure there is no event overlap between categories entering a final combined 
+result, for example between the $\mutau$ channel and the 
+$\PW\PH$, $\PH\to\Pgt\Pgt$ analysis in the $\Pmu\Pmu\Pgth$ final state. 
 
 \subsection{Topological Selection}
 \label{sec:topologicalselection}
 
 After selection of the candidate pair, a large background from $\WJets$ remains
 in the $\etau$ and $\mutau$ channels, usually with the lepton from the $\PW$ and
-a jet faking the hadronic tau. A useful quantity to reduce this background is
+a jet faking the hadronic tau. The contribution of this background is indicated
+in the figures with the label ``Electroweak'', which also includes the smaller
+contributions from diboson and single top events. A useful quantity to reduce this background is
 the transverse mass between the lepton and the $\MET$:
 
 \begin{equation}
@@ -213,7 +221,7 @@ mass than the $\Pgt$, and hence the neutrino is more likely to travel in the
 opposite direction to the lepton in the transverse plane. Hence $\WJets$ events
 have a higher transverse mass than signal events, and so a cut of
 $m_{\text{T}}<30\,\GeV$ is found to reduce a large amount of $\WJets$ events
-whilst still retaining a good signal efficiency.
+whilst still retaining a good signal efficiency. 
 
 Figure \ref{fig:transversemass} shows the distribution of $m_{\text{T}}$ for all
 events in the $\mutau$ channel before the $m_{\text{T}}<30\,\GeV$ cut is
@@ -225,8 +233,10 @@ applied.
       {plots/htt-sm/mt_1_inclusive_mt_2012.pdf}
 
 \end{center}
-\caption{
- The transverse mass between the muon and the $\MET$ in the $\mutau$ channel.  
+\caption[The transverse mass between the muon and the $\MET$ in the $\mutau$ channel.]{
+ The transverse mass between the muon and the $\MET$ in the $\mutau$ channel.
+ Events with high transverse mass largely result from the $\WJets$ background,
+ wheres events with real taus generally have lower transverse mass.
 }
 \label{fig:transversemass}
 \end{figure}
@@ -251,13 +261,20 @@ channels.
 \end{center}
 \caption[Categories used in the $\etau$ and $\mutau$ channels of the SM
  $\HToTauTau$ analysis.]{
- Categories used in the $\etau$ and $\mutau$ channels of the SM
- $\HToTauTau$ analysis \cite{HIG-13-004}.  
+ Categories used in the $\etau$ and $\mutau$ channels of the \ac{SM}
+ $\HToTauTau$ analysis \cite{HIG-13-004}. Events are separated according to the
+ numbers of jets in the event, to target the properties of gluon fusion and \ac{VBF}
+ Higgs production. Events with large tau or Higgs candidate $\pt$ are more
+ signal sensitive, and so further separations are made using these variables.
+ The signal sensitivity in the 2--jet events is enhanced using cuts on $m_{jj}$ and
+ $\Delta\eta_{jj}$, which are both expected to be large in \ac{VBF} signal events.
+ The 1--jet low $\pt^{\Pgt\Pgt}$ category is removed in the $\etau$ channel
+ since such events are suppressed by the $\MET$ cut.   
 }
 \label{fig:smcategories}
 \end{figure}
 
-The categorisation separates events which have 0, 1 or $\geq$2 jets with $\pt > 30~\GeV$
+The categorisation separates events which have zero, one or $\geq$ two jets with $\pt > 30~\GeV$
 and $|\eta| < 4.7$. The jets are required to be separate from the lepton
 candidates by $\Delta R > 0.5$. Events which contain a b-tagged jet as described in section
 \ref{sec:btag} are vetoed to reduce the contribution of the $\ttbar$ background. 
@@ -265,24 +282,25 @@ The 0--jet categories are background dominant, and are included in the final
 signal extraction to provide constraints on the backgrounds for the more signal
 sensitive categories. The 1--jet categories are sensitive to gluon fusion Higgs
 production in association with a jet and \ac{VBF} Higgs production where one jet is
-not picked up by the detector. The 2-jet categories are sensitive to
-\ac{VBF} Higgs production, and the additional cuts on $m_{jj}$ and $\Delta
-\eta_{jj}$ exploit the topology of this process. Events with additional jets in
-the $\Delta \eta_{jj}$ gap are vetoed to reduce the \ac{QCD} background.
+not picked up by the detector. The 2--jet categories are sensitive to
+\ac{VBF} Higgs production, and the additional cuts on the invariant mass, $m_{jj}$,
+and $\eta$ separation, $\Delta\eta_{jj}$, of the two leading
+jets exploit the topology of this process. Events with additional jets in
+the $\Delta \eta_{jj}$ gap are vetoed to reduce the QCD background.
 
 To improve sensitivity, categories are further separated into more signal-like
 and background-like events. The 0--jet and 1--jet categories are separated by
 $\Pgth$ $\pt$. The high $\pt^{\Pgth}$ events are more likely to be
 consistent with a $\HToTauTau$ event than a $\ZToTauTau$ event due to the higher
-mass of the Higgs than the $\PZ$. This also reduces contributions from \ac{QCD}
+mass of the Higgs than the $\PZ$. This also reduces contributions from QCD
 and $\WJets$ processes, where the jet faking the hadronic tau is likely to be
 softer. An additional boosted category is used in 1-jet high $\pt^{\tau_{h}}$
 events with a cut on the di-tau $\pt$, defined as:
 \begin{equation}
 \pt^{\Pgt\Pgt} = |\vec{\pt}^{\Pe/\Pmu} + \vec{\pt}^{\Pgth}+\vecMET|,
 \end{equation}
-%where $L$ and $L'$ are the electron/muon and $\Pgth$ candidates, 
-with the requirement $\pt^{\Pgt\Pgt}>100~\GeV$. The VBF categories are split into VBF
+where $\vec{\pt}$ is the vector $\pt$ of the candidate, with the requirement 
+$\pt^{\Pgt\Pgt}>100~\GeV$. The VBF categories are split into VBF
 ``tight'' and ``loose'' based on tighter or looser $m_{jj}$ and
 $\Delta\eta_{jj}$ cuts and the inclusion of the same ditau $\pt$ cut as in the
 boosted 1-jet category. The distribution of the $\pt^{\Pgt\Pgt}$ in the
@@ -301,13 +319,13 @@ $\mutau$ channel is shown in figure \ref{fig:ditaupt}.
 \end{figure}
 
 The boosted 1--jet and the VBF tight categories are very 
-signal sensitive, and also select events wth the best $m_{\tau\tau}$ resolution.
+signal sensitive, and also select events with the best $m_{\Pgt\Pgt}$ resolution.
 The VBF tight category is not possible in 2011 data due to the lower statistics,
 so the VBF tight and VBF loose categories are merged. 
 
 In the $\etau$ channel, 1--jet categories have an additional cut of $\MET >
-30~\GeV$ to reduce the background from $\PZ\to\Pe\Pe$. This cut suppresses the
-signal and $\ZToTauTau$ events with low $\pt^{\Pgt\Pgt}$, and as such the 1-jet low
+30~\GeV$ to reduce the background from $\PZ\to\Pe\Pe$. This cut also suppresses the
+signal and $\ZToTauTau$ events with low $\pt^{\Pgt\Pgt}$, and so the 1-jet low
 $\pt^{\Pgt\Pgt}$ category is not possible in the $\etau$ channel. 
 
 In all categories in the $\etau$ and $\mutau$ channels, the final discriminating
@@ -325,14 +343,15 @@ generator is used for the $\ZJets$, $\WJets$, diboson ($\PW\PW$, $\PZ\PZ$ and
 $\PW\PZ$) and $\ttbar$ backgrounds. 
 In order to have high enough statistics to evaluate the
 backgrounds in categories with varying jet multiplicities, extra samples are
-generated with fixed jet multiplicities up to 4. These are combined with
+generated with fixed jet multiplicities up to four. These are combined with
 inclusive samples using the expected ratio to retain the correct cross-section
 ratios between different jet multiplicities. 
 
 The single top samples are generated using
 \textsc{powheg}~\cite{Frixione:2007vw,Alioli:2010xd,Alioli:2010xa}, as are the
-signal samples for gluon-fusion and \ac{VBF} at \ac{NLO} precision. Signal
-samples for production in association with a vector boson are generated using
+\ac{SM} signal samples for gluon-fusion and \ac{VBF} at \ac{NLO} precision. Signal
+samples for production in association with a vector boson or a pair of top
+quarks are generated using
 \textsc{pythia}~\cite{Sjostrand:2006za} at \ac{LO} precision. In all
 samples, \textsc{pythia} is used for parton showering and hadronisation and
 \textsc{tauola}~\cite{TAUOLA} is used for tau decays. Minimum bias events
@@ -340,14 +359,15 @@ generated by \textsc{pythia} are added to all generated Monte Carlo samples
 to simulate additional proton-proton interactions, and then the events are
 weighted to match the pile-up distribution observed in data. 
 
-For the signal, \ac{MC} samples are produced in $5~\GeV$ steps between
-$m_{\PH}=90~\GeV$ and $m_{\PH}=145~\GeV$. The cross-sections and branching ratios 
+For the signal, \ac{MC} samples are produced in $5\,\GeV$ steps between
+$m_{\PH}=90\,\GeV$ and $m_{\PH}=145\,\GeV$. The cross-sections and branching ratios 
 are taken from the \ac{LHCHXSWG}
 \cite{LHCHiggsCrossSectionWorkingGroup:2011ti,Dittmaier:2012vm,Heinemeyer:2013tqa}.
 The full set of simulated processes, the \ac{MC} generators used and the
 corresponding cross-sections can be found in table \ref{tab:datasetsandMC}.
 
 \begin{table}[tbh]
+\begin{center}
 \begin{tabular}{|l|c|c|c|}
 \hline
 Process & \ac{MC} Generator & \multicolumn{2}{|c|}{Cross Section [$\picobarn$]} \\
@@ -381,6 +401,7 @@ samples are produced for jet multiplicities of 0, 1, 2, 3 and 4. The
 cross-sections listed for the signal process are for $m_{\PH}=125~\GeV$.
 }
 \label{tab:datasetsandMC}
+\end{center}
 \end{table}
 
 \section{Background Estimation}
@@ -395,12 +416,12 @@ individually for each source of background.
 \subsection{Drell-Yan $\PZ \to\Pgt\Pgt$}
 \label{sec:backgroundEstimation_Ztautau}
 
-The $\PZ \to \Pgt\Pgt$ component is the largest and is usually referred to as ``irreducible", due to its final
+The $\PZ \to \Pgt\Pgt$ background is the largest and is usually referred to as ``irreducible", due to its final
 state involving two real taus which only differ from the $\PH \to \Pgt\Pgt$ signal by
 having an invariant mass closer to $m_{\PZ}$ than $m_{\PH}$.
 The contribution from $\ZToTauTau$ in each category is estimated using an
 ``embedded'' sample. In this process a sample of $\PZ\to\Pmu\Pmu$ events in data are
-collected and the muons replaced with simulated taus. These muons are required
+collected and the muons replaced with simulated taus. The muons are required
 to pass \ac{PF} identification and loose isolation and be of opposite charge.
 The simulated taus are assigned the 4-momenta of the muons, and all other
 quantities such as jets, $\MET$ and tau isolation are re-computed. The taus
@@ -428,7 +449,7 @@ category selection.
 
 The $\PZ\to\ell\ell$ background results when one lepton provides the electron or
 muon and either the other lepton or an associated jet fakes the hadronic tau. This
-background is much smaller than $\ZToTauTau$ but especially important in the
+background is much smaller than $\ZToTauTau$ but is especially important in the
 $\etau$ channel where electrons have a $3$-$4\%$ probability to pass the
 anti-electron discrimination in the tau ID. Both yield and shape of this
 background are taken from simulation.
@@ -436,17 +457,17 @@ background are taken from simulation.
 \subsection{$\WJets$}
 \label{sec:backgroundEstimation_WplusJets}
 
-$\WJets$ has already been mentioned in section \ref{sec:topologicalselection},
-and is a background in this analysis where there is a real electron or
-muon from the W and one of the associated jets fakes a hadronic tau. This
-background is largely reduced by the $m_{\text{T}}< 30~\GeV$ cut. 
-To estimate the remaining contribution the
-events with $m_{\text{T}}> 70~\GeV$ are used, which are dominated by $\WJets$ 
+$\WJets$ events have already been discussed in section \ref{sec:topologicalselection},
+and form a background in this analysis where there is a real electron or
+muon from the $\PW$ and one of the associated jets fakes a hadronic tau. This
+background is largely reduced by the $m_{\text{T}}< 30\,\GeV$ cut. 
+The remaining contribution is estimated using 
+events with $m_{\text{T}}> 70\,\GeV$, which are dominated by $\WJets$ 
 events as can be seen in figure \ref{fig:transversemass}. 
 This is used to estimate the sideband normalisation of the $\WJets$, by
 subtracting all other backgrounds from data and taking the rest to be $\PW$.
-An extrapolation factor from  $m_{\text{T}} > 70~\GeV$ to $m_{\text{T}}< 30~\GeV$, 
-is then calculated from MC and scales the sideband normalisation.
+An extrapolation factor from  $m_{\text{T}} > 70\,\GeV$ to $m_{\text{T}}< 30\,\GeV$, 
+is then calculated from MC and used to scale the sideband normalisation.
 
 The shape of the $\WJets$ is taken from MC in each category. Due to the low number of
 events passing the VBF categories, the $m_{jj}$ and $|\Delta\eta_{jj}|$
@@ -459,18 +480,18 @@ obtaining the shape.
 QCD background occurs when both the lepton and the tau are misidentified jets, and is estimated 
 entirely from data. It is expected that the contribution of events with a
 candidate pair in which the pair have opposite or the same
-charges/signs is roughly the same in QCD. Thus the same
+charges (signs) is roughly the same in QCD. Thus the same
 sign data is used with all other backgrounds subtracted, to predict the rate of
-QCD in the opposite sign events in our signal region. 
+QCD in the opposite sign events in the signal region. 
 For the background subtraction, the $\WJets$ is 
-estimated as described in the previous section simply switching opposite sign
-events for same sign, and all other background
+estimated as described in the previous section simply using same sign
+events instead of opposite sign, and all other background
 contributions are estimated from \ac{MC}. The rates of opposite sign to same
 sign QCD events are not quite exactly the same, and an extrapolation factor of
 1.06 is applied to correct for this. This factor is measured using data with the 
 electron/muon isolation inverted to give a pure QCD sample. 
 
-The same sign data is used in this way for extracting the norm in all of the
+The same sign data is used in this way for extracting the normalisation in all of the
 0--jet and 1--jet
 categories, with the exception of 1--jet high-$\pT^{\Pgth}$ boosted.
 Due to the low statistics in the 1--jet high-$\pT^{\Pgth}$ boosted and in the VBF
@@ -485,9 +506,31 @@ category selection as estimated in the anti-isolated data.
 
 In the 0--jet low-$\pT^{\Pgth}$ category the shape is taken from the normal
 isolation same-sign data with other backgrounds subtracted. In all other
-categories the anti-isolated data is used for the shape. In the 1--jet
-high-$\pT^{\Pgth}$ boosted and tight VBF-tag categories the isolation on the
-$\Pgt_{had}$ is also loosened to obtain a sufficiently smooth shape.  
+categories the anti-isolated data is used for the shape.
+Figure~\ref{fig:samesign} shows the distribution of $m_{\Pgt\Pgt}$ in same sign
+events in the 1-jet low-$\pT^{\Pgth}$ and VBF-loose categories in the $\mutau$
+channel, in which the shape has been taken fron the anti-isolated data. It can be seen that the
+predictions from the anti-isolated data agree well with the same sign normal
+isolation data. In the 1--jet
+high-$\pT^{\Pgth}$ boosted and tight VBF categories the isolation on the
+$\Pgt_{had}$ is also loosened to obtain a sufficiently smooth shape. 
+
+\begin{figure}[htb]
+\subfloat[]{
+\includegraphics[width=0.5\textwidth]{plots/htt-sm/m_sv_1jet_medium_mt_2012.pdf}}
+\subfloat[]{
+\includegraphics[width=0.5\textwidth]{plots/htt-sm/m_sv_vbf_loose_mt_2012.pdf}}
+\caption[Distribution of $m_{\Pgt\Pgt}$ for same sign candidate events in the
+1-jet low-$\pT^{\Pgth}$ (left) and VBF-loose (right) categories of the $\mutau$
+channel.]{Distribution of $m_{\Pgt\Pgt}$ for same sign candidate events in the
+1-jet low-$\pT^{\Pgth}$ (left) and VBF-loose (right) categories of the $\mutau$
+channel. The shape of the QCD estimate is taken from anti-isolated data. For the
+VBF-loose events, the normalisation of the QCD is also estimated using an efficiency
+calculated with anti-isolated data, as described in the text. 
+The figures indicate that the agreement with the data in the normal isolation same sign region is good. 
+Note that here the uncertainty band includes only statistical uncertainty on the background esimate.}
+\label{fig:samesign}
+\end{figure}
 
 \subsection{$\ttbar$}
 \label{sec:backgroundEstimation_TT}
@@ -498,7 +541,8 @@ $t \bar{t}$. This is done using the $\emu$ channel, which has a much higher
 quantity of $\ttbar$ than $\etau$ and $\mutau$. The control region is used to
 derive a scale factor to the \ac{MC} normalisation. This control region will be
 discussed further in chapter \ref{chap:Hhh} in the context of an analysis which
-much larger contributions from $\ttbar$ background.  
+much larger contributions from $\ttbar$ background. In this analysis the
+contribution from $\ttbar$ is reasonably low due to the b-jet veto.
 
 \subsection{Diboson and single top}
 Both the normalisation and shapes of these backgrounds are estimated using MC.
@@ -509,8 +553,7 @@ The contributions from these backgrounds are much smaller than the others.
 
 Whilst data-driven methods are used wherever possible, \ac{MC} is still
 relied on in predicting expected shapes and yields of signal and some of the
-backgrounds, as discussed in the previous section.
-As such is it important that the \ac{MC} is corrected for
+backgrounds. As such is it important that the \ac{MC} is corrected for
 any effects which are known to be imperfectly modeled. Many of these corrections
 are derived by studying the agreement between \ac{MC} and data in dedicated
 samples or control regions.
@@ -520,8 +563,7 @@ samples or control regions.
 
 For ID, isolation and trigger efficiencies of the candidate electron/muon 
 and tau in the analysis, the \ac{MC} is corrected for measured differences in 
-the efficiency of the selection in \ac{MC} compared with data.
-
+the efficiency of the selection in \ac{MC} compared with data. 
 This section documents measurements of these efficiences for the electron/muon 
 of the $\etau$ and $\mutau$ channels. This is done using a ``tag and probe"
 method \cite{Khachatryan:2010xn}.
@@ -596,7 +638,7 @@ to the different regions of the muon chambers as discussed in chapter
 a probe passing or failing matching to the electron leg of the $\etau$ trigger.]
 {Fitted $m_{ee}$ peaks for $\PZ\to\Pe\Pe$ tag and probe data events with a probe passing (a) and
 failing (b) matching to the electron leg of the $\etau$ trigger. This example
-fit is for electrons with $26 <\pt< 30~\GeV$ in the barrel. A separate function is fitted for the
+fit is for electrons with $26 <\pt< 30\,\GeV$ in the barrel. A separate function is fitted for the
 background and signal ($\PZ\to\Pe\Pe$) contributions. The ratio of the integrals
 of these two fits gives the trigger efficiency of the electrons, which is
 approximately $80\%$ for this $\pt$ and $\eta$ range.}
@@ -635,9 +677,8 @@ $<$ $|\eta|$ $<$ 1.2 and (bottom) $|\eta|$ $>$ 1.2.}
 \subsection{Other corrections}
 \label{sec:othercorrections}
 
-Several other data to \ac{MC} corrections are applied in this analysis, and are
-discussed briefly here. More information on each correction can be found in
-\cite{HIG-13-004}. 
+Several other data to \ac{MC} corrections are applied in this analysis. 
+More detailed information on each correction can be found in \cite{HIG-13-004}. 
 
 Corrections for the tau trigger efficiency are 
 obtained in a similar way as for the light leptons, using $\PZ\to\Pgt\Pgt\to\Pmu\Pgt_{h}$ events. As described in
@@ -645,7 +686,7 @@ section \ref{sec:taues}, a correction to \ac{MC} for the tau energy
 scale is derived by fitting the di-tau mass and applied to the \ac{MC} samples
 which contain real taus.
 
-As mentioned in section \ref{sec:dataandMC}, a weight is applied to \ac{MC} such
+As described in section~\ref{sec:dataandMC}, a weight is applied to all \ac{MC} such
 that the pileup distribution matches that observed in data.
 
 B-tagging is used in this analysis as a veto, to reduce the contribution of
@@ -696,7 +737,7 @@ than the overall number.
 
 The way in which these different types of uncertainties are incorporated in the
 final results is described in section \ref{sec:signalextraction}. The different
-sources of uncertainties and their chosen values is described separately for the 
+sources of uncertainties and their chosen values are described separately for the 
 normalisation and shape uncertainties. A summary of all systematics applied in
 this analysis is given in table \ref{tab:SMSystematics}.
 
@@ -705,58 +746,58 @@ this analysis is given in table \ref{tab:SMSystematics}.
 
 \subsubsection{\textbf{ID, isolation and trigger efficiencies for the electrons, muons and
 hadronic taus}}
-As discussed in the previous section, data to \ac{MC} scale factors are measured for this 
-analysis and applied to correct \ac{MC}. The estimated uncertainty in these
-measurements are combined in quadrature. For the electrons and muons, this
-amounts to a $2\%$ normalisation uncertainty, which is applied to all
-backgrounds in which the yield is taken from MC and signal.
-For the hadronic taus a $6\%$ uncertainty
-is measured on the tau identification efficiency using 
-$Z/\gamma^{*} \to \Pgt\Pgt \to \Pmu\Pgt_{h}$ events~\cite{Chatrchyan:2012zz}. 
-For the hadronic tau leg of the trigger, the uncertainty is $3\%$ for the $\etau$ and $\mutau$ triggers.
+As discussed in the previous section, \ac{MC} is corrected using scale factors
+to account for differences in ID, isolation and trigger efficiencies. The
+estimated uncertainties in these measurements are combined in quadrature. 
+For the electrons and muons this amounts to a $2\%$ normalisation uncertainty.
+For the hadronic taus a $8\%$ uncertainty on the tau identification efficiency
+is measured using $\PZ \to \Pgt\Pgt \to \Pmu\Pgth$ events~\cite{Chatrchyan:2012zz}. 
+The uncertainty on the tau leg of the $\etau$ and $\mutau$ triggers is $3\%$.
 These uncertainties are applied to signal and all backgrounds in which the yield
 is taken from \ac{MC}.
 
 \subsubsection{\textbf{b-tag scale factors}} 
-Uncertainties on b-tagging efficiencies and mistag rates as function of jet
+Uncertainties on b-tagging efficiencies and mis-tag rates as function of jet
 $\pt$ and $\eta$ are incorporated through variations of the scale factors
 described in the previous section within their estimated uncertainties to modify
 the promote/demote probabilities. This results in an overall change in yield for
-backgrounds and signal as a result of the b-jet veto. For those backgrounds
+backgrounds and signal. For those backgrounds
 with a non-negligible variation as a result of this uncertainty the yield change
 is applied as a normalisation uncertainty. The largest effect of this
 uncertainty is on the $\ttbar$ background which contains real b-jets and can
-vary by up to $10\%$ as a result of this uncertainty. The values of the uncertainties 
+vary by up to $10\%$. The values of the uncertainties 
 are determined as part of the measurement of the efficiencies as described in 
 \cite{CMS-PAS-BTV-11-004} for 2011 data and \cite{CMS-PAS-BTV-13-001} for 2012 data.
 
 \subsubsection{\textbf{$\MET$ scale uncertainty}}
 Uncertainties on \MET resolution and response are accounted for
-by varying the $Z$-recoil correction parameters within the uncertainties
-determined within the recoil correction method.
-This can result in a change in yield as a result of the $m_{\text{T}}$ cut, and
-also affects the $m_{\Pgt\Pgt}$ distribution. In the $\etau$ channel it also directly
-effects the 1--jet categories via the $\MET > 30~\GeV$ cut. The $\MET$ scale
-uncertainty is controlled to within $5\%$ \cite{CMS-PAS-JME-12-002} by the recoil fits and the resulting
-uncertainty on each category is similar. 
+by varying the $\PZ$-recoil correction parameters within the uncertainties
+determined in the recoil correction method.
+This can result in a change in yield as a result of the $m_{\text{T}}$ cut. 
+In the $\etau$ channel it also directly
+effects the 1--jet categories via the $\MET > 30\,\GeV$ cut. The $\MET$ scale
+uncertainty is controlled to within $5\%$ \cite{CMS-PAS-JME-12-002} by the 
+recoil fits and the resulting uncertainty on each category is similar. 
 
 \subsubsection{\textbf{Jet energy scale}}
 Uncertainty on jet energy scale was discussed in section
-\ref{sec:JEC}. This uncertainty can change the number of events in
-each category via the change in jet $\pt$ and $m_{jj}$. Thus the largest
-variations as a result of this uncertainty can be found in the VBF categories
-and are in the range of $5$-$15\%$. 
+\ref{sec:JEC}, and is in the region $3$-$5\%$ dependent on $\pt$ and $\eta$.
+This uncertainty can change the number of events in
+each category via the change in jet $\pt$ and $m_{jj}$. The normalisation
+uncertainties as result of these changes are in the region of $5$-$15\%$
+depending on category, with the largest in the VBF categories. 
 
 \subsubsection{\textbf{Background Normalisation}}
-The systematic uncertainty of the $\ZToTauTau$ estimate is significantly reduced
+The systematic uncertainty on the $\ZToTauTau$ estimate is significantly reduced
 through the use of embedded samples. However, systematics must be evaluated for
 the embedding process to account for imperfections in the removal of the
 $\PZ\to\Pgm\Pgm$ event. This process is studied by applying the embedding
 procedure to $\PZ\to\Pmu\Pmu$ \ac{MC} and comparing with pure $\ZToTauTau$
 \ac{MC}, and an uncertainty of approximately $5\%$ in the category efficiencies
-is observed. An overall uncertainty of $3\%$ on the inclusive normalisation from
-$\PZ\to LL$ \ac{MC} is also applied, to both the $\ZToTauTau$ and
-$\PZ\to\ell\ell$ predictions.
+is observed. An overall uncertainty of $3\%$ on the normalisation from
+$\PZ\to LL$ \ac{MC} is also applied to both the $\ZToTauTau$ and
+$\PZ\to\ell\ell$ predictions to account for uncertainty in the inclusive
+cross-section.
 
 The normalization of the $\WJets$ background is obtained from data, 
 using the high $m_{\text{T}}$ sideband extrapolation method described in
@@ -774,16 +815,21 @@ uncertainty on opposite sign - same sign factor of 1.06, which is found to be
 10$\%$ as measured in an anti-isolated sample.
 
 The uncertainty on the $t \bar{t}$ cross-section amounts to $10\%$, and on the single top and di-boson
-production cross-sections amounts to $15\%$ \cite{Chatrchyan:2013oev,Chatrchyan:2012ep}.
+production cross-sections amounts to $15\%$
+\cite{Chatrchyan:2013oev,Chatrchyan:2012ep}. For some categories, in particular
+the VBF-tag, an additional uncertainty on these backgrounds is added to account
+for low \ac{MC} statistics.  
  
 \subsubsection{\textbf{$\Pgt_{h}$ fake-rates}} 
 The uncertainty on the $\Pe \to \Pgt_{h}$ fakerate is determined as part of
-its measurement. This amounts to an uncertainty of $30\%$, correlated between
-$\Pgt_{h}$ candidates reconstructed in any tau decay mode. 
+its measurement. This amounts to an uncertainty of $20\%$, correlated between
+$\Pgt_{h}$ candidates reconstructed in any tau decay mode~\cite{HIG-13-004}. 
 The uncertainty on the rate of $\Pmu \to \Pgt_{h}$ fakes amounts to $30\%$.
 The uncertainty on the rate of jets faking taus is $20\%$ and primarily affects
 the $\PZ\to\ell\ell$ background, and not the QCD or \WJets which are normalised
-using data driven methods.
+using data driven methods. The $\PZ\to\ell\ell$ prediction in the boosted and
+VBF categories also suffers from low event statistics, yielding larger
+statistical uncertainties as high as $70\%$
 
 \subsubsection{\textbf{Luminosity}} 
 The uncertainty on the luminosity amounts to $2.2\%$ for the 2011 data and
@@ -805,7 +851,7 @@ $2.8\%$ respectively from
 
 Uncertainties due to the renormalisation and factorisation scale uncertainties
 are around $5$-$20\%$ for gluon fusion and $1$-$5\%$ for \ac{VBF} dependent on
-category. An additional uncertainty on the gluon-fusion contribution in the
+category~\cite{HIG-13-004}. An additional uncertainty on the gluon-fusion contribution in the
 VBF categories is estimated to account for the fact that the gluon-fusion is
 simulated using \textsc{powheg} which only includes up to one jet in the matrix
 element calculation. This is done by comparing the acceptances from other
@@ -818,25 +864,27 @@ $2$ and $10\%$ depending on the category.
 \subsection{Shape Uncertainties}
 \label{sec:systematicUncertainties_shape}
 
-\subsubsection{$\tau_{had}$ energy scale} 
+\subsubsection{$\Pgth$ energy scale} 
 When studying mass distributions, the shape of the distribution is directly
 dependent on the energy scale of the objects used in calculating the mass. Thus the
 $m_{\Pgt\Pgt}$ shape is sensitive to the tau energy scale.
 To incorporate this uncertainty, the energy scale of hadronically decaying taus is varied by $3\%$,
-which is constrained by fits to the tau mass discussed in section \ref{sec:taues}.
+which is constrained by fits to the tau mass discussed in section
+\ref{sec:taues}. Note that compared with the tau energy scale, the effect of the
+electron or muon energy scale is negligible.
 
-\subsubsection{\textbf{$Z \to \ell\ell$ lepton energy scale}}
-A shape uncertainty is also added for the $Z \to \ell\ell$ contribution for the
+\subsubsection{\textbf{$\PZ \to \ell\ell$ lepton energy scale}}
+A shape uncertainty is also added for the $\PZ \to \ell\ell$ contribution for 
 events where a lepton fakes a hadronic tau, to account for the effect of the energy 
-scale of the lepton fake. This energy scale mismeasurement is estimated to give a 
-shift of up to $2\%$ in the mass shape of the contribution, and hence a shape systematic amounting to the
-$2\%$ shift up and down is included to cover for this effect.
+scale of the lepton fake. From studies in control regions, this energy scale mismeasurement is 
+estimated to give a shift of up to $2\%$ in the $m_{\Pgt\Pgt}$ shape, and hence a shape systematic amounting to the
+$2\%$ shift up and down is included to cover this effect. %maybe add a reference
 
 \subsubsection{\textbf{Bin-by-bin statistical uncertainties}}
 As described when discussing the background methods, selections are often
 relaxed to obtain smooth templates for certain backgrounds in the most signal
 sensitive categories. Despite this, low statistics in background templates must
-still be accounted for in the fit. This often affects particular bins in the
+still be accounted for in the fit. This often affects some bins in the
 template more than others, in particular at low or high $m_{\Pgt\Pgt}$ values
 where event statistics are naturally lower. For these bins the statistical
 uncertainty in the bin is considered a single uncorrelated source of

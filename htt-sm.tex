@@ -951,7 +951,7 @@ dependent on the predictions for signal and background in each bin and taking in
 the systematic uncertainties described in the previous section.
 
 The likelihood function $\mathcal{L}$ is given by the product of Poisson probabilities 
-$Poisson(n_{i} \vert \nu_{i}(\mu, \theta))$ to observe $n_{i}$ events in each bin
+$\mathrm{Poisson}(n_{i} \vert \nu_{i}(\mu, \theta))$ to observe $n_{i}$ events in each bin
 $i$ of the $m_{\Pgt\Pgt}$ distribution:
 \begin{equation}
 \mathcal{L} = \prod_{i} \mathrm{Poisson}(n_{i} \vert \nu_{i}(\mu, \theta)) \cdot
@@ -983,14 +983,15 @@ for the $\etau$ and $\mutau$ channels, as well as the other channels included in
 the final combination: $\emu$, $\tautau$, $\ee$, $\mumu$ and all the
 associated production channels $\PW\PH$ and $\PZ\PH$. 
 The second product reflects the knowledge that one has about the values of nuisance parameters:
-each $Constraint$ term represents the probability for the true value of a nuisance parameter to be equal to $\theta_{j}$,
+each $\mathrm{Constraint}(\theta_{j}, \tilde{\theta}_{j})$ 
+term represents the probability for the true value of a nuisance parameter to be equal to $\theta_{j}$,
 given that the best estimate that one has for that parameter is
-$\tilde{\theta}_{j}$. The choice of $\tilde{\theta}_{j}$ is usually determined
-by external measurements.
+$\tilde{\theta}_{j}$. The choice of $\tilde{\theta}_{j}$ is determined by
+external measurements as discussed in section~\ref{sec:systematics}.
 
-The functional form of the $Constraint$ term depends on the type of systematic
-uncertainty that it represents.
-These can take the form of both yield and shape uncertainties as discussed in
+The functional form of the $\mathrm{Constraint}(\theta_{j}, \tilde{\theta}_{j})$ 
+term depends on the type of systematic uncertainty that it represents.
+Systematics can take the form of both yield and shape uncertainties as discussed in
 section~\ref{sec:systematics}. Yield uncertainties which correspond
 to multiplicative factors on the signal or background yield are represented by
 log--normal constraints, which prevent the fit from choosing negative yields. 

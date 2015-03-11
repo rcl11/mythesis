@@ -75,7 +75,7 @@ associated with the production fall outside the acceptance of the analysis.
 events into b--tag and no b--tag categories.]{Number of b-tagged jets in events
 in the $\mutau$ channel, as used to separate
 events into b--tag and no b--tag categories. Signal contributions are shown
-separately for b-associated producton $\Pqb\Pqb\Pphi$ and gluon fusion
+separately for b-associated production $\Pqb\Pqb\Pphi$ and gluon fusion
 $\Pg\Pg\Pphi$, normalised to a benchmark cross-section times branching ratio.}
 \label{fig:nbtag}
 \end{figure}
@@ -146,7 +146,7 @@ large number of bin-by-bin uncertainties like those described in
 section~\ref{sec:systematicUncertainties_shape} to cover bins with low
 statistics. A better method for dealing with this is to ensure that the bins are
 all populated by fitting the template in the high mass region using an analytic
-function, and replacing the tail of the distibution with the binned form of the function.
+function, and replacing the tail of the distribution with the binned form of the function.
 
 The function used for the fits takes the following form:
 
@@ -229,17 +229,18 @@ found in table \ref{tab:MSSMSystematics}.
 \label{sec:mssmSignalExtraction}
 
 The discriminating variable used for signal extraction is the same as in the
-\ac{SM} analysis - the di-tau mass $m_{\Pgt\Pgt}$. Other than the fact that the distribution is
-included in the fit up to $1.5\,\GeV$, the maximum likelihood fit is performed in
-a similar way to that described in section~\ref{sec:signalextraction} using a simultaneous 
-fit to all channels and
-categories using equations~\ref{eq:LikelihoodFunction} and \ref{eq:PoissonDistribution}.
+\ac{SM} analysis - the di-tau mass $m_{\Pgt\Pgt}$, using values up $1.5\,\TeV$.
+The maximum likelihood fit is performed using similar methods to those described in 
+section~\ref{sec:signalextraction}, using a simultaneous fit to all channels and
+categories as described by equations~\ref{eq:LikelihoodFunction} and \ref{eq:PoissonDistribution}.
 
-Figure \ref{fig:mssmpostfitmass} shows the post-fit di-tau mass distribution in the
+Figure~\ref{fig:mssmpostfitmass} shows the post-fit di-tau mass distribution in the
 $\etau$ and $\mutau$ channels for the b--tag and no b--tag categories. The plots
-are shown on a logarithmic scale to highlight the tail of the distribution of
+are shown on a logarithmic scale to highlight the tail of the distribution, of
 interest in the \ac{MSSM} analysis. The signal shown is for a benchmark cross
-section times branching ratio and combines the two signal production processes.
+section times branching ratio and combines the two signal production processes
+and all three neutral Higgs bosons. No excess of events in data is seen compared 
+with the prediction from backgrounds.
 
 \begin{figure}[tbh]
 \subfloat[]{
@@ -259,10 +260,9 @@ $7$ and $8\,\TeV$ data \cite{HIG-13-021}.}
 \label{fig:mssmpostfitmass}
 \end{figure}
 
-No excess of events in data is seen compared with the prediction from
-backgrounds. The \ac{MSSM} analysis differs from the \ac{SM} analysis in the
+The \ac{MSSM} analysis differs from the \ac{SM} analysis in the
 interpretation of the results of the maximum likelihood fit in the form of a limit. This
-is done differently for the two types of result producted - referred to as `model 
+is done differently for the two types of result produced - referred to as `model 
 independent' and `model dependent'. 
 
 \subsection{Model Independent Results}
@@ -303,26 +303,28 @@ be positive, in steps of cross-section times branching ratio in picobarns. For
 each point in the 2-D plane of the two signal strength modifiers, the negative
 log likelihood, defined as:
 \begin{equation}
-NLL = - \ln \mathcal{L} ,  
+\mathrm{NLL} = - \ln \mathcal{L} ,  
 \end{equation}
-is evaluated. The lowest value of $NLL$ in the 2D plane is the best fit value
+is evaluated. The lowest value of $\mathrm{NLL}$ in the 2D plane is the best fit value
 for the two signal strength modifiers. The one and two sigma contours are
 calculated as the points $x$ in the plane where:
 
 \begin{equation}
-\Delta(NLL)_{1\sigma} = NLL(\text{best fit}) - NLL(x) = 0.5 ,\\ 
-\Delta(NLL)_{2\sigma} = NLL(\text{best fit}) - NLL(x) = 1.92 ,\\ 
+\Delta(\mathrm{NLL})_{1\sigma} = \mathrm{NLL}(\text{best fit}) - \mathrm{NLL}(x) = 0.5 ,\\ 
+\Delta(\mathrm{NLL})_{2\sigma} = \mathrm{NLL}(\text{best fit}) - \mathrm{NLL}(x) = 1.92 , 
 \end{equation}
 
-where $NLL(\text{best fit})$ is the lowest $NLL$ value in the plane.
+where $\mathrm{NLL}(\text{best fit})$ is the lowest $\mathrm{NLL}$ value in the plane and the
+values of 0.5 and 1.92 correspond to the 68\% and 95\% confidence intervals
+respectively.
 
 A likelihood scan is performed for each mass hypothesis $m_{\Pphi}$. 
 This type of result is referred to as a `single-resonance' search,
 due to the fact that there is no requirement that the three Higgs bosons of the
 \ac{MSSM} are included, the search is simply for the production of $\Pphi$,
 which represents any of the three bosons. Figure \ref{fig:2Dlikelihood} shows the 
-result for four example $m_{\Pphi}$ values across the
-plane. The best fit point is indicated by a black cross and the 1 and 2 $\sigma$
+result for four example $m_{\Pphi}$ values across the. 
+The best fit point is indicated by a black cross and the 1 and 2 $\sigma$
 contours are shown. The fit result is compared with the result obtained in the
 case where an \ac{SM} Higgs is in our dataset and no \ac{MSSM} Higgs is present
 - this indicates that a small positive value of cross-section times branching
@@ -342,10 +344,12 @@ the next sections.
 \subfloat[]{
 \includegraphics[width=0.5\textwidth]{plots/htt-mssm/bbb-ggH-bbH-scan-GGH-BBH-1000.pdf}}
 \caption[2-D likelihood scans showing the best fit values for the cross-section
-times branching ratio of the gluon fusion (x-axis) and b-assocated production
+times branching ratio of the gluon fusion (x-axis) and b-associated production
 (y-axis) processes using $8\,\TeV$ data.]{2-D likelihood scans showing the best fit values for the cross-section
-times branching ratio of the gluon fusion (x-axis) and b-assocated production
-(y-axis) processes using $8\,\TeV$ data. The best fit point is indicated along with the best fit
+times branching ratio of the gluon fusion (x-axis) and b-associated production
+(y-axis) processes using $8\,\TeV$ data. Shown for $m_{\Pphi}$ values of
+$125\,\GeV$ (top left), $300\,\GeV$ (top right), $500\,\GeV$ (bottom left) and
+$1\,\TeV$ (bottom right). The best fit point is indicated along with the best fit
 point which would be obtained if there was a $125\,\GeV$ SM Higgs boson in the data \cite{HIG-13-021}.}
 \label{fig:2Dlikelihood}
 \end{figure}
@@ -359,21 +363,21 @@ on the signal strength modifier with reference to a benchmark cross-section, a
 more model-independent limit is given on cross-section times branching ratio
 for the Higgs production process. This can then be interpreted in many different
 benchmark models. A limit is set separately for each of the two dominant production modes,
-b-associated production and gluon fusion production, again in a `single
+$\Pqb\Pqb\Pphi$ and $\Pg\Pg\Pphi$, again in a `single
 resonance' search for $\Pphi$. It is not possible to
 completely disentangle the two production modes - as shown in
 section~\ref{sec:mssmEventSelection} the categorisation does not completely
-separate the signal contributions, and some b-associated production signal is
-found in no b--tag category and some gluon fusion in the b--tag category. Hence
+separate the signal contributions, and some $\Pqb\Pqb\Pphi$ signal is
+found in no b--tag category and some $\Pg\Pg\Phi$ in the b--tag category. Hence
 to produce a limit on each process separately, the other signal process is
 `profiled'. This means that it is allowed to float in the fit in a similar way
 to one of the nuisance parameters. 
 
 Figure \ref{fig:mssmModelIndependent} shows the expected and observed limit on
-cross-section times branching ratio for the gluon fusion and b-associated
+cross-section times branching ratio for the $\Pg\Pg\Pphi$ and $\Pqb\Pqb\Pphi$
 production processes. The expected limit and the corresponding 1 and 2$\sigma$ bands
 are generated in the same way as in figure \ref{fig:results-limit} b), by
-running toy with an \ac{SM} Higgs injected.
+running toys with an \ac{SM} Higgs injected.
 In this way the observed limit is compared to an expected including both the
 backgrounds and an \ac{SM} Higgs. 
 
@@ -395,7 +399,7 @@ the SM Higgs \cite{HIG-13-021}.}
 The reason for comparing the observed with an expected including the \ac{SM}
 Higgs, both here and in the 2D likelihood results, 
 is that the results cannot be interpreted in the context of the \ac{MSSM} without taking into account
-the fact that we have $3\sigma$ evidence of an \ac{SM}-like Higgs boson decaying
+the fact that there is $3\sigma$ evidence of an \ac{SM}-like Higgs boson decaying
 into taus. Despite the fact that the categorisation of events is chosen to
 enhance selection of a \ac{MSSM} signal rather than a \ac{SM} signal, the
 selection is still very close to that of the \ac{SM} analysis and hence there is
@@ -409,14 +413,14 @@ from the \ac{SM} Higgs.
 
 The model independent results described in the previous section are open to
 interpretation in a variety of models. It is also interesting to look more
-closely at the interpretation of the results in particular benchmarks scenarios.
+closely at the interpretation of the results in particular benchmark scenarios.
 Such results are referred to as `model-dependent'. Model-dependent searches are
 conducted in a plane of the two free parameters in the model, usually $m_{\PA}$
 and $\tan\beta$. At each point in the phase space, the cross-section times
 branching ratio for each of the three neutral Higgs bosons is calculated, taking
-into account both production processes. The contribution of the three Higgs
-bosons is then combined into one template for the final fit. Hence, unlike in the
-model-independent `single resonance' search, the consistency of the data with
+into account both production processes. The contributions of the three Higgs
+bosons are then combined into one template for the final fit. Hence, unlike in the
+model-independent `single resonance' searches, the consistency of the data with
 all three Higgs bosons is considered. 
 
 The sensitivity to the \ac{SM} Higgs becomes even more important in a
@@ -438,9 +442,9 @@ background plus \ac{MSSM} signal hypothesis.
 
 \subsubsection{\ac{MSSM} and \ac{SM} hypothesis testing}
 
-To compare two different signal hypotheses, the likelihood function as desribed
-in equation~\ref{eq:LikelihoodFunction} must be modified. As described in the
-text, this likelihood compares the observed data with an expected constructed as
+To compare two different signal hypotheses, the likelihood function as described
+in equation~\ref{eq:LikelihoodFunction} must be modified. This likelihood compares 
+the observed data with an expected constructed as
 $\mu \cdot s(\theta) + b(\theta)$. This must be modified to compare the data with the
 following:
 \begin{equation}
@@ -457,12 +461,13 @@ where $s_{\text{MSSM}}(\theta)$ and $s_{\text{SM}}(\theta)$ are the
 signal expectations in the \ac{MSSM} and \ac{SM} hypotheses respectively. In
 this likelihood the signal strength modifier $\mu$ connects both expectations,
 with the null hypothesis being the \ac{SM} for $\mu=0$ and the alternative
-hypothesis the \ac{MSSM} for $\mu=1$. 
+hypothesis the \ac{MSSM} for $\mu=1$. This choice ensures that the model does
+not allow for the coexistence of the \ac{SM} and \ac{MSSM} hypotheses. 
 
 With this likelihood, a slightly different form of the test statistic must be
-built compared with that in equation~\ref{eq:ProfileLikelihood}. In the test
+built compared with that of equation~\ref{eq:ProfileLikelihood}. In the test
 statistic used at the \ac{LHC}, the numerator is defined for some signal
-strength $\mu$ compared with the signal strength which maxmises the likelihood,
+strength $\mu$ compared with the signal strength which maximises the likelihood,
 $\hat{\mu}$. Here is required instead a version of the test statistic which tests
 two fixed values of $\mu$ against on another. For this a test statistic
 which was used at the Tevatron, and hence is referred to as the ``TEV'' test
@@ -505,7 +510,7 @@ backgrounds plus \ac{SM} Higgs.
 signal injected for $m_{\PA} = 300\,\GeV$, $\tan\beta = 13$ in the $m_{h}^{\text{max}}$
 scenario.]{Distributions of the test statistic for toys with \ac{SM} or
 \ac{MSSM} signal injected for $m_{\PA} = 300\,\GeV$, $\tan\beta = 13$ in the $m_{h}^{\text{max}}$
-scenario. The black vertical line indictates the observed value of the test
+scenario. The black vertical line indicates the observed value of the test
 statistic. The separation of the distributions is such that this point can be
 excluded at 95$\%$ C.L.}
 \label{fig:toydistribution}
@@ -530,7 +535,7 @@ using interpolation between neighbouring points in the grid.
 
 Figure \ref{fig:hypotestcompare} shows the comparison between the exclusion
 limits obtained using the conventional method of comparing \ac{MSSM} signal
-hypothesis against background-only using the asymptotic approximation 
+hypothesis against background-only with the asymptotic approximation 
 and using this new method to compare the
 \ac{MSSM} and \ac{SM} hypotheses for the example of the $m_{\Ph}^\text{max}$
 scenario. The left hand plot includes a line which shows

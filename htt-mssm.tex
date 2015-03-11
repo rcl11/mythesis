@@ -38,26 +38,30 @@ as that used for the \ac{SM} $\HToTauTau$ analysis described in section
 \ref{sec:eventSelection}, with one small difference. In the \ac{MSSM} analysis
 the $\Pgth$ $\pt$ threshold is lowered from $30\,\GeV$ to $20\,\GeV$. This is
 not possible in the \ac{SM} analysis due to an observed data - \ac{MC}
-discrepancy in the low $\pt$ taus as a result of imperfect modelling of the
-trigger, which the \ac{SM} analysis is sensitive to due to the $\pt$ cut used in the
-categorisation of events. A lower $\pt$ cut on the $\Pgth$ gives a larger overall number of events
+discrepancy in the tau $\pt$ distribution between 20 and $30\,\GeV$, 
+as a result of imperfect modelling of the trigger. 
+The \ac{SM} analysis is sensitive to this because of the $\pt^{\Pgt}$ cut used in the
+categorisation of events, whereas the \ac{MSSM} analysis does not use this
+variable and hence is not affected by the disagreement. 
+A lower $\pt$ cut on the $\Pgth$ gives a larger overall number of events
 and improves the statistics in the background templates across the
-$m_{\Pgt\Pgt}$ range. This is useful in the \ac{MSSM} analysis, since the 
-heavier Higgs bosons $\PH$ and $\PA$ can have masses as high as $1\,\TeV$,
-meaning that the a much larger range of $m_{\Pgt\Pgt}$ values is used, making it
-difficult to achieve populated background templates across the entire range.
+$m_{\Pgt\Pgt}$ range. This is important in the \ac{MSSM} analysis, because the 
+heavier Higgs bosons can have masses as high as $1\,\TeV$,
+meaning that a much larger range of $m_{\Pgt\Pgt}$ values is used, making it
+difficult to achieve well populated background templates across the entire range.
 This is discussed further in section~\ref{sec:tailfitting}.
 
-Much like in the \ac{SM} analysis where the categorisation is used to target the different 
-production modes of the Higgs (see section~\ref{sec:eventcategorisation}), 
-the \ac{MSSM} analysis follows a similar
-strategy. Events are split into those with at least one b-tagged jet, or exactly
+Much like in the \ac{SM} analysis, events are categorised to target the
+production modes and enhance sensitivity. Events are separated into those with at least one b-tagged jet, or exactly
 zero b-tagged jets, referred to as the ``b--tag'' and ``no b--tag'' categories
-respectively. The definition of a b-tagged jet is as described in
-section~\ref{sec:btag} with the conditions
-$\pt > 30\,\GeV$ and $|\eta| < 2.4$. The b--tag
+respectively. The definition of a b-tagged jet is any jet with
+$\pt > 20\,\GeV$ and $|\eta| < 2.4$ which passes the medium \ac{CSV} working
+point as described in section~\ref{sec:btag}. Events in the b--tag category are also required to have no more
+than one jet of any flavour with $\pt>30\,\GeV$ and $|\eta|<4.7$, which reduces the contribution
+from $\ttbar$ background. As in the \ac{SM} analysis, all considered jets must
+be separated from the lepton candidates by $\Delta R > 0.5$. The b--tag
 category is more sensitive to b-associated Higgs production, and the no b--tag
-to gluon fusion, referred to as $\Pg\Pg\Pphi$ and $\Pqb\Pqb\Pphi$ throughout
+category to gluon fusion, referred to as $\Pqb\Pqb\Pphi$ and $\Pg\Pg\Pphi$ throughout
 this chapter. Figure \ref{fig:nbtag} shows the number of b-tagged jets in the
 $\mutau$ channel, with the two signal contributions shown. It can be seen
 that a large amount of the b-associated production signal has zero b-tagged jets
@@ -68,11 +72,11 @@ associated with the production fall outside the acceptance of the analysis.
 \includegraphics[width=0.6\textwidth]{plots/htt-mssm/n_bjets_inclusive_mt_2012_log.pdf}
 
 \caption[Number of b-tagged jets in events in the $\mutau$ channel, as used to separate
-events into b--tag and no b--tag categories]{Number of b-tagged jets in events
+events into b--tag and no b--tag categories.]{Number of b-tagged jets in events
 in the $\mutau$ channel, as used to separate
 events into b--tag and no b--tag categories. Signal contributions are shown
-separately for b-associated producton and gluon fusion, normalised to a
-benchmark cross-section times branching ratio.}
+separately for b-associated producton $\Pqb\Pqb\Pphi$ and gluon fusion
+$\Pg\Pg\Pphi$, normalised to a benchmark cross-section times branching ratio.}
 \label{fig:nbtag}
 \end{figure}
 
@@ -84,11 +88,10 @@ and 2012 running periods of the \ac{LHC}.
 The \ac{MC} samples for each of the background processes are
 identical to those described in section \ref{sec:dataandMC} for the \ac{SM}
 analysis. The signal samples for the two production processes are
-generated using \textsc{pythia}~\cite{Sjostrand:2006za} at \ac{LO}. Like the
-samples described in section \ref{sec:dataandMC}, it uses \textsc{pythia}
+generated using \textsc{pythia}~\cite{Sjostrand:2006za} at \ac{LO}. They both use \textsc{pythia}
 for parton showering and hadronisation and \textsc{tauola}~\cite{TAUOLA} for tau
 decays. Additional proton-proton collisions to simulate pileup events are added
-as for the other samples. The signal samples are generated in a mass range from
+as they are for the other samples. The signal samples are generated in a mass range from
 $90\,\GeV$ up to $1\,\TeV$ in steps of varying size. Cross-sections times
 branching ratios for the signal are taken from the \ac{LHCHXSWG}
 \cite{LHCHiggsCrossSectionWorkingGroup:2011ti,Dittmaier:2012vm,Heinemeyer:2013tqa}.
@@ -110,15 +113,15 @@ are $\ttbar$ events instead of $\PZ\to\Pgm\Pgm$ events, and hence it is
 necessary to calculate this contamination in the b--tag category so as to avoid
 double counting of $\ttbar$. The contamination is estimated by running the
 embedding procedure on a $\ttbar$ \ac{MC} sample. For the $\etau$ and $\mutau$ channels, this
-contamination is around $1.5\%$, and so the $\ttbar$ yield is reduced
-accordingly. The contribution is negligible in the no b--tag category (as well
+contamination is around $1.5\%$ of the $\ZToTauTau$ yield, and so the $\ttbar$ yield is reduced
+accordingly by $14\%$. The contribution is negligible in the no b--tag category (as well
 as in all the categories of the \ac{SM} analysis). 
 
 Similarly to the way cuts on $m_{jj}$ and $|\Delta\eta_{jj}|$ are relaxed to
 obtain smooth shapes for the $\WJets$ background in the VBF categories, the
 b-tagging working point for the jets is relaxed to the loose \ac{CSV} working point to
 obtain the shape for the b--tag category. This is also done for the shape of
-the $\PZ\to\ell\ell$ background. For the QCD, the same-sign data is used for
+the $\PZ\to\ell\ell$ background. For the QCD estimate, the same-sign data is used for
 both shape and normalisation in the no b--tag category, whereas for the b--tag
 category the shape is taken from anti-isolated same-sign data using again the relaxed
 b-tagging working point.
@@ -133,22 +136,22 @@ $\WJets$ control region using high $m_{\mathrm{T}}$ events.
 \subsection{Tail fitting of backgrounds}
 \label{sec:tailfitting}
 
-The largest difference between the \ac{MSSM} $\Pphi\to\Pgt\Pgt$ analysis compared
-with the $\HToTauTau$ analysis is the fact that Higgs bosons of
-masses up to $1\,\TeV$ are considered. This means that the $m_{\Pgt\Pgt}$
-distribution is used up to high values of around $1.5\,\TeV$. In these high mass regions, the
+The largest difference between the \ac{MSSM} $\Pphi\to\Pgt\Pgt$ analysis and the
+\ac{SM} $\HToTauTau$ analysis is the fact that Higgs bosons of
+masses up to $1\,\TeV$ are considered. This means that events with high $m_{\Pgt\Pgt}$
+are used up to $1.5\,\TeV$. In these high mass regions, the
 number of events in the backgrounds is greatly reduced, and it becomes more
 difficult to obtain smooth background templates. This results in a need for a
 large number of bin-by-bin uncertainties like those described in
 section~\ref{sec:systematicUncertainties_shape} to cover bins with low
 statistics. A better method for dealing with this is to ensure that the bins are
 all populated by fitting the template in the high mass region using an analytic
-function, and replacing the tail of the distibution with binned form of the function.
+function, and replacing the tail of the distibution with the binned form of the function.
 
 The function used for the fits takes the following form:
 
 \begin{equation}
-f = exp\left(\frac{-m_{\Pgt\Pgt}}{c_{0} + c_{1}\cdot m_{\Pgt\Pgt}}\right) ,
+f = \exp\left(\frac{-m_{\Pgt\Pgt}}{c_{0} + c_{1}\cdot m_{\Pgt\Pgt}}\right) ,
 \end{equation}
 
 where $c_{0}$ and $c_{1}$ are free parameters in the fit. The fit is made to
@@ -157,7 +160,7 @@ replaced by the values of the analytical function for this region. To represent
 the uncertainty on this high mass fit in the final maximum-likelihood fit for
 signal extraction, shape uncertainties are generated corresponding to the 
 values of the function for the $\pm1\sigma$ shift in the fit parameters $c_{0}$ 
-and $c_{1}$. The values of the uncertainty $\sigma$ are the 
+and $c_{1}$. The values of these uncertainties are the 
 eigenvalues of the covariance matrix of the fit. Figure \ref{fig:tailfits} shows
 an example of the fit obtained for the \WJets background in the $\mutau$
 channel, showing the central fit to the template and the shape nuisances which
@@ -171,11 +174,11 @@ are added to the maximum likelihood fit.
 \caption[Analytic fits to the high mass tail of the $m_{\Pgt\Pgt}$ distribution,
 shown for the example of the $\WJets$ background.]{Analytic fits to the high mass tail of the $m_{\Pgt\Pgt}$ distribution,
 shown here for the example of the $\WJets$ background. Fits are shown for the
-no--btag (left) and b--tag (right) categories of the $\mutau$ channel in $8\,\TeV$
-\ac{MC}. The green line corresponds to the central fit, and the red and blue
+no--btag (left) and b--tag (right) categories of the $\mutau$ channel for
+$\sqrt{s}=8\,\TeV$. The green line corresponds to the central fit, and the red and blue
 lines indicate the systematic uncertainties added to the final
-maximum-likelihood fit corresponding to the uncertainties in the two fitted
-parameters.}
+maximum-likelihood fit corresponding in order to propagate through the
+uncertainties in the two fitted parameters.}
 \label{fig:tailfits}
 \end{figure}
 
@@ -195,23 +198,23 @@ uncertainties are evaluated in the same way as in the \ac{SM} analysis
 for the categories of the \ac{MSSM}. 
 Uncertainties due to b-tagging are also evaluated in the same way, 
 and are generally larger in the \ac{MSSM} analysis due to
-the direct dependence on number of b-tagged jets, with the effect of shuffling 
-\ac{MC} events between the two categories.   
+the direct dependence on number of b-tagged jets. The effect of the b--tag scale
+factor is to migrate \ac{MC} events between the two categories.
 
 Normalisation uncertainties on the $\ZToTauTau$ background are similar, with the
 same $3\%$ cross-section uncertainty and $5\%$ extrapolation uncertainty from
-the embedded sample. Uncertainties on $\WJets$ and QCD are analogous to the
-\ac{SM} analysis. The same cross-section uncertainties are taken on the $\ttbar$
+the embedded sample. Uncertainties on $\WJets$ and QCD are calculated
+analogously to the \ac{SM} analysis. The same cross-section uncertainties are taken on the $\ttbar$
 and diboson backgrounds. The magnitude of the correction to the $\ttbar$ as a result 
 of the embedding contamination is taken as an uncertainty in the rate of $\ttbar$ events. A shape 
-uncertainty for the correction for jet-tau fake-rate on the $\WJets$ background
+uncertainty for the correction for jet-tau fake-rate at high $\pt$ on the $\WJets$ background
 is also applied, where the shapes are generated by shifting the fake-rate
 correction up and down by the uncertainty in its measurement. 
 
-A shape uncertainty to account for tau energy scale is applied in the same way. 
-Another shape uncertainty is included to account for differences in tau ID
+A shape uncertainty to account for tau energy scale is applied in the same way
+as the \ac{SM} analysis. Another shape uncertainty is included on the signal to account for differences in tau ID
 efficiency at high $\pt$, affecting the high $m_{\Pgt\Pgt}$ events. 
-Uncertainties on the signal are similar to those on the \ac{SM} signal, and vary
+Theoretical uncertainties on the signal are similar to those on the \ac{SM} signal, and vary
 with $m_{\PA}$ and $\tan\beta$. The \ac{PDF} uncertainties range from $2$--$10\%$ and scale uncertainties range from
 $5$--$25\%$ for gluon-gluon fusion and $8$--$15\%$ for b-associated production
 \cite{HIG-13-021}. A summary of all systematics applied in this analysis can be

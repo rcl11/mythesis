@@ -2,8 +2,8 @@
 \label{chap:reco}
 
 This chapter describes the reconstruction of events collected by the CMS
-detector. The $\PH \to \Pgt\Pgt$ analysis uses almost every object measured in
-CMS and makes use of information from every sub-detector. The reconstruction of
+detector. The $\PH \to \Pgt\Pgt$ analysis requires almost every object measured in
+CMS and makes use of information from every subdetector. The reconstruction of
 each of these objects is summarised, followed by a description of a likelihood based
 reconstruction of the di-tau mass. 
 
@@ -25,35 +25,36 @@ reconstruction of the di-tau mass.
 \label{sec:vertex}
 %Consider adding track reconstruction here too.
 
-The reconstruction of the \ac{PV} of the event allows us to identify the hard
-$pp$ interaction from other vertices from multiple $pp$ collisions in the same
-bunch crossing, known as \ac{PU}. At CMS there was an average of 9
-\ac{PU} vertices per event in 2011 data and 21 in 2012. Correct
-identification of the \ac{PV} also allows us to distinguish ``prompt" production of
-particles, i.e. production at the \ac{PV} from the hard interaction, from
-in-flight decays of hadrons or photon conversions.  
+As discussed in section~\ref{sec:theLHC}, in the high instantaneous luminosity
+conditions at the LHC there is a large probability for multiple proton-proton
+collisions occurring in each bunch crossing. 
+The reconstruction of the \ac{PV} of the event allows the identification of the hard
+$pp$ interaction amongst other vertices due such additional collisions. 
+It also provides distinction between ``prompt" particles, i.e. production at the \ac{PV} from the hard
+interaction, and in-flight decays of hadrons or photon conversions which occur
+after the hard interaction.  
 
-The vertices are reconstructed using the tracks in the inner
+The vertices are reconstructed using the tracks collected in the inner
 tracker. A clustering algorithm, \ac{DA},
 \cite{DetAnnealing}, is used to assign tracks to their most likely 
 vertex. Each vertex is seeded by at least two tracks separated in $z$ by less than
-$1~\cm$ at the point of closest approach to the $z$ axis.
+$1\,\cm$ at the point of closest approach to the $z$ axis.
 The most likely position of each vertex is then determined using the
 adaptive vertex fitter \cite{adaptivevertex}. In
-this fitter each track is assigned a weight, $w_{i}$, which is close to 1 for tracks which
-are highly compatible with the fitted vertex position and close to 0 for tracks with low
+this algorithm each track is assigned a weight, $w_{i}$, which is close to one for tracks which
+are highly compatible with the fitted vertex position and close to zero for tracks with low
 compatibility. These weights are used to define the number of degrees of freedom
-for the fit as: $n_{dof}^{vertex} = 2\sum_{i}^{\text{tracks}}w_{i}-3$. This
+for the fit: $n_{\text{dof}}^{\text{vertex}} = 2\sum_{i}^{\text{tracks}}w_{i}-3$. This
 variable is an assessment of the mutual compatibility of the component tracks of
 the vertex, and is used to distinguish real $pp$ interactions from
-mis-reconstructed vertices. For most analyses, quality cuts \cite{CMS-PAS-TRK-10-005} on each vertex are
-applied as follows:
+mis-reconstructed vertices. For most analyses, the following quality cuts are
+applied on each vertex~\cite{CMS-PAS-TRK-10-005}:
 \begin{itemize}
 \item The distance in the $z$ direction from the vertex to the nominal interaction
-point must be smaller than $24~\cm$. 
+point must be smaller than $24\,\cm$. 
 \item The corresponding distance in the transverse plane must be smaller than
-$2~\cm$.
-\item $n_{dof}^{vertex} > 4$.
+$2\,\cm$.
+\item $n_{\text{dof}}^{\text{vertex}} > 4$.
 \end{itemize}
 
 The \ac{PV} is taken to be the vertex with the highest sum squared transverse
@@ -71,50 +72,50 @@ can be spread out in the $\phi$ direction. Hence dedicated algorithms are used
 to combine the energy deposits from both the initial electron and the
 bremsstrahlung products, known as ``supercluster'' algorithms \cite{ElectronReco}.
 
-The algorithms used are different for electrons in the barrel and endcaps, in
+Separate algorithms are used for electrons in the barrel and endcaps, in
 order to be optimal for the different geometries. In both cases, a clustering is performed
-in the $\eta-\phi$ plane starting from the \ac{ECAL} crystal with the most energetic deposit, and
+in the $\eta$--$\phi$ plane starting from the \ac{ECAL} crystal with the most energetic deposit, and
 continuing outwards to the surrounding crystals until there are no more
 unclustered crystals above a certain energy threshold. In the barrel, the
 ``hybrid'' clustering algorithm is used. In this algorithm the seed crystal
-has transverse energy ($\Et$)> larger than $1~\GeV$ and the clustering is performed in a ``domino'' of $3\times1$ or
+has $\Et>1\,\GeV$ and the clustering is performed in a ``domino'' of $3\times1$ or
 $5\times1$ crystals, with additional dominoes (which attempt to collect
 radiation deposits) stepping in both $\phi$
 directions around the seed up to $\Delta\phi\approx0.3$. The energy threshold
-below which crystals are not clustered  is $100~\MeV$. In the endcaps the
+below which crystals are not clustered  is $100\,\MeV$. In the endcaps the
 approach is similar with a clustering algorithm
-is the ``Multi5$\times$5'' algorithm using $5\times5$ arrays of crystals within
-$\Delta\eta<0.07$ and $\Delta\phi<0.3$.
+called the ``Multi5$\times$5'' algorithm using $5\times5$ arrays of crystals within
+$\Delta\eta<0.07$ and $\Delta\phi<0.3$~\cite{CMS:2013hoa}.
 
-The energy-weighted average position of the supercluster is computed, and this
-position is the equivalent of the impact point in the \ac{ECAL} of a
+The energy-weighted average position of the supercluster is computed, which
+is the equivalent of the impact point in the \ac{ECAL} of a
 non-radiating electron with energy equal to the supercluster energy. This is
-matched to a compatible hit in a loose $\phi$-$z$ search region 
+matched to a compatible hit in a loose $\phi$--$z$ search region 
 in the first pixel layer, under the
 hypothesis that the electron could be either charge. If a compatible hit is
 found, the hit in the first layer is used to update the estimated electron
 trajectory which would result in hits in the outer layers. This seeds the
-reconstruction of the electron trajectory through the Silicon Strip Tracker
-using the \ac{GSF} algorithm \cite{GSFalgorithm}. This provides an additional momentum measurement
+reconstruction of the electron trajectory through the tracker
+using the \ac{GSF} algorithm~\cite{GSFalgorithm}. This provides an additional momentum measurement
 which is used to improve the electron energy resolution. 
 
 %Backgrounds to electrons are expected to originate
 %in hadronic jets, for example where a $\Pgpz$ and $\Pgppm$ overlap, or where a
 %$\Pgppm$ showers early in the \ac{ECAL}.
 % read the paper and understand better what these backgrounds are!! pions?
-Electron ID criteria are used in many analyses to improve the efficiency of
+Electron identification (ID) criteria are used in many analyses to improve the efficiency of
 selecting real electrons over backgrounds which tend to originate from
 hadronic jets. The most commonly used variables are \cite{Baffioni:2006cd}:
 
 \begin{itemize}
-\item $\Delta\eta_{\text in}$ and $\Delta\phi_{\text in}$, the separation in the
+\item $\Delta\eta_{in}$ and $\Delta\phi_{in}$, the separation in the
 $\eta$ and $\phi$ between the supercluster and track direction
 evaluated at the \ac{PV} position and extrapolated to the \ac{ECAL} (generally
 smaller for prompt electrons).
 \item $\sigma_{i\eta i\eta}$, the energy-weighted $\eta$ width of the cluster.
 This is typically small for prompt electrons, which have a more localised
 cluster.
-\item $H/E$, the ratio of hadronic to electromagnetic energy in the region of
+\item $H/E$, the ratio of hadronic to electromagnetic (EM) energy in the region of
 the seed cluster. This is also generally lower for prompt electrons.
 \end{itemize}
 
@@ -148,11 +149,12 @@ ECAL.]{
 \end{figure} 
 
 The electron ID used in the $\PH \to \Pgt\Pgt$ analysis makes use of these four variables and additional
-conditions on the track quality and kinematics \cite{Baffioni:2006cd} to provide
-improved identification efficiency. These variables are combined in a
-multivariate \ac{BDT} \cite{TMVA}, which is trained in two bins of
-$\pt$ and three bins of $\eta$ using $Z/\gamma^{*} \to \Pe\Pe$ events in data.
-The additional variables used as inputs to the \ac{BDT} are as follows:
+conditions on the track quality and kinematics~\cite{Baffioni:2006cd} to provide
+improved ID efficiency. These variables are combined in a
+multivariate \ac{BDT}~\cite{TMVA}, which is trained in two bins of
+$\pt$ and three bins of $\eta$ using $Z/\gamma^{*} \to \Pe\Pe$ events in
+data.
+The additional variables used as inputs to the \ac{BDT} are:
 
 \begin{itemize}
 \item Quantities relating to the quality of the tracks, including the normalised
@@ -172,30 +174,30 @@ at the surface of the calorimeter and the ratio of the energy reconstructed in
 the pre-shower detector over the raw energy of the supercluster.  
 \end{itemize}
 
-The \ac{BDT} output is then a $\pt$ and $\eta$ dependent cut threshold. Finally
+The \ac{BDT} output is a $\pt$ and $\eta$ dependent cut threshold. Finally
 non-prompt electrons from photons interacting with the tracker are suppressed
 by requiring there are no missing hits in the inner tracker and that the
 electron is not matched to a reconstructed conversion. The electron must also be
-consistent with the \ac{PV}, by having small impact parameters. More information
-on the efficiency of the electron ID in the $\PH \to \Pgt\Pgt$ analysis can be
+consistent with the \ac{PV}, by having small impact parameters. Studies
+of the efficiency of the electron ID in the $\PH \to \Pgt\Pgt$ analysis can be
 found in section \ref{sec:datamcfactors}.
 
 \section{Muons}
 \label{sec:muons}
 
 Muons typically travel through the CMS calorimeters with minimal energy deposit
-and are reconstructed in the muon chambers. Thus we are able to reconstruct
-muons in two independent places - the tracker and the muon chambers. This
+and are reconstructed in the muon chambers. Thus muons can be reconstructed
+in two independent places - the tracker and the muon chambers. This
 greatly improves the ability to isolate muons from hadronic activity. The
-``global'' muon reconstruction algorithm \cite{MuonReco} uses both sets of information by
+``global'' muon reconstruction algorithm~\cite{MuonReco} uses both sets of information by
 starting from each track in the muon chambers and searching for a compatible
 track in the inner tracker. If a compatible track is found, the energy and
 momentum of the muon is determined by a fit to the hits in both the inner
 tracker and the muon chambers, taking into account the expected energy loss
 within the magnet. This improves the momentum resolution compared to
-the track only measurement for muons with $\pt$ larger than 200 $\GeV$. For
+the track only measurement for muons with $\pt$ larger than $200\,\GeV$. For
 lower $\pt$ muons, the momentum resolution is driven by the fit to the tracker
-hits. For muons with $\pt < 5~\GeV$, the reconstruction starting from the inner
+hits. For muons with $\pt < 5\,\GeV$, the reconstruction starting from the inner
 tracker is more efficient due to the lower probability of these muons reaching
 the muon chambers. This is known as ``tracker'' muon reconstruction.  
 
@@ -211,21 +213,21 @@ addition, track segments must be found in at least two stations of the muon
 detector. These conditions taken together provide the ``tight'' muon ID used in
 many analyses, including the $\PH\to\Pgt\Pgt$ analysis.
 The efficiency of CMS muon reconstruction is found to be better
-than $96\%$ for muons with $\pt > 10~\GeV$. Some studies of the ID efficiency of
+than $96\%$ for muons with $\pt > 10\,\GeV$~\cite{MuonReco}. Studies of the ID efficiency of
 muons in data and \ac{MC} in the context of the $\PH \to \Pgt\Pgt$ analysis can
 be found in section \ref{sec:datamcfactors}.
 
 \section{Lepton Isolation}
 \label{sec:leptonisolation}
 
-In order to further reduce background contributions from mis-identified \ac{QCD} jets,
-electrons and muons are required to be isolated. Isolation is computed as the
-scalar sum of transverse momenta of the candidates within a cone in
-$\eta-\phi$ space of size $\Delta R = 0.4$ centred on the lepton direction. 
+In order to further reduce background contributions from mis-identified QCD jets,
+electrons and muons are required to be isolated~\cite{CMS:2013hoa,MuonReco}. 
+Isolation is computed as the scalar sum of transverse momenta of the candidates within a cone in
+$\eta$--$\phi$ space of size $\Delta R = 0.4$ centred on the lepton direction. 
 This sum includes all charged particles, neutral hadrons and photon candidates. 
 To reduce the contamination of particles which originate from \ac{PU} events 
 in this cone, charged  candidates with an impact parameter greater than 
-$0.1~\cm$ from the primary vertex are excluded from the sum. An estimate of the 
+$0.1\,\cm$ from the primary vertex are excluded from the sum. An estimate of the 
 neutral pileup contribution is made based on the charged pileup contamination,
 multiplied by a factor 0.5, which is approximately the ratio of neutral to
 charged components of the hadronisation, as determined from simulation.   
@@ -239,8 +241,6 @@ I = \sum^{\substack{\text{charged} \\ \text{non-pileup}}}\pT +
 
 Requirements are usually placed on relative isolation, defined as
 $I_{\text{rel}} = I / \pt^{\text{lepton}}$. 
-%In the $\PH\to\Pgt\Pgt$ analysis the electrons and
-%muons are both required to have $I / \pt^{\text{lepton}} < 0.1$. 
 
 \section{Jets}
 \label{sec:jets}
@@ -265,11 +265,10 @@ These particles can then be
 used to calculate the missing transverse energy $\MET$,
 reconstruct jets and quantify the isolation of leptons and photons. A separate
 algorithm is used to reconstruct hadronic decays of taus, discussed in section
-\ref{sec:taus}. 
-
-The \ac{PF} algorithm combines the high resolution of
+\ref{sec:taus}. The \ac{PF} algorithm combines the high resolution of
 the tracker with the energy resolution and high granularity of the calorimeters.
-The output of the algorithm is a set of the stable particles in the event
+
+The output of the \ac{PF} algorithm is a set of the stable particles in the event
 resulting from the hard interaction, from the inputs of charged particle tracks,
 calorimeter energy deposits and muon chamber hits. The clustering of energy
 deposits is performed separately in the \ac{ECAL} and \ac{HCAL}. For electrons
@@ -287,14 +286,15 @@ if the track falls inside the cluster volume.
 \subsection{Jet Identification by Clustering}
 \label{sec:jetID}
 
-Jets are composed of a wide range of particle types which interact in the
-detector in different ways. These particles must be combined using a clustering
-algorithm, where the choice of algorithm defines how the particles should be combined
+Jets can be composed of many sub-particles, which may interact in the detector
+in different ways. These particles must be combined using a clustering
+algorithm~\cite{Salam:2009jx}, where the choice of algorithm defines how the particles should be combined
 taking into account the distance between the objects. In particular the
 algorithm should be infrared- and collinear- safe, meaning that the jet
-reconstruction is not affected by soft \ac{QCD} radiation or gluon splitting.
-The algorithm used for the $\PH\to\Pgt\Pgt$ analysis is the `anti-$k_{\text{T}}$' algorithm as implemented in
-the \textsc{fastjet} package \cite{Cacciari:fastjet1}, which considers all 
+reconstruction is not affected by soft QCD radiation or gluon splitting.
+The algorithm used for the $\PH\to\Pgt\Pgt$ analysis is the
+`anti-$k_{\text{T}}$' algorithm~\cite{Cacciari:2008gp} as implemented in
+the \textsc{fastjet} package~\cite{Cacciari:fastjet1}, which considers all 
 objects within a certain jet `size' defined by a parameter $R=0.5$, and 
 sequentially combines them starting from the one with the
 smallest distance from the beamline. If this distance is smaller than the
@@ -326,15 +326,15 @@ due to experimental effects. This can be due to uninstrumented regions of the
 detector, non-linear calorimeter response and contamination by jets from \ac{PU}
 interactions. Particles from different \ac{PU} vertices can be clustered and identified as a
 jet, or overlap with a jet from the primary vertex affecting the measurement of the jet energy.
-Pileup jet identification \cite{CMS-PAS-JME-13-005} is used to classify these events, which consists
-of a \ac{BDT} \cite{TMVA} with input variables such as
+Pileup jet identification \cite{CMS-PAS-JME-13-005} is used to classify these events, which uses a 
+\ac{BDT}~\cite{TMVA} with input variables such as
 momentum and spatial distribution of the jet particles. In addition
 a calibration factor is applied to account for imperfections in the
 neutral-hadron calibration, the jet energy containment and small differences
 between the simulated and observed response.
 
 To account for remaining \ac{PU} and the detector effects, a correction to the jet energy
-scale is derived \cite{CMS-JME-10-011}:
+scale is derived~\cite{CMS-JME-10-011}:
 
 %Read this paper when you have internet and find a better way to write this
 %equation
@@ -364,35 +364,40 @@ events containing a reference jet with $|\eta| < 1.3$ and exploits momentum cons
 The probe jet (which can have any value of $\eta$), is used to calculate the
 average of a balance quantity, defined as:
 $(\pT^{\text{probe jet}}-\pT^{\text{ref jet}})/\pT^{\text{average}}$, in bins of
-average dijet $\pt$ and probe $\eta$. Figure \ref{fig:jesresponse} shows the
-values of the response for \ac{MC} and data. 
+average dijet $\pt$ and probe $\eta$.  
 
 The absolute correction is measured
-using the \ac{MPF} method \cite{Abe:1992sj}, using $\gamma$+jets and $\PZ$+jets
-events and enforcing momentum conservation in light of the fact that these
+using the \ac{MPF} method~\cite{Abe:1992sj}, using $\Pphoton$+jets and $\PZ$+jets
+events and enforcing momentum conservation exploiting the fact that these
 events shouldn't contain any real $\MET$. Thus any measured $\MET$ can be used to
 calibrate the $\pt$ of the jets. The total uncertainty on the jet energy scale
 is given by the sum in quadrature of the estimated uncertainties in each of the
-correction factors. This uncertainty varies between approximately $3$ and $5\%$
-depending on $\pt$ and $\eta$. 
+correction factors. Figure~\ref{fig:jesuncert} shows the total value of the jet
+energy scale correction factor for two different $\pt$ values for jets
+reconstructed using the \ac{PF} algorithm and two other types also used at CMS. 
+The bands show the corresponding jet energy scale uncertainty. For jets with $\pt>20\,\GeV$, 
+this uncertainty varies between approximately $3$ and $5\%$ depending on 
+$\pt$ and $\eta$~\cite{CMS-JME-10-011}. 
 
 \begin{figure}
 \begin{center}
 \subfloat[]{
     \includegraphics[width=0.5\textwidth]
-      {plots/reco/jes-response-a.pdf}}
+      {plots/reco/jes-total-pt50.pdf}}
 \subfloat[]{
     \includegraphics[width=0.5\textwidth] 
-      {plots/reco/jes-response-b.pdf}} 
+      {plots/reco/jes-total-pt200.pdf}} 
 
 \end{center}
-\caption[Relative jet energy response as a function of jet $\eta$ measured in dijet
-events.]{
-Relative jet energy response as a function of jet $\eta$ measured in dijet
-events, for jets with $40 < \pt^{\text{dijet}} < 55$ (left) and 
-$85 < \pt^{\text{dijet}} < 100$ in data and MC \cite{CMS-JME-10-011}.       
+\caption[Total jet energy scale correction factor and corresponding uncertainty
+as a function of jet $\eta$.]{
+Total jet energy scale correction factor and corresponding uncertainty
+as a function of jet $\eta$. Shown for jets with $\pt=50\,\GeV$ (left) and
+$\pt=200\,\GeV$ \cite{CMS-JME-10-011}. The correction factor is shown for
+different types of jets. Only \ac{PF} jets are used in the $\HToTauTau$
+analysis.      
 }
-\label{fig:jesresponse}
+\label{fig:jesuncert}
 \end{figure}
 
 \subsection{B-tagged Jets}

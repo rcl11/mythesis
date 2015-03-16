@@ -463,18 +463,14 @@ unchanged, while the shape of the signal is greatly improved.}
 \label{sec:Hhhdatasets}
 
 The dataset used for this analysis corresponds to the complete 2012 dataset at
-$\sqrt{s}=8~\TeV$. Samples of background events correspond exactly to those
-described in section \ref{sec:dataandMC}. For the signal, \ac{MC} samples are
-produced for $m_{\PH}$ masses between $260~\GeV$ and $350~\GeV$ in $10~\GeV$
+$\sqrt{s}=8\,\TeV$. Samples of background events correspond exactly to those
+described in section~\ref{sec:dataandMC}. For the signal, \ac{MC} samples are
+produced for $m_{\PH}$ masses between $260\,\GeV$ and $350\,\GeV$ in $10\,\GeV$
 steps using \textsc{pythia}
 for parton showering and hadronisation and \textsc{tauola}~\cite{TAUOLA} for tau
-decays. No cross-section values are assumed for the signal, since the analysis
-sets an upper limit on cross-section times branching ratio in a model
-independent way, however recommended
-values for a typical \ac{MSSM} or 2HDM scenario are available from the \ac{LHCHXSWG}
-\cite{LHCHiggsCrossSectionWorkingGroup:2011ti,Dittmaier:2012vm,Heinemeyer:2013tqa}.
-For displaying the signal on figures, a benchmark point in the \ac{MSSM}
-$m_{\Ph}^{\text{mod+}}$ scenario described in section~\ref{sec:mhmodscenario} is
+decays. Values for cross-section times branching ratio are calculated for the
+low-$\tan\beta$-high scenario as described in section~\ref{sec:}.
+For displaying the signal on figures, a benchmark point in this scenario is
 chosen for illustration purposes.
 
 \section{Background methods}
@@ -496,16 +492,16 @@ categories after applying the mass cuts on $m_{\Pqb\Pqb}$ and $m_{\Pgt\Pgt}$.
 The $\ZToTauTau$ background exists in the categories from $\PZ$ plus $\geq 2$
 jet events. This is greatly reduced by the b-tagging requirements, and so most
 events fall in the 2jet--0tag category. This component is also reduced somewhat
-by the mass cut on $m_{\Pgt\Pgt}$, but the lower edge of the window at $90~\GeV$
+by the mass cut on $m_{\Pgt\Pgt}$, but the lower edge of the window at $90\,\GeV$
 is such that the higher half of the $\ZToTauTau$ peak is still retained in the
 signal region.  
 
 As in the previous analyses, the $\ZToTauTau$ component is estimated using an
 embedded sample. As in the \ac{MSSM} analysis, there is a known contamination in
 this sample from $\ttbar$ events. This contribution is more important in this
-analysis, since we don't apply the veto on events with more than one jet which
-is applied in the b--tag category of
-the \ac{MSSM} analysis and hence are really selecting very $\ttbar$-like events,
+analysis because there is no veto on events with more than one jet which
+is applied in the b--tag category of the \ac{MSSM} analysis, and 
+hence the analysis selects very $\ttbar$-like events,
 especially in the 2jet--1tag and 2jet--2tag categories. The contribution is
 estimated using a $\ttbar$ embedded sample as described in section
 \ref{sec:mssmBackgrounds}. The contribution to the total normalisation is
@@ -518,24 +514,25 @@ embedded $\ttbar$ is subtracted from the $\ZToTauTau$ estimate.
 \subsection{$\ttbar$}
 
 For the estimate of the large $\ttbar$ background, both shape and normalisation
-are taken from \ac{MC}. Since this background is so large in this analysis, it
+are taken from \ac{MC}. As this background is so large in this analysis, it
 is extremely important that this estimate is accurate. To improve the confidence
 in this estimate, both shape and normalisation are checked against a data
 control region. In the \ac{SM} and \ac{MSSM} $\HToTauTau$ analyses, this is done
 using events in the $\emu$ final state, and the crucial distributions to check
-the shapes are mostly related to the taus, in particular $m_{\Pgt\Pgt}$. In this
+the shapes os are mostly related to the taus, in particular $m_{\Pgt\Pgt}$. In this
 analysis we are also concerned that the b-jets are well modelled in the
-$\ttbar$ \ac{MC}. Since we do not actually use the $\emu$ final state for this
-analysis, we are also more concerned with checking $\mutau$ and $\etau$ events.
+$\ttbar$ \ac{MC}. Since the $\emu$ final state is not actually used for this
+analysis, it is also important to check $\mutau$ and $\etau$ events.
 Hence two $\ttbar$ control regions are defined: the first is the same as is used
-normally with the $\emu$ channel, and uses events with at least two jets, at least
-one b-tagged jet and $\MET>80~\GeV$. The second is defined using the
+in the \ac{SM} and \ac{MSSM} $\HToTauTau$ analyses using the $\emu$ channel, 
+and takes events with at least two jets, at least one b-tagged jet and
+$\MET>80\,\GeV$. The second is defined using the
 $\mutau$ final state and uses events with at least two b-tagged jets and in the
-high $m_{\text{T}}>100~\GeV$ region. Both control regions have purity in
+high $m_{\text{T}}>100\,\GeV$ region. Both control regions have purity in
 $\ttbar$ events of larger than $90\%$. Figure~\ref{fig:ttbarcontrol} shows
 distributions made in these control regions for the example distribution of the
 leading and subleading b-jet $\pt$. There are no obvious differences in shape or
-normalisation between the data and the \ac{MC} in this, or any of the other
+normalisation between the data and the \ac{MC} in these, or any of the other
 distributions the analysis is sensitive to.
 
 \begin{figure}
@@ -562,13 +559,13 @@ $\emu$ and $\mutau$ channels as defined in the text.}
 
 \subsection{$\WJets$}
 
-The $\WJets$ background estimation follows that in the previous analyses, with
+The $\WJets$ background estimation follows that of the previous analyses, with
 the normalisation in a high $m_{\text{T}}$ control region taken from data with
 other backgrounds subtracted, and extrapolated to the low $m_{\text{T}}$ signal
 region using a scale factor from \ac{MC}. Here,
 care must be taken due to the high quantity of $\ttbar$ in the $\WJets$ control
 region at high $m_{\text{T}}$ in the 2jet--1tag and 2jet--2tag categories. 
-Figure \ref{fig:2jet1tag2jet2tagmt} shows the 
+Figure~\ref{fig:2jet1tag2jet2tagmt} shows the 
 $m_{\text{T}}$ distribution in the 2jet--1tag and 2jet--2tag categories for
 events in the $\mutau$ channel. It can
 be seen that the contribution of $\ttbar$ in the high $m_{\text{T}}$ control
@@ -577,7 +574,7 @@ driven subtraction method is still safe. Additional cross-checks were performed 
 using events in the high $m_{\text{T}}$ region and fitting a variable in data
 with good shape discrimination between $\WJets$ and $\ttbar$. Figure
 \ref{fig:highmtfit} shows an example of such a fit in the 2jet--1tag category
-using the discriminator of leading jet $\pt$. In the fit the contribution of
+using the discriminator of leading jet $\pt$. In the fit the contributions of
 both backgrounds are allowed to float unconstrained, such that only the shapes of
 the templates affect the fit. The results of such fits were generally found to be
 consistent with the subtraction method within the statistical uncertainties.
@@ -643,7 +640,7 @@ and 2jet--2tag, there is again a reasonable contribution from $\ttbar$ in the
 data control region. The normalisation estimate is cross-checked using the anti-isolated
 same-sign data, which is presumed to be entirely QCD and hence does not have the
 same issues with background subtraction. The same-sign estimate for inclusive
-events including at least 2 jets (which has a lower overall fraction of $\ttbar$
+events including at least two jets (which has a lower overall fraction of $\ttbar$
 events compared with pure QCD) is extrapolated to the 2jet--1tag or 2jet--2tag
 categories using an extrapolation factor calculated using the anti-isolated
 data. This prediction is found to be consistent with the prediction from the
@@ -667,7 +664,7 @@ loose working point to obtain smooth shapes in 2jet--1tag and 2jet--2tag.
 The systematic uncertainties follow those discussed in the previous analyses,
 with some small differences. 
 
-Since the \ac{CSV} values are not directly used in this analysis except to make
+As the \ac{CSV} values are not directly used in this analysis except to make
 the choice of leading and subleading jets, it is safe to use the promote/demote
 method to evaluate the b-tag scale factor uncertainties. The effect of these uncertainties 
 in this analysis is illustrated in figure~\ref{fig:Hhhbtagsystematic}. The figure on the left hand
@@ -677,14 +674,14 @@ working point, and so in the absence of a correction would fall into the
 after the correction is applied some of the events have zero or two b-tagged
 jets. Hence after the correction, only events in the central bin would fall into
 the 2jet--1tag category, and the other events are reassigned to either the
-2jet--0tag tag category (first bin) or the 2jet--2tag category (third bin). The
+2jet--0tag category (first bin) or the 2jet--2tag category (third bin). The
 right hand plot shows the same effect for the events which originally have 2
 b-tagged jets and would fall in the 2jet--2tag category. After the re-tagging,
 some events have zero or one b-tagged jet and are reassigned to the 2jet--0tag
 or 2jet--1tag categories respectively. All remaining events in the third bin and
 above fall into the 2jet--2tag category. It can be seen from this plot that the
 number of events being reassigned is relatively small, and the largest effect is
-approximately $5\%$ on $\ttbar$ events.
+up to $10\%$ on $\ttbar$ events.
 
 \begin{figure}
 \begin{center}
@@ -731,8 +728,8 @@ Since the discriminating variable in this analysis is computed using the taus
 and the jets, both the tau and jet energy scales must be applied as a shape
 uncertainty. The size of the jet energy scale uncertainty is computed exactly as
 in section \ref{sec:systematicUncertainties_yield}, but the change in the shape
-as a result of the shift up and down in energy scale is retained instead of
-simply computing the change in normalisation. The effect of the jet energy scale
+as a result of the shift up and down in energy scale is retained as well as 
+computing the change in normalisation. The effect of the jet energy scale
 on the shape of the distributions for the $\ttbar$ background and the signal is
 shown in figure~\ref{fig:kinfitjes}.
 
@@ -747,11 +744,12 @@ shown in figure~\ref{fig:kinfitjes}.
 
 \end{center}
 \caption[Effect of the jet energy scale uncertainty on the kinematic fit distribution for
-the signal with $m_{\PH}=300~\GeV$ (left) and the $\ttbar$ background (right).]{
-Effect of the jet energy scale uncertainty on the kinematic fit distribution for
-the signal with $m_{\PH}=300~\GeV$ (left) and the $\ttbar$ background (right).
-The shift up or down int he JES can cause both the shape and normalisation to
-vary. The signal is normalised to a cross-section of $1\,\picobarn$ in this figure.}
+the signal with $m_{\PH}=300\,\GeV$ (left) and the $\ttbar$ background (right).]{
+Effect of the jet energy scale (JES) uncertainty on the kinematic fit distribution for
+the signal with $m_{\PH}=300\,\GeV$ (left) and the $\ttbar$ background (right).
+The shift up or down in the JES can cause both the shape and normalisation to
+vary, but only the effect on the shape is shown here. 
+The signal is normalised to a cross-section of $1\,\picobarn$ in this figure.}
 \label{fig:kinfitjes}
 \end{figure} 
 

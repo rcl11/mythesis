@@ -205,7 +205,8 @@ After selection of the candidate pair, a large background from $\WJets$ remains
 in the $\etau$ and $\mutau$ channels, usually with the lepton from the $\PW$ and
 a jet faking the hadronic tau. The contribution of this background is indicated
 in the figures with the label ``Electroweak'', which also includes the smaller
-contributions from diboson and single top events. A useful quantity to reduce this background is
+contributions from diboson ($\PW\PW$, $\PZ\PZ$ and
+$\PW\PZ$) and single top events. A useful quantity to reduce this background is
 the transverse mass between the lepton and the $\MET$:
 
 \begin{equation}
@@ -724,10 +725,10 @@ mass approximations is also applied \cite{Grazzini:2013mca}.
 %A $\pt$-dependent re-weighting is applied to $t \bar{t}$ events to better match
 %the top quark $\pt$ distribution observed in data. 
 
-The contribution of $Z/\gamma^{*} \to ee$ background to the $\etau$ channel
-is additionally corrected by $e \to \tau_{had}$ fake-rate \ac{MC} to data
+The contribution of $\PZ \to \Pe\Pe$ background to the $\etau$ channel
+is additionally corrected by $\Pe \to \Pgth$ fake-rate \ac{MC} to data
 scale factors. These are obtained by fitting the distribution of the $\Pe$ +
-$\Pgt_{h}$ visible mass for taus reconstructed in different decay modes. 
+$\Pgth$ visible mass for taus reconstructed in different decay modes. 
 
 \section{Systematic Uncertainties}
 \label{sec:systematics}
@@ -823,7 +824,7 @@ described in section~\ref{sec:backgroundEstimation_QCD} in quadrature with the
 uncertainty on opposite sign - same sign factor of 1.06, which is found to be
 10$\%$ as measured in an anti-isolated sample.
 
-The uncertainty on the $t \bar{t}$ cross-section amounts to $10\%$, and on the single top and di-boson
+The uncertainty on the $t \bar{t}$ cross-section amounts to $10\%$, and on the single top and diboson
 production cross-sections amounts to $15\%$
 \cite{Chatrchyan:2013oev,Chatrchyan:2012ep}. For some categories, in particular
 the VBF-tag, an additional uncertainty on these backgrounds is added to account
@@ -843,8 +844,8 @@ statistical uncertainties as high as $70\%$.
 \subsubsection{\textbf{Luminosity}} 
 The uncertainty on the luminosity amounts to $2.2\%$ for the 2011 data and
 $2.6\%$ for the 2012 data as described in \cite{CMS-PAS-SMP-12-008,CMS-PAS-LUM-13-001}.
-This uncertainty is applied to the signal and to $Z/\gamma^{*} \to \ell\ell$, $Z/\gamma^{*} \to
-\tau\tau$, $t \bar{t}$, single top and diboson backgrounds. 
+This uncertainty is applied to the signal and to $\PZ \to \ell\ell$, $\PZ \to
+\Pgt\Pgt$, $\ttbar$, single top and diboson backgrounds. 
 The normalisation of the $\WJets$ and QCD backgrounds is obtained from data and hence not subject to the luminosity uncertainty.
 
 \subsubsection{\textbf{Theoretical Uncertainties}} 
@@ -1221,8 +1222,10 @@ indicating the possible presence of an \ac{SM} Higgs in the data.
 \includegraphics[width=0.5\textwidth]{plots/htt-sm/cmb_limit.pdf}}
 \subfloat[]{
 \includegraphics[width=0.5\textwidth]{plots/htt-sm/cmb_limit_signalinjected.pdf}}
-\caption[Expected and observed limits on $\mu$ obtained using the asymptotic $CL_{s}$
-method.]{Expected and observed limits obtained using the asymptotic $CL_{s}$
+\caption[Expected and observed limits on $\mu$ obtained using the asymptotic
+$\mathrm{CL_{s}}$
+method.]{Expected and observed limits obtained using the asymptotic
+$\mathrm{CL_{s}}$
 method. The left hand plot compares the observed limit with the expected limit
 for the background-only hypothesis, and the right hand plot compares the observed
 limit with the expected limit for background only plus \ac{SM} Higgs of

@@ -47,7 +47,7 @@ compatibility. These weights are used to define the number of degrees of freedom
 for the fit: $n_{\text{dof}}^{\text{vertex}} = 2\sum_{i}^{\text{tracks}}w_{i}-3$. This
 variable is an assessment of the mutual compatibility of the component tracks of
 the vertex, and is used to distinguish real $pp$ interactions from
-mis-reconstructed vertices. For most analyses, the following quality cuts are
+misreconstructed vertices. For most analyses, the following quality cuts are
 applied on each vertex~\cite{CMS-PAS-TRK-10-005}:
 \begin{itemize}
 \item The distance in the $z$ direction from the vertex to the nominal interaction
@@ -397,7 +397,7 @@ Total jet energy scale correction factor and corresponding uncertainty
 as a function of jet $\eta$. Shown for jets with $\pt=50\,\GeV$ (a) and
 $\pt=200\,\GeV$ (b) \cite{CMS-JME-10-011}. The correction factor is shown for
 three different types of jets; only \ac{PF} jets are used in the $\HToTauTau$
-analysis. For \ac{PF} jets the total uncertainty vaues between $3$ and $3\%$
+analysis. For \ac{PF} jets the total uncertainty varies between $3$ and $5\%$
 depending on $\pt$ and $\eta$.     
 }
 \label{fig:jesuncert}
@@ -461,10 +461,10 @@ candidate taus after they decay via the weak interaction.
 The \ac{PF} algorithm allows the calculation of $\MET$ as the opposite of the vectorial sum
 of the transverse momenta of all \ac{PF} particles. 
 The performance of the \ac{PF} $\MET$ response differs in data and
-MC, and a correction is derived from an independent $\PZ\to\Pmu\Pmu$ sample which
+\ac{MC}, and a correction is derived from an independent $\PZ\to\Pmu\Pmu$ sample which
 does not contain any real $\MET$. The longitudinal and transverse component of
 the $\pt$ response and the resolution of the $\PZ$ boson recoil is parametrised
-as a function of $\pt$ and jet multiplicity. This parameterization is then
+as a function of $\pt$ and jet multiplicity. This parameterisation is then
 applied to all simulated events as a function of the $\pt$ of the boson. Then
 finally the $\MET$ is taken as the transverse energy of the opposite of the 
 vectorial sum of the visible decay products and the
@@ -640,10 +640,10 @@ mass consistent with $\text{a}_{1}$(1260).
 \end{itemize}
 
 In all of the above cases, the charged hadrons and strips must be contained
-within a cone defined by $\Delta R=2.8\,\GeV/\pt^{\tau_{h}}$, where
-$\pt^{\tau_{h}}$ is the $\pt$ of the hadronic tau candidate, for taus with $28 <
-\pt^{\tau_{h}} < 56\,\GeV$. For taus with $\pt^{\tau_{h}} < 28\,\GeV$ the cone is
-is fixed at 0.1 and for taus with $\pt^{\tau_{h}} > 56\,\GeV$ at 0.05. 
+within a cone defined by $\Delta R=2.8\,\GeV/\pt^{\Pgth}$, where
+$\pt^{\Pgth}$ is the $\pt$ of the hadronic tau candidate, for taus with $28 <
+\pt^{Pgth} < 56\,\GeV$. For taus with $\pt^{\Pgth} < 28\,\GeV$ the cone is
+is fixed at 0.1 and for taus with $\pt^{\Pgth} > 56\,\GeV$ at 0.05. 
 Figure \ref{fig:taudecaymode} illustrates the number of events reconstructed in
 each of the tau decay modes in the backgrounds to the $\PH \to \Pgt\Pgt$ analysis.
 
@@ -731,6 +731,9 @@ peaks near the mass of the intermediate $\rho(770)$ meson, and from those with
 three charged hadrons peaks near the mass of the $\text{a}_{1}(1260)$ meson.}
 \label{fig:taumass}
 \end{figure}
+
+In subsequent chapters, the term ``tau'' is often used to mean ``hadronic tau'',
+where the meaning is clear from the context.
 
 \section{Di-tau Mass Reconstruction in $\PH \to \Pgt\Pgt$}
 \label{sec:svfit}

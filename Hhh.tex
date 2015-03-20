@@ -1,4 +1,4 @@
-\chapter{Search for MSSM $\PH \to hh \to \Pgt\Pgt bb$}
+\chapter{Search for MSSM $\PH \to \Ph\Ph \to \Pgt\Pgt \Pqb\Pqb$}
 \label{chap:Hhh}
 
 As illustrated in section~\ref{sec:mssmbenchmarks}, there are many popular
@@ -31,7 +31,7 @@ and require additional b-jets to form the $\Ph\to\Pqb\Pqb$ part.
 Therefore, a large amount of the methods discussed in chapters~\ref{chap:htt-sm} 
 and~\ref{chap:htt-mssm} can be applied to this analysis.
 
-\section{Event Selection and Categorisation}
+\section{Event selection and categorisation}
 \label{sec:HhhEventSelection}
 
 The inclusive selection of the di-tau candidate pair is identical to that of
@@ -184,9 +184,9 @@ selection unless otherwise stated.
     \includegraphics[width=0.5\textwidth] 
       {plots/Hhh/prebjet_mjj_2jet0tagSF_et_2012.pdf}} 
 \end{center}
-\caption[Distributions of $m_{\Pgt\Pgt}$ (left) and $m_{\Pqb\Pqb}$ (right) in the $\mutau$ (top) and
+\caption[Distributions of $m_{\Pgt\Pgt}$ (left) and $m_{jj}$ (right) in the $\mutau$ (top) and
 $\etau$ (bottom) channels for the 2jet--0tag category.]{
-Distributions of $m_{\Pgt\Pgt}$ (left) and $m_{\Pqb\Pqb}$ (right) in the $\mutau$ (top) and
+Distributions of $m_{\Pgt\Pgt}$ (left) and $m_{\Pqb\Pqb}$ ($m_{jj}$) (right) in the $\mutau$ (top) and
 $\etau$ (bottom) channels for the 2jet--0tag category. The signal cannot be seen
 in these figures since this category is background dominated.}
 \label{fig:2jet0tagmttmbb}
@@ -208,9 +208,9 @@ in these figures since this category is background dominated.}
     \includegraphics[width=0.5\textwidth] 
       {plots/Hhh/prebjet_mjj_2jet1tagSF_et_2012.pdf}} 
 \end{center}
-\caption[Distributions of $m_{\Pgt\Pgt}$ (left) and $m_{\Pqb\Pqb}$ (right) in the $\mutau$ (top) and
+\caption[Distributions of $m_{\Pgt\Pgt}$ (left) and $m_{jj}$ (right) in the $\mutau$ (top) and
 $\etau$ (bottom) channels for the 2jet--1tag category.]{
-Distributions of $m_{\Pgt\Pgt}$ (left) and $m_{\Pqb\Pqb}$ (right) in the $\mutau$ (top) and
+Distributions of $m_{\Pgt\Pgt}$ (left) and $m_{\Pqb\Pqb}$ ($m_{jj}$) (right) in the $\mutau$ (top) and
 $\etau$ (bottom) channels for the 2jet--1tag category. The signal peaks close to
 $125\,\GeV$ in both variables, motivating the application of cuts in a window
 around $125\,\GeV$ to select the most signal-like events.}
@@ -233,16 +233,16 @@ around $125\,\GeV$ to select the most signal-like events.}
     \includegraphics[width=0.5\textwidth] 
       {plots/Hhh/prebjet_mjj_2jet2tagSF_et_2012.pdf}} 
 \end{center}
-\caption[Distributions of $m_{\Pgt\Pgt}$ (left) and $m_{\Pqb\Pqb}$ (right) in the $\mutau$ (top) and
+\caption[Distributions of $m_{\Pgt\Pgt}$ (left) and $m_{jj}$ (right) in the $\mutau$ (top) and
 $\etau$ (bottom) channels for the 2jet--2tag category.]{
-Distributions of $m_{\Pgt\Pgt}$ (left) and $m_{\Pqb\Pqb}$ (right) in the $\mutau$ (top) and
+Distributions of $m_{\Pgt\Pgt}$ (left) and $m_{\Pqb\Pqb}$ ($m_{jj}$) (right) in the $\mutau$ (top) and
 $\etau$ (bottom) channels for the 2jet--2tag category. The signal peaks close to
 $125\,\GeV$ in both variables, motivating the application of cuts in a window
 around $125\,\GeV$ to select the most signal-like events.}
 \label{fig:2jet2tagmttmbb}
 \end{figure} 
 
-\section{Kinematic Fitting to extract $m_{\PH}$}
+\section{Kinematic fitting to extract $m_{\PH}$}
 \label{sec:kinematicfit}
 
 In addition to applying cuts on $m_{\Pqb\Pqb}$ and $m_{\Pgt\Pgt}$, the condition that
@@ -425,7 +425,8 @@ $\mutau$ channel.}
 \end{center}
 \caption[]{
 Four body mass of the candidate \PH in $\PH\to\Ph\Ph$ signal events with
-$m_{\PH}=260$, $300$ or $350\,\GeV$, as reconstructed using the kinematic fit}
+$m_{\PH}=260$, $300$ or $350\,\GeV$, as reconstructed using the kinematic fit. 
+Shown for events in the 2jet--2tag category of the $\mutau$ channel.}
 \label{fig:kinfitsignalmasses}
 \end{figure} 
 
@@ -459,7 +460,7 @@ unchanged, while the shape of the signal is greatly improved.}
 \label{fig:kinfitvsmttbbstacked}
 \end{figure} 
 
-\section{Datasets and MC samples}
+\section{Datasets and Monte Carlo samples}
 \label{sec:Hhhdatasets}
 
 The dataset used for this analysis corresponds to the complete 2012 dataset at
@@ -469,11 +470,11 @@ produced for $m_{\PH}$ masses between $260\,\GeV$ and $350\,\GeV$ in $10\,\GeV$
 steps using \textsc{pythia}
 for parton showering and hadronisation and \textsc{tauola}~\cite{TAUOLA} for tau
 decays. Values for cross-section times branching ratio are calculated for the
-low-$\tan\beta$-high scenario as described in section~\ref{sec:}.
+low-$\tan\beta$-high scenario as described in section~\ref{sec:lowtanbscenario}.
 For displaying the signal on figures, a benchmark point in this scenario is
 chosen for illustration purposes.
 
-\section{Background methods}
+\section{Background estimation}
 \label{sec:Hhhbackgrounds}
 
 Inclusively, the background composition is the same as discussed in the previous
@@ -693,11 +694,11 @@ up to $10\%$ on $\ttbar$ events.
       {plots/Hhh/n_prebjets_SF_2jet2tagMassCuts_mt_2012_log.pdf}}
 
 \end{center}
-\caption[Number of b-tagged jets after the b-tag scale factor (SF) is applied for events which
+\caption[Number of b-tagged jets after the b-tag scale factor is applied for events which
 are originally in the 2jet--1tag (a) and 2jet--2tag (b) categories.]{
-Number of b-tagged jets after the b-tag scale factor is applied for events which
+Number of b-tagged jets after the b-tag scale factor (SF) is applied for events which
 are originally in the 2jet--1tag (a) and 2jet--2tag (b) categories. Jets
-are promoted and demoted such that afterwards the events from one category
+are promoted and demoted such that the events from one category
 migrate to the other categories.}
 \label{fig:Hhhbtagsystematic}
 \end{figure}
@@ -766,7 +767,7 @@ table \ref{tab:HhhSystematics}.
 \section{Results}
 \label{sec:Hhhresults}
 
-\subsection{Signal Extraction}
+\subsection{Signal extraction}
 
 The 4-body mass after kinematic fit is used as the discriminating variable for
 signal extraction. A maximum likelihood fit is performed in all channels and
@@ -821,7 +822,7 @@ and scaled by a factor of 10 to make it visible.}
 \label{fig:PostFitMHetau}
 \end{figure} 
 
-\subsection{Contribution from an SM Higgs boson}
+\subsection{Contribution from a SM Higgs boson}
 
 \ac{SM} Higgs boson events can pass the selections for this analysis via both the $\PH\to\Pgt\Pgt$
 and $\PH\to\Pqb\Pqb$ processes, and their contributions in the event
@@ -840,7 +841,7 @@ obtained and the analysis becomes more sensitive, and measures following those
 described for the \ac{MSSM} $\Pphi\to\Pgt\Pgt$ analysis will need to be
 employed. 
 
-\subsection{Model Independent Results}
+\subsection{Model independent results}
 
 An expected limit on cross-section times branching ratio for the $\Hhh$
 process is obtained using the methods described in \ref{sec:signalextraction}
@@ -863,7 +864,7 @@ expected and observed limits for the $\etau$ and $\mutau$ channels separately.
 \end{center}
 \caption{
 Expected and observed limits on cross-section times branching ratio for the
-$\Pgluon\Pgluon\to\PH\to\Pgt\Pgt\Pqb\Pqb$ process for the $\mutau$ (a) and
+$\Pgluon\Pgluon\to\PH\to\Ph\Ph\to\Pgt\Pgt\Pqb\Pqb$ process for the $\mutau$ (a) and
 $\etau$ (b) channels.}
 \label{fig:Hhhlimits}
 \end{figure} 
@@ -883,16 +884,16 @@ hadronic channel not described in this thesis (b).
 
 \end{center}
 \caption[Combined expected and observed limits on cross-section times branching ratio for the
-$\Pgluon\Pgluon\to\PH\to\Pgt\Pgt\Pqb\Pqb$ process.]{
+$\Pgluon\Pgluon\to\PH\to\Ph\Ph\to\Pgt\Pgt\Pqb\Pqb$ process.]{
 Combined expected and observed limits on cross-section times branching ratio for the
-$\Pgluon\Pgluon\to\PH\to\Pgt\Pgt\Pqb\Pqb$ process. The left hand plot is the
+$\Pgluon\Pgluon\to\PH\to\Ph\Ph\to\Pgt\Pgt\Pqb\Pqb$ process. The left hand plot is for the
 combination of the $\etau$ and $\mutau$ channels discussed in this chapter, and
 the right hand plot includes a combination with the $\tautau$ channel not
 described in this thesis.}
 \label{fig:HhhCmblimits}
 \end{figure}
 
-\subsection{Model Dependent Results}
+\subsection{Model dependent results}
 
 As described in section~\ref{sec:lowtanbscenario}, this analysis is sensitive in
 a particular region of \ac{MSSM} phase space at low $\tan\beta$, provided
@@ -920,9 +921,9 @@ allows a small amount of the low $\tan\beta$ phase space to be excluded.
 of the low-$\tan\beta$-high scenario.]{
 Combined expected and observed limits in the $m_{\PA}-\tan\beta$ plane
 of the low-$\tan\beta$-high scenario.
-This includes a combination with the $\tautau$ channel not
+This includes a combination of the $\etau$ and $\mutau$ channels with the $\tautau$ channel not
 described in this thesis. The red area indicates the region of phase space which is already
-excluded by the Higgs boson mass constraint of $125\pm3\,\GeV$. The grey dashed
+excluded by the Higgs boson mass constraint of $125\pm3\,\GeV$. The green dashed
 lines indicate the region which is outside of the range of the $m_{\PH}$ values
 considered in this analysis. The lack of an excess of events in this analysis
 allows a small amount of the low $\tan\beta$ phase space to be excluded.}

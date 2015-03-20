@@ -5,6 +5,8 @@
 \usepackage[printonlyused]{acronym}
 \usepackage{ptdr-definitions}
 \usepackage{ragged2e}
+\usepackage{amsmath}
+\usepackage{array}
 %% You can set the line spacing this way
 %\setallspacing{double}
 %% or a section at a time like this
@@ -29,18 +31,21 @@
 \makeatletter
 \@ifpackageloaded{hyperref}{%
 \hypersetup{%
-pdftitle = {Searches for neutral Higgs Bosons in the $\Pgt\Pgt$ final state with
+pdftitle = {Searches for neutral Higgs bosons in the $\Pgt\Pgt$ final state with
 the CMS detector},
 pdfsubject = {Rebecca Lane's PhD thesis},
 pdfkeywords = {CMS, H, physics, LHC, Higgs, tau},
 pdfauthor = {\textcopyright\ Rebecca Lane},
-hyperfootnotes=false
+hyperfootnotes=false,
+linkcolor=black,
+citecolor=black,
+urlcolor=black
 }
 }{}
 \makeatother
 
 %% Define the thesis title and author
-\title{Searches for neutral Higgs Bosons in the $\Pgt\Pgt$ final state with
+\title{Searches for neutral Higgs bosons in the $\Pgt\Pgt$ final state with
 the CMS detector}
 \author{Rebecca Charlotte Lane}
 

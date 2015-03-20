@@ -1,4 +1,4 @@
-\chapter{Search for Standard Model $\PH \to \Pgt\Pgt$}
+\chapter{Search for standard model $\PH \to \Pgt\Pgt$}
 \label{chap:htt-sm}
 
 As discussed in chapter~\ref{chap:theory}, the Higgs boson was the final missing 
@@ -27,7 +27,7 @@ six $\HToTauTau$ channels, and additional channels from a dedicated $\PW\PH$, $\
 $\PZ\PH$, $\PH\to\Pgt\Pgt$ analysis, are shown in \ref{sec:results}. More detail on the other channels
 not described here can be found in \cite{HIG-13-004}. 
 
-\section{Event Selection}
+\section{Event selection}
 \label{sec:eventSelection}
 
 This section describes how the objects discussed in chapter
@@ -35,7 +35,7 @@ This section describes how the objects discussed in chapter
 %The selections used for the $\mutau$ and $\etau$ channels are discussed
 %separately.
 
-\subsection{Candidate Events in the $\etau$ Channel}
+\subsection{Candidate events in the $\etau$ channel}
 
 Selected events in the $\etau$ channel require an electron and hadronic tau
 candidate. The events are first selected by a trigger algorithm which requires
@@ -113,7 +113,7 @@ channel.
 \label{fig:etautaus}
 \end{figure}
 
-\subsection{Candidate Events in the $\mutau$ Channel}
+\subsection{Candidate events in the $\mutau$ channel}
 
 Selected events in the $\mutau$ channel require a muon and hadronic tau
 candidate. The events are first selected by a trigger algorithm which requires
@@ -198,7 +198,7 @@ to ensure there is no event overlap between categories entering a final combined
 result, for example between the $\mutau$ channel and the 
 $\PW\PH$, $\PH\to\Pgt\Pgt$ analysis in the $\Pmu\Pmu\Pgth$ final state. 
 
-\subsection{Topological Selection}
+\subsection{Topological selection}
 \label{sec:topologicalselection}
 
 After selection of the candidate pair, a large background from $\WJets$ remains
@@ -243,7 +243,7 @@ applied.
 \end{figure}
 
 
-\section{Event Categorisation}
+\section{Event categorisation}
 \label{sec:eventcategorisation}
 
 The selection as described up until this point is referred to as the
@@ -284,11 +284,11 @@ The 0--jet categories are background dominant, and are included in the final
 signal extraction to provide constraints on the backgrounds for the more signal
 sensitive categories. The 1--jet categories are sensitive to gluon fusion Higgs
 production in association with a jet and \ac{VBF} Higgs production where one jet is
-not picked up by the detector. The 2--jet categories are sensitive to
+not picked up by the detector. The 2--jet (VBF) categories are sensitive to
 \ac{VBF} Higgs production, and the additional cuts on the invariant mass, $m_{jj}$,
 and $\eta$ separation, $\Delta\eta_{jj}$, of the two leading
 jets exploit the topology of this process. Events with additional jets in
-the $\Delta \eta_{jj}$ gap are vetoed to reduce the QCD background.
+the $\Delta \eta_{jj}$ gap are vetoed to reduce the QCD multijet background.
 
 To improve sensitivity, categories are further separated into more signal-like
 and background-like events. The 0--jet and 1--jet categories are separated by
@@ -296,7 +296,7 @@ $\Pgth$ $\pt$. The high $\pt^{\Pgth}$ events are more likely to be
 consistent with a $\HToTauTau$ event than a $\ZToTauTau$ event due to the higher
 mass of the Higgs than the $\PZ$. This also reduces contributions from QCD
 and $\WJets$ processes, where the jet faking the hadronic tau is likely to be
-softer. An additional boosted category is used in 1-jet high $\pt^{\tau_{h}}$
+softer. An additional boosted category is used in 1-jet high $\pt^{\Pgth}$
 events with a cut on the di-tau $\pt$, defined as:
 \begin{equation}
 \pt^{\Pgt\Pgt} = |\vec{\pt}^{\Pe/\Pmu} + \vec{\pt}^{\Pgth}+\vecMET|,
@@ -335,7 +335,7 @@ distribution for signal extraction is the SVFit di-tau mass, as described in
 section \ref{sec:svfit}. The method used for signal extraction is described
 further in section \ref{sec:signalextraction}.
 
-\section{Datasets and MC samples}
+\section{Datasets and Monte Carlo samples}
 \label{sec:dataandMC}
 
 The datasets used in this analysis correspond to all data collected during the 2011 and
@@ -407,7 +407,7 @@ cross-sections listed for the signal process are for $m_{\PH}=125\,\GeV$.
 \end{center}
 \end{table}
 
-\section{Background Estimation}
+\section{Background estimation}
 \label{sec:backgrounds}
 
 There are many backgrounds to $\HToTauTau$. Where possible, data driven methods
@@ -416,7 +416,7 @@ are used to minimise systematic uncertainty related to the modelling in the
 yield of each background, and the following sections describe how this is done
 individually for each source of background.
 
-\subsection{Drell-Yan $\PZ \to\Pgt\Pgt$}
+\subsection{$\PZ \to\Pgt\Pgt$}
 \label{sec:backgroundEstimation_Ztautau}
 
 The $\PZ \to \Pgt\Pgt$ background is the largest and is usually referred to as ``irreducible", due to its final
@@ -480,7 +480,7 @@ obtaining the shape.
 \subsection{QCD}
 \label{sec:backgroundEstimation_QCD}
 
-QCD background occurs when both the lepton and the tau are misidentified jets, and is estimated 
+The QCD multijet background occurs when both the lepton and the tau are misidentified jets, and is estimated 
 entirely from data. It is expected that the contribution of events with a
 candidate pair in which the pair have opposite or the same
 charges (signs) is roughly the same in QCD. Thus the same
@@ -531,7 +531,7 @@ channel. The shape of the QCD estimate is taken from anti-isolated data. For the
 VBF-loose events, the normalisation of the QCD is also estimated using an efficiency
 calculated with anti-isolated data, as described in the text. 
 The figures indicate that the agreement with the data in the normal isolation same sign region is good. 
-Note that here the uncertainty band includes only statistical uncertainty on the
+Here the uncertainty band includes only statistical uncertainty on the
 background estimate.}
 \label{fig:samesign}
 \end{figure}
@@ -552,7 +552,7 @@ contribution from $\ttbar$ is reasonably low due to the b-jet veto.
 Both the normalisation and shapes of these backgrounds are estimated using \ac{MC}.
 The contributions from these backgrounds are much smaller than the others.
 
-\section{Data/MC Correction Factors}
+\section{Data to Monte Carlo correction factors}
 \label{sec:datamcfactors}
 
 Whilst data-driven methods are used wherever possible, \ac{MC} is still
@@ -562,7 +562,7 @@ any effects which are known to be imperfectly modelled. Many of these correction
 are derived by studying the agreement between \ac{MC} and data in dedicated
 samples or control regions.
 
-\subsection{ID, isolation and trigger efficiencies}
+\subsection{Identification, isolation and trigger efficiencies}
 \label{sec:idisotrigger}
 
 For ID, isolation and trigger efficiencies of the candidate electron/muon 
@@ -730,7 +730,7 @@ is additionally corrected by $\Pe \to \Pgth$ fake-rate \ac{MC} to data
 scale factors. These are obtained by fitting the distribution of the $\Pe$ +
 $\Pgth$ visible mass for taus reconstructed in different decay modes. 
 
-\section{Systematic Uncertainties}
+\section{Systematic uncertainties}
 \label{sec:systematics}
 
 The systematic uncertainties consist of two different types:
@@ -749,7 +749,7 @@ sources of uncertainties and their chosen values are described separately for th
 normalisation and shape uncertainties. A summary of all systematics applied in
 this analysis is given in table \ref{tab:SMSystematics}.
 
-\subsection{Normalisation Uncertainties}
+\subsection{Normalisation uncertainties}
 \label{sec:systematicUncertainties_yield}
 
 \subsubsection{\textbf{ID, isolation and trigger efficiencies for the electrons, muons and
@@ -797,7 +797,7 @@ each category via the change in jet $\pt$ and $m_{jj}$. The normalisation
 uncertainties as result of these changes are in the region of $5$-$15\%$
 depending on category, with the largest in the VBF categories. 
 
-\subsubsection{\textbf{Background Normalisation}}
+\subsubsection{\textbf{Background normalisation}}
 The systematic uncertainty on the $\ZToTauTau$ estimate is significantly reduced
 through the use of embedded samples. However, systematics must be evaluated for
 the embedding process to account for imperfections in the removal of the
@@ -830,11 +830,11 @@ production cross-sections amounts to $15\%$
 the VBF-tag, an additional uncertainty on these backgrounds is added to account
 for low \ac{MC} statistics.  
  
-\subsubsection{\textbf{$\Pgt_{h}$ fake-rates}} 
-The uncertainty on the $\Pe \to \Pgt_{h}$ fakerate is determined as part of
+\subsubsection{\textbf{$\Pgth$ fake-rates}} 
+The uncertainty on the $\Pe \to \Pgth$ fakerate is determined as part of
 its measurement. This amounts to an uncertainty of $20\%$, correlated between
-$\Pgt_{h}$ candidates reconstructed in any tau decay mode~\cite{HIG-13-004}. 
-The uncertainty on the rate of $\Pmu \to \Pgt_{h}$ fakes amounts to $30\%$.
+$\Pgth$ candidates reconstructed in any tau decay mode~\cite{HIG-13-004}. 
+The uncertainty on the rate of $\Pmu \to \Pgth$ fakes amounts to $30\%$.
 The uncertainty on the rate of jets faking taus is $20\%$ and primarily affects
 the $\PZ\to\ell\ell$ background, and not the QCD or \WJets which are normalised
 using data driven methods. The $\PZ\to\ell\ell$ prediction in the boosted and
@@ -848,7 +848,7 @@ This uncertainty is applied to the signal and to $\PZ \to \ell\ell$, $\PZ \to
 \Pgt\Pgt$, $\ttbar$, single top and diboson backgrounds. 
 The normalisation of the $\WJets$ and QCD backgrounds is obtained from data and hence not subject to the luminosity uncertainty.
 
-\subsubsection{\textbf{Theoretical Uncertainties}} 
+\subsubsection{\textbf{Theoretical uncertainties}} 
 Theoretical uncertainties on the \ac{MC} predictions of the different signal
 contributions are estimated in the form of an uncertainty on the acceptance in
 each category. The \ac{PDF} uncertainty is estimated by calculating the
@@ -871,7 +871,7 @@ Uncertainty in the underlying event simulation and parton showering is between
 $2$ and $10\%$ depending on the category. 
 
 
-\subsection{Shape Uncertainties}
+\subsection{Shape uncertainties}
 \label{sec:systematicUncertainties_shape}
 
 \subsubsection{$\Pgth$ energy scale} 
@@ -902,7 +902,7 @@ kinematic cuts.
 the gluon-fusion signal with $m_{\PH}=125\,\GeV$ (a) and the $\ZToTauTau$ background (b).]{
 Effect of the tau energy scale (ES) uncertainty on the $m_{\Pgt\Pgt}$ shape for
 the gluon-fusion signal with $m_{\PH}=125\,\GeV$ (a) and the $\ZToTauTau$
-background (b), for events in the 1-jet high-$\pt^{\Pgt}$ non-boosted category of
+background (b), for events in the 1-jet high-$\pt^{\Pgt}$ category of
 the $\mutau$ channel. The signal in the left hand plot is normalised to the
 \ac{SM} cross-section times branching ratio. Only the variation in shape as a
 result of the tau energy scale is shown here, but small variations in
@@ -932,7 +932,7 @@ uncertainty, using a method described in \cite{Barlow1993219}.
 \section{Results}
 \label{sec:results}
 
-\subsection{Signal Extraction}
+\subsection{Signal extraction}
 \label{sec:signalextraction}
 
 The discriminating distribution used for signal extraction is the di-tau mass,
@@ -1088,7 +1088,7 @@ p_{0} =
 \end{equation}
 
 
-\subsection{Post-fit $m_{\Pgt\Pgt}$ Distributions}
+\subsection{Post-fit $m_{\Pgt\Pgt}$ distributions}
 
 A simultaneous maximum likelihood fit is performed for all channels and
 categories. The result of the fit is to select the values of the nuisance
@@ -1202,7 +1202,7 @@ with this band~\cite{HIG-13-004}. }
 \end{figure}
 
 
-\subsection{Limit and Significance}
+\subsection{Limit and significance}
 \label{sec:significance}
 
 The compatibility of the data with either the signal plus background or
@@ -1229,7 +1229,7 @@ method.]{Expected and observed limits obtained using the asymptotic
 $\mathrm{CL_{s}}$
 method. The left hand plot compares the observed limit with the expected limit
 for the background-only hypothesis, and the right hand plot compares the observed
-limit with the expected limit for background only plus \ac{SM} Higgs of
+limit with the expected limit for background only plus \ac{SM} Higgs boson of
 $125\,\GeV$ \cite{HIG-13-004}. }
 \label{fig:results-limit}
 \end{figure}
@@ -1252,7 +1252,7 @@ significance for an \ac{SM} Higgs boson at each $m_{\PH}$ hypothesis
 \label{fig:results-pvalue}
 \end{figure}
 
-\subsection{Consistency with $125\,\GeV$ Higgs}
+\subsection{Consistency with $125\,\GeV$ Higgs boson}
 \label{sec:consistency}
 
 Having seen that there is an excess in data, the compatibility with a $125\,\GeV$
@@ -1295,7 +1295,7 @@ consistent with the \ac{SM} within the uncertainties.
 \caption[Figures indicating the compatibility of the observed excess in data
 with a $125\,\GeV$ SM Higgs Boson.]{Figures indicating the compatibility of the observed excess in data
 with a $125\,\GeV$ \ac{SM} Higgs Boson. The left hand plot indicates the best fit
-value of the mass of the Higgs, and the right hand plot indicates the best fit
+value of the mass of the Higgs boson, and the right hand plot indicates the best fit
 value of the couplings to vector bosons and fermions compared with the \ac{SM}
 predictions \cite{HIG-13-004}.}
 \label{fig:results-properties}

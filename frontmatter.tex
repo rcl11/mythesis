@@ -17,28 +17,29 @@ researchers must make clear to others the licence terms of this work.
   %\thispagestyle{empty}
   The Compact Muon Solenoid (CMS) detector is located at the CERN Large Hadron
   Collider. It is a general purpose detector designed to test predictions of the
-  Standard Model (SM) and search for the Higgs Boson, as well as search for
+  standard model (SM) and search for the Higgs boson, as well as to look for
   signatures of new physics beyond the SM. The analyses described in
   this thesis use proton-proton collision data recorded by CMS during 2011 and
   2012. Searches for neutral Higgs bosons decaying into tau pairs are presented.
-  The searches are performed in the context of the SM Higgs Boson or the neutral
+  The searches are performed separately for the SM Higgs boson or the neutral
   Higgs bosons of the minimal supersymmetric standard model (MSSM). The MSSM
-  searches are separated into two analysis. The first contains a direct search 
+  searches consist of two different analyses. The first is a direct search 
   for any one of the MSSM neutral Higgs bosons in the mass range from $90\,\GeV$ to 
   $1\,\TeV$ decaying directly into taus. The second searches for the signature 
   from a heavy neutral Higgs boson of the MSSM decaying into two light MSSM Higgs 
-  bosons with SM-like properties in the final state with two b-quarks and two
+  bosons with SM-like properties ($\PH\to\Ph\Ph$) in the final state with two b-quarks and two
   taus. The SM and MSSM $\Pgt\Pgt$ analyses use $4.9\,\invfb$ of data collected
-  at $7\,\TeV$ and $19.7\,\invfb$ collected at $8\,\TeV$. In the SM analysis, an
+  at $7\,\TeV$ and $19.7\,\invfb$ collected at $8\,\TeV$, while the MSSM
+  $\PH\to\Ph\Ph$ analysis uses only the $8\,\TeV$ data. In the SM analysis, an
   excess of events in data above the background expectation is observed with an
-  observed (expected) local significance of $3.0$ ($3.1$) standard deviations at
+  observed (expected) local significance of $3.2$ ($3.7$) standard deviations at
   $125\,\GeV$. This excess is found to be consistent with the $125\,\GeV$ Higgs
-  boson of the SM in mass and coupling strength. No significance excess is
-  observed in either MSSM search. For both MSSM analyses, upper limits
+  boson of the SM in mass and coupling strengths. No significant excess is
+  observed in either MSSM search, and so upper limits
   are set on cross-section times branching ratio for the Higgs production
-  processes at the $95\%$ confidence level. For the MSSM $\Pgt\Pgt$ analysis, 
-  limits are also set in $m_{\PA}$-$\tan\beta$ parameter space of several interesting
-  scenarios.
+  processes at the $95\%$ confidence level. Limits are also set in 
+  $m_{\PA}$-$\tan\beta$ parameter space of several interesting MSSM
+  benchmark scenarios.
 \end{abstract}
 
 
@@ -48,26 +49,27 @@ researchers must make clear to others the licence terms of this work.
   results are taken from other sources this is indicated by an appropriate
   reference. All figures labelled ``CMS'' are sourced directly from CMS
   publications, including those made by myself, and as such include the
-  relevent reference in the caption. The label ``CMS (unpublished)'' or ``CMS
+  relevant reference in the caption. The label ``CMS (unpublished)'' or ``CMS
   Preliminary'' is reserved for figures not directly included in a paper but 
-  made public via a public twiki page or other preliminary public document.
+  made public via a public web page or other preliminary public document.
   Studies conducted and results produced by myself are indicated in the main
   body of the text. For the analyses in chapters \ref{chap:htt-sm} to \ref{chap:Hhh}
   the work was conducted as part of the CMS $\PH\to\Pgt\Pgt$ working group. I
   contributed to measurement of identification and trigger efficiencies and
   the statistical interpretation for the results in chapters \ref{chap:htt-sm}
-  and \ref{chap:htt-mssm}. These results are those from the most recent legacy results
+  and \ref{chap:htt-mssm}. These results are part of the most recent
   from Run 1 of the LHC~\cite{HIG-13-004,HIG-13-021}, and my work
   was also included in the preliminary results that predated them with subsets
   of the Run 1 data available at the time; at the HCP 2012
   \cite{CMS-PAS-HIG-12-050,CMS-PAS-HIG-12-043}
   and Moriond 2013~\cite{CMS-PAS-HIG-13-004-mor} conferences, as well as for a preliminary result
   produced in November 2013 \cite{CMS-PAS-HIG-13-021}. The final analysis in
-  chapter \ref{chap:Hhh} is to date not yet published. For this
+  chapter~\ref{chap:Hhh} is at the time of writing not yet published. For this
   analysis, my work included designing event selections, studying
   background methods and evaluating systematics and further work on statistical
   interpretation. For this analysis I provided the main result for two out of
-  the three channels included in the final version of the analysis to be published.
+  the three channels included in the final version of the analysis to be
+  published.
   \vspace*{1cm}
   \begin{flushright}
     Rebecca Lane
@@ -81,13 +83,13 @@ researchers must make clear to others the licence terms of this work.
   opportunity to conduct this research, and especially for providing me with two
   years of valuable experience working at CERN. Thanks to my supervisor David
   Colling for persuading me towards the exciting field of Higgs physics and for
-  guiding me through my PhD research. I also thank M\'{o}nica for her
-  support and advice during my time at CERN, and Sasha for his friendly
-  enthusiasm. I owe a huge amount to Andrew, for teaching me the important
-  aspects of an analysis with exceptional patience. I thank all of the friends I
-  made on LTA at CERN for providing some extremely fun distractions from work, and those
-  back home for not minding when I missed all their social events while I was
-  away. Finally I thank my parents, Kevin and Shirley, my brother Tom and my
+  guiding me through all aspects of my PhD research. I also thank M\'{o}nica for
+  much support and advice during my time at CERN, and Sasha for his friendly
+  enthusiasm. I owe a huge amount to Andrew, for teaching me about all the important
+  aspects of analysis with exceptional patience. I thank all of the friends I
+  made on LTA at CERN for providing many fun distractions from work, and those
+  back home for putting up with my absence from all their events for two
+  years. Finally I thank my parents, Kevin and Shirley, my brother Tom and my
   boyfriend Tom for their love and support.  
 \end{acknowledgements}
 
@@ -107,6 +109,19 @@ researchers must make clear to others the licence terms of this work.
 \tableofcontents
 \listoffigures
 \listoftables
+
+%\addtocontents{lof}{\protect\noaddvspace}
+%\addtocontents{lot}{\protect\noaddvspace}
+
+\addtocontents{lof}{In the following figures, distributions with uniform binning 
+are labelled with ``Events'', while normalisations of distributions with
+variable bin widths are specified explicitly. For the figures in
+chapters~\ref{chap:htt-sm} to \ref{chap:Hhh}, scalings to the normalisations of
+the simulated backgrounds resulting from a fit to data are applied unless
+otherwise stated. Where distributions are made in a signal sensitive event
+selection the expected contribution from signal is indicated.
+\par
+\vspace{0.4cm}}
 
 %% Strictly optional!
 %\frontquote%

@@ -5,10 +5,9 @@
 \label{sec:theSM}
 
 The \ac{SM} of particle physics is a theory
-which describes the electromagnetic, weak and strong nuclear interactions, often
-represented as a collection of the elementary particles contained within the theory.
-The \ac{SM} has successfully described data from a wide range of experiments, and in the 
-years prior to the LHC, all of the predicted elementary particles were verified 
+which describes the electromagnetic, weak nuclear and strong nuclear
+interactions. The \ac{SM} has successfully described data from a wide range of experiments, and in the 
+years prior to the LHC, all of its predicted elementary particles were verified 
 except for one: the Higgs boson. This chapter briefly describes the theory
 behind the \ac{SM} and the Higgs mechanism, before discussing previous
 experimental results in \ac{SM} Higgs boson searches and outlining the theory
@@ -19,9 +18,12 @@ and motivation behind a possible extension to the \ac{SM} - the \ac{MSSM}.
 
 The \ac{SM} is a renormalisable quantum field theory, in which the constituents of
 matter are represented as spin-$\frac{1}{2}$ fermions which interact with
-forces mediated by spin-1 bosons. These interactions are described by a
+forces mediated by spin-1 bosons. The addition of the Higgs mechanism (to be
+described in section~\ref{sec:SMHiggs})
+introduces a further spin-0 boson, with which both the fermions and bosons
+interact. The \ac{SM} interactions are described by a
 Lagrangian which is invariant under $SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$
-symmetries. The $SU(3)_{C}$ part describes the strong interaction, mediated by
+local gauge symmetries. The $SU(3)_{C}$ part describes the strong interaction, mediated by
 particles which carry colour charge (C). In these interactions, described by the
 theory of \ac{QCD}~\cite{Griffiths:2008nx,Perkins:2000uq}, the force mediators are massless gluons
 and the coloured fermions are the quarks. A notable property of \ac{QCD} interactions
@@ -89,7 +91,8 @@ $-m\overline{\psi}\psi = -m(\overline{\psi_{R}}\psi_{L} +
 \overline{\psi_{L}}\psi_{R})$, where $\overline\psi$ indicates the adjoint of
 the field $\psi$, contain field pairs of left and right handed components which transform differently
 under the $SU(2)_{L}$ and $U(1)_{Y}$ groups, and so also break gauge invariance.
-Experimental results confirm the photon to be massless, but the $\PW$ and $\PZ$
+Experimental results suggest that the photon is massless (or at least has a mass
+smaller than experimental resolution), but the $\PW$ and $\PZ$
 bosons have finite masses of $\approx80.4\,\GeV$ and $\approx91.2\,\GeV$
 respectively, and the fermions also have a range of finite masses~\cite{PDG}. As
 such the electroweak symmetry must be spontaneously broken. The mechanism of
@@ -117,7 +120,8 @@ where $\mathbf{F_{\mu\nu}}$ and $G_{\mu\nu}$ are the weak isospin and field stre
 tensors respectively, related to the fields as:
 \begin{equation}
 \mathbf{F_{\mu\nu}} = \partial_{\mu} \mathbf{W_{\nu}} - \partial_{\nu}\mathbf{W_{\mu}} -
-g\mathbf{W_{\mu}} \times \mathbf{W_{\nu}} , 
+g\mathbf{W_{\mu}} \times \mathbf{W_{\nu}} ,\\ 
+G_{\mu\nu} = \partial_{\mu} B_{\nu} - \partial_{\nu}B_{\mu} ,
 \end{equation}
 where $\mathbf{W_{\mu}}= (W_{\mu}^{1},W_{\mu}^{2},W_{\mu}^{3})$. Introducing the
 complex scalar field $\phi$ yields an additional term of the form:
@@ -141,7 +145,7 @@ To obtain the physical particles, perturbations around the vacuum state are
 considered. If $\theta_{i}$ and $H_{SM}$ represent small variations in the four
 degrees of freedom of the field $\phi$ then:
 \begin{equation}
-\phi = \exp(-i\theta_{i}T^{i}/2v)\frac{1}{\sqrt{2}}\left(\frac{0}{v+H_{SM}} \right)
+\phi = \exp(-i\theta_{i}T^{i}/2v)\frac{1}{\sqrt{2}}\begin{pmatrix} 0 \\ v+H_{SM} \end{pmatrix}
 \end{equation}
 An appropriate gauge transformation can set the phase fields $\theta_{i}$ to be
 zero, leaving only $H_{SM}$. Inserting this into the Lagrangian, $H_{SM}$ is
@@ -166,10 +170,9 @@ of the fermions. The experimentally measured $\PW$ and $\PZ$ masses can be used
 alongside the measured value of the fine structure constant to determine
 $\sin{\theta_{W}}$, $v$ and $g$, but the value of $\mu_{SM}$ cannot be
 predicted. Hence the mass of the Higgs boson associated with the Higgs field,
-$m_{\PH}=\sqrt{2}\mu_{SM}$, is not directly predicted by the \ac{SM}. 
-Indirect constraints can be derived from theoretical considerations using
-precision electroweak data, which favours values of $m_{\PH}$
-smaller than $\sim300\,\GeV$~\cite{lepewwg}.
+$m_{\PH}=\sqrt{2}\mu_{SM}$, is not directly predicted by the \ac{SM}, although 
+indirect constraints can be derived from theoretical considerations using
+precision electroweak data~\cite{lepewwg}.
 
 \subsection{Searching for the SM Higgs boson}
 \label{sec:LHCSMHiggs}
@@ -178,7 +181,8 @@ Since the mass of the Higgs boson is not directly predicted by the \ac{SM},
 searches covering a wide range of potential masses must be performed.
 The Higgs boson is produced in particle accelerators and searched for via a signature 
 resulting from its decay to either fermions or bosons. The coupling of the
-Higgs boson to a particular final state is determined as in equation~\ref{eq:HiggsCoupling} and
+Higgs boson to a particular final state is determined as in
+equation~\ref{eq:HiggsCoupling} for fermions and similarly for bosons - i.e. it
 depends on both the mass of the Higgs boson and the mass of the final state
 particles. 
 
@@ -220,7 +224,7 @@ $\sqrt{s}=1.96\,\TeV$. The searches were performed in a mass range of
 $90$--$200\,\GeV$ and focussed on decays into $\Pqb\Paqb$, $\PWp\PWm$,
 $\gamma\gamma$ and $\Pgtp\Pgtm$ pairs, with  $\Pqb\Paqb$ and $\PWp\PWm$ offering
 the highest sensitivity. The combined results from the Tevatron yielded
-exclusions of $m_{\PH}$ in the ranges $90$--$109\,\GeV$ and $140$--$184\,\GeV$
+exclusions of $m_{\PH}$ in the ranges $90$--$109\,\GeV$ and $149$--$182\,\GeV$
 \cite{Aaltonen:2013kxa}. The results of such direct searches
 can be combined with precision measurements of electroweak observables at LEP
 and by the SLAC Large Detector (SLD) to constrain the mass of the Higgs
@@ -264,7 +268,7 @@ discovery in the low mass region are $\Pphoton\Pphoton$ and $\PZ\PZ$ due to
 their clean signatures. However, upon discovery of a Higgs boson, decays into 
 fermions are particularly important
 to establish the Yukawa couplings. In fermionic decays, the decay into
-$\Pqb\Paqb$ dominates with a branching fraction of $\sim 80\%$ in this mass
+$\Pqb\Paqb$ dominates with a branching fraction of $\sim 57\%$ in this mass
 range. However, this final state is difficult to disentangle from the large QCD
 jet background at the LHC, meaning that the $\Pgtp\Pgtm$ final state has higher sensitivity.
 
@@ -347,7 +351,7 @@ quadratically dependent on $\Lambda$~\cite{Carena:2002es}:
 The scale $\Lambda$ can be as high as the Planck scale, where gravitational
 interactions become significant~\cite{Griffiths:2008nx}. For a $\Lambda$ at the Planck scale then
 $\Delta m_{\PH}^{2}$ is some 30 orders of magnitude larger than 
-$m_{\PH_{SM}}^{2}$ for $m_{\PH_{SM}}<1\,\TeV$. This means that the bare Higgs
+$m_{\PH_{SM}}^{2}$ for $m_{\PH_{SM}}<<1\,\TeV$. This means that the bare Higgs
 boson mass requires extreme fine tuning of the bare mass term $2\mu_{SM}^{2}$ to
 allow cancellation. Figure~\ref{fig:HiggsMassLoops} indicates the radiative
 corrections to the Higgs mass resulting from a fermion and a boson loop.
@@ -389,7 +393,7 @@ The simplest addition of \ac{SUSY} to the \ac{SM} results in the \ac{MSSM}. The
 additional fields and interactions while preserving R-parity~\cite{Dimopoulos:1981zb}. R-parity
 is an operator with eigenvalues of 1 for \ac{SM} particles and -1 for
 superparners. It is required to be conserved in order to explain the stability
-of the proton~\cite{}. In order to generate the appropriate mass terms for the up-type 
+of the proton~\cite{PDG}. In order to generate the appropriate mass terms for the up-type 
 and down-type fermions, two complex scalar weak isospin doublet fields
 $\phi_{\Pqu}$ and $\phi_{\Pqd}$ are added:
 \begin{equation}

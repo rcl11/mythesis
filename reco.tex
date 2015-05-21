@@ -29,13 +29,13 @@ As discussed in section~\ref{sec:theLHC}, in the high instantaneous luminosity
 conditions at the LHC there is a large probability for multiple proton-proton
 collisions occurring in each bunch crossing. 
 The reconstruction of the \ac{PV} of the event allows the identification of the hard
-$pp$ interaction amongst other vertices due such additional collisions. 
+$pp$ interaction amongst other vertices due to such additional collisions. 
 It also provides distinction between ``prompt" particles, i.e. production at the \ac{PV} from the hard
 interaction, and in-flight decays of hadrons or photon conversions which occur
 after the hard interaction.  
 
 The vertices are reconstructed using the tracks collected in the inner
-tracker. A clustering algorithm, \ac{DA},
+tracker. A clustering algorithm, \ac{DA}
 \cite{DetAnnealing}, is used to assign tracks to their most likely 
 vertex. Each vertex is seeded by at least two tracks separated in $z$ by less than
 $1\,\cm$ at the point of closest approach to the $z$ axis.
@@ -112,7 +112,7 @@ hadronic jets. The most commonly used variables are \cite{Baffioni:2006cd}:
 $\eta$ and $\phi$ between the supercluster and track direction
 evaluated at the \ac{PV} position and extrapolated to the \ac{ECAL} (generally
 smaller for prompt electrons).
-\item $\sigma_{i\eta i\eta}$, the energy-weighted $\eta$ width of the cluster.
+\item $\sigma_{\eta\eta}$, the energy-weighted $\eta$ width of the cluster.
 This is typically small for prompt electrons, which have a more localised
 cluster.
 \item $H/E$, the ratio of hadronic to electromagnetic (EM) energy in the region of
@@ -220,9 +220,9 @@ be found in section \ref{sec:datamcfactors}.
 \section{Lepton isolation}
 \label{sec:leptonisolation}
 
-In order to further reduce background contributions from mis-identified QCD jets,
+In order to further reduce background contributions from misidentified QCD jets,
 electrons and muons are required to be isolated~\cite{CMS:2013hoa,MuonReco}. 
-Isolation is computed as the scalar sum of transverse momenta of the candidates within a cone in
+Isolation is computed as the scalar sum of transverse momenta of the particles within a cone in
 $\eta$--$\phi$ space of size $\Delta R = 0.4$ centred on the lepton direction. 
 This sum includes all charged particles, neutral hadrons and photon candidates. 
 To reduce the contamination of particles which originate from \ac{PU} events 
@@ -334,7 +334,7 @@ a calibration factor is applied to account for imperfections in the
 neutral-hadron calibration, the jet energy containment and small differences
 between the simulated and observed response.
 
-To account for remaining \ac{PU} and the detector effects, a correction to the jet energy
+To account for the detector effects and remaining \ac{PU}, a correction to the jet energy
 scale is derived~\cite{CMS-JME-10-011}:
 
 %Read this paper when you have internet and find a better way to write this
@@ -431,7 +431,7 @@ In the $\PH\to\Pgt\Pgt$ analysis, the medium working point of the \ac{CSV}
 discriminator is used to identify b-jets, corresponding to a discriminator
 output greater than 0.679. The distribution of the \ac{CSV} discriminator 
 can be seen in figure \ref{fig:csv}. The medium working point corresponds to a
-b-tag efficiency of $\approx 85\%$ and a mis-tag rate of $\approx 1\%$. 
+b-tag efficiency of $\approx 85\%$ and a light jet mis-tag rate of $\approx 1\%$. 
 
 \begin{figure}
 \begin{center}
@@ -462,7 +462,7 @@ The \ac{PF} algorithm allows the calculation of $\MET$ as the opposite of the ve
 of the transverse momenta of all \ac{PF} particles. 
 The performance of the \ac{PF} $\MET$ response differs in data and
 \ac{MC}, and a correction is derived from an independent $\PZ\to\Pmu\Pmu$ sample which
-does not contain any real $\MET$. The longitudinal and transverse component of
+should not contain any real $\MET$ from neutrinos. The longitudinal and transverse component of
 the $\pt$ response and the resolution of the $\PZ$ boson recoil is parametrised
 as a function of $\pt$ and jet multiplicity. This parameterisation is then
 applied to all simulated events as a function of the $\pt$ of the boson. Then
@@ -561,17 +561,17 @@ possibilities for hadronic tau decays are listed in table~\ref{tab:hadronictaus}
 Decay Mode & Intermediate Resonance & Branching Fraction [\%] \\
 \hline
 \hline
-$\Pgtpm\to\Pgppm\Pgpz\Pgngt$ & $\Pgr$(770) & 26.0 \\
+$\Pgtpm\to\Pgppm\Pgpz\Pgngt$ & $\Pgr$(770) & 25.5 \\
 \hline
-$\Pgtpm\to\Pgppm\Pgngt$ & -  & 11.6 \\
+$\Pgtpm\to\Pgppm\Pgngt$ & -  & 10.8 \\
 \hline
-$\Pgtpm\to\Pgppm\Pgpz\Pgpz\Pgngt$ & $\text{a}_{1}$(1260) & 10.8 \\
+$\Pgtpm\to\Pgppm\Pgpz\Pgpz\Pgngt$ & $\text{a}_{1}$(1260) & 9.3 \\
 \hline
-$\Pgtpm\to\Pgppm\Pgpmp\Pgppm\Pgngt$ & $\text{a}_{1}$(1260) & 9.8 \\
+$\Pgtpm\to\Pgppm\Pgpmp\Pgppm\Pgngt$ & $\text{a}_{1}$(1260) & 9.3 \\
 \hline
-$\Pgtpm\to\Pgppm\Pgpmp\Pgppm\Pgpz\Pgngt$ & -  & 4.8 \\
+$\Pgtpm\to\Pgppm\Pgpmp\Pgppm\Pgpz\Pgngt$ & -  & 4.6 \\
 \hline
-Other hadronic modes & - & 1.7 \\
+Other hadronic modes & - & 5.3 \\
 \hline
 \hline
 Total & &  64.7 \\
@@ -613,7 +613,7 @@ probability to convert to electron-positron pairs within the tracker, resulting
 in an EM shower spread in the $\phi$ direction. These candidates are clustered
 using strips with size $\Delta\eta = 0.05$ and $\Delta\phi = 0.2$ initially
 centred on the most energetic EM candidate in the \ac{PF} jet. Strips with
-$\pt>1\,\GeV$ are considered. The energy of the
+$\pt>1\,\GeV$ are considered. The extracted mass of the
 strip is required to be consistent with the mass of the neutral pion, and hence
 between 50 and $200\,\MeV$. The strips are then combined with the charged hadrons
 from \ac{PF} to give four different cases:
@@ -642,7 +642,7 @@ mass consistent with $\text{a}_{1}$(1260).
 In all of the above cases, the charged hadrons and strips must be contained
 within a cone defined by $\Delta R=2.8\,\GeV/\pt^{\Pgth}$, where
 $\pt^{\Pgth}$ is the $\pt$ of the hadronic tau candidate, for taus with $28 <
-\pt^{Pgth} < 56\,\GeV$. For taus with $\pt^{\Pgth} < 28\,\GeV$ the cone is
+\pt^{\Pgth} < 56\,\GeV$. For taus with $\pt^{\Pgth} < 28\,\GeV$ the cone is
 is fixed at 0.1 and for taus with $\pt^{\Pgth} > 56\,\GeV$ at 0.05. 
 Figure \ref{fig:taudecaymode} illustrates the number of events reconstructed in
 each of the tau decay modes in the backgrounds to the $\PH \to \Pgt\Pgt$ analysis.
@@ -684,13 +684,14 @@ loose, medium and tight working points of tau isolation.
 \subsection{Electron and muon rejection}
 \label{sec:tauleptonrejection}
 
-An electron can be misidentified as a hadronic tau with one charged hadron when
+An electron can be misidentified as an hadronic tau with one charged hadron when
 it has an isolated energy deposit in the calorimeters. Electrons can also be
 reconstructed as hadronic taus in the one charged hadron plus strips modes when 
 they emit photons via bremsstrahlung. A \ac{BDT} is trained to reduce
 misidentified electrons, using many of the same variables exploited in electron
 ID described in section \ref{sec:electrons}. The $\PH\to\Pgt\Pgt$ analysis makes 
-use of this discriminator in a tight working point, which reduces the rate 
+use of this discriminator in a tight working point in all final states except
+for $\etau$, which reduces the rate 
 of misidentified electrons to around $3\%$ with an efficiency for real taus of
 around $90\%$. 
 
@@ -750,18 +751,18 @@ but greater accuracy is achieved if the full mass is reconstructed including the
 invisible neutrinos. This can be achieved using a likelihood based algorithm called
 SVFit~\cite{HIG-13-004}, which combines the visible decay products and the reconstructed $\MET$. A
 short description of this method is given in this section. A more detailed
-description can be found in \cite{HIG-13-004}.
+description can be found in \cite{HIG-13-004,Bianchini:2014vza}.
 
 The inputs to the SVFit algorithm are the kinematics of the visible decay
 products and the missing transverse energy. If all visible components of a
 hadronic tau decay are treated as a single composite object, the visible part of
 the decay is specified by five parameters, which are chosen to be the momentum,
 polar and azimuthal angles in the lab frame, and two decay angles in the rest
-frame of the tau lepton. The invisible component of the decay adds another
-degree of freedom, which is chosen to be the invariant mass of the invisible
-system. Leptonic tau decays produce an additional neutrino, and so an additional
-variable is required which is chosen to be the invariant mass of the
-two-neutrino system. The unknown parameters are constrained by three
+frame of the tau lepton. Leptonic tau decays produce an additional neutrino, and so an additional
+variable is required to describe the invisible part of the decay, 
+which is chosen to be the invariant mass of the
+two-neutrino system (this is zero in the case of hadronic tau decays). 
+The unknown parameters are constrained by three
 observables: the momentum, polar and azimuthal angles of the visible products
 measured in the lab frame. Further constraints are provided by
 $E_{x}^{\text{miss}}$ and $E_{y}^{\text{miss}}$, the x and y components of the
@@ -821,7 +822,7 @@ for which the physically allowed region constitutes $0 \leq x \leq 1$ and $0
 \leq m_{\nu\nu} \leq m_{\tau}\sqrt{1-x}$. The final part of the likelihood
 quantifies the compatibility of a particular tau decay hypothesis with the
 reconstructed $\MET$. The resolution of the neutrino energy measurement is
-modelling using a Gaussian resolution:
+modelled using a Gaussian form:
 
 \begin{equation}
 \mathcal{L}_{\nu}(E_{x}^{\text{miss}},E_{y}^{\text{miss}}) =

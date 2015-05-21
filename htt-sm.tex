@@ -8,7 +8,7 @@ piece of the Standard Model of particle physics. In order to complete the
 chapter describes the search for the Higgs boson of the Standard Model 
 decaying into two tau leptons.
 
-This chapter outlines the \ac{SM} $\HToTauTau$ result from Run 1 of the LHC, using the
+This chapter outlines the \ac{SM} $\HToTauTau$ results from Run 1 of the LHC, using the
 full dataset collected in 2011 and 2012 by CMS. This corresponds to an
 integrated luminosity of $4.9\,\femtobarn^{-1}$ at a centre of mass energy of $7\,\TeV$ and
 $19.7\,\femtobarn^{-1}$ at $8\,\TeV$. The results in this chapter are parts of a CMS publication 
@@ -73,7 +73,7 @@ $1.5\,\GeV$.
 
 The electron and hadronic tau are required to be of opposite charge. If more
 than one such pair exists in the event, then the pair with the highest sum $\pt$
-is selected. The $\pt$ and $\eta$ distributions of the selected pair in the
+is selected. The $\pt$ and $\eta$ distributions of the selected particles in the
 $\etau$ channel are shown in figure~\ref{fig:etauelectrons} for the electron and
 figure~\ref{fig:etautaus} for the tau. 
 
@@ -138,7 +138,7 @@ anti-electron discriminator are used.
 
 Similarly to the $\etau$ channel, the muon and hadronic tau are required to be of 
 opposite charge, and if more than one such pair exists then the pair with the highest sum $\pt$
-is selected. The $\pt$ and $\eta$ distributions of the candidate pair in the
+is selected. The $\pt$ and $\eta$ distributions of the candidate particles in the
 $\mutau$ channel are shown in figure~\ref{fig:mutaumuons} for the muon and
 figure~\ref{fig:mutautaus} for the tau. 
 
@@ -450,7 +450,7 @@ category selection.
 \subsection{$\PZ\to\ell\ell$}
 \label{sec:backgroundEstimation_Zll}
 
-The $\PZ\to\ell\ell$ background results when one lepton provides the electron or
+The $\PZ\to\ell\ell$ ($\ell=\Pe,\Pmu$) background results when one lepton provides the electron or
 muon and either the other lepton or an associated jet fakes the hadronic tau. This
 background is much smaller than $\ZToTauTau$ but is especially important in the
 $\etau$ channel where electrons have a $3$-$4\%$ probability to pass the
@@ -516,7 +516,7 @@ channel, in which the shape has been taken from the anti-isolated data. It can b
 predictions from the anti-isolated data agree well with the same sign normal
 isolation data. In the 1--jet
 high-$\pT^{\Pgth}$ boosted and tight VBF categories the isolation on the
-$\Pgt_{had}$ is also loosened to obtain a sufficiently smooth shape. 
+$\Pgth$ is also loosened to obtain a sufficiently smooth shape. 
 
 \begin{figure}[htb]
 \subfloat[]{
@@ -543,9 +543,9 @@ For the $t \bar{t}$ both shape and normalisation are taken from \ac{MC}. Both ar
 against data by defining a control region which is at least 90$\%$ pure in
 $t \bar{t}$. This is done using the $\emu$ channel, which has a much higher
 quantity of $\ttbar$ than $\etau$ and $\mutau$. The control region is used to
-derive a scale factor to the \ac{MC} normalisation. This control region will be
+derive a scale factor on the \ac{MC} normalisation. This control region will be
 discussed further in chapter \ref{chap:Hhh} in the context of an analysis which
-much larger contributions from $\ttbar$ background. In this analysis the
+has much larger contributions from $\ttbar$ background. In this analysis the
 contribution from $\ttbar$ is reasonably low due to the b-jet veto.
 
 \subsection{Diboson and single top}
@@ -821,7 +821,7 @@ reconstruction to mimic a $\PW$ decay.
 The uncertainty on the normalization of QCD background is obtained by adding the
 statistical uncertainty on the yield of events selected in the QCD dominated control regions
 described in section~\ref{sec:backgroundEstimation_QCD} in quadrature with the
-uncertainty on opposite sign - same sign factor of 1.06, which is found to be
+uncertainty on the opposite sign - same sign factor of 1.06, which is found to be
 10$\%$ as measured in an anti-isolated sample.
 
 The uncertainty on the $t \bar{t}$ cross section amounts to $10\%$, and on the single top and diboson
@@ -999,7 +999,7 @@ log--normal constraints, which prevent the fit from choosing negative yields.
 Shape uncertainties are accounted for using a template morphing technique. 
 For each quantity that affects the shape of a background or signal,
 multiple versions of the template are produced by varying the quantity on which it 
-depends upon by $\pm 1$ standard deviation. A nuisance parameter $\lambda$
+depends by $\pm 1$ standard deviation. A nuisance parameter $\lambda$
 representing a Gaussian constraint is added to the likelihood model 
 to smoothly interpolate between the nominal template
 and the templates representing the variations by $+1 \sigma$ and $-1 \sigma$.
@@ -1063,8 +1063,7 @@ which the median, $\pm$1 sigma and $\pm$2 sigma exclusions can be calculated.
 Generating large numbers of toys can be computationally expensive. 
 In the limit of a large data sample, the distribution $f(q_{\mu})$ follows a
 calculable formula~\cite{Cowan:2011aa} known as the asymptotic limit approximation. Using this form
-removes the need to generate toys, which can be very computationally expensive.
-It is also possible to derive a formula for
+removes the need to generate toys. It is also possible to derive a formula for
 the median expected limit and uncertainty bands using this method, completely
 removing the need to generate toys and greatly improving the speed of the
 statistical interpretation.
@@ -1079,7 +1078,8 @@ q_{0} = -2
 \;\; \text{with the constraint} \; \hat{\mu}\geq 0,
 \end{equation}
 
-From this, the p-value for the observed data can be defined as:
+From this, the p-value to observe an excess as large or larger than the observed
+data can be defined as:
 
 \begin{equation}
 p_{0} =
@@ -1273,9 +1273,7 @@ observed values, yielding a best likelihood value at $122\,\GeV$. The uncertaint
 on this number is obtained from the 1 $\sigma$ width of the likelihood curve in
 combination with an estimated systematic uncertainty from the energy scales of
 the objects, yielding a total uncertainty of $7\,\GeV$. Hence the result is
-consistent with $125\,\GeV$ within the large uncertainty on this measurement,
-which is the result of the fact that the di-tau mass resolution is not good
-enough to distinguish between values of $m_{\PH}$ any better than this.
+consistent with $125\,\GeV$ within the large uncertainty on this measurement.
 
 The consistency of the excess with a $125\,\GeV$ \ac{SM} Higgs also relies on the
 Higgs being produced at the predicted rates according to the \ac{SM}

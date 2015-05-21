@@ -343,18 +343,22 @@ corrections adjust the mass as:
 \begin{equation}
 m_{\PH_{SM}}^{2} = 2\mu_{SM}^{2} - \Delta m_{\PH}^{2}. 
 \end{equation}
-It can be shown that the size of the correction, $\Delta m_{\PH}^{2}$, is
-quadratically dependent on $\Lambda$~\cite{Carena:2002es}:
+Figure~\ref{fig:HiggsMassLoops} indicates the radiative
+corrections to the Higgs mass resulting from a fermion and a boson loop.
+Considering the fermion loop (which would be dominated by the top quark, which
+has the strongest coupling to the Higgs boson as the result of its large mass), 
+the coupling of the fermion to the Higgs boson in
+the form $\lambda_{f}\bar{\psi}\phi\psi$ yields a correction as~\cite{Carena:2002es}:
 \begin{equation}
-\Delta m_{\PH}^{2} \sim \mathcal{O}(\Lambda^{2}).
+\Delta m_{\PH}^{2} = - \frac{|\lambda_{f}^{2}|}{8\pi^{2}}(\Lambda^{2}) + ...
 \end{equation}
-The scale $\Lambda$ can be as high as the Planck scale, where gravitational
+In this equation, $\Lambda$ is the momentum cut off used to regulate the loop
+integral. The scale $\Lambda$ can be as high as the Planck scale, where gravitational
 interactions become significant~\cite{Griffiths:2008nx}. For a $\Lambda$ at the Planck scale then
 $\Delta m_{\PH}^{2}$ is some 30 orders of magnitude larger than 
 $m_{\PH_{SM}}^{2}$ for $m_{\PH_{SM}}<<1\,\TeV$. This means that the bare Higgs
 boson mass requires extreme fine tuning of the bare mass term $2\mu_{SM}^{2}$ to
-allow cancellation. Figure~\ref{fig:HiggsMassLoops} indicates the radiative
-corrections to the Higgs mass resulting from a fermion and a boson loop.
+allow cancellation.
 
 \begin{figure}[htbp]
 \subfloat[]{
@@ -379,7 +383,7 @@ the superpartners have exactly the same mass as their \ac{SM} partner. Since
 none of these superpartner particles have been observed in nature, \ac{SUSY} must be
 a broken symmetry in which the superpartner masses are larger than the
 \ac{SM} masses. The necessity to avoid further fine tuning means the scale of
-\ac{SUSY} cannot be much larger than $\mathcal{O}(1\,\TeV)$. An additional motivation
+\ac{SUSY} cannot be much larger than $\mathcal{O}(1\,\TeV)$ \cite{Barbieri198863}. An additional motivation
 for \ac{SUSY} is the fact that the lightest \ac{SUSY} particles, if stable, could provide
 candidates for dark matter. Also the behaviour of the running coupling
 constants is modified such that all three intersect at
@@ -443,10 +447,10 @@ conventionally chosen to be the mass of the pseudoscalar, $m_{\PA}$. The masses
 of the other Higgs bosons can then be expressed as:
 \begin{equation}
 m_{\Ph}^{2} = \frac{1}{2} \left( m_{\PA}^{2} + m_{\PZ}^{2} - \sqrt{(m_{\PA}^{2} +
-m_{\PZ}^{2})^{2} - 4m_{\PZ}^{2}m_{\PA}^{2}\cos{2\beta}^{2} }\right) ,
+m_{\PZ}^{2})^{2} - 4m_{\PZ}^{2}m_{\PA}^{2}\cos^{2}{2\beta} }\right) ,
 \label{eq:mh}\\
 m_{\PH}^{2} = \frac{1}{2} \left( m_{\PA}^{2} + m_{\PZ}^{2} + \sqrt{(m_{\PA}^{2} +
-m_{\PZ}^{2})^{2} - 4m_{\PZ}^{2}m_{\PA}^{2}\cos{2\beta}^{2} }\right) , \\
+m_{\PZ}^{2})^{2} - 4m_{\PZ}^{2}m_{\PA}^{2}\cos^{2}{2\beta} }\right) , \\
 m_{\PH^{\pm}} = m_{\PA}^{2} + m_{\PW}^{2},
 \end{equation}
 where $m_{\Ph}$, $m_{\PH}$ and $m_{\PH^{\pm}}$ are the masses of the $\Ph$,
@@ -468,7 +472,7 @@ These corrections, as illustrated in figure \ref{fig:HiggsMassLoops}, do not
 completely cancel in the case that \ac{SUSY} is broken. Hence the size of the
 corrections is strongly dependent on the top and stop masses, where the stop
 mass depends on $\mu$ and the parameters describing \ac{SUSY} breaking. The upper
-bound of $m_{\Ph}$ is increased by these radiative corrections and is maximised
+bound on $m_{\Ph}$ is increased by these radiative corrections and is maximised
 for large $m_{\PA}$ ($\gg m_{\PZ}$) and $\tan\beta$ ($\gg1$). The maximum value of
 $m_{\Ph}$ for a particular choice of $m_{\PA}$ and $\tan\beta$ is denoted
 $m_{\Ph}^{\text{max}}$. If the scale of SUSY breaking, $M_{\text{SUSY}}$, is
@@ -483,7 +487,8 @@ Higgs bosons and hence optimise an experimental search for them. This is
 complicated by the number of \ac{SUSY} breaking parameters in the \ac{MSSM}. Hence it
 is conventional to study particular benchmark scenarios where the \ac{SUSY} breaking
 parameters and $\mu$ are fixed to a choice of values and only $m_{\PA}$ and
-$\tan\beta$ are varied~\cite{Carena:2002es}. One such scenario is the $m_{\Ph}^{\text{max}}$ scenario
+$\tan\beta$ are varied~\cite{Carena:1999xa,Carena:2002es}. 
+One such scenario is the $m_{\Ph}^{\text{max}}$ scenario
 in which $m_{\Ph}=m_{\Ph}^{\text{max}}$ for high $m_{\PA}$ and $\tan\beta$
 values, using the choice $M_{\text{SUSY}} = 1\,\TeV$ and $\mu = \pm 200\,\GeV$.
 Other alternative benchmark scenarios are discussed in 
@@ -534,7 +539,7 @@ final state with the CMS detector.
 \caption[Branching ratios of the pseudoscalar Higgs boson $\PA$ in the
 $m_{\Ph}^{\text{max}}$ scenario.]{Branching ratios of the pseudoscalar Higgs boson $\PA$ in the
 $m_{\Ph}^{\text{max}}$ scenario for $\tan\beta=10$ (a) and $\tan\beta=50$
-(b) \cite{Heinemeyer:2013tqa}.}
+(b). Branching ratios into \ac{SUSY} particles are not included in the figure \cite{Heinemeyer:2013tqa}.}
 \label{fig:mhmaxBRs}
 \end{figure}
 
@@ -578,7 +583,7 @@ $m_{\Ph}^{\text{max}}$ scenario for $\tan\beta=5$ (a) and $\tan\beta=30$
 \end{figure}
 
 Previous searches for neutral \ac{MSSM} Higgs bosons were conducted at LEP, with
-interpretation in the $m_{\Ph}^{max}$ scenario~\cite{Schael:2006cr}.
+interpretation in the $m_{\Ph}^{\text{max}}$ scenario~\cite{Schael:2006cr}.
 The results were negative and yielded limits $m_{\PA} > 93.4\,\GeV$ at $95\%$ CL.  
 Results from the Tevatron~\cite{Benjamin:2010xb} provide complementary exclusion 
 limits at high $\tan\beta$, considering masses up to $m_{\PA}=200\,\GeV$. The
@@ -674,11 +679,16 @@ as the benchmark used at LEP, the Tevatron and early LHC searches.
 In this scenario the ratio of the stop mixing parameter and the
 masses of the third generation squarks is chosen equal to 2
 ($|X_{\Pqt}/M_{\text{SUSY}}| = 2$). This yields a value of
-$m_{\Ph}\sim135\,\GeV$ and high $m_{\PA}$ and $\tan\beta$. 
+$m_{\Ph}\sim135\,\GeV$ at high $m_{\PA}$ and $\tan\beta$. 
 In light of the $125\,\GeV$ boson discovery, this scenario becomes less relevant,
 since there is only a small amount of parameter space where either scalar
 Higgs mass is consistent with $125\,\GeV$. Figure~\ref{fig:mhmaxmass} indicates
-the region ruled out by this mass constraint. 
+the region ruled out by this mass constraint. It should be noted that the exact
+definition of the $m_{h}^{\text{max}}$ scenario in terms of the choices made for
+radiative corrections has varied slightly over the
+last few years to take into account results from the most recent \ac{SUSY}
+searches; the exact version used for the $\HToTauTau$ analysis is defined in
+table~\ref{tab:mssmbenchmarks}.
 
 \begin{figure}[htbp]
    \includegraphics[width=0.5\textwidth]{plots/theory/cmb_mhmax-HypoTest.pdf}
@@ -745,8 +755,10 @@ relation in equation~\ref{eq:GUTrelation}.
 \subsubsection{The light stau scenario}
 \label{sec:lightstauscenario}
 
-The light stau scenario is motivated by the excess of events in the decay
-channel of the $\PH\to\Pphoton\Pphoton$ measured by ATLAS~\cite{ATLAS-CONF-2013-012}. 
+The light stau scenario was motivated by the excess of events in the decay
+channel of the $\PH\to\Pphoton\Pphoton$ measured by
+ATLAS~\cite{ATLAS-CONF-2013-012}. The most recent ATLAS $\PH\to\Pphoton\Pphoton$
+result can be found in~\cite{Aad:2014eha} and sees a slightly smaller excess.
 Light staus lead to a modification of the ratio of the lightest Higgs boson decaying into
 two photons with respect to the \ac{SM} expectation:
 \begin{equation}
@@ -844,14 +856,14 @@ $\tan\beta$ region and analyses which could access it.
 The low $\tan\beta$ region can be re-opened if the value of $M_{\text{SUSY}}$ is
 allowed to be higher than $1\,\TeV$~\cite{Djouadi:2013vqa}. In the \ac{MSSM}, values of
 $M_{\text{SUSY}}$ must be lower than $3\,\TeV$ to avoid too much fine tuning in
-the model. However, as searches at the LHC have yet to discover supersymmetric
+the model \cite{Barbieri198863}. However, as searches at the LHC have yet to discover supersymmetric
 particles, it is natural that models with higher \ac{SUSY} scales are being
 considered, and as the allowed amount of fine-tuning in a model is somewhat
 subjective, attention is turning more to these types of scenarios. Figure
 \ref{fig:MSUSYcontours} illustrates the mass of the $\Ph$ boson at different
 choices of $M_{\text{SUSY}}$ for a range of $\tan\beta$ values. It can be seen
 that $m_{\Ph} = 125\pm 3\,\GeV$ can be achieved for values of $\tan\beta$ as low
-as $1\,\GeV$ if $M_{\text{SUSY}}$ is allowed to be in the range $100-1000\,\TeV$.
+as 1 if $M_{\text{SUSY}}$ is allowed to be in the range $100-1000\,\TeV$.
 Slightly higher $\tan\beta$ values in the range 2--5 can be achieved with
 $M_{\text{SUSY}}$ values only as high as a few $\TeV$. 
 
@@ -870,8 +882,8 @@ over any b-associated production. Figure~\ref{fig:XSlowtanb} indicates the
 production cross-sections for each of the neutral Higgs bosons in such a low
 $\tan\beta$ regime for $\sqrt{s}=8\,\TeV$. It can be seen that the production of
 the heavier $\PA$ and $\PH$ bosons via gluon fusion dominates over any of the
-other production mechanisms. Thus to access information about such a scenario,
-the heavier Higgs bosons with masses up to $1\,\TeV$ must be searched for.
+other production mechanisms. To access information about such a scenario,
+the heavier Higgs bosons must be searched for.
 Figure~\ref{fig:BRlowtanb} illustrates the branching ratios of the $\PA$ and
 $\PH$ bosons in such a mass range. 
 
@@ -899,7 +911,7 @@ made searches for these decays in the scenario where the $\Ph$ is the $125\,\GeV
 Higgs discovered at the LHC. Various final states have been studied including
 for the $\PH\to\Ph\Ph$ analysis $\Pphoton\Pphoton\Pqb\Pqb$ \cite{Aad:2014yja,CMS-PAS-HIG-13-032} and 
 $\Pqb\Pqb\Pqb\Pqb$ \cite{CMS-PAS-HIG-14-013} and for the $\PA\to\PZ\Ph$ analysis $\ell\ell\Pqb\Pqb$
-and $\ell\ell\Pgt\Pgt$ \cite{Aad:2015wra,CMS-PAS-HIG-14-011}. 
+and $\ell\ell\Pgt\Pgt$ \cite{Aad:2015wra,Khachatryan:2015lba}. 
 Chapter~\ref{chap:Hhh} documents a $\PH\to\Ph\Ph$ analysis in the
 final state of $\Pgt\Pgt\Pqb\Pqb$. Such results can be interpreted in an
 appropriate low $\tan\beta$ scenario.
@@ -908,7 +920,8 @@ appropriate low $\tan\beta$ scenario.
 \label{sec:lowtanbscenario}
 
 An appropriate \ac{MSSM} scenario at low $\tan\beta$ is known as the
-low-$\tan\beta$-high scenario~\cite{lowtanbhighwiki}. Such a scenario depends on radiative
+low-$\tan\beta$-high scenario (also called low-tb-high scenario)~\cite{lowtanbhighwiki}. 
+Such a scenario depends on radiative
 corrections like those described previously. To attain a light Higgs boson mass
 consistent with $125\pm3\,\GeV$ for low-$\tan\beta$ values in the range 0.5-4,
 $M_{\text{SUSY}}$ is varied between $1$-$100\,\TeV$ and the parameter $X_{\Pqt}$ is
@@ -982,7 +995,7 @@ $m_{\PA}-\tan\beta$ space, such that no particular choices for the \ac{SUSY} bre
 parameters is necessary. This is found to produce similar cross-sections times
 branching ratios as the low-$\tan\beta$-high scenario. More detail on this
 method can be found in~\cite{Djouadi:2015jea}. Both methods are currently being studied by the 
-\ac{LHCHXSWG}~\cite{LHCHiggsCrossSectionWorkingGroup:2011ti,Dittmaier:2012vm,Heinemeyer:2013tqa}. 
+\ac{LHCHXSWG}. 
 
 
 

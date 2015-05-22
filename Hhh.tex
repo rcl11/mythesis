@@ -22,7 +22,7 @@ Higgs boson masses of relevance to such a search in the \ac{MSSM} is from $m_{\P
 bosons) up to $m_{\PH}\approx350\,\GeV$, above which the branching ratio for 
 $\PH$ decaying into a pair of top quarks becomes overwhelmingly high.
 
-In searching for two $125\,\GeV$ Higgs boson bosons, the final state consisting of two
+In searching for two $125\,\GeV$ Higgs bosons, the final state consisting of two
 $\Pgt$ leptons and two $\Pqb$ quarks combines the higher branching ratio of the
 $\Ph$ into $\Pqb$ quarks with the relative cleanness of a final state containing
 taus. A natural way to search for such a final state is to use the inclusive
@@ -35,7 +35,7 @@ and~\ref{chap:htt-mssm} can be applied to this analysis.
 \label{sec:HhhEventSelection}
 
 The inclusive selection of the di-tau candidate pair is identical to that of
-\ac{MSSM} $\Pphi\to\Pgt\Pgt$ analysis discussed in
+the \ac{MSSM} $\Pphi\to\Pgt\Pgt$ analysis discussed in
 section~\ref{sec:mssmEventSelection}. On top of the selection of a candidate
 $\Pgt\Pgt$, a $\PH \to \Ph\Ph \to \Pgt\Pgt \Pqb\Pqb$ signal would consist of two
 $\Pqb$ quarks which hadronise to form b-jets. A selection similar to that
@@ -63,8 +63,8 @@ jet. The latter indicates that in many events the b-jets in signal resulting
 from the true $\Ph\to\Pqb\Pqb$ process either do not pass the medium \ac{CSV}
 working point or are not inside the jet acceptance cuts. The combination of these two
 facts means that if the two jets selected to reconstruct the $\Ph\to\Pqb\Pqb$ 
-are simply those with the highest $\pt$, as is conventionally used in most analyses, 
-there is a high probability that these will not be the correct jets originating from the $\Pqb$ quarks. 
+are simply those with the highest $\pt$, there is a high probability that these 
+will not be the correct jets originating from the $\Pqb$ quarks. 
 From studies using the generator level information of the signal \ac{MC}, 
 it was found that a higher success rate for selecting the
 correct two jets is achieved if the jets are ordered by their \ac{CSV}
@@ -87,7 +87,8 @@ jets in the $\mutau$ channel, when the jets are ordered in this way.
 $\PH\to\Ph\Ph$ signal.]{
 Number of jets in inclusive $\Pgt\Pgt$ events in backgrounds and
 $\PH\to\Ph\Ph$ signal. Distribution shown for events in the $\mutau$ (a) and $\etau$
-(b) channels.}
+(b) channels. Note that the effect of the b-tag scale factor correction between
+data and \ac{MC} is not included in this figure.}
 \label{fig:Hhhnjets}
 \end{figure} 
 
@@ -127,7 +128,10 @@ in the event (b), for events with at least two jets in the $\mutau$ channel.}
 \label{fig:Hhhcsv}
 \end{figure} 
 
-Finally, events are categorised depending on whether zero, one or two of the selected jets pass the
+As in the $\HToTauTau$ analyses, a cut on transverse mass of $m_{\text{T}} < 30
+\,\GeV$ is applied, which was found to be optimal in rejection of $\WJets$ and
+the increased $\ttbar$ in this analysis. Finally, events are categorised depending 
+on whether zero, one or two of the selected jets pass the
 medium \ac{CSV} b-tagging working point. This allows all of the potential signal
 events in the inclusive selection which have at least two jets to be retained,
 whilst separating them into regions with very different background compositions
@@ -321,7 +325,7 @@ original tau. This direction is assumed to be known to a high degree of
 accuracy, as in the case of the b-jets, and so is not varied in the fit. Thus 
 only the energy of one tau is free in the fit, and
 the energy of the other tau can be related to the first analogously to 
-equation \ref{eq:bjetrelation}. The mass of either tau lepton is kept
+equation \ref{eq:bjetrelation}. The mass of both tau leptons is kept
 constant at $m_{\Pgt}$.  
 
 In order to find the correct tau energies, additional constraints are put on
@@ -398,7 +402,7 @@ and $350\,\GeV$. From this figure it can be seen that the 4-body mass from the k
 good discrimination between the different mass hypotheses, such that in the
 event of an excess of events in data, it would provide a good variable to make a prediction for
 the most likely $m_{\PH}$ consistent with the data. This is not true, for example, 
-in variables such as $m_{\Pgt\Pgt}$ and $m_{\Pqb\Pqb}$ where the signal looks very 
+in variables such as $m_{\Pgt\Pgt}$ and $m_{\Pqb\Pqb}$ where the signals look very 
 similar with a peak at $125\,\GeV$ for all $m_{\PH}$ hypotheses.
 
 \begin{figure}
@@ -438,6 +442,9 @@ $250\,\GeV$ due to the threshold for $2\times m_{\Ph}$, whereas the shape of
 signal is greatly improved leading to much better shape discrimination between
 signal and background. For this reason, the 4-body mass from the kinematic fit
 is chosen as the discriminating variable for signal extraction.
+Note that the narrow width approximation is valid for all mass points
+considered in this analysis, since the resolution in $m_{\PH}$ is always at least
+$10\,\GeV$ worse than the theoretical width of the $\PH$ in the signal samples.
 
 \begin{figure}
 \begin{center}
@@ -639,7 +646,8 @@ analyses. In the 2jet--0tag and 2jet--1tag categories, the normalisation is
 taken from the same-sign data with other backgrounds subtracted. In 2jet--1tag
 and 2jet--2tag, there is again a reasonable contribution from $\ttbar$ in the
 data control region. The normalisation estimate is cross-checked using the anti-isolated
-same-sign data, which is presumed to be entirely QCD and hence does not have the
+same-sign data, which is found to be almost entirely QCD with negligible contributions
+from other backgrounds and hence does not have the
 same issues with background subtraction. The same-sign estimate for inclusive
 events including at least two jets (which has a lower overall fraction of $\ttbar$
 events compared with pure QCD) is extrapolated to the 2jet--1tag or 2jet--2tag
@@ -722,7 +730,7 @@ covers the limited statistics in the data control region and is uncorrelated
 with any other uncertainty, with a size of $30\%$.
 
 An additional uncertainty on the $\ZToTauTau$ estimate, corresponding to the
-size of the subtraction of the $\ttbar$ contamination in the embedded, is
+size of the subtraction of the $\ttbar$ contamination in the embedded sample, is
 included. 
 
 Since the discriminating variable in this analysis is computed using the taus
@@ -900,7 +908,7 @@ a particular region of \ac{MSSM} phase space at low $\tan\beta$, provided
 appropriate choices are made for the radiative corrections which define the
 benchmark scenario. Thus a model dependent result can be produced in such a
 scenario, analogous to those described in~\ref{sec:modeldependent}. As discussed
-above, this analysis is not so sensitive to the \ac{SM} Higgs boson boson, and hence
+above, this analysis is not so sensitive to the \ac{SM} Higgs boson, and hence
 the special statistical treatment to separate the \ac{MSSM} and \ac{SM}
 hypotheses is not required. Thus the limit in $m_{\PA}$--$\tan\beta$ is derived
 by calculating the $\mathrm{CL_{s}}$ values using the asymptotic approximation, comparing
@@ -908,7 +916,10 @@ the \ac{MSSM} signal hypothesis with the background-only hypothesis. The
 resulting limit in the low-$\tan\beta$-high scenario for the combination of the
 $\etau$ and $\mutau$ channels with the $\tautau$ channel is shown in
 figure~\ref{fig:lowtanbhigh}. The lack of an excess of events in this analysis
-allows a small amount of the low $\tan\beta$ phase space to be excluded.
+allows a small amount of the low $\tan\beta$ phase space to be excluded. Note
+that limits going as low as $\tan\beta=1$ are shown and not any lower since
+this is the region of the cross-section calculations which was fully validated
+by the \ac{LHCHXSWG} at the time of writing this thesis.
 
 \begin{figure}
 \begin{center}
